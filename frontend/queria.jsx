@@ -4,7 +4,9 @@ import Root from "./components/root";
 import configureStore from './store/store';
 
 document.addEventListener("DOMContentLoaded", () => {
-    const store = configureStore();
+    let preloadedState = undefined;
+    const store = configureStore(preloadedState);
+    //const store = createStore();
     
     // //testing start
     // window.getState = store.getState;
