@@ -1,0 +1,10 @@
+<% if logged_in? %>
+  <script type="text/javascript">
+    window.currentUser = <%= render(
+      "/api/users/basic_user.json.jbuilder",
+      user: current_user
+    ).html_safe %>
+  </script>
+<% end %>
+
+<div id="root">webpack is not running, but I'm working</div>
