@@ -13,7 +13,6 @@ document.addEventListener("DOMContentLoaded", () => {
     // //testing end
     
     const root = document.getElementById("root");
-    ReactDOM.render(<h1>Queria the great candyland!</h1>, root);
 
-    // ReactDOM.render(<Root store={store} />, root);
+    ReactDOM.render(<Root store={store} />, root);
 })
