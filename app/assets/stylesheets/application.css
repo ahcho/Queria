@@ -48,13 +48,23 @@ body {
     background-color: pink;
 }
 
-#entry-page-box {
-    background-color: white;
+.center-box {
+    position: absolute;
+    background: #ccc;
+
+    left: 50%;
+    width: 150px;
+    margin-left: -75px;  /* width * -0.5 */
+
+    top: 50%;
+    height: 200px;
+    margin-top: -100px;  /* height * -0.5 */
+
+
     margin: auto;
     border-radius: 10px;
     padding: 10px;
     width: 50%;
-    position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);

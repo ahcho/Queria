@@ -35,7 +35,7 @@ class Entry extends React.Component {
     render() {
         return (
             <main id="entry-page">
-                <div id="entry-page-box">
+                <div class="center-box">
                     <h1 id="logo">Queria</h1>
                     <p id="statement">A place to share knowledge and better understand Willy Wonka's Chocolate Factory</p>
                     <div id="forms">
