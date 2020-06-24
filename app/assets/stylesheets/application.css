@@ -13,3 +13,52 @@
  *= require_tree .
  *= require_self
  */
+
+ html, body, div, span, h1, h2, h3, h4, a, ol, ul, li, form, label, article, aside, figure, figcaption, footer, header, nav {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  background: transparent;
+}
+
+body {
+    background-image: url("main-background.jpg");
+    background-size: cover;
+    /*background-repeat: no-repeat;*/
+}
+
+#logo {
+    background-color: brown;
+    text-align: center;
+    font-size: 50px;
+    font-weight: 200;
+    color: green;
+}
+
+#statement {
+    background-color: blue;
+    position: center;
+    font-size: 14px;
+}
+
+#forms {
+    display: flex;
+    background-color: pink;
+}
+
+#entry-page-box {
+    background-color: white;
+    margin: auto;
+    border-radius: 10px;
+    padding: 10px;
+    width: 50%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: space-between;
+}

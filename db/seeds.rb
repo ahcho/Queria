@@ -9,3 +9,4 @@ u1 = User.create!(email: 'Apple@pie.com', password: 'password', first_name: 'Nic
 u2 = User.create!(email: 'banana@pie.com', password: 'password', first_name: 'banana', last_name: 'pie')
 u3 = User.create!(email: 'chocolate@pie.com', password: 'password', first_name: 'chocolate', last_name: 'pie')
 u4 = User.create!(email: 'lemon@pie.com', password: 'password', first_name: 'lemon', last_name: 'pie')
+demo = User.create!(email: 'charlie@chocolate.com', password: 'password', first_name: 'Charlie', last_name: 'Bucke')
