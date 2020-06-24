@@ -16,6 +16,18 @@ class Entry extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.demoSubmit = this.demoSubmit.bind(this);
     }
+///////////////////////
+    showError() {
+        const errors = this.props.errors;
+        return (
+            <div className="errors">
+                {errors.map((error) => {
+                    <li>{error}</li>
+                })}
+            </div>
+        )
+    };
+///////////////////////
 
     handleSubmit(e) {
         e.preventDefault();
@@ -36,7 +48,7 @@ class Entry extends React.Component {
         return (
             <main id="entry-page">
                 <div class="center-box">
-                    <h1 id="logo">Queria</h1>
+                    <h1 id="main-logo">Queria</h1>
                     <p id="statement">A place to share knowledge and better understand Willy Wonka's Chocolate Factory</p>
                     <div id="forms">
                         <form className="login-form">

@@ -9,8 +9,8 @@ document.addEventListener("DOMContentLoaded", () => {
     //const store = createStore();
     
     // //testing start
-    // window.getState = store.getState;
-    // window.dispatch - store.dispatch;
+    window.getState = store.getState;
+    window.dispatch - store.dispatch;
     
     // //testing end
     
