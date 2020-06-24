@@ -16,24 +16,27 @@ export const logoutCurrentUser = () => ({
 });
 
 export const receiveErrors = (errors) => { 
-    debugger
+    //debugger
     return({
         type: RECEIVE_SESSION_ERRORS,
         errors: errors
 })}
 
 // thunk action creators 
-export const signup = (user) => (dispatch) => (APIUtil.signup(user)
-    .then(user => (dispatch(receiveCurrentUser(user))), 
-    err => (dispatch(receiveErrors(err.responseJSON))))
-);
+export const createNewUser = (user) => (dispatch) => {
+
+    return ( APIUtil.createNewUser(user)
+            .then(user => (dispatch(receiveCurrentUser(user))), 
+            err => (dispatch(receiveErrors(err.responseJSON))))
+    )
+}
 
 export const login = (user) => (dispatch) => {
-    debugger
+    //debugger
     return (APIUtil.login(user)
-    .then(user => (dispatch(receiveCurrentUser(user))), 
-    err => { debugger
-        return ( dispatch(receiveErrors(err.responseJSON)))})
+            .then(user => (dispatch(receiveCurrentUser(user))), 
+            err => { //debugger
+            return ( dispatch(receiveErrors(err.responseJSON)))})
 )}
 
 export const logout = () => (dispatch) => (APIUtil.logout()
