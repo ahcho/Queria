@@ -3,6 +3,9 @@ import MainPage from './main';
 
 
 const mapStateToProps = (state) => {
+    return ({
+        currentUser: state.session.currentUser
+    })
 
 }
 
@@ -10,4 +13,4 @@ const mapDispatchToProps = (dispatch) => {
 
 }
 
-export default connect(null, null)(MainPage);
+export default connect(mapStateToProps, null)(MainPage);

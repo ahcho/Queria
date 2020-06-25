@@ -32,7 +32,7 @@ class Entry extends React.Component {
     handleModalSubmit(e) {
         e.preventDefault();
         const user = Object.assign({}, this.state);
-        this.props.processForm(user).then(this.props.closeModal());
+        this.props.createNewUser(user).then(this.props.closeModal());
     }
 
     update(field) {

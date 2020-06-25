@@ -30,19 +30,9 @@
 }
 
 .login-form {
-    border: 1px solid red;
     width: 150px;
     height: 150px;   
 }
-//////////////////
-.signup-form {
-    display: none;
-    border: 1px solid black;
-    font-size: 8px;
-    color: grey;
-    width: 150px;
-}
-////////////////////
 
 #login-email {
     padding-bottom: 15px;
@@ -102,7 +92,6 @@
     background: green;;
 }
 
-
 .center-box {
     position: fixed;
     top: 50%;
@@ -128,7 +117,8 @@
 #login-email *, #login-pw * {
     background: #E8E8E8;
     border-radius: 3px;
-    border: 1px solid lightgrey;
+    border: 0.1px solid lightgrey;
+    width: 96%;
 }
 #input-bar {
     padding: 3px;   

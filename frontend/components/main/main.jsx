@@ -6,6 +6,10 @@ class MainPage extends React.Component {
         return (
             <div>
                 <p>this will be the main page in main.jsx</p>
+                <br/>
+                <br/>
+                <br/>  
+                <p>hello!!!! {this.props.currentUser.name}!!!!</p>
             </div>
         )
     }
