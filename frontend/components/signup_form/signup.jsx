@@ -27,10 +27,10 @@ class SignUpForm extends React.Component {
             <form onSubmit={this.handleSubmit}>   
                 <div id="user-name">
                     <label>FIRST NAME
-                                    <input type="text" onChange={this.update("fname")} value={this.state.fname} />
+                        <input type="text" onChange={this.update("fname")} value={this.state.fname} />
                     </label>
                     <label>LAST NAME
-                                    <input type="text" onChange={this.update("lname")} value={this.state.lname} />
+                        <input type="text" onChange={this.update("lname")} value={this.state.lname} />
                     </label>
                 </div>
                 <label>EMAIL

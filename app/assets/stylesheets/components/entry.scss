@@ -26,34 +26,50 @@
     flex-direction: row-reverse;
     justify-content: space-around;
     padding: 30px 0 30px 0;
-    background-color: whitesmoke;
+    background-color: #F8F8F8;
 }
 
 .login-form {
     border: 1px solid red;
-    height: 200px;   
+    width: 150px;
+    height: 150px;   
 }
-
+//////////////////
 .signup-form {
     display: none;
     border: 1px solid black;
     font-size: 8px;
     color: grey;
     width: 150px;
+}
+////////////////////
 
+#login-email {
+    padding-bottom: 15px;
 }
 
-.submit-button {
-    margin: 5px;
+#login-pw {
+    padding-bottom: 5px;
+}
+
+.login-msg {
+    color: black;
+    font-size: 10px;
+    padding-bottom: 5px;
+}
+
+.submit-button *{
+    margin: 3px 0 0 5px;
     float: right;
     background-color: #3b5998;
     color: white;
+    width: 38px;
+    height: 20px;
     font-size: 10px;
     font-weight: 100;
     border: none;
     text-align: center;
     border-radius: 3px;
-
 }
 
 .link-btn {
@@ -63,8 +79,7 @@
     width: 150px;
 }
 
-.link-btn * {
-    
+.link-btn * { 
     height: 25px;
     color: white;
     padding: 10px;
@@ -78,9 +93,11 @@
 #google-btn {
     background: #DB4437;
 }
+
 #fb-btn {
     background: #4267B2;
 }
+
 #queria-btn {
     background: green;;
 }
@@ -92,22 +109,29 @@
     left: 50%;
     margin-top: -50px;
     margin-left: -100px;
-    background-color: white;
+    background-color: #F8F8F8;
     width: 450px;
     height: 380px;
     margin: auto;
-    border-radius: 10px;
+    border-radius: 5px;
     padding: 10px;
-
-    transform: translate(-50%, -50%);
     display: flex;
-    flex-direction: column;
-    align-items: space-between;
+    flex-direction: column;      
+    //place it on the center
+    transform: translate(-50%, -50%);
 }
+#login-email, #login-pw {
+    width: 150px;
+    float: right;  
+} 
 
+#login-email *, #login-pw * {
+    background: #E8E8E8;
+    border-radius: 3px;
+    border: 1px solid lightgrey;
+}
 #input-bar {
-    padding: 3px;
-
+    padding: 3px;   
 }
 .vertical { 
     border-left: 1px solid lightgrey; 

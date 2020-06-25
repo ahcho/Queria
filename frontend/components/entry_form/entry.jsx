@@ -53,51 +53,30 @@ class Entry extends React.Component {
                     <p id="statement">A place to share knowledge and better understand Willy Wonka's Chocolate Factory</p>
                     <div id="forms">
                         <form className="login-form">
-                            <div id="login-input">
-                                <h2>Login</h2>
-                                <div id='input-bar'></div>
+                            <h2 className="login-msg">Login</h2>
+                            <div id="login-email">
                                 <input type="text" placeholder="Email" onChange={this.update("email")} value={this.state.email}/>
-                                <br/>
+                            </div>
+                            <div id="login-pw">
                                 <input type="password" placeholder="password" onChange={this.update("password")}/>
                             </div>
-                            <button className="submit-button" type="submit" onClick={this.handleSubmit} >Login</button>
-                            <button className="submit-button" type="submit" onClick={this.demoSubmit}>Demo</button>
+                            <div className="submit-button">
+                                <button type="submit" onClick={this.handleSubmit} >Login</button>
+                                <button type="submit" onClick={this.demoSubmit}>Demo</button>
+                            </div>
                         </form>
                         <div className="link-btn">
                             <button id='google-btn'>Go to Google</button>
                             <br/>
                             <button id='fb-btn'>Go to Facebook</button>
                             <br/>
-                            <button id='queria-btn' onClick={() => this.props.openModal('signup')}>Sign Up With Email</button>
+                            <button className='signup-form-open'id='queria-btn' onClick={() => this.props.openModal('signup')}>Sign Up With Email</button>
                         </div>
                         
                         <div className="vertical"></div> 
 
 
-                        <form className="signup-form">
-                            <div id="signup-input">
-                                <div id="user-name">
-                                    <label>FIRST NAME
-                                        <input type="text" onChange={this.update("fname")} value={this.state.fname}/>
-                                    </label>
-                                    <label>LAST NAME
-                                        <input type="text" onChange={this.update("lname")} value={this.state.lname} />
-                                    </label>
-                                </div>
-                                <label>EMAIL
-                                    <br/>
-                                    <input type="text" onChange={this.update("signup_email")} value={this.state.signup_email} />
-                                </label>
-                                <br/>
-                                <label>PASSWORD
-                                    <br/>
-                                    <input type="password" onChange={this.update("signup_pw")} value={this.state.signup_pw} />
-                                </label>
-                                <br/>
-                                <p> cancel </p>
-                                <button className="submit-button" type="submit" onClick={this.handleModalSubmit }>Sign Up</button>
-                            </div>
-                        </form>
+                        
                     </div>
                 </div>
             </main>
