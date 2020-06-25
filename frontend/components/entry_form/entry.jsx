@@ -18,18 +18,6 @@ class Entry extends React.Component {
         this.demoSubmit = this.demoSubmit.bind(this);
     }
 
-    showError() {
-        const errors = this.props.errors;
-        return (
-            <div className="errors">
-                {errors.map((error) => {
-                    <li>{error}</li>
-                })}
-            </div>
-        )
-    };
-
-
     handleSubmit(e) {
         e.preventDefault();
         this.props.login(this.state);   
