@@ -9,35 +9,40 @@ class NavBar extends React.Component {
     render() {
         return (
             <ul className='nav-bar'>
-                <li id="logo">
-                    <i class="fab fa-quora"></i>
-                    <Link to='/'>Queria</Link> 
-                </li>
-                <li id="home">
-                    <i class="fas fa-home"></i>
-                    <Link to='/'>Home</Link>
-                </li>
-                <li id="answers">
-                    <i class="fas fa-pencil-alt"></i>
-                    Answer
-                </li>
+                <div className="left">
+                    <li id="logo">
+                        <i className="fab fa-quora"></i>
+                        <Link className="plain" to='/'>ueria</Link>
+                    </li>
+                    <li id="home">
+                        <i className="fas fa-home"></i>
+                        <Link className="plain" to='/'>Home</Link>
+                    </li>
+                    <li id="answers">
+                        <i className="fas fa-pencil-alt"></i>
+                        Answer
+                    </li>
+                </div>
+                <div className="right">
 
-                <div className="search-bar">
-                    <div className="search">
-                        <input type="text" className="searchTerm" 
-                        placeholder="Search Queria"/>
-                        <button type="submit" className="searchButton">
-                            <i className="fa fa-search"></i>
-                        </button>
+                    <div className="search-bar">
+                        <div className="search">
+                            <input type="text" className="searchTerm" 
+                            placeholder="Search Queria"/>
+                            <button type="submit" className="searchButton">
+                                <i className="fa fa-search"></i>
+                            </button>
+                        </div>
                     </div>
-                </div>
-                <div className="dropdown-profile">
-                    <i class="fas fa-user-circle">  </i>
-                </div>
+                    <div className="dropdown-profile">
+                        <i className="fas fa-user-circle">  </i>
+                    
+                    </div>
+                    
+                    <button className="round-btn">Add Question</button>
                 
-                <button className="round-btn">Add Question</button>
-              
-                <button className="round-btn" onClick={this.props.logout}>Logout</button>
+                    <button className="round-btn" onClick={this.props.logout}>Logout</button>
+                </div>
             </ul>
         )
     }

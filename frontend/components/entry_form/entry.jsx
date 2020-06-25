@@ -31,13 +31,15 @@ class Entry extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        debugger
+         
         (this.state.fname.length > 1) ? this.props.createNewUser(this.state) : this.props.login(this.state);   
     }
     
     demoSubmit(e) {
+         
         e.preventDefault();
         this.props.login({email:"charlie@chocolate.com", password: "password"})
+        .then(() => this.props.history.push('/main')) // necessary if I'm moving the user to a different page
     }
 
     update(field) {
@@ -47,14 +49,17 @@ class Entry extends React.Component {
     render() {
         return (
             <main id="entry-page">
-                <div class="center-box">
+                <div className="center-box">
                     <h1 id="main-logo">Queria</h1>
+                    <br/>
                     <p id="statement">A place to share knowledge and better understand Willy Wonka's Chocolate Factory</p>
                     <div id="forms">
                         <form className="login-form">
                             <div id="login-input">
-                                <h2>Login</h2>
+                                <h2>         Login</h2>
+                                <div id='input-bar'></div>
                                 <input type="text" placeholder="Email" onChange={this.update("email")} value={this.state.email}/>
+                                <br/>
                                 <br/>
                                 <input type="password" placeholder="password" onChange={this.update("password")}/>
                             </div>
