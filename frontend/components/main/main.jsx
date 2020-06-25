@@ -9,7 +9,7 @@ class MainPage extends React.Component {
                 <br/>
                 <br/>
                 <br/>  
-                <p>hello!!!! {this.props.currentUser.name}!!!!</p>
+                <p>hello!!!! {this.props.currentUser.email}!!!!</p>
             </div>
         )
     }
