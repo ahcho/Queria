@@ -64,7 +64,7 @@ table {
 }
 
 body {
-    background-image: image_url("Quora_2000.jpg");
+    background-image: image-url("Quora_2000.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     height: 100vh;
