@@ -23,6 +23,7 @@ class NavBar extends React.Component {
                         Answer
                     </li>
                 </div>
+            
                 <div className="right">
 
                     <div className="search-bar">
