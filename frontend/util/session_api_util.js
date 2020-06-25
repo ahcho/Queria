@@ -6,15 +6,14 @@ export const createNewUser = (user) => (
     })
 );
 
-export const login = (user) => { 
-    //  
+export const login = (user) => {  
     return (
         $.ajax({
             method: 'POST',
             url: '/api/session',
             data: { user }
         })
-)
+    )
 }
 
 export const logout = () => (

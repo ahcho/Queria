@@ -1,6 +1,4 @@
-
-
-body {
+#entry-page {
     background: image_url("Quora_2000.jpg");
     background-size: cover;
     background-repeat: no-repeat;
@@ -27,7 +25,6 @@ body {
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-around;
-
     padding: 30px 0 30px 0;
     background-color: pink;
 }
@@ -37,23 +34,59 @@ body {
     height: 200px;   
 }
 
-.login-button {
-    margin-top: 5px;
-    padding:5px;
+.signup-form {
+
+    border: 1px solid black;
+    font-size: 8px;
+    color: grey;
+    width: 150px;
+
+}
+
+.submit-button {
+    margin: 5px;
     float: right;
     background-color: #3b5998;
     color: white;
     font-size: 10px;
     font-weight: 100;
+    border: none;
+    text-align: center;
+    border-radius: 3px;
 
 }
-.signup-form {
-    display: none;
-    
+
+.link-btn {
+    display: flex;
+    flex-direction: column;
+    height: 150px;
+    width: 150px;
 }
+
+.link-btn * {
+    
+    height: 25px;
+    color: white;
+    padding: 10px;
+    font-size: 9px;
+    border-radius: 8px;
+    border: none;
+    text-align: center;
+    border-radius: 3px;
+}
+
+#google-btn {
+    background: #DB4437;
+}
+#fb-btn {
+    background: #4267B2;
+}
+#queria-btn {
+    background: green;;
+}
+
 
 .center-box {
-
     position: fixed;
     top: 50%;
     left: 50%;
@@ -76,3 +109,9 @@ body {
     padding: 3px;
 
 }
+.vertical { 
+            border-left: 1px solid lightgrey; 
+            height: 150px; 
+            position:absolute; 
+            left: 50%; 
+        } 

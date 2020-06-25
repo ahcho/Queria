@@ -8,11 +8,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const store = configureStore(preloadedState);
     //const store = createStore();
     
-    // //testing start
+    //testing start
     window.getState = store.getState;
-    window.dispatch - store.dispatch;
-    
-    // //testing end
+    window.dispatch = store.dispatch;
+    //testing end
     
     const root = document.getElementById("root");
 

@@ -4,11 +4,13 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import entryContainer from './entry_form/entry_container';
 import mainContainer from './main/main_container'
 import NavBarContainer from './nav_bar/nav_bar_container';
+import Modal from './modal/modal';
+
 
 const App = () => (
     <div>
-        <header>
-            
+        <Modal />
+        <header>  
             <ProtectedRoute path="/" component={NavBarContainer} />
             <ProtectedRoute path="/main" component={mainContainer} />
             <Route exact path="/" component={entryContainer} /> 
