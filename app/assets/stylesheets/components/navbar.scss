@@ -1,11 +1,13 @@
 .nav-bar {
+    background: #fff;
+    background: skyblue;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 20px 0 20px;
-    background: #fff;
-    border-top: 0;
+    border-bottom: 0.2px solid grey;
+   
     position: fixed;
     min-height: 32px;
     box-sizing: border-box;
