@@ -1,40 +1,52 @@
 .nav-bar {
     background: #fff;
-    background: skyblue;
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     padding: 0 20px 0 20px;
-    border-bottom: 0.2px solid grey;
-   
+    border-bottom: 0.2px solid li;
     position: fixed;
-    min-height: 32px;
+    min-height: 50px;
     box-sizing: border-box;
     z-index: 800;
-    font-size: 13px; 
+    font-size: 23px; 
     list-style-type: none; 
     color: #AA2200;  
 }
+
 .right{
-    background-color: green;
     display: flex;
-    justify-content: space-around;
-    border: 1px solid orange;
+    align-items: center;
+    justify-content: space-between;
+    width: 450px;
 }
 
 .left{
-    background-color: yellow;
     display: flex;
     justify-content: space-around;
-    
-    border: 1px solid black;
-    width: 200px;
-
+    width: 300px;
 }
 
 #logo {
     color: #AA2200;
+}
+
+.search-bar {
+  height: 50;
+  width: 200px;
+}
+
+.search > input[type=text] {
+  padding: 8px;
+  font-size: 14px;
+  width: 280px;
+  border: solid 0.5px grey;
+  border-radius: 4px;
+}
+
+a:visited {
+  color: #AA2200;
 }
 
 .search {
@@ -60,30 +72,22 @@
 .plain{
     text-decoration: none;
 }
-.searchButton {
-  width: 15px;
-  height: 24px;
-  border: 1px solid lightgrey;
-  background: lightgrey;
-  text-align: center;
-  color: #fff;
-  border-radius: 0 5px 5px 0;
-  cursor: pointer;
-  font-size: 20px;
-}
 
-.round-btn {
+
+.round-btn > button {
   background-color: #AA2200;
-  font-size: 10px;
+  font-size: 16px;
   border: none;
   color: white;
   padding: 5px 10px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  margin: 4px 2px;
+  margin: 4px 0px 4px 10px;
   cursor: pointer;
   border-radius: 500px;
 }
 
-
+.dropdown-profile {
+  font-size: 28px;
+}

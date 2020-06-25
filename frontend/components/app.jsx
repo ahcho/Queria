@@ -3,17 +3,20 @@ import { Route } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import entryContainer from './entry_form/entry_container';
 import mainContainer from './main/main_container'
-import NavBarContainer from './nav_bar/nav_bar_container';
+import leftBarContainer from './left_bar/left_bar'
+import navBarContainer from './nav_bar/nav_bar_container';
 import Modal from './modal/modal';
+import { logger } from 'redux-logger';
 
 
 const App = () => (
     <div>
         <Modal />
         <header>  
-            <ProtectedRoute path="/" component={NavBarContainer} />
+            <ProtectedRoute path="/" component={navBarContainer} />
+            <ProtectedRoute path="/" component={leftBarContainer} />
             <ProtectedRoute path="/main" component={mainContainer} />
-            <Route exact path="/" component={entryContainer} /> 
+            <AuthRoute exact path="/" component={entryContainer} /> 
         </header>
     </div>
 

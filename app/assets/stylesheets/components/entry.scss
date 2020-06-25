@@ -7,7 +7,7 @@
 
 #main-logo {
     text-align: center;
-    font-size: 50px;
+    font-size: 70px;
     font-weight: 500;
     color: #AA2200;
     font-family: Bookman;
@@ -16,7 +16,7 @@
 #statement {
     text-align: center;
     position: center;
-    font-size: 13px;
+    font-size: 18.5px;
     color: grey;
     padding-bottom: 20px;
 }
@@ -27,10 +27,12 @@
     justify-content: space-around;
     padding: 30px 0 30px 0;
     background-color: #F8F8F8;
+    border-bottom: lightgrey 0.5px solid;
 }
 
 .login-form {
-    width: 150px;
+    border: black solid 1px;
+    width: 200px;
     height: 150px;   
 }
 
@@ -44,18 +46,29 @@
 
 .login-msg {
     color: black;
-    font-size: 10px;
+    font-size: 15px;
     padding-bottom: 5px;
 }
 
-.submit-button *{
+#login-email > input[type=text], #login-pw >[type=password] {
+  padding: 8px;
+  font-size: 14px;
+  width: 180px;
+  border: solid 0.5px grey;
+  border-radius: 4px;
+}
+
+.submit-botton {
+    border-bottom: 0.2px solid grey;
+}
+.submit-button * {
     margin: 3px 0 0 5px;
     float: right;
     background-color: #3b5998;
     color: white;
-    width: 38px;
-    height: 20px;
-    font-size: 10px;
+    width: 50px;
+    height: 30px;
+    font-size: 15px;
     font-weight: 100;
     border: none;
     text-align: center;
@@ -63,21 +76,23 @@
 }
 
 .link-btn {
+    border: 1px solid red;
     display: flex;
     flex-direction: column;
     height: 150px;
-    width: 150px;
+    width: 180px;
 }
 
 .link-btn * { 
-    height: 25px;
+    height: 40px;
     color: white;
     padding: 10px;
-    font-size: 9px;
+    font-size: 13px;
     border-radius: 8px;
     border: none;
     text-align: center;
     border-radius: 3px;
+    width: 170px;
 }
 
 #google-btn {
@@ -93,14 +108,15 @@
 }
 
 .center-box {
+    border: 0.2px solid lightgrey;
     position: fixed;
     top: 50%;
     left: 50%;
     margin-top: -50px;
     margin-left: -100px;
     background-color: #F8F8F8;
-    width: 450px;
-    height: 380px;
+    width: 630px;
+    height: 450px;
     margin: auto;
     border-radius: 5px;
     padding: 10px;
@@ -110,8 +126,9 @@
     transform: translate(-50%, -50%);
 }
 #login-email, #login-pw {
-    width: 150px;
+    width: 200px;
     float: right;  
+    padding: 10;
 } 
 
 #login-email *, #login-pw * {

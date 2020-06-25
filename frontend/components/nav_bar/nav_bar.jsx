@@ -11,12 +11,15 @@ class NavBar extends React.Component {
             <ul className='nav-bar'>
                 <div className="left">
                     <li id="logo">
-                        <i className="fab fa-quora"></i>
-                        <Link className="plain" to='/'>ueria</Link>
+                        <Link className="plain" to='/'>
+                            <i className="fab fa-quora"></i>ueria
+                        </Link>
+                        
                     </li>
                     <li id="home">
-                        <i className="fas fa-home"></i>
-                        <Link className="plain" to='/'>Home</Link>
+                        <Link className="plain" to='/'>
+                            <i className="fas fa-home"></i>Home
+                        </Link>
                     </li>
                     <li id="answers">
                         <i className="fas fa-pencil-alt"></i>
@@ -30,19 +33,18 @@ class NavBar extends React.Component {
                         <div className="search">
                             <input type="text" className="searchTerm" 
                             placeholder="Search Queria"/>
-                            <button type="submit" className="searchButton">
-                                <i className="fa fa-search"></i>
-                            </button>
                         </div>
                     </div>
                     <div className="dropdown-profile">
-                        <i className="fas fa-user-circle">  </i>
+                        <a href="">
+                            <i className="fas fa-user-circle">  </i>
+                        </a>
                     
                     </div>
-                    
-                    <button className="round-btn">Add Question</button>
-                
-                    <button className="round-btn" onClick={this.props.logout}>Logout</button>
+                    <div className="round-btn">
+                        <button>Add Question</button>
+                        <button onClick={this.props.logout}>Logout</button>
+                    </div>
                 </div>
             </ul>
         )
