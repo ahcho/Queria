@@ -33,14 +33,23 @@ class Entry extends React.Component {
     }
 
     update(field) {
-        return e => this.setState({[field]: e.currentTarget.value})
+        return e => this.setState({[field]: e.currentTarget.value});
+    }
+
+    componentWillUnmount() {
+        this.props.clearErrors();
     }
 
     renderError() {
-        const error = this.props.errors || []
+        const error = this.props.errors || [];
         return (
                 <li>{error[0]}</li>
-        )
+        );
+    }
+
+    handleSignUp() {
+        this.props.openModal('signup');
+
     }
 
     render() {
@@ -66,7 +75,8 @@ class Entry extends React.Component {
                                     </div>
                                 </div>
                                 <div className="login-bottom">
-                                    <div id={`login-error ${this.props.errors ? "" : "no-error"}`}>
+                                    call render here
+                                    <div id={`login-error ${this.props.errors ? "" : "no"}`}>
                                         {this.renderError()}
                                     </div>
                                     <div className="submit-button">
@@ -77,7 +87,9 @@ class Entry extends React.Component {
                         </div>
                         <div className="signup-2">
                             <div className="signup">
+                
                                 <button id='google-btn'>Anna's GitHub</button>
+            
                                 <button id='fb-btn' type="submit" onClick={this.demoSubmit}>Demo</button>
                                 <button className='signup-form-open'id='queria-btn' onClick={() => this.props.openModal('signup')}>Sign Up With Email</button>
                             </div>
@@ -91,3 +103,6 @@ class Entry extends React.Component {
 };
 
 export default Entry;
+
+//<button className='signup-form-open' id='queria-btn' onClick={() => this.props.openModal('signup')}>Sign Up With Email</button>
+

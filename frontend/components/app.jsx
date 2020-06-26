@@ -1,5 +1,5 @@
 import React from "react";
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import entryContainer from './entry_form/entry_container';
 import mainContainer from './main/main_container'
@@ -15,12 +15,17 @@ const App = () => (
         <header>  
             <ProtectedRoute path="/" component={navBarContainer} />
             <ProtectedRoute path="/" component={leftBarContainer} />
-            <ProtectedRoute path="/main" component={mainContainer} />
-            <AuthRoute exact path="/" component={entryContainer} /> 
+            <Switch>
+                <ProtectedRoute path="/main" component={mainContainer} />
+                <AuthRoute exact path="/" component={entryContainer} />  
+                <AuthRoute component={entryContainer} />   
+            </Switch>
         </header>
     </div>
 
     //<ProtectedRoute path="/profile/userId" component={UserContainer} />
 );
+
+/////????????????
 
 export default App;

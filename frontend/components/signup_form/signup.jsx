@@ -12,7 +12,6 @@ class SignUpForm extends React.Component {
             lname: ""
         } 
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.renderErrors = this.renderErrors.bind(this);
     }
 
     update(field) {
@@ -22,26 +21,33 @@ class SignUpForm extends React.Component {
     renderErrors() {
         const errors = this.props.errors || []
         return (
-            errors.map(error => <li>{error}</li>)
+            errors.map((error, idx) => <li key={idx}>{error}</li>)
         )
     }
+    componentWillUnmount() {
+        this.props.clearErrors();
+    }
+
+    handleCancel() {
+        this.props.errors = [];
+        this.props.closeModal();
+    } 
 
     handleSubmit(e) {
         e.preventDefault();
         const user = Object.assign({}, this.state);
         this.props.createNewUser(user)
-            .then(this.props.closeModal()),
-            err => (this.renderError())
+            .then(() => {this.props.closeModal()})
+            //err => (this.renderErrors()))
     }
 
     render() {
-
         return (
             <div className="signup-form">
                 <h1 id='signup-msg'>Join Queria!</h1>
                 <br/>
                 <form onSubmit={this.handleSubmit}>  
-                    <div class="signup-input">
+                    <div className="signup-input">
                         <div id="user-fname">
                             <label>First name
                                 <br />
@@ -65,11 +71,11 @@ class SignUpForm extends React.Component {
                             <input type="password" placeholder="Password(6 or more characters)" onChange={this.update("signup_pw")} value={this.state.signup_pw} />
                         </div>
                         <div className="signup-btn">
-                            <button type="submit" onClick={() => this.props.closeModal()}>Cancel</button> 
+                            <button type="submit" onClick={() => this.props.closeModal()}>Cancel</button>                             
                             <button type="submit" onClick={this.handleSubmit}>Sign Up</button>        
                         </div>
                     </div >
-                    <div id={`signin-error ${this.props.errors ? "" : "no-error"}`}>
+                    <div id="signup-error">
                         {this.renderErrors()}
                     </div>
                 </form>
@@ -80,3 +86,5 @@ class SignUpForm extends React.Component {
 }
 
 export default SignUpForm;
+// reducer action, everytime componenet mounts 
+// call this.clearerror or inside of close modal                            

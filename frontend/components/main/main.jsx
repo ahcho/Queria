@@ -11,11 +11,21 @@ class MainPage extends React.Component {
     render() {
         return (
             <div className='main-page'>
-                <p>this will be the main page in main.jsx</p>
-                <br/>
-                <br/>
-                <br/>  
-                <p>{" " +this.user.first_name + " " + this.user.last_name} is logged in</p>
+                <div className='main-right'>
+                    <p>I'm going to be on the rightside of main page</p>
+                </div>
+                <div className='main-center'>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <p>{" " +this.user.first_name + " " + this.user.last_name} is logged in</p>
+                </div>
+                <div className='main-left'>
+                    <br />
+                    <br />
+                    <br />
+                    <p>I'm going to be on the leftside of main page</p>
+                </div>   
             </div>
         )
     }

@@ -23,7 +23,7 @@ function Modal({ modal, closeModal }) {
         </div>
     );
 }
-
+//container
 const mapStateToProps = state => {
     return {
         modal: state.ui.modal
