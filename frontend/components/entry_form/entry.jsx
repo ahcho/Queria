@@ -55,22 +55,25 @@ class Entry extends React.Component {
                 <div className="center-box">
                     <h1 id="main-logo">Queria</h1>
                     <br/>
-                    <p id="statement">A place to share knowledge and better understand Willy Wonka's Chocolate Factory</p>
-                    <div id="forms">
-                        <form className="login-form">
+                    <h2 className="entry-tag-line">A place to share knowledge and better understand Willy Wonka's Chocolate Factory</h2>
+                    <div className="login-sigin-form">
+                        <form className="login">
                             <h2 className="login-msg">Login</h2>
-                            <div id="login-email">
-                                <input type="text" placeholder="Email" onChange={this.update("email")} value={this.state.email}/>
-                            </div>
-                            <div id="login-pw">
-                                <input type="password" placeholder="password" onChange={this.update("password")}/>
+                            <div className="user-input">
+                                <div id="login-email">
+                                    <input type="text" placeholder="Email" onChange={this.update("email")} value={this.state.email}/>
+                                </div>
+                                <div id="login-pw">
+                                    <input type="password" placeholder="password" onChange={this.update("password")}/>
+                                </div>
                             </div>
                             {this.renderError()}
                             <div className="submit-button">
                                 <button type="submit" onClick={this.handleSubmit} >Login</button>
                             </div>
                         </form>
-                        <div className="link-btn">
+                        
+                        <div className="signin">
                             <button id='google-btn'>Anna's GitHub</button>
                             <br/>
                             <button id='fb-btn' type="submit" onClick={this.demoSubmit}>Demo</button>
