@@ -5,98 +5,132 @@
     height: 100vh;
 }
 
-li{ 
-    list-style-type: none; 
+li {
+    list-style: none;
 }
-
-#main-logo {
-    text-align: center;
-    font-size: 70px;
-    font-weight: 500;
-    color: #AA2200;
-    font-family: Bookman;
-}
-
-.entry-tag-line {
-    font-family: "Helvetica Neue",sans-serif;
-    text-align: center;
-    position: center;
-    font-size: 18x;
-    color: #949494;
-    padding-bottom: 20px;
-}
-
-.login-sigin-form {
+.center-box {
+    border: 0.2px solid lightgrey;
+    background-color:  #F8F8F8;
     width: 650px;
-    height: 248px;
+    height: 520px;
+    /*margin: 50px auto;*/
+    box-shadow: 1px 1px 1px lightgrey;
+    border-radius: 5px; /*future box shadow*/
+    margin: 2px solid gray;
+    //place it on the center
+    transform: translate(-50%, -50%);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -50px;
+    margin-left: -100px;
+}
+
+.entry-page-top {
+    padding: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.entry-page-top > div > h1 {
+    display: block;
+    margin-bottom: 0 auto 25px auto;
+    color: #AA2200;
+    font-size: 70px;
+    font-weight: 700;
+    font-family: Bookman;
+    text-align: center;
+}
+
+.entry-page-top > div > h2 {
+    color: #949494;
+    font-size: 16px;
+    font-family: sans-serif;
+    width: 400px;
+    display: block;
+    text-align: center;
+    padding-top: 15px;
+}
+
+.entry-page-bottom {
     display: flex;
     flex-direction: row-reverse;
-    justify-content: space-around;
-    padding: 30px 0 30px 0;
-    background-color: #F8F8F8;
+    // background-color: lightpink;
     border-bottom: lightgrey 0.5px solid;
+}
+.login-signup-form {
+    width: 325px;
+    box-sizing: box;
+    margin-top: 37px;
+}
+
+.signup-2 {
+    width: 325px;
+    height: 270px;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.signup > button {
+    display: block;
+    padding: 8px 25px;
+    width: 270px;
+    margin: 40px 20px;
+    color: white;
+    border-radius: 4px;
+    border: none;
 }
 
 .login {
-    width: 250px;
-    height: 150px;   
-}
-
-#login-email {
-    padding-bottom: 15px;
-}
-
-#login-pw {
-    padding-bottom: 5px;
+    padding: 20px;
+    border-left: lightgrey 0.5px solid;
 }
 
 .login-msg {
-    color: black;
-    font-size: 15px;
-    padding-bottom: 5px;
+    font-family: sans-serif;
+    display: box;
+    margin-left: 14px;
 }
 
-#login-email > input[type=text], #login-pw >[type=password] {
-  padding: 8px;
-  font-size: 14px;
-  width: 230px;
-  border-radius: 4px;
+.user-input {
+    // background-color: red;
 }
 
-.submit-botton {
-    border-bottom: 0.2px solid grey;
-}
-.submit-button * {
-    margin: 3px 0 0 5px;
-    float: right;
-    background-color: #3b5998;
-    color: white;
-    width: 50px;
-    height: 30px;
-    font-size: 15px;
-    font-weight: 100;
-    border: none;
-    text-align: center;
-    border-radius: 3px;
+#login-email {
+    padding: 10px 14px;
 }
 
-.signin {
-    display: flex;
-    flex-direction: column;
-    height: 150px;
-    width: 250px;
+#login-pw {
+    padding: 10px 14px;
 }
 
-.signin * { 
-    height: 40px;
-    color: white;
-    padding: 10px;
-    font-size: 13px;
-    border-radius: 8px;
-    border: none;
-    text-align: center;
-    border-radius: 3px;
-    width: 250px;
+#login-email > input[type="text"] {
+    padding: 8px 25px;
+    background-color: #E8E8E8;
+    width: 212px;
+    border-radius: 4px;
+    border: 0.1px solid lightgrey;
+}
+
+#login-pw > input[type="password"] {
+    padding: 8px 25px;
+    width: 212px;
+    background-color: #E8E8E8;
+    border-radius: 4px;
+    border: 0.1px solid lightgrey;
+}
+
+.submit-button {
+    text-align: right;
+}
+
+.submit-button > button[type="submit"] {
+    padding: 5px 10px;
+    margin-right: 4px;
 }
 
 #google-btn {
@@ -109,49 +143,4 @@ li{
 
 #queria-btn {
     background: green;;
-}
-
-.center-box {
-    border: 0.2px solid lightgrey;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    margin-top: -50px;
-    margin-left: -100px;
-    background-color: #F8F8F8;
-    width: 652px;
-    height: 527px;
-    margin: auto;
-    border-radius: 5px;
-    padding: 10px;
-    display: flex;
-    flex-direction: column;      
-    //place it on the center
-    transform: translate(-50%, -50%);
-}
-#login-email, #login-pw {
-    width: 250px;
-    float: right;  
-    padding: 10;
-} 
-
-#login-email *, #login-pw * {
-    background: #E8E8E8;
-    border-radius: 3px;
-    border: 0.1px solid lightgrey;
-    width: 96%;
-}
-#input-bar {
-    padding: 3px;   
-}
-.vertical { 
-    border-left: 1px solid lightgrey; 
-    height: 150px; 
-    position:absolute; 
-    left: 50%; 
-} 
-
-.error-msg {
-    color: red;
-    font-size: 10px;
 }
