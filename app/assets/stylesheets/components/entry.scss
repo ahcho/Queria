@@ -8,22 +8,23 @@
 li {
     list-style: none;
 }
+
 .center-box {
     border: 0.2px solid lightgrey;
     background-color:  #F8F8F8;
     width: 650px;
     height: 520px;
-    /*margin: 50px auto;*/
     box-shadow: 1px 1px 1px lightgrey;
-    border-radius: 5px; /*future box shadow*/
+    border-radius: 5px; 
     margin: 2px solid gray;
+    /*margin: 50px auto;*/
     //place it on the center
     transform: translate(-50%, -50%);
     position: fixed;
     top: 50%;
     left: 50%;
     margin-top: -50px;
-    margin-left: -100px;
+    margin-left: -40px;
 }
 
 .entry-page-top {
@@ -56,7 +57,6 @@ li {
 .entry-page-bottom {
     display: flex;
     flex-direction: row-reverse;
-    // background-color: lightpink;
     border-bottom: lightgrey 0.5px solid;
 }
 .login-signup-form {
@@ -124,13 +124,33 @@ li {
     border: 0.1px solid lightgrey;
 }
 
+.login-bottom {
+    display: flex;
+    justify-content: space-between;
+}
+
+#login-error {
+    margin-left: 16px;
+    padding: 5px 10px;
+    border: 0.5px solid  #DB4437;
+    color:  #DB4437;
+    text-align: center;
+    font-size: 13px;
+    border-radius: 4px;
+}
+
 .submit-button {
-    text-align: right;
+    text-align: right; /*안나 힘내요!!*/
 }
 
 .submit-button > button[type="submit"] {
     padding: 5px 10px;
     margin-right: 4px;
+    background: #4267B2;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 13px;
 }
 
 #google-btn {

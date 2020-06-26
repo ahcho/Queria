@@ -7,11 +7,7 @@ class Entry extends React.Component {
         super(props);
         this.state = {
             email: "",
-            password: "",
-            signup_email: "",
-            signup_pw: "",
-            fname: "",
-            lname: ""
+            password: ""
         }
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleModalSubmit = this.handleModalSubmit.bind(this);
@@ -43,9 +39,7 @@ class Entry extends React.Component {
     renderError() {
         const error = this.props.errors || []
         return (
-            <div className='error-msg'>
                 <li>{error[0]}</li>
-            </div>
         )
     }
 
@@ -71,9 +65,13 @@ class Entry extends React.Component {
                                         <input type="password" placeholder="password" onChange={this.update("password")}/>
                                     </div>
                                 </div>
-                                {this.renderError()}
-                                <div className="submit-button">
-                                    <button type="submit" onClick={this.handleSubmit} >Login</button>
+                                <div className="login-bottom">
+                                    <div id={`login-error ${this.props.errors ? "" : "no-error"}`}>
+                                        {this.renderError()}
+                                    </div>
+                                    <div className="submit-button">
+                                        <button type="submit" onClick={this.handleSubmit}>Login</button>
+                                    </div>
                                 </div>
                             </form>
                         </div>
@@ -83,7 +81,6 @@ class Entry extends React.Component {
                                 <button id='fb-btn' type="submit" onClick={this.demoSubmit}>Demo</button>
                                 <button className='signup-form-open'id='queria-btn' onClick={() => this.props.openModal('signup')}>Sign Up With Email</button>
                             </div>
-                            {/* <div className="vertical"></div>                          */}
                         </div>
                     </div>
                 </div>
