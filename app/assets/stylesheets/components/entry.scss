@@ -76,7 +76,7 @@
 }
 
 .link-btn {
-    border: 1px solid red;
+    border: 5px solid black;
     display: flex;
     flex-direction: column;
     height: 150px;
@@ -146,3 +146,7 @@
     position:absolute; 
     left: 50%; 
 } 
+
+.error-msg {
+    color: black;
+}

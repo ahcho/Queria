@@ -16,6 +16,7 @@ class Entry extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleModalSubmit = this.handleModalSubmit.bind(this);
         this.demoSubmit = this.demoSubmit.bind(this);
+        this.renderError = this.renderError.bind(this);
     }
 
     handleSubmit(e) {
@@ -39,12 +40,16 @@ class Entry extends React.Component {
         return e => this.setState({[field]: e.currentTarget.value})
     }
 
-    test(e) {
-        e.preventDefault();
+    renderError() {
+        const error = this.props.errors || []
+        return (
+            <div className='error-msg'>
+                <li>{error[0]}</li>
+            </div>
+        )
     }
 
     render() {
-
         return (
             <main id="entry-page">
                 <div className="center-box">
@@ -60,15 +65,15 @@ class Entry extends React.Component {
                             <div id="login-pw">
                                 <input type="password" placeholder="password" onChange={this.update("password")}/>
                             </div>
+                            {this.renderError()}
                             <div className="submit-button">
                                 <button type="submit" onClick={this.handleSubmit} >Login</button>
-                                <button type="submit" onClick={this.demoSubmit}>Demo</button>
                             </div>
                         </form>
                         <div className="link-btn">
-                            <button id='google-btn'>Go to Google</button>
+                            <button id='google-btn'>Anna's GitHub</button>
                             <br/>
-                            <button id='fb-btn'>Go to Facebook</button>
+                            <button id='fb-btn' type="submit" onClick={this.demoSubmit}>Demo</button>
                             <br/>
                             <button className='signup-form-open'id='queria-btn' onClick={() => this.props.openModal('signup')}>Sign Up With Email</button>
                         </div>
