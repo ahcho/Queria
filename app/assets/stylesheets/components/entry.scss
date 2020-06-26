@@ -1,3 +1,11 @@
+button:hover {
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    cursor: pointer;
+}
+
 #entry-page {
     background: image_url("Quora_2000.jpg");
     background-size: cover;
@@ -59,6 +67,7 @@ li {
     flex-direction: row-reverse;
     border-bottom: lightgrey 0.5px solid;
 }
+
 .login-signup-form {
     width: 325px;
     box-sizing: box;
@@ -100,9 +109,6 @@ a {
     margin-left: 14px;
 }
 
-.user-input {
-    // background-color: red;
-}
 
 #login-email {
     padding: 10px 14px;
@@ -148,6 +154,8 @@ a {
 .submit-button {
     text-align: right; /*안나 힘내요!!*/
     margin-left: 10px;
+    cursor:pointer;
+    
 }
 
 .submit-button > button[type="submit"] {
@@ -169,5 +177,5 @@ a {
 }
 
 #queria-btn {
-    background: green;;
+    background: green;
 }

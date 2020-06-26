@@ -39,12 +39,10 @@ class Entry extends React.Component {
     componentWillUnmount() {
         this.props.clearErrors();
     }
-    // handleSignUp() {
-    //     this.props.clearErrors();
-    // }
+  
 
     renderError() {
-        const error = this.props.errors || [];
+        const error = this.props.errors.login || [];
         if (error.length > 0) {
            return ( <li id='login-error'>{error[0]}</li> )
         } else {
@@ -82,7 +80,7 @@ class Entry extends React.Component {
                                 <div className="login-bottom">  
                                     {this.renderError()}
                                     <div className="submit-button">
-                                        <button type="submit" onClick={this.handleSubmit}>Login</button>
+                                        <button id="loginbtn" type="submit" onClick={this.handleSubmit}>Login</button>
                                     </div>
                                 </div>
                             </form>
