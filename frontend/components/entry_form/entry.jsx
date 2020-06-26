@@ -12,7 +12,7 @@ class Entry extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleModalSubmit = this.handleModalSubmit.bind(this);
         this.demoSubmit = this.demoSubmit.bind(this);
-        this.renderError = this.renderError.bind(this);
+        this.handleSignUp = this.handleSignUp.bind(this);
     }
 
     handleSubmit(e) {
@@ -39,17 +39,22 @@ class Entry extends React.Component {
     componentWillUnmount() {
         this.props.clearErrors();
     }
+    // handleSignUp() {
+    //     this.props.clearErrors();
+    // }
 
     renderError() {
         const error = this.props.errors || [];
-        return (
-                <li>{error[0]}</li>
-        );
+        if (error.length > 0) {
+           return ( <li id='login-error'>{error[0]}</li> )
+        } else {
+            return null
+        }
     }
 
     handleSignUp() {
-        this.props.openModal('signup');
-
+        this.props.clearErrors();
+        this.props.openModal('signup')
     }
 
     render() {
@@ -74,11 +79,8 @@ class Entry extends React.Component {
                                         <input type="password" placeholder="password" onChange={this.update("password")}/>
                                     </div>
                                 </div>
-                                <div className="login-bottom">
-                                    call render here
-                                    <div id={`login-error ${this.props.errors ? "" : "no"}`}>
-                                        {this.renderError()}
-                                    </div>
+                                <div className="login-bottom">  
+                                    {this.renderError()}
                                     <div className="submit-button">
                                         <button type="submit" onClick={this.handleSubmit}>Login</button>
                                     </div>
@@ -88,10 +90,10 @@ class Entry extends React.Component {
                         <div className="signup-2">
                             <div className="signup">
                 
-                                <button id='google-btn'>Anna's GitHub</button>
+                                <a href="https://github.com/ahcho/"><button id='google-btn'>Anna's GitHub</button></a>
             
                                 <button id='fb-btn' type="submit" onClick={this.demoSubmit}>Demo</button>
-                                <button className='signup-form-open'id='queria-btn' onClick={() => this.props.openModal('signup')}>Sign Up With Email</button>
+                                <button className='signup-form-open'id='queria-btn' onClick={this.handleSignUp}>Sign Up With Email</button>
                             </div>
                         </div>
                     </div>
