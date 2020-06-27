@@ -24,6 +24,7 @@ class SignUpForm extends React.Component {
             errors.map((error, idx) => <li key={idx}>{error}</li>)
         )
     }
+    
     componentWillUnmount() {
         this.props.clearErrors();
     }

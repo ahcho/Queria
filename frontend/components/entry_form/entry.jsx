@@ -40,7 +40,6 @@ class Entry extends React.Component {
         this.props.clearErrors();
     }
   
-
     renderError() {
         const error = this.props.errors.login || [];
         if (error.length > 0) {

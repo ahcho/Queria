@@ -1,7 +1,8 @@
 import React from 'react';
 import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
-import SignupContainer from '../signup_form/signup_container'
+import SignupContainer from '../signup_form/signup_container';
+import CreateQuestionContainer from '../question/create_question_container';
 
 function Modal({ modal, closeModal }) {
     if (!modal) {
@@ -12,6 +13,8 @@ function Modal({ modal, closeModal }) {
         case 'signup':
             component = <SignupContainer />;
             break;
+        case 'createquestion' :
+            component = <CreateQuestionContainer />;
         default:
             return null;
     }

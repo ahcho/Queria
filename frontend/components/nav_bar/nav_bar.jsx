@@ -4,6 +4,11 @@ import { Link } from 'react-router-dom';
 class NavBar extends React.Component {
     constructor(props) {
         super(props)
+        this.handleAddQuestion = this.handleAddQuestion.bind(this);
+    }
+
+    handleAddQuestion() {
+        this.props.openModal('createquestion')
     }
 
     render() {
@@ -42,7 +47,7 @@ class NavBar extends React.Component {
                     
                     </div>
                     <div className="round-btn">
-                        <button>Add Question</button>
+                        <button onClick={this.handleAddQuestion}>Add Question</button>
                         <button onClick={this.props.logout}>Logout</button>
                     </div>
                 </div>
