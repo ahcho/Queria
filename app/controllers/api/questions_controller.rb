@@ -9,18 +9,20 @@ class Api::QuestionsController < ApplicationController
 
     def create
         @question = Question.new(question_params)
+        @question.topic_id = 1;
         #@question.author_id = current_user.id
         if @question.save
             @questions = Question.all
-            render json: @questions
+            #render "api/questions/show"
+            render :show
         else
-            render json: ["Fail to create a post"]
+            render json: ["Fail to create a post"], status: 422
         end
     end
 
     def show
         @question = Question.find(params[:id])
-        render json: @question
+        render :show
     end
 
     def update
@@ -32,13 +34,14 @@ class Api::QuestionsController < ApplicationController
         end
     end
 
-    def destory
+    def destroy
         @question = Question.find(params[:id])
-        if @question.destory
+        if @question.destroy
             @questions = Question.all
             render :index 
         else 
             render json: ["fail to delete the question"], status: 404
+        end
     end
 
     private

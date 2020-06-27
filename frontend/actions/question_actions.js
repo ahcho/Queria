@@ -37,7 +37,7 @@ export const fetchQuestion = (questionId) => (dispatch) => {
 
 export const createQuestion = (question) => (dispatch) => {
     return QuestionApiUtil.createQuestion(question)
-        .then((question) => dispatch(receieveQuestion(question)))
+        .then((question) => dispatch(receiveQuestion(question)))
 };
 
 export const updateQuestion = (question) => (dispatch) => {

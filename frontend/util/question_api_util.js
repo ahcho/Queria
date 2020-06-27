@@ -1,11 +1,11 @@
-export const fetchQuestions = () => {
+export const receiveQuestions = () => {
     return $.ajax({
         method: "GET",
         url: "/api/questions"
     })
 };
 
-export const fetchQuestion = (id) => {
+export const receiveQuestion = (id) => {
     return $.ajax({
         method: "GET",
         url: `/api/questions/${id}`

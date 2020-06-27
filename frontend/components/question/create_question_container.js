@@ -3,9 +3,10 @@ import CreateQuestion from './create_question';
 import { createQuestion } from '../../actions/question_actions';
 import { openModal, closeModal } from '../../actions/modal_actions';
 
-const mapStateToProps = ({ errors }) => {
+const mapStateToProps = (state) => {
     return {
-        errors: errors.session
+        currentUser: state.session.currentUser,
+        errors: state.errors.session
         //type: question
     }
 }
