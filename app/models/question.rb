@@ -1,5 +1,5 @@
 class Question < ApplicationRecord
-    validates :title, :author_id, :topic_id, presence: true
+    validates :question, :author_id, :topic_id, presence: true
 
     belongs_to :author,
         foreign_key: :author_id,
