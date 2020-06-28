@@ -9,7 +9,9 @@ class Question < ApplicationRecord
         foreign_key: :topic_id,
         class_name: :Topic
     
-    # has_many :answers,
-    #     foreign_key: :question_id,
-    #     class_name: :Answer
+    has_many :answers,
+        foreign_key: :question_id,
+        class_name: :Answer
+
+    #dependent: :destroy
 end

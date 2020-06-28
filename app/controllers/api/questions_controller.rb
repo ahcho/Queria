@@ -8,8 +8,10 @@ class Api::QuestionsController < ApplicationController
     end
 
     def create
+        
         @question = Question.new(question_params)
-        @question.topic_id = 1; ## need to be updated
+        @question.topic_id = 1; ## needs to be updated\
+        debugger
         #@question.author_id = current_user.id
         if @question.save
             #@questions = Question.all
