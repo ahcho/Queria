@@ -3,15 +3,14 @@ class Api::QuestionsController < ApplicationController
 
     #shows all questions or questions belong to a user or topic
     def index
-        @questions = Question.all #need to be updated later !!!!!!!!!!!!! selected by topic_id and user_id
+        @questions = Question.all #needs to be updated later !!!!!!!!!!!!! selected by topic_id and user_id
         render :index
     end
 
     def create
-        
         @question = Question.new(question_params)
         @question.topic_id = 1; ## needs to be updated\
-        debugger
+    
         #@question.author_id = current_user.id
         if @question.save
             #@questions = Question.all
