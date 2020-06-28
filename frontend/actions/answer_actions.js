@@ -3,7 +3,7 @@ import * as answerApiUtil from '../util/answer_api_util';
 
 export const RECEIVE_ALL_ANSWERS = "RECEIVE_ALL_ANSWERS";
 export const RECEIVE_ALL_USER_ANSWERS = "RECEIVE_ALL_USER_ANSWERS";
-export const RECEIVE_ALL_ANSWER = "RECEIVE_ALL_ANSWER";
+export const RECEIVE_ANSWER = "RECEIVE_ANSWER";
 export const REMOVE_ANSWER = "REMOVE_ANSWER";
 
 const receiveAllAnswers = (answers) => {
