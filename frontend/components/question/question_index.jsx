@@ -19,17 +19,12 @@ class QuestionIndex extends React.Component {
         return (
             <div>
                 <div>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <div className="ask-question-box">
-                        <div id="asking-user">{currentUser.first_name + " " + currentUser.last_name}</div>
-                        <div id="main-question">
-                            <input type="text" placeholder="What is your Question?" onClick={() => openModal('createquestion')}/>
-                        </div>    
+                    <div className="main-question-modal-trigger" >
+                        <div id="main-asking-user" onClick={() => openModal('createquestion')}>Hello {currentUser.first_name + " " + currentUser.last_name}</div>
+                        <br/>
+                        <div id="main-asking-user-input"
+                            onClick={() => openModal('createquestion')}> ask me a question
+                        </div>   
                     </div>
                     <div className="question-index">
                         {questions.map((question) => <QuestionIndexItem question={question} key={question.id}/>)}

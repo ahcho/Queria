@@ -8,14 +8,14 @@ class User < ApplicationRecord
 
   has_many :questions,
     class_name: :Question,
-    foreign_key: :author_id
+    foreign_key: :author_id,
+    dependent: :destroy
 
 
   has_many :answers,
     class_name: :Answer,
     foreign_key: :author_id
-
-  #dependent: :destroy
+    #dependent: :destroy
   
 
   def self.find_by_credentials(email, password)

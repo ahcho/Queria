@@ -8,3 +8,33 @@
     background: lightsteelblue;
     border-radius: 4px;
 }
+
+.main-question-modal-trigger {
+    width: 93%;
+    background-color: #F5FFFA;
+    display: box;
+    border-radius: 4px;
+    margin: 90px 5px 10px 5px;
+    border: 0.5px solid lightgrey;
+    padding: 16px;
+
+}
+
+#main-asking-user-input > input[type=text] {
+    width: 80%;
+}
+// #main-question-modal-input {
+   
+// }
+
+.question-index-item {
+    width: 93%;
+    margin: 15px 5px 10px 5px;
+    border-radius: 4px;
+    background: #F5FFFA;
+    border: 0.5px solid lightgrey;
+    padding: 16px;
+
+
+
+}

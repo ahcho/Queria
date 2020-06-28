@@ -11,7 +11,8 @@ class Question < ApplicationRecord
     
     has_many :answers,
         foreign_key: :question_id,
-        class_name: :Answer
+        class_name: :Answer,
+        dependent: :destroy
 
     #dependent: :destroy
 end

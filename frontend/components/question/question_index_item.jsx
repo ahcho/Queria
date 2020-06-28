@@ -11,9 +11,9 @@ class QuestionIndexItem extends React.Component {
         
         const {question} =this.props;
         return (
-            <div>
+            <div className="question-index-item">
                 <div className="question-top">
-                    <h1>author name will be here</h1>
+                <h1>{question.author.first_name} {question.author.last_name} asked:</h1>
                 </div>
                 <div className="question-detail">
                     <h2 key={question.id}>{question.question}</h2>

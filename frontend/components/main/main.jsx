@@ -19,10 +19,6 @@ class MainPage extends React.Component {
                 </div>
                 <div className='main-center'>
                     <QuestionIndexContainer />
-                    <br/>
-                    <br/>
-                    <br/>
-                    <p>{ " " +this.user.first_name + " " + this.user.last_name } is logged in</p>
                 </div>
                 <div className='main-right'>
                     <br />
