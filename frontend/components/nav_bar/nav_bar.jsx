@@ -43,6 +43,10 @@ class NavBar extends React.Component {
                     <div className="dropdown-profile">
                         <a href="">
                             <i className="fas fa-user-circle">  </i>
+                            <div className="dropdown-content">
+                                <a href="#">profile</a>
+                                <a href="#">logout</a>
+                            </div>
                         </a>
                     
                     </div>
@@ -57,3 +61,10 @@ class NavBar extends React.Component {
 }
 
 export default NavBar;
+
+/* <div className="dropdown-profile">
+    <a href="">
+        <i className="fas fa-user-circle">  </i>
+    </a>
+
+</div> */

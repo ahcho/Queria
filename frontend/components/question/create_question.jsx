@@ -38,17 +38,26 @@ class CreateQuestion extends React.Component {
         return (
             <div className='question-modal'>
                 <div className='question-head'>
-                    <h1>Add Question</h1>
-                    <h2><p>{this.currentUser.first_name} asked</p></h2>
+                    <h1 className='q-modal-msg'>Add Question</h1>
                 </div>
-                <form onSubmit={this.handleSubmit}>
+                <div className='question-reminder'>
+                    Tips on getting good answers quickly
+                    Make sure your question has not been asked already
+                    Keep your question short and to the point
+                    Double-check grammar and spelling
+                </div>
+    
+                <form className='modal-q-form' onSubmit={this.handleSubmit}>
+                    <h2 className='q-form-header'>{this.currentUser.first_name} asked</h2>
                     <input type="text" 
                         placeholder='Start your question with "What","How","Why", etc' 
                         onChange={this.update('question')}/>
-                    <button onClick={() => this.props.closeModal()}>
-                        cancel</button>
-                    <button onClick={this.handleSubmit} >
-                        Add Question</button>
+                    <div className='q-form-btn'>
+                        <button onClick={() => this.props.closeModal()}>
+                            cancel</button>
+                        <button onClick={this.handleSubmit} >
+                            Add Question</button>
+                    </div>
                 </form>
             </div>
         )

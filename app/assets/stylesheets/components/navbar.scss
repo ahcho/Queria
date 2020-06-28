@@ -13,6 +13,7 @@
     font-size: 23px; 
     list-style-type: none; 
     color: #AA2200;  
+    //color: #0F4C81;
 }
 
 .right{
@@ -30,6 +31,7 @@
 
 #logo {
     color: #AA2200;
+    //color: #0F4C81;
 }
 
 .search-bar {
@@ -41,12 +43,13 @@
   padding: 8px;
   font-size: 14px;
   width: 280px;
-  border: solid 0.5px grey;
+  border: solid 0.5px lightgrey;
   border-radius: 4px;
 }
 
 a:visited {
   color: #AA2200;
+  //color: #0F4C81;
 }
 
 .search {
@@ -86,8 +89,34 @@ a:visited {
   margin: 4px 0px 4px 10px;
   cursor: pointer;
   border-radius: 500px;
+  //background-color: #0F4C81;
 }
 
 .dropdown-profile {
   font-size: 28px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  min-width: 160px;
+  background: white;
+  border: 0.5px solid gray;
+  border-radius: 2px;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 10px;
+  font-size: 14px;
+  display: block;
+  text-decoration: none;
+}
+
+.dropdown-content a:hover {
+  background: lightgray;
+}
+
+.dropdown-profile:hover .dropdown-content {
+  display: block;
 }

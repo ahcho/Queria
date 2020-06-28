@@ -10,7 +10,7 @@ class Api::AnswersController < ApplicationController
     def create
         @answer = Answer.new(answer_params)
         if @answer.save
-            render: show
+            render :show
         else
             render json: ["fail to create an answer"], status 422
         end

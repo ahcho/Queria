@@ -5,10 +5,30 @@
 .question-modal {
     width: 500px;
     height: 350px;
-    background: lightsteelblue;
+    background: #E5F6E3;
     border-radius: 4px;
+    border: lightgrey solid 0.5px;
+    margin: 20px;
 }
 
+.q-modal-msg {
+    display: block;
+    background: lightsteelblue;
+    margin-bottom: 20px;
+    border: none;
+    padding: 20px;
+    color: grey;
+    
+}
+
+.question-reminder  {
+    display: block;
+    background: lightpink;
+    color: grey;
+    margin: 10px 10px 30px 10px;
+    padding: 20px;
+    border-radius: 4px;
+}
 .main-question-modal-trigger {
     width: 93%;
     background-color: #F5FFFA;
@@ -17,11 +37,46 @@
     margin: 90px 5px 10px 5px;
     border: 0.5px solid lightgrey;
     padding: 16px;
+}
 
+.modal-q-form {
+    display: box;
+    background-color: lightsalmon;
+    margin: 0 10px 0 10px;
+    border-radius: 4px;
+    padding: 10px;
+}
+
+.modal-q-form > input[type=text] {
+    background: transparent;
+    border: none;
+    border-bottom: 0.7px solid lightgray;
+    width: 80%;
+}
+
+.q-form-header {
+    display: box;
+ 
+    color: gray;
+    margin-bottom: 10px;
+}
+
+.q-form-btn {
+    margin-top: 50px;
+    float: right;
+}
+
+.q-form-btn > * {
+    border-radius: 20px;
+    padding: 10px;
+    background: lightsteelblue;
+    border: none;
+    margin-left: 10px;
+    color: white;
 }
 
 #main-asking-user-input > input[type=text] {
-    width: 80%;
+    width: 90%;
 }
 // #main-question-modal-input {
    
