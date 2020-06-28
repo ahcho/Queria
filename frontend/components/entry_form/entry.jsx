@@ -39,7 +39,6 @@ class Entry extends React.Component {
     componentWillUnmount() {
         this.props.clearErrors();
     }
-  
 
     renderError() {
         const error = this.props.errors.login || [];

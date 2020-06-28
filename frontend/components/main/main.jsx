@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import LeftBar from '../left_bar/left_bar';
 import QuestionIndexContainer from '../question/question_index_container';
+import CreateQuestion from '../question/create_question_container';
 
 class MainPage extends React.Component {
 
@@ -21,7 +22,7 @@ class MainPage extends React.Component {
                     <br/>
                     <br/>
                     <br/>
-                    <p>{" " +this.user.first_name + " " + this.user.last_name} is logged in</p>
+                    <p>{ " " +this.user.first_name + " " + this.user.last_name } is logged in</p>
                 </div>
                 <div className='main-right'>
                     <br />

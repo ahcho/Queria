@@ -5,28 +5,26 @@ import QuestionIndexItem from './question_index_item';
 class QuestionIndex extends React.Component {
 
     constructor(props) {
-        super(props);   
-        
+        super(props);          
     };
 
     componentDidMount() {
         this.props.fetchQuestions();
-    
     };
 
     render() {
-
-        if (!this.props.currentUser) {
-            return null;
-        }
-
-        debugger;
 
         const { questions, currentUser, openModal } = this.props;
 
         return (
             <div>
                 <div>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
                     <div className="ask-question-box">
                         <div id="asking-user">{currentUser.first_name + " " + currentUser.last_name}</div>
                         <div id="main-question">

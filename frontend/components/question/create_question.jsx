@@ -20,12 +20,14 @@ class CreateQuestion extends React.Component {
     // componentWillUnmount() {
     //     this.props.clearErrors();
     // }
-
+///////????????????????
     handleSubmit(e) {
         e.preventDefault();
+    
         const question = Object.assign({}, this.state);
         this.props.createQuestion(question)
             .then(() => {this.props.closeModal()})
+        
     }
 
     handleClose() {
@@ -45,7 +47,7 @@ class CreateQuestion extends React.Component {
                         onChange={this.update('question')}/>
                     <button onClick={() => this.props.closeModal()}>
                         cancel</button>
-                    <button onClick={this.handleSubmit}>
+                    <button onClick={this.handleSubmit} >
                         Add Question</button>
                 </form>
             </div>

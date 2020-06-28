@@ -12,7 +12,7 @@ class Api::QuestionsController < ApplicationController
         @question.topic_id = 1; ## need to be updated
         #@question.author_id = current_user.id
         if @question.save
-            @questions = Question.all
+            #@questions = Question.all
             #render "api/questions/show"
             render :show
         else
@@ -21,7 +21,7 @@ class Api::QuestionsController < ApplicationController
     end
 
     def show
-        @question = Question.find(params[:id])
+        @question = Question.find_by(id: params[:id])
         render :show
     end
 

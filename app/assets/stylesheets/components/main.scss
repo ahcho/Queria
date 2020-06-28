@@ -4,17 +4,23 @@ body {
 
 .main-page {
     display: flex;
-
+    background: pink;
+    height: 100%
 }
 
+.main-center {
+    background: lightyellow;
+    width: 50%;
+
+}
 .main-left {
     background: powderblue;
-    width: 30%;
-    height: 100%;
+    width: 25%;
+    
 }
 
 .main-right {
     background: lightsteelblue;
-    width: 30%;
-    height: 100%;
+    width: 25%;
+
 }
