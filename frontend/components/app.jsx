@@ -14,7 +14,7 @@ const App = () => (
         <Modal />
         <header>  
             <ProtectedRoute path="/" component={navBarContainer} />
-            <ProtectedRoute path="/" component={leftBarContainer} />
+            
             <Switch>
                 <ProtectedRoute path="/main" component={mainContainer} />
                 <AuthRoute exact path="/" component={entryContainer} />  
@@ -23,6 +23,7 @@ const App = () => (
         </header>
     </div>
 
+    //<ProtectedRoute path="/" component={leftBarContainer} />
     //<ProtectedRoute path="/profile/userId" component={UserContainer} />
 );
 

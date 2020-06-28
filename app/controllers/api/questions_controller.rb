@@ -4,19 +4,19 @@ class Api::QuestionsController < ApplicationController
     #shows all questions or questions belong to a user or topic
     def index
         @questions = Question.all #need to be updated later !!!!!!!!!!!!! selected by topic_id and user_id
-        render json: @questions
+        render :index
     end
 
     def create
         @question = Question.new(question_params)
-        @question.topic_id = 1;
+        @question.topic_id = 1; ## need to be updated
         #@question.author_id = current_user.id
         if @question.save
             @questions = Question.all
             #render "api/questions/show"
             render :show
         else
-            render json: ["Fail to create a post"], status: 422
+            render json: ["Fail to create a question"], status: 422
         end
     end
 
@@ -28,7 +28,7 @@ class Api::QuestionsController < ApplicationController
     def update
         @question = Question.find(params[:id])
         if @question.update(question_params)
-            render json: @question
+            render :show
         else
             render json: ["fail to upload the question"], status: 404
         end
