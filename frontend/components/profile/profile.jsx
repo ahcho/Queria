@@ -14,6 +14,7 @@ class Profile extends React.Component {
     }
 
     renderQuestions(e) {
+        debugger
         return (
             <div className="question-index">
                 {this.props.questions.map((question) => <QuestionIndexItem question={question} key={question.id} />)}

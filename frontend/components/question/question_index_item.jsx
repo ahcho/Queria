@@ -7,14 +7,17 @@ class QuestionIndexItem extends React.Component {
         super(props);
         
     }
+
     
     render() {
-        
-        const {question} =this.props;
+
+        debugger;
+        const {question, deleteQuestion} =this.props;
         return (
             <div className="question-index-item">
                 <div className="question-top">
-                <h1>{question.author.first_name} {question.author.last_name} asked:</h1>
+                    <h1>{question.author.first_name} {question.author.last_name} asked:</h1>
+                    <button onClick={()=>deleteQuestion(question.id)}>delete</button>
                 </div>
                 <div className="question-detail">
                     <h2 key={question.id}>{question.question}</h2>
