@@ -12,6 +12,7 @@ class MainPage extends React.Component {
     }
 
     render() {
+        
         return (
             <div className='main-page'>
                 <div className='main-left'>
@@ -21,7 +22,6 @@ class MainPage extends React.Component {
                     <QuestionIndexContainer />
                 </div>
                 <div className='main-right'>
-                    <p>I'm going to be on the right side of main page</p>
                 </div>   
             </div>
         )

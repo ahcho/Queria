@@ -12,6 +12,7 @@ class SignUpForm extends React.Component {
             lname: ""
         } 
         this.handleSubmit = this.handleSubmit.bind(this);
+        //enterkey bind it with key code
     }
 
     update(field) {

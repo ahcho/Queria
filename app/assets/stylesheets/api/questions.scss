@@ -1,7 +1,6 @@
 // Place all the styles related to the api/questions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
 .question-modal {
     width: 500px;
     height: 350px;
@@ -29,6 +28,7 @@
     padding: 20px;
     border-radius: 4px;
 }
+
 .main-question-modal-trigger {
     width: 93%;
     background-color: #F5FFFA;
@@ -45,9 +45,11 @@
     font-size: 16px;
     font-weight: bold;
 }
+
 #main-asking-user {
     font-size: 13px;
 }
+
 .modal-q-form {
     display: box;
     background-color: lightsalmon;
@@ -65,7 +67,6 @@
 
 .q-form-header {
     display: box;
- 
     color: gray;
     margin-bottom: 10px;
 }
@@ -78,18 +79,15 @@
 .q-form-btn > * {
     border-radius: 20px;
     padding: 10px;
-    background: lightsteelblue;
     border: none;
     margin-left: 10px;
+    background: lightsteelblue;
     color: white;
 }
 
 #main-asking-user-input > input[type=text] {
     width: 90%;
 }
-// #main-question-modal-input {
-   
-// }
 
 .question-index-item {
     width: 93%;
@@ -105,11 +103,9 @@
     background: #F8F4E3;
     border: solid lightgrey 1px;
     padding: 10px 0 10px 0;
- 
 }
 
 .question-top > .left {
     justify-content: flex-end;
     border: 1px solid lightgray;
-
 }

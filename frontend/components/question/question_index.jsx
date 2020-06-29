@@ -15,7 +15,7 @@ class QuestionIndex extends React.Component {
     render() {
         
         const { questions, currentUser, openModal, deleteQuestion } = this.props;
-        
+        //debugger;
         return (
             <div>
                 <div>
