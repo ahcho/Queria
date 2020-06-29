@@ -5,6 +5,7 @@ class QuestionIndexItem extends React.Component {
 
     constructor(props){
         super(props);
+        
     }
     
     render() {

@@ -5,7 +5,10 @@ end
 json.questions do
     @user.questions.each do |question|
         json.set! question.id do
-            json.extract! question, :question, :updated_at
+            json.extract! question, :question, :updated_at, :id
+            json.author do 
+                json.extract! question.author, :first_name, :last_name
+            end
         end
     end
 end

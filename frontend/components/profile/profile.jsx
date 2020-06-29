@@ -1,4 +1,5 @@
 import React from 'react';
+import QuestionIndexItem from '../question/question_index_item';
 
 class Profile extends React.Component {
 
@@ -12,11 +13,10 @@ class Profile extends React.Component {
         this.props.fetchUser(this.props.match.params.userId);
     }
 
-    renderQuestions() {
-        debugger;
+    renderQuestions(e) {
         return (
-            <div>
-                {this.questions.map((question) => <QuestionIndexItem question={question} key={question.id} />)}
+            <div className="question-index">
+                {this.props.questions.map((question) => <QuestionIndexItem question={question} key={question.id} />)}
             </div>
         )
     }
@@ -37,7 +37,7 @@ class Profile extends React.Component {
                     <p>Write a description about yourself</p>
                 </div>
                 <ul className='profile-list'>
-                    <li id='user-questions' onClick={() => this.renderQuestions()}>Questions</li>
+                    <li id='user-questions' onClick={this.renderQuestions}>Questions</li>
                     <li id='user-answers'>Answers</li>
                     <li>Followers</li>
                     <li>Following</li>

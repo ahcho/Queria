@@ -1,0 +1,14 @@
+.topic-list {
+    margin: 90px 25px 0 100px;
+    display: felx;   
+}
+
+.topic-list > li {
+    border: 1px green solid;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    padding: 7px 0 7px 0;
+    color: #404040;
+    font-size: 14px;
+    width: 100px;
+}

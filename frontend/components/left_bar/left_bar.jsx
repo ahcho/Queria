@@ -15,7 +15,7 @@ class LeftBar extends React.Component {
     render() {
         return (
             <div className='left-bar'>
-                <ul className='topic'>
+                <ul className='topic-list'>
                     <li onClick={this.redirect}>Feed</li>
                     <li>History</li>
                     <li>Products</li>
