@@ -6,7 +6,7 @@ export const fetchAnswers = (questionId) => {
 }
 ///api/questions/:question_id/answers(.:format)   
 //call to get answer by a logged in user
-export const fetchAllUserAnswers = (userId) => {
+export const fetchUserAllAnswers = (userId) => {
     return $.ajax({
         method: "GET",
         url: `api/user/answers/${userId}`

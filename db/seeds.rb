@@ -17,7 +17,7 @@ u3 = User.create!(email: 'guest2@wonka.com', password: 'password', first_name: '
 u4 = User.create!(email: 'guest3@wonka.com', password: 'password', first_name: 'Veruca', last_name: 'Salt')
 demo = User.create!(email: 'charlie@chocolate.com', password: 'password', first_name: 'Charlie', last_name: 'Bucket')
 
-t1 = Topic.create!(name: "Feed")
+t1 = Topic.create!(id: 1, name: "Feed")
 t2 = Topic.create!(name: "History")
 t3 = Topic.create!(name: "Tour")
 t4 = Topic.create!(name: "Recipe")

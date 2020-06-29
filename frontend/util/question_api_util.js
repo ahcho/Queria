@@ -34,3 +34,13 @@ export const deleteQuestion = (id) => {
         url: `/api/questions/${id}`,
     })
 };
+
+
+///////////////in profile page show all question by a logged in user
+export const fetchUserQuestions = () => {
+    return $.ajax({
+        method: 'GET',
+        url: `api/user/questions`
+    })
+
+}

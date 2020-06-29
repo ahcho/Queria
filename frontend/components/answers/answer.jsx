@@ -1,6 +1,6 @@
 import { React } from 'react';
 
-class Answer extends React.Componenet {
+class Answer extends React.Component {
     constructor(props) {
         super(props);
     }

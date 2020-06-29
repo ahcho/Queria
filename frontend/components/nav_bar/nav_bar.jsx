@@ -41,13 +41,17 @@ class NavBar extends React.Component {
                         </div>
                     </div>
                     <div className="dropdown-profile">
-                        <a href="">
-                            <i className="fas fa-user-circle">  </i>
-                            <div className="dropdown-content">
-                                <a href="#">profile</a>
-                                <a href="#">logout</a>
-                            </div>
-                        </a>
+    
+                        <i className="fas fa-user-circle">  </i>
+                        <div className="dropdown-content">
+                            <ul>
+                                <li>
+                                    <Link to={`/profile/${this.props.currentUser.id}`} >
+                                    <span>My Profile</span></Link>
+                                </li>
+                                <li onClick={this.props.logout}>Logout</li>
+                            </ul>
+                        </div>
                     
                     </div>
                     <div className="round-btn">

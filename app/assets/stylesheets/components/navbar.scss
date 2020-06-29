@@ -7,13 +7,13 @@
     padding: 0 20px 0 20px;
     border-bottom: 0.2px solid lightgrey;
     position: fixed;
-    min-height: 50px;
+    height: 50px;
     box-sizing: border-box;
     z-index: 800;
     font-size: 23px; 
     list-style-type: none; 
-    color: #AA2200;  
-    //color: #0F4C81;
+    //color: #AA2200;  
+    color: #713E5A;
 }
 
 .right{
@@ -30,8 +30,8 @@
 }
 
 #logo {
-    color: #AA2200;
-    //color: #0F4C81;
+    //color: #AA2200;
+    color: #713E5A;
 }
 
 .search-bar {
@@ -42,14 +42,14 @@
 .search > input[type=text] {
   padding: 8px;
   font-size: 14px;
-  width: 280px;
+  width: 300px;
   border: solid 0.5px lightgrey;
   border-radius: 4px;
 }
 
 a:visited {
-  color: #AA2200;
-  //color: #0F4C81;
+  //color: #AA2200;
+  color: #713E5A;
 }
 
 .search {
@@ -78,7 +78,8 @@ a:visited {
 
 
 .round-btn > button {
-  background-color: #AA2200;
+  //background-color: #AA2200;
+  background-color: #713E5A;
   font-size: 16px;
   border: none;
   color: white;

@@ -13,13 +13,6 @@ const receiveAllAnswers = (answers) => {
     })
 }
 
-const receiveAllUserAnswers = (answers) => {
-    return ({
-        type: RECEIVE_ALL_USER_ANSWERS,
-        answers: answers
-    })
-}
-
 const receiveAnswer = (answer) => {
     return ({
         type: RECEIVE_ANSWER,
@@ -33,25 +26,25 @@ const removeAnswer = (answerId) => {
         answerId: answerId
     })
 }
-
+//get answers belong to a question
 export const fetchAnswers = (questionId) => (dispatch) => (
     answerApiUtil.fetchAnswers(questionId)
         .then(answers => dispatch(receiveAllAnswers(answers)))
 );
-
-export const fetchAllUserAnswers = (userId) => (dispatch) => (
-    answerApiUtil.fetchAllUserAnswers(userId)
-        .then(answers => dispatch(receiveAllUserAnswers(answers)))
+//get all answes by a logged in user
+export const fetchUserAllAnswers = (userId) => (dispatch) => (
+    answerApiUtil.fetchUserAllAnswers(userId)
+        .then(answers => dispatch(receiveAllAnswers(answers)))
 );
 
 export const createAnswer = (answer) => (dispatch) => (
     answerApiUtil.createAnswer(answer)
-        .then(answer => dispatch(receiveAnswer(answer)))
+        .then(newAnswer => dispatch(receiveAnswer(newAnswer)))
 )
 
 export const updateAnswer = (answer) => (dispatch) => (
     answerApiUtil.updateAnswer(answer)
-        .then(answer => dispatch(receiveAnswer(answer)))
+        .then(updatedAnswer => dispatch(receiveAnswer(updatedAnswer)))
 )
 
 export const deleteAnswer = (answerId) => (dispatch) => (

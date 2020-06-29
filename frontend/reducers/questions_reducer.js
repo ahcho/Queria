@@ -3,6 +3,7 @@ import {
     RECEIVE_QUESTION,
     REMOVE_QUESTION
 } from '../actions/question_actions';
+import { RECEIVE_USER } from '../actions/user_actions';
 
 const QuestionsReducer = (state = {}, action) => {
     Object.freeze(state);
@@ -17,6 +18,9 @@ const QuestionsReducer = (state = {}, action) => {
         case REMOVE_QUESTION:
             delete newState[action.questionId];
             return newState;
+        case RECEIVE_USER://///////////////////
+            if (!action.payload.questions) return {};
+            return action.payload.questions;
         default:
             return state;
     }
