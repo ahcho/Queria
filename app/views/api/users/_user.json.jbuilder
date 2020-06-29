@@ -7,9 +7,9 @@ end
 json.questions do
     user.questions.each do |question|
         json.set! question.id do
-            json.extract! question, :question, :updated_at, :id
+            json.extract! question, :question, :updated_at, :id, :author_id
             json.author do 
-                json.extract! question.author, :first_name, :last_name
+                json.extract! question.author, :first_name, :last_name, :id
             end
         end
     end
@@ -18,7 +18,7 @@ end
 json.answers do 
     user.answers.each do |answer|
         json.set! answer.id do
-            json.extract! answer, :body, :updated_at
+            json.extract! answer, :body, :updated_at, :id, :author_id, :question_id
         end
     end
 end

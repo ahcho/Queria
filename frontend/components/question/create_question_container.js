@@ -4,8 +4,9 @@ import { createQuestion, fetchQuestions } from '../../actions/question_actions';
 import { openModal, closeModal } from '../../actions/modal_actions';
 
 const mapStateToProps = (state) => {
+    debugger;
     return {
-        currentUser: state.session.currentUser,
+        currentUser: state.session.currentUser.user,
         errors: state.errors.session
     }
 }
