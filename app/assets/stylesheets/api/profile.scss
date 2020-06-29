@@ -1,28 +1,48 @@
+button {
+    outline: none;
+}
+
 .profile-page{
     width: 70%;
-
     display: flex;
     background: #EEE2DF;
     flex-direction: column;
     margin-left: auto;
     margin-right: auto;
-
 }
 
 .profile-top {
     padding-top: 50px;
     background: #C89F9C;
+    display: flex;
+}
+
+.profile-top > * {
+    padding: 10px;
+}
+#profile-name{
+    font-size: 24px;
+    font-weight: bold;
+    color: black;
+}
+
+.profile-description {
+    margin: 20px;
 }
 
 .profile-list {
     display: flex;
     padding: 10px;
     margin-bottom: 100px;
-    background: yellow;
+    background: #EEE2DF;
     border-top: 1px solid grey;
     border-bottom: 1px solid grey;
 }
 
+.profile-list > li {
+    background: white;
+    margin: 10px;
+}
 
 .profile-bottom > button {
     background: #713E5A;

@@ -1,4 +1,5 @@
 import { React } from 'react';
+import QuestionIndexItem from './question_index_item';
 
 class Answer extends React.Component {
     constructor(props) {
