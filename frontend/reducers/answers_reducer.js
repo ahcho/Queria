@@ -19,7 +19,7 @@ const answersReducer = (state = {}, action) => {
             return newState;
         case RECEIVE_USER://///////////////////
             if (!action.payload.answers) return {};
-            return action.payload.answer;
+            return action.payload.answers;
         default: 
             return state;
     }

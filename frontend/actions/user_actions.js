@@ -11,13 +11,6 @@ const receiveAllUsers = (users) => {
     })
 }
 
-// const receiveUser = (user) => { 
-//     return ({
-//     type: RECEIVE_USER,
-//     user: user
-//     })
-// }
-
 const receiveUser = (payload) => { 
     return ({
     type: RECEIVE_USER,

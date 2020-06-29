@@ -8,15 +8,16 @@ class Profile extends React.Component {
 
     constructor(props) {
         super(props);
-        //this.questions = Object.values(this.props.user.questions)
+        debugger;
+
     } 
+
     componentDidMount() {
         this.props.fetchUser(this.props.match.params.userId);
     }
 
     render() {
-
-    
+   
         return (
             <div className='profile-page'>
                 <div className='profile-top'>

@@ -10,8 +10,8 @@ import { fetchUserAllAnswers } from '../../actions/answer_actions';
 const mapStateToProps = (state, ownProps) => {
     return ({
         user: state.entities.users[ownProps.match.params.userId],
-        answers: state.entities.users[ownProps.match.params.userId].answers,
-        questions: state.entities.users[ownProps.match.params.userId].questions
+        answers: state.entities.answers,
+        questions: state.entities.questions
     })
 
 }
