@@ -10,7 +10,6 @@ class QuestionIndex extends React.Component {
 
     componentDidMount() {
         this.props.fetchQuestions();
-
     };
 
     render() {
@@ -20,12 +19,10 @@ class QuestionIndex extends React.Component {
         return (
             <div>
                 <div>
-                    <div className="main-question-modal-trigger" >
-                        <div id="main-asking-user" onClick={() => openModal('createquestion')}>
+                    <div onClick={() => openModal('createquestion')} className="main-question-modal-trigger" >
+                        <div id="main-asking-user" >
                             Hello {currentUser.first_name + " " + currentUser.last_name}</div>
-                        <br/>
-                        <div id="main-asking-user-input"
-                            onClick={() => openModal('createquestion')}> ask me a question
+                        <div id="main-asking-user-input">What is your question?
                         </div>   
                     </div>
                     <div className="question-index">

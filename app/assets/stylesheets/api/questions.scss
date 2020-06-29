@@ -35,10 +35,19 @@
     display: box;
     border-radius: 4px;
     margin: 90px 5px 10px 5px;
-    border: 0.5px solid lightgrey;
-    padding: 16px;
+    border: 0.5px solid  darkgrey;
+    padding: 16px 16px 6px 16px;
 }
 
+.main-question-modal-trigger > div {
+    padding-bottom: 10px;
+    color: grey;
+    font-size: 16px;
+    font-weight: bold;
+}
+#main-asking-user {
+    font-size: 13px;
+}
 .modal-q-form {
     display: box;
     background-color: lightsalmon;
@@ -96,13 +105,11 @@
     background: #F8F4E3;
     border: solid lightgrey 1px;
     padding: 10px 0 10px 0;
-    border-radius: 4px;
  
 }
 
 .question-top > .left {
-    float: right;
+    justify-content: flex-end;
     border: 1px solid lightgray;
-    
 
 }
