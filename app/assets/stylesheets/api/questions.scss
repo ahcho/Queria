@@ -97,15 +97,23 @@
     border: 0.5px solid lightgrey;
     padding: 16px;
 }
+.question-index-item > .right {
+    display: flex;
+    float: right;
+}
+.question-index-item > .right > i {
+    display: flex;
+    float: right;
+    padding-left: 10px;
+}
 
 .question-top {
     display: flex;
-    background: #F8F4E3;
-    border: solid lightgrey 1px;
+    //background: #F8F4E3;
+    //border: solid lightgrey 1px;
     padding: 10px 0 10px 0;
 }
 
 .question-top > .left {
-    justify-content: flex-end;
     border: 1px solid lightgray;
 }

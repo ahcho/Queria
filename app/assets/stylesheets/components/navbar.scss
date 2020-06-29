@@ -16,19 +16,18 @@
     color: #713E5A;
 }
 
-.right{
+.nav-bar > .right{
     display: flex;
-    align-items: center;
+    border: red solid 1px;
     justify-content: space-between;
     width: 50%;
   }
   
-  .left{
+  .nav-bar > .left{
     display: flex;
     width: 40%;
     height: 100%;
     text-align: center;
-    
 }
 
 .left > li {
@@ -41,7 +40,6 @@
 
 
 #logo {
-    //color: #AA2200;
     color: #713E5A;
   
 }
