@@ -12,7 +12,7 @@ class Api::AnswersController < ApplicationController
         if @answer.save
             render :show
         else
-            render json: ["fail to create an answer"], status 422
+            render json: ["fail to create an answer"], status: 422
         end
     end
 
@@ -32,7 +32,7 @@ class Api::AnswersController < ApplicationController
         if @answer.update(answer_params)
             render :show
         else
-            render json: ["fail to update an answer"], status 404
+            render json: ["fail to update an answer"], status: 404
         end
     end
 
@@ -42,7 +42,7 @@ class Api::AnswersController < ApplicationController
             @answer.destroy
             render :show
         else 
-            render json: ["fail to delete an answer"], status 404
+            render json: ["fail to delete an answer"], status: 404
         end
     end
 
