@@ -21,7 +21,8 @@ class QuestionIndex extends React.Component {
             <div>
                 <div>
                     <div className="main-question-modal-trigger" >
-                        <div id="main-asking-user" onClick={() => openModal('createquestion')}>Hello {currentUser.first_name + " " + currentUser.last_name}</div>
+                        <div id="main-asking-user" onClick={() => openModal('createquestion')}>
+                            Hello {currentUser.first_name + " " + currentUser.last_name}</div>
                         <br/>
                         <div id="main-asking-user-input"
                             onClick={() => openModal('createquestion')}> ask me a question

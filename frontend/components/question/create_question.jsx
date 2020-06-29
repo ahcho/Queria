@@ -56,7 +56,6 @@ class CreateQuestion extends React.Component {
                             <option value="3">recipe</option>
                             <option value="4">health</option>
                             <option value="5">tour</option>
-
                         </select>
                         <button onClick={() => this.props.closeModal()}>
                             cancel</button>
