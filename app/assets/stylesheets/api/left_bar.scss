@@ -7,10 +7,18 @@
     border: 1px solid lightgray;
     margin-bottom: 15px;
     border-radius: 5px;
-    padding: 7px 0 7px 0;
+    padding: 7px 0 7px 5px;
     color: #404040;
     font-size: 14px;
     width: 100px;
+
+
+    transition-duration: 0.1s;
+}
+
+.topic-list > li:hover {
+    background-color: lightgrey;
+    color: white;
 }
 
 .main-right {

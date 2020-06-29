@@ -17,10 +17,6 @@ class CreateQuestion extends React.Component {
         return e => this.setState({ [field]: e.currentTarget.value})
     }
 
-    // componentWillUnmount() {
-    //     this.props.clearErrors();
-    // }
-///////????????????????
     handleSubmit(e) {
         e.preventDefault();
     
@@ -53,6 +49,15 @@ class CreateQuestion extends React.Component {
                         placeholder='Start your question with "What","How","Why", etc' 
                         onChange={this.update('question')}/>
                     <div className='q-form-btn'>
+                        <select name="topic-select" id="slct">
+                            <option>Category</option>
+                            <option value="1">history</option>
+                            <option value="2">product</option>
+                            <option value="3">recipe</option>
+                            <option value="4">health</option>
+                            <option value="5">tour</option>
+
+                        </select>
                         <button onClick={() => this.props.closeModal()}>
                             cancel</button>
                         <button onClick={this.handleSubmit} >

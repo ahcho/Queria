@@ -5,19 +5,18 @@ import QuestionIndexItem from './question_index_item';
 class QuestionIndex extends React.Component {
 
     constructor(props) {
-        super(props);          
+        super(props);    
     };
 
     componentDidMount() {
         this.props.fetchQuestions();
-        debugger;
+
     };
 
     render() {
         
         const { questions, currentUser, openModal, deleteQuestion } = this.props;
         
-
         return (
             <div>
                 <div>
@@ -29,7 +28,10 @@ class QuestionIndex extends React.Component {
                         </div>   
                     </div>
                     <div className="question-index">
-                        {questions.map((question) => <QuestionIndexItem question={question} deleteQuestion={deleteQuestion} key={question.id}/>)}
+                        {questions.map(
+                            (question) => <QuestionIndexItem 
+                                            question={question} deleteQuestion={deleteQuestion} key={question.id}
+                                            currentUserId={currentUser.id}/>)}
                     </div>
                 </div>
             </div>

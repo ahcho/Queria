@@ -21,18 +21,28 @@
     align-items: center;
     justify-content: space-between;
     width: 450px;
-}
-
-.left{
+  }
+  
+  .left{
     display: flex;
     justify-content: space-around;
     width: 300px;
+    height: 100%;
+    text-align: center;
+    
+}
+
+.left > li {
+  border: black solid 1px;
+  padding-top: 10px;
 }
 
 #logo {
     //color: #AA2200;
     color: #713E5A;
+  
 }
+
 
 .search-bar {
   height: 50;

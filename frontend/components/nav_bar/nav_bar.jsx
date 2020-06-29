@@ -18,8 +18,7 @@ class NavBar extends React.Component {
                     <li id="logo">
                         <Link className="plain" to='/'>
                             <i className="fab fa-quora"></i>ueria
-                        </Link>
-                        
+                        </Link>    
                     </li>
                     <li id="home">
                         <Link className="plain" to='/'>

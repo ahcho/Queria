@@ -39,7 +39,7 @@ class SignUpForm extends React.Component {
         const user = Object.assign({}, this.state);
         this.props.createNewUser(user)
             .then(() => {this.props.closeModal()})
-            //err => (this.renderErrors()))
+            err => (this.renderErrors())
     }
 
     render() {
