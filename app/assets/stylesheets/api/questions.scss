@@ -111,9 +111,14 @@
     display: flex;
     //background: #F8F4E3;
     //border: solid lightgrey 1px;
-    padding: 10px 0 10px 0;
+    padding: 0 0 10px 0;
 }
 
 .question-top > .left {
-    border: 1px solid lightgray;
+    //border: 1px solid lightgray;
+    font-size: 12px;
+}
+
+.question-detail {
+    border: 1px solid pink;
 }

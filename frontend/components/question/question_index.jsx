@@ -28,8 +28,8 @@ class QuestionIndex extends React.Component {
                     <div className="question-index">
                         {questions.map(
                             (question) => <QuestionIndexItem 
-                                            question={question} deleteQuestion={deleteQuestion} key={question.id}
-                                            currentUserId={currentUser.id}/>)}
+                                question={question} deleteQuestion={deleteQuestion} key={question.id}
+                                openModal={openModal} DisplayQuestioncurrentUserId={currentUser.id}/>)}
                     </div>
                 </div>
             </div>

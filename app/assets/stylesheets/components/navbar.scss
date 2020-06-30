@@ -13,12 +13,11 @@
     font-size: 23px; 
     list-style-type: none; 
     //color: #AA2200;  
-    color: #713E5A;
+    color: #713E5A; color: #84C0C6;
 }
 
 .nav-bar > .right{
     display: flex;
-    border: red solid 1px;
     justify-content: space-between;
     width: 50%;
   }
@@ -40,7 +39,7 @@
 
 
 #logo {
-    color: #713E5A;
+    color: #713E5A; color: #84C0C6;
   
 }
 
@@ -60,7 +59,7 @@
 
 a:visited {
   //color: #AA2200;
-  color: #713E5A;
+  color: #713E5A; color: #84C0C6;
 }
 
 .search {
@@ -90,7 +89,8 @@ a:visited {
 
 .round-btn > button {
   //background-color: #AA2200;
-  background-color: #713E5A;
+  background-color: #713E5A; 
+  background-color: #84C0C6;
   font-size: 16px;
   border: none;
   color: white;

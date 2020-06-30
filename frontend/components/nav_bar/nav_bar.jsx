@@ -46,7 +46,8 @@ class NavBar extends React.Component {
                             <ul>
                                 <li>
                                     <Link to={`/profile/${this.props.currentUser.user.id}`} >
-                                    <span>My Profile</span></Link>
+                                        <span>My Profile</span>
+                                    </Link>
                                 </li>
                                 <li onClick={this.props.logout}>Logout</li>
                             </ul>
