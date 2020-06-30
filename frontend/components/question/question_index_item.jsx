@@ -11,16 +11,25 @@ class QuestionIndexItem extends React.Component {
     handleEditQuestion() {
         this.props.openModal('editquestion')
     }
+
+    userIconDisplay(targetId) {
+        if (this.props.currentUserId === this.props.question.author_id) {
+            return (
+                <div className='right'>
+                    <i className="far fa-edit" onClick={this.handleEditQuestion}></i>
+                    <i className="fas fa-times" onClick={() => deleteQuestion(targetId)}></i>
+                </div>
+            )
+        }
+
+    }
     
     render() {
 
         const {question, deleteQuestion, currentUserId} =this.props;
         return (
             <div className="question-index-item">
-                <div className="right" >
-                    <i className="far fa-edit" onClick={this.handleEditQuestion}></i>
-                    <i className="fas fa-times" onClick={() => deleteQuestion(question.id)}></i>
-                </div>
+                {this.userIconDisplay(question.id)}
                 <div className="question-top">
                     <div className="left">
                         <h1>{question.author.first_name} {question.author.last_name} asked:</h1>
