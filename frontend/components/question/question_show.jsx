@@ -11,7 +11,7 @@ class QuestionShow extends React.Component {
     }
 
     render() {
-        debugger;
+        ////debugger;
         const { question, answers, users } = this.props;
         return (
             <div>

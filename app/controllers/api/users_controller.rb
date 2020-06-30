@@ -1,4 +1,10 @@
 class Api::UsersController < ApplicationController
+    
+    def index
+        @users = User.all 
+        render :index
+    end
+
     def create
         @user = User.new(email: params[:user][:signup_email], 
             password: params[:user][:signup_pw],

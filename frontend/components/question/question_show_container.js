@@ -3,6 +3,7 @@ import { updateQuestion, deleteQuestion, fetchQuestion } from "../../actions/que
 import QuestionShow from './question_show';
 
 const mapStateToProps = (state, ownProps) => {
+    //debugger;
     return ({ 
         question: state.entities.questions[ownProps.match.params.questionId],
         answers: state.entities.answers,

@@ -1,8 +1,8 @@
-#json.extract! user, :id, :email, :first_name, :last_name
-
 json.user do
     json.extract! user, :id, :email, :first_name, :last_name, :question_ids, :answer_ids
 end
+###################
+
 
 json.questions do
     user.questions.each do |question|
@@ -14,6 +14,7 @@ json.questions do
         end
     end
 end
+
 
 json.answers do 
     user.answers.each do |answer|

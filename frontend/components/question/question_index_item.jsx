@@ -25,8 +25,9 @@ class QuestionIndexItem extends React.Component {
     }
     
     render() {
-
+        //debugger;
         const {question, deleteQuestion, currentUserId} =this.props;
+        if (!question ) return null;
         return (
             <div className="question-index-item">
                 {this.userIconDisplay(question.id)}

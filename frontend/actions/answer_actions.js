@@ -31,6 +31,7 @@ export const fetchAnswers = (questionId) => (dispatch) => (
     answerApiUtil.fetchAnswers(questionId)
         .then(answers => dispatch(receiveAllAnswers(answers)))
 );
+
 //get all answes by a logged in user
 export const fetchUserAllAnswers = (userId) => (dispatch) => (
     answerApiUtil.fetchUserAllAnswers(userId)

@@ -13,8 +13,8 @@ class QuestionIndex extends React.Component {
     };
 
     render() {
-        
         const { questions, currentUser, openModal, deleteQuestion } = this.props;
+        if (!questions || !currentUser) return null;
         //debugger;
         return (
             <div>
