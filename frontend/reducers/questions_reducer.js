@@ -4,6 +4,8 @@ import {
     REMOVE_QUESTION
 } from '../actions/question_actions';
 import { RECEIVE_USER } from '../actions/user_actions';
+import { RECEIVE_ALL_ANSWERS } from '../actions/answer_actions';
+import { RECEIVE_CURRENT_USER } from '../actions/session_actions';
 
 const QuestionsReducer = (state = {}, action) => {
     Object.freeze(state);
@@ -19,6 +21,9 @@ const QuestionsReducer = (state = {}, action) => {
             delete newState[action.questionId];
             return newState;
         case RECEIVE_USER://///////////////////
+            if (!action.payload.questions) return {};
+            return action.payload.questions;
+        case RECEIVE_CURRENT_USER:
             if (!action.payload.questions) return {};
             return action.payload.questions;
         default:

@@ -8,9 +8,9 @@ export const REMOVE_SESSION_ERRORS = 'REMOVE_SESSION_ERRORS';
 export const RECEIVE_SESSION_SIGNUP_ERRORS = 'RECEIVE_SESSION_SIGNUP_ERRORS'
 
 // action creators
-export const receiveCurrentUser = (currentUser) => ({
+export const receiveCurrentUser = (payload) => ({
     type: RECEIVE_CURRENT_USER,
-    currentUser: currentUser
+    payload
 });
 
 export const logoutCurrentUser = () => ({

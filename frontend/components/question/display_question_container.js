@@ -4,7 +4,8 @@ import { updateQuestion, deleteQuestion } from "../../actions/question_actions";
 
 
 const mapStateToProps = (state, ownProps) => {
-    return null;
+
+    //currentUser: state.currentUser
 }
 
 const mapDispatchToProps = (dispatch) => {

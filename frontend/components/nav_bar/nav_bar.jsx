@@ -45,7 +45,7 @@ class NavBar extends React.Component {
                         <div className="dropdown-content">
                             <ul>
                                 <li>
-                                    <Link to={`/profile/${this.props.currentUser.user.id}`} >
+                                    <Link to={`/profile/${this.props.currentUser.id}`} >
                                         <span>My Profile</span>
                                     </Link>
                                 </li>
