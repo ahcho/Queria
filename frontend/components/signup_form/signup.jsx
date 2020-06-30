@@ -12,7 +12,6 @@ class SignUpForm extends React.Component {
             lname: ""
         } 
         this.handleSubmit = this.handleSubmit.bind(this);
-        //enterkey bind it with key code
     }
 
     update(field) {
@@ -40,10 +39,9 @@ class SignUpForm extends React.Component {
         const user = Object.assign({}, this.state);
         this.props.createNewUser(user)
             .then(() => {this.props.closeModal()})
-            err => (this.renderErrors())
+            //err => (this.renderErrors()))
     }
 
-  
     render() {
         return (
             <div className="signup-form">

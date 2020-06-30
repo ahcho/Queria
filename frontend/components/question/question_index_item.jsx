@@ -17,7 +17,7 @@ class QuestionIndexItem extends React.Component {
             return (
                 <div className='right'>
                     <i className="far fa-edit" onClick={this.handleEditQuestion}></i>
-                    <i className="fas fa-times" onClick={() => deleteQuestion(targetId)}></i>
+                    <i className="fas fa-times" onClick={() => this.props.deleteQuestion(targetId)}></i>
                 </div>
             )
         }

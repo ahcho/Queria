@@ -8,6 +8,7 @@ class NavBar extends React.Component {
     }
 
     handleAddQuestion() {
+        debugger
         this.props.openModal('createquestion')
     }
 
