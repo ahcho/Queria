@@ -10,12 +10,10 @@ class QuestionShow extends React.Component {
     }
 
     render() {
-        debugger;
         const { question } = this.props;
         return (
             <div>
-                <p className='testing'>I want to print this</p>
-                
+                <p className='testing'>{question.question}</p>
             </div>
         )
 

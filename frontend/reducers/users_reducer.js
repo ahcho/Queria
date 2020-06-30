@@ -2,6 +2,7 @@ import { RECEIVE_CURRENT_USER, LOGOUT_CURRENT_USER } from "../actions/session_ac
 import { RECEIVE_ALL_USERS,
          RECEIVE_USER,
          REMOVE_USER} from "../actions/user_actions";
+import { RECEIVE_QUESTION } from "../actions/question_actions";
 
 const usersReducer = (state = {}, action) => {
     Object.freeze(state);
@@ -19,6 +20,8 @@ const usersReducer = (state = {}, action) => {
         case REMOVE_USER:
             delete nextState[action.userId];
             return nextState;
+        case RECEIVE_QUESTION:
+            return Object.assign(nextState, action.payload.users);
         default:
             return state;
     }

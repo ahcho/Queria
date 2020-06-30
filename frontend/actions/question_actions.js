@@ -11,10 +11,10 @@ const receiveAllQuestions = (questions) => {
     })
 };
 
-const receiveQuestion = (question) => {
+const receiveQuestion = (payload) => {
     return({
         type: RECEIVE_QUESTION,
-        question
+        payload: payload
     })
 }
 
@@ -33,7 +33,7 @@ export const fetchQuestions = () => (dispatch) => {
 
 export const fetchQuestion = (questionId) => (dispatch) => {
     return QuestionApiUtil.fetchQuestion(questionId)
-        .then((question) => dispatch(receiveQuestion(question)))
+        .then((payload) => dispatch(receiveQuestion(payload)))
 };
 
 export const createQuestion = (question) => (dispatch) => {
