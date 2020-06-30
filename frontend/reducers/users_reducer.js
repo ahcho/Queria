@@ -21,6 +21,8 @@ const usersReducer = (state = {}, action) => {
             delete nextState[action.userId];
             return nextState;
         case RECEIVE_QUESTION:
+            // if (!action.payload.users) return {};
+            // return action.payload.users;
             return Object.assign(nextState, action.payload.users);
         // case RECEIVE_ALL_QUESTIONS:
         //     if(!action.payload.users) return state;

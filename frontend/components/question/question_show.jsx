@@ -1,5 +1,4 @@
 import React from 'react'; 
-import AnswerIndexItem from '../answers/answer_index_item';
 
 class QuestionShow extends React.Component {
     constructor(props) {
@@ -11,12 +10,12 @@ class QuestionShow extends React.Component {
     }
 
     render() {
-        ////debugger;
+        if (!this.props.question) return null;
         const { question, answers, users } = this.props;
         return (
             <div>
                 <div className='q-show-header'>
-                    <p>{users[question.author_id].first_name} asked</p>
+                    <p>{question.author.first_name} asked</p>
                     <p>{question.created_at}</p>
                     <p>{question.question}</p>
                 </div>

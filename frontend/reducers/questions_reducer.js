@@ -13,19 +13,18 @@ const QuestionsReducer = (state = {}, action) => {
 
     switch (action.type) {
         case RECEIVE_ALL_QUESTIONS:
-            return action.questions;
+            return Object.assign({}, state, action.questions)
         case RECEIVE_QUESTION:
             newState[action.payload.question.id] = action.payload.question;
             return newState;
         case REMOVE_QUESTION:
             delete newState[action.questionId];
             return newState;
-        case RECEIVE_USER://///////////////////
+        case RECEIVE_USER:
             if (!action.payload.questions) return {};
-            return action.payload.questions;
+            return Object.assign({}, state, action.payload.questions)
         case RECEIVE_CURRENT_USER:
-            if (!action.payload.questions) return {};
-            return action.payload.questions;
+            return Object.assign({}, state, action.payload.questions)
         default:
             return state;
     }

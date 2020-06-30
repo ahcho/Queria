@@ -12,7 +12,8 @@
         end
     end
 end
-
+# json.set!
+# @questions.each do |qeustion|
 # @questions.each do |question|
 #     json.set! question.id do
 #         json.extract! question, :id, :question, :author_id, :created_at, :topic_id

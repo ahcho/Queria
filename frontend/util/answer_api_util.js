@@ -4,7 +4,7 @@ export const fetchAnswers = (questionId) => {
         url: `/api/questions/${questionId}/answers`
     })
 }
-///api/questions/:question_id/answers(.:format)   
+   
 //call to get answer by a logged in user
 export const fetchUserAllAnswers = (userId) => {
     return $.ajax({
@@ -35,9 +35,3 @@ export const deleteAnswer = (answerId) => {
         url: `/api/answers/${answerId}`
     })
 }
-// export const fetchQuestion = (id) => {
-//     return $.ajax({
-//         method: "GET",
-//         url: `/api/questions/${id}`
-//     })
-// };

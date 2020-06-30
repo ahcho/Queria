@@ -25,8 +25,7 @@ class QuestionIndexItem extends React.Component {
     }
     
     render() {
-        //debugger;
-        const {question, deleteQuestion, currentUserId} =this.props;
+        const { question, deleteQuestion, currentUserId} = this.props;
         if (!question ) return null;
         return (
             <div className="question-index-item">
@@ -42,7 +41,6 @@ class QuestionIndexItem extends React.Component {
                         <h2 key={question.id}>{question.question}</h2>
                     </div>
                 </Link>
-
             </div>
         )
     }
@@ -50,7 +48,3 @@ class QuestionIndexItem extends React.Component {
 
 export default QuestionIndexItem;
 
-/* <Link to={`/question/$this.props.question.id`}>
-    <div onClick={this.handleEditQuestion} className="question-detail">
-        <h2 key={question.id}>{question.question}</h2>
-    </div></Link> */
