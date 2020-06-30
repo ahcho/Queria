@@ -5,3 +5,30 @@
     width: 50%;
     margin: 0 0 20px 100px;
 }
+
+.q-answer-box {
+    display: flex;
+    flex-direction: column;;
+    border: 2px solid salmon;
+    margin: 0 0 20px 100px;
+    width: 50%;
+}
+
+.q-answer-box > button {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 15px;
+    width: 30%;
+    border: none;
+    color: white;
+    background: lightcoral
+}
+
+.display-answer-box {
+    width: 50%;
+    margin: 0 0 20px 100px;
+    border: 2px solid yellow;
+
+}

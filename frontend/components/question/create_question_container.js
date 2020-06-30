@@ -4,13 +4,13 @@ import { createQuestion, fetchQuestions } from '../../actions/question_actions';
 import { openModal, closeModal } from '../../actions/modal_actions';
 
 const mapStateToProps = (state) => {
-    //////debugger;
     return {
         currentUser: state.session.currentUser,
         errors: state.errors.session
     }
 }
-const mDTP = (dispatch) => {
+
+const mapDispatchToProps  = (dispatch) => {
     return ({
         createQuestion: (question) => dispatch(createQuestion(question)),
         fetchQuestions: () => dispatch(fetchQuestions()),
@@ -20,4 +20,4 @@ const mDTP = (dispatch) => {
     })
 }
 
-export default connect(mapStateToProps, mDTP)(CreateQuestion);
+export default connect(mapStateToProps, mapDispatchToProps)(CreateQuestion);
