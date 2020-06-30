@@ -18,7 +18,7 @@ const answersReducer = (state = {}, action) => {
         case REMOVE_ANSWER:
             delete newState[action.answerId];
             return newState;
-        case RECEIVE_USER://///////////////////
+        case RECEIVE_USER:
             if (!action.payload.answers) return {};
             return action.payload.answers;
         case RECEIVE_CURRENT_USER:

@@ -7,7 +7,7 @@ import leftBarContainer from './left_bar/left_bar_container'
 import navBarContainer from './nav_bar/nav_bar_container';
 import Modal from './modal/modal';
 import ProfileContainer from './profile/profile_container'
-import DisplayQuestion from './question/display_question_container';
+import QuestionShow from './question/question_show_container'
 import { logger } from 'redux-logger';
 
 
@@ -16,7 +16,7 @@ const App = () => (
         <Modal /> 
         <ProtectedRoute path="/" component={navBarContainer} />
         <Switch>
-            <Route path="/question/:questionId" component={DisplayQuestion} />
+            <Route path="/question/:questionId" component={QuestionShow} />
             <Route path="/profile/:userId" component={ProfileContainer} />
             <ProtectedRoute path="/main" component={mainContainer} />
             <AuthRoute exact path="/" component={entryContainer} />  
