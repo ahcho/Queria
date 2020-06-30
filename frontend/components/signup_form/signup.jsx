@@ -43,6 +43,7 @@ class SignUpForm extends React.Component {
             err => (this.renderErrors())
     }
 
+  
     render() {
         return (
             <div className="signup-form">

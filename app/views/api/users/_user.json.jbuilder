@@ -1,7 +1,7 @@
 #json.extract! user, :id, :email, :first_name, :last_name
 
 json.user do
-    json.extract! user, :id, :email, :first_name, :last_name
+    json.extract! user, :id, :email, :first_name, :last_name, :question_ids, :answer_ids
 end
 
 json.questions do
