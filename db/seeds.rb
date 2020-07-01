@@ -85,3 +85,62 @@ body:
  "It's a super super secret!",
 author_id: u2.id,
 question_id: q8.id)
+
+
+
+
+
+
+c1 = Answer.create!(
+body:
+ "It's a secret!",
+author_id: u1.id,
+question_id: q1.id)
+
+c1_1 = Answer.create!(
+body:
+ "I <3 original milk chocolate bar",
+author_id: u2.id,
+question_id: q1.id)
+
+c1_2 = Answer.create!(
+body:
+ "I don't like chocolate!!",
+author_id: u4.id,
+question_id: q6.id)
+
+c1 = Answer.create!(
+body:
+ "I bought 2 bars and got the ticket",
+author_id: demo.id,
+question_id: q6.id)
+
+c2 = Answer.create!(
+body:
+ "Mr. Wonka is my dad' friend's teacher's son's nextdoor neightbour's cousin!",
+author_id: u1.id,
+question_id: q6.id)
+
+c33 = Answer.create!(
+body:
+ "I bouth 1000000000 wonka bar to get the ticket",
+author_id: u2.id,
+question_id: q4.id)
+
+c42 = Answer.create!(
+body:
+ "I bought it from black market",
+author_id: u4.id,
+question_id: q4.id)
+
+c21 = Answer.create!(
+body:
+ "It's a super secret!!",
+author_id: demo.id,
+question_id: q3.id)
+
+c35 = Answer.create!(
+body:
+ "It's a super super secret!",
+author_id: u2.id,
+question_id: q3.id)

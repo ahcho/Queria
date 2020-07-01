@@ -14,6 +14,7 @@ class QuestionShow extends React.Component {
     render() {
         const { answers, currentUser, deleteAnswer, updateAnswer, question, users  } = this.props;
         if (!currentUser || !answers || !question ) return null;
+        debugger
         return (
             <div>
                 <div className='q-show-header'>
@@ -27,9 +28,7 @@ class QuestionShow extends React.Component {
                     <button>Answer</button>
                 </div>
                 <div className='display-answer-box'>
-                    <div>This is where all the answers will be displayed,
-                    later I will add AnswerIndex. 
-                    Errrrrrrrrr!!
+                    <div>This is a box where all the answers will be displayed,
                         <AnswerIndex answers={answers} deleteAnswer={deleteAnswer}
                             currentUserId={currentUser.id}
                             users={users}
