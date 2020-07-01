@@ -12,7 +12,7 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = (dispatch) => {
-    //debugger
+
     return ({
         fetchQuestions: () => (dispatch(fetchQuestions())),
         deleteQuestion: (questionId) => (dispatch(deleteQuestion(questionId))),

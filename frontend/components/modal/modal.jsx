@@ -17,7 +17,6 @@ function Modal({ modal, closeModal }) {
             component = <CreateQuestionContainer />;
             break;
         case 'editquestion' :
-            debugger
             component = <CreateQuestionContainer questionId={modal.questionId}/>;
             break;
         default:
