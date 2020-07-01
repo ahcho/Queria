@@ -1,4 +1,6 @@
 import React from 'react'; 
+import AnswerIndex from './../answers/answer_index';
+
 
 class QuestionShow extends React.Component {
     constructor(props) {
@@ -10,8 +12,9 @@ class QuestionShow extends React.Component {
     }
 
     render() {
-        if (!this.props.question) return null;
-        const { question, answers, users } = this.props;
+        debugger
+        const { answers, currentUser, deleteAnswer, updateAnswer, question, users  } = this.props;
+        if (!currentUser || !answers || !question ) return null;
         return (
             <div>
                 <div className='q-show-header'>
@@ -20,13 +23,19 @@ class QuestionShow extends React.Component {
                     <p>{question.question}</p>
                 </div>
                 <div className='q-answer-box'>
-                    <p>{this.props.cur_user.first_name}, can you answer this question?</p>
+                    <p>{this.props.currentUser.first_name}, can you answer this question?</p>
                     <p>people are searching for an answer to this question.</p>
                     <button>Answer</button>
                 </div>
                 <div className='display-answer-box'>
-                    <p>This is where all the answer will be displayed</p>
-                    
+                    <div>This is where all the answers will be displayed,
+                    later I will add AnswerIndex. 
+                    Errrrrrrrrr!!
+                        <AnswerIndex answers={answers} deleteAnswer={deleteAnswer}
+                            currentUserId={currentUser.id}
+                            users={users}
+                        />
+                    </div>
                 </div>
             </div>
         )
