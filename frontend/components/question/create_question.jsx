@@ -36,7 +36,7 @@ class CreateQuestion extends React.Component {
         e.preventDefault();
         //this.setState({})
         const question = Object.assign({}, this.state);
-        debugger
+        //debugger
         this.props.updateQuestion(question)
             .then(() => { this.props.closeModal() })
 

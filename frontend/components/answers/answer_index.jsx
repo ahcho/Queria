@@ -1,4 +1,3 @@
-
 import React from 'react';
 import AnswerIndexItem from './answer_index_item';
 
@@ -8,11 +7,12 @@ class AnswerIndex extends React.Component {
     }
 
     render() {
-        // 
+
         const {answers, currentUser, deleteAnswer, updateAnswer} = this.props;
         
         if (!answers) return null
 
+        //debugger
         return (
             <div>
                 <div className="answer-index-box">

@@ -1,9 +1,10 @@
 .nav-bar {
     background: #F5FFFA;
+    //background: #8BB8E8;
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     padding: 0 20px 0 20px;
     border-bottom: 0.2px solid lightgrey;
     position: fixed;
@@ -13,12 +14,14 @@
     font-size: 23px; 
     list-style-type: none; 
     //color: #AA2200;  
-    color: #713E5A; color: #84C0C6;
+    //color: #713E5A; color: #84C0C6;
+    //color: #003B5C;
+    //color: #84C0C6;
 }
 
 .nav-bar > .right{
     display: flex;
-    justify-content: space-between;
+    //justify-content: space-between;
     width: 50%;
   }
   
@@ -34,13 +37,14 @@
 }
 
 .left > li:hover {
-  background: #F0F0F0;
+  background: #2774AE;
+  color: white;
 }
 
 
 #logo {
-    color: #713E5A; color: #84C0C6;
-  
+    //color: #713E5A; color: #84C0C6;
+    color: 519E8A;
 }
 
 
@@ -86,11 +90,15 @@ a:visited {
     text-decoration: none;
 }
 
-
+.round-btn {
+  //border: 1px red solid;
+  margin-right: 20px;
+}
 .round-btn > button {
   //background-color: #AA2200;
-  background-color: #713E5A; 
-  background-color: #84C0C6;
+  //background-color: #713E5A; 
+  background-color: #519E8A;
+  //background-color: #84C0C6;
   font-size: 16px;
   border: none;
   color: white;
@@ -98,14 +106,17 @@ a:visited {
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  margin: 4px 0px 4px 10px;
+  margin: 4px 0px 4px 5px;
   cursor: pointer;
   border-radius: 500px;
   //background-color: #0F4C81;
 }
 
 .dropdown-profile {
+  //border: red 1px solid;
+  padding: 5px;
   font-size: 28px;
+  color: #519E8A;
 }
 
 .dropdown-content {
@@ -114,20 +125,21 @@ a:visited {
   min-width: 160px;
   background: white;
   border: 0.5px solid gray;
-  border-radius: 2px;
-  font-size: 14px;
+  border-radius: 4px;
+  font-size: 16px;
+  margin-top: 3px;
 }
 
 .dropdown-content a {
-  color: black;
-  padding: 10px;
-  font-size: 14px;
+  color: #519E8A;
+  font-size: 16px;
   display: block;
   text-decoration: none;
 }
 
 .dropdown-content a:hover {
-  background: lightgray;
+  background: #A1CBBF;
+  color: white;
 }
 
 .dropdown-profile:hover .dropdown-content {

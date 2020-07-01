@@ -29,15 +29,15 @@ class QuestionShow extends React.Component {
         return (
             <div>
                 <div className='q-show-header'>
+                    <h1>{question.question}</h1>
                     <p>{question.author.first_name} asked</p>
                     <p>{question.created_at.slice(0, 10)} at {question.created_at.slice(11, 16)}</p>
-                    <p>{question.question}</p>
                 </div>
                 <div className='q-answer-box'>
                     <p>{this.props.currentUser.first_name}, can you answer this question?</p>
                     <p>people are searching for an answer to this question.</p>
                     <button onClick={this.handleDropDown}>Answer</button>
-                    <div className={banana}>
+                    <div className={banana} id="answer-box">
                         <CreateAnswerContainer currentUserId={currentUser.id} questionId={question.id}/>
                     </div>
                 </div>

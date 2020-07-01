@@ -31,10 +31,13 @@ class QuestionIndexItem extends React.Component {
         return (
             <div className="question-index-item">
                 {this.userIconDisplay(question.id)}
-                <div className="question-top">
-                    <div className="left">
+                <div className="single-question-top">
+                    <div className="sqt-left">
+                        <i className="fas fa-user-circle">  </i>
+                    </div>
+                    <div className="sqt-right">
                         <h1>{question.author.first_name} {question.author.last_name} asked:</h1>
-                        <h1>{question.created_at.slice(0, 10)} at {question.created_at.slice(11, 16)}</h1>
+                        <h2>{question.created_at.slice(0, 10)}</h2>
                     </div>
                     
                 </div>

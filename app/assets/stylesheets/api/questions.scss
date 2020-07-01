@@ -107,18 +107,28 @@
     padding-left: 10px;
 }
 
-.question-top {
+.single-question-top {
     display: flex;
     //background: #F8F4E3;
     //border: solid lightgrey 1px;
     padding: 0 0 10px 0;
+    font-size: 10px;
 }
 
-.question-top > .left {
+.single-question-top > .sqt-left {
     //border: 1px solid lightgray;
-    font-size: 12px;
+    font-size: 25px;
+    margin-right: 5px;
+    
 }
 
-// .question-detail {
-//     //border: 1px solid pink;
-// }
+.sqt-right > h1 {
+    font-size: 13px;
+    margin-bottom: 2px;
+}
+
+.question-detail {
+    padding-top: 5px;
+    color: black;
+    font-weight: 500;
+}

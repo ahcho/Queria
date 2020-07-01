@@ -43,7 +43,6 @@ class AnswerIndexItem extends React.Component {
         if (!answer) return null
         return (
             <div className='single-answer-box'>
-                
                 <p>{answer.updated_at.slice(0, 10)} at {answer.updated_at.slice(11, 16)}</p>
                 <p>{answer.body}</p>
             </div>

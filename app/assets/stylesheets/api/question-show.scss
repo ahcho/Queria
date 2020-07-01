@@ -1,17 +1,29 @@
 .q-show-header {
     padding-top: 100px;
-    border: 0.8px lightgrey solid;
-    border-radius: 6px;
+    //border: 0.8px lightgrey solid;
     width: 50%;
-    margin: 0 0 20px 100px;
+    margin: 0 0 20px 150px;
+    padding-bottom: 10px;
+    border-bottom: 1px red solid;
+    font-size: 12px;
 }
 
+.q-show-header > h1 {
+    font-size: 20px;
+    font-weight: bold;
+    padding-bottom: 10px;
+    
+}
 .q-answer-box {
     display: flex;
     flex-direction: column;;
-    border: 2px solid salmon;
-    margin: 0 0 20px 100px;
+    border-top: 2px solid salmon;
+    border-bottom: 2px solid salmon;
+    padding: 20px 0 10px 0;
+    margin: 0 0 20px 150px;
     width: 50%;
+    text-align: center;  
+
 }
 
 .q-answer-box > button {
@@ -23,12 +35,15 @@
     width: 30%;
     border: none;
     color: white;
-    background: lightcoral
+    background: lightcoral;
+
+    
 }
+
 
 .display-answer-box {
     width: 50%;
-    margin: 0 0 20px 100px;
+    margin: 0 0 20px 150px;
     border: 2px solid yellow;
 
 }

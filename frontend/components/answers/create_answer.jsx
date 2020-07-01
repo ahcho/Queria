@@ -28,10 +28,11 @@ class CreateAnswer extends React.Component {
         // 
         return (
             <form className="answer-form" onSubmit={this.handleSumbit}>
-                <textarea id="answerBox" rows="10" value={this.state.body}
+                <textarea id="answerBox" rows="10" cols="63" value={this.state.body}
                 onChange={this.handleInput("body")} placeholder="Write your answer">
                     {this.state.body}
                 </textarea>
+                <br/>
                 <button className="answer-btn">Submit</button>
             </form>
 
