@@ -25,7 +25,7 @@ class QuestionShow extends React.Component {
         const { answers, currentUser, deleteAnswer, updateAnswer, question, users  } = this.props;
         const banana = this.state.dropDown ? "" : "hidden" ;
         if (!currentUser || !answers || !question ) return null;
-        //debugger
+        // 
         return (
             <div>
                 <div className='q-show-header'>

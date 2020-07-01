@@ -12,7 +12,7 @@ class MainPage extends React.Component {
     }
 
     render() {
-        ////debugger;
+        //// ;
         
         return (
             <div className='main-page'>

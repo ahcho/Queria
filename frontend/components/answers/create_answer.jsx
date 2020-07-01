@@ -19,13 +19,13 @@ class CreateAnswer extends React.Component {
     }
 
     handleSumbit(e) {
-        debugger
+         
         e.preventDefault();
         this.props.createAnswer(this.state)
     }
 
     render () {
-        //debugger
+        // 
         return (
             <form className="answer-form" onSubmit={this.handleSumbit}>
                 <textarea id="answerBox" rows="10" value={this.state.body}

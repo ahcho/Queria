@@ -6,6 +6,7 @@ class QuestionIndexItem extends React.Component {
     constructor(props){
         super(props);
         this.handleEditQuestion = this.handleEditQuestion.bind(this);
+  
     }
 
     handleEditQuestion() {
