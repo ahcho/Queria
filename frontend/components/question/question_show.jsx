@@ -30,7 +30,7 @@ class QuestionShow extends React.Component {
             <div>
                 <div className='q-show-header'>
                     <p>{question.author.first_name} asked</p>
-                    <p>{question.created_at}</p>
+                    <p>{question.created_at.slice(0, 10)} at {question.created_at.slice(11, 16)}</p>
                     <p>{question.question}</p>
                 </div>
                 <div className='q-answer-box'>
@@ -42,7 +42,7 @@ class QuestionShow extends React.Component {
                     </div>
                 </div>
                 <div className='display-answer-box'>
-                    <div>This is a box where all the answers will be displayed,
+                    <div>
                         <AnswerIndex answers={answers} deleteAnswer={deleteAnswer}
                             currentUserId={currentUser.id}
                             users={users}

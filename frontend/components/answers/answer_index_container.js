@@ -18,7 +18,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
 
     return ({ 
-        createAnswer: (answer) => (dispatch(createAnswer(answer))),
+        //createAnswer: (answer) => (dispatch(createAnswer(answer))),
         deleteAnswer: (answerId) => (dispatch(deleteAnswer(answerId))),
         updateAnswer: (answer) => (dispatch(updateAnswer(answer)))
     })

@@ -1,10 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-// (answer) => <AnswerIndexItem
-//     answer={answer} deleteAnswer={deleteAnswer} key={answer.id}
-//     openModal={openModal} currentUserId={currentUser.id}
-//     users={users} />)}
 class AnswerIndexItem extends React.Component {
 
     constructor(props) {
@@ -41,13 +37,14 @@ class AnswerIndexItem extends React.Component {
     // }
 
     render() {
-        // 
-        const {answer} = this.props;
+        //debugger
+        const {answer, author} = this.props;
+        //if (!answer || !author) return null
         if (!answer) return null
-
         return (
             <div className='single-answer-box'>
-                <p>{answer.updated_at}</p>
+                
+                <p>{answer.updated_at.slice(0, 10)} at {answer.updated_at.slice(11, 16)}</p>
                 <p>{answer.body}</p>
             </div>
         )

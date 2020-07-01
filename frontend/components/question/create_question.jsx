@@ -8,9 +8,13 @@ class CreateQuestion extends React.Component {
         this.state = {
             question: "",
             author_id: this.currentUser.id,
-            //topic_id: ""
+            topic_id: "",/////////
+            question_id: ""//////////////
         }
+        this.questionId = this.props.questionId;
+     
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleEdit = this.handleEdit.bind(this);
     }
      
     update(field) {
@@ -19,11 +23,23 @@ class CreateQuestion extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-    
+        
         const question = Object.assign({}, this.state);
         this.props.createQuestion(question)
             .then(() => {this.props.closeModal()})
         
+    }
+//     t.string "question", null: false
+// t.integer "author_id", null: false
+// t.integer "topic_id", null: false
+    handleEdit(e) {
+        e.preventDefault();
+        //this.setState({})
+        const question = Object.assign({}, this.state);
+        debugger
+        this.props.updateQuestion(question)
+            .then(() => { this.props.closeModal() })
+
     }
 
     handleClose() {
@@ -31,7 +47,36 @@ class CreateQuestion extends React.Component {
     }
 
     render () {
-        return (
+        //debugger
+        if (this.questionId) {
+            //const questionHolder = this.props.questions[this.questionId].question
+            return (
+                <div className='question-modal'>
+                    <div className='question-head'>
+                        <h1 className='q-modal-msg'>Edit Question</h1>
+                    </div>
+                    <div className='question-reminder'>
+                        Please edit your question:)
+                </div>
+
+                    <form className='modal-q-form' onSubmit={this.handleSubmit}>
+                        <h2 className='q-form-header'>{this.currentUser.first_name} asked</h2>
+                        <input type="text"
+                            placeholder='I need to be same as a question you want to edit!'
+                            onChange={this.update('question')} />
+                        <div className='q-form-btn'>
+                            <button onClick={() => this.props.closeModal()}>
+                                cancel
+                            </button>
+                            <button onClick={this.handleSubmit} >
+                                Edit Question
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            )
+        }
+        else (
             <div className='question-modal'>
                 <div className='question-head'>
                     <h1 className='q-modal-msg'>Add Question</h1>

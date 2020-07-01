@@ -12,24 +12,21 @@ class AnswerIndex extends React.Component {
         const {answers, currentUser, deleteAnswer, updateAnswer} = this.props;
         
         if (!answers) return null
+
         return (
             <div>
-                <p>This is where I'm going to display all the answers hooray!</p>
                 <div className="answer-index-box">
                 {
                     Object.values(answers).map(
                         (answer) => {
                             if (!answer) return null;
-                        
+                            const author = this.props.users[answer.id];/////
                             return (
-                                <AnswerIndexItem
+                                <AnswerIndexItem author={author}///
                                 answer={answer} deleteAnswer={deleteAnswer}
                                 key={answer.id} currentUser={currentUser}
                                 />)})
                 }
-        
-
-
                 </div>
                 
             </div>
