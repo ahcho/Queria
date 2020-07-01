@@ -2,10 +2,13 @@ import { connect } from 'react-redux';
 import CreateAnswer from './create_answer';
 import { createAnswer } from '../../actions/answer_actions';
 
-// const mapStateToProps = (state) => {
-//     return{
-//     }
-// }
+const mapStateToProps = (state, ownProps) => {
+    debugger
+    return{
+        currentUserId: ownProps.currentUserId,
+        questionId: ownProps.questionId
+    }
+}
 
 
 const mapDispatchToProps = (dispatch) => {

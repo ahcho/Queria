@@ -41,7 +41,7 @@ class AnswerIndexItem extends React.Component {
     // }
 
     render() {
-        debugger
+        //debugger
         const {answer} = this.props;
         if (!answer) return null
 
