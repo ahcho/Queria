@@ -60,7 +60,10 @@ class CreateQuestion extends React.Component {
                 </div>
 
                     <form className='modal-q-form' onSubmit={this.handleSubmit}>
-                        <h2 className='q-form-header'>{this.currentUser.first_name} asked</h2>
+                        <div className='modal-user'>
+                            <i class="fa fa-user-circle" aria-hidden="true"></i>
+                            <h2 className='q-form-header'>{this.currentUser.first_name} asked </h2>
+                        </div>
                         <input type="text"
                             placeholder='I need to be same as a question you want to edit!'
                             onChange={this.update('question')} />
@@ -76,20 +79,24 @@ class CreateQuestion extends React.Component {
                 </div>
             )
         }
-        else (
+        else {
+            return (
             <div className='question-modal'>
                 <div className='question-head'>
                     <h1 className='q-modal-msg'>Add Question</h1>
                 </div>
                 <div className='question-reminder'>
-                    Tips on getting good answers quickly
-                    Make sure your question has not been asked already
-                    Keep your question short and to the point
-                    Double-check grammar and spelling
+                    <h1>Tips on getting good answers quickly</h1>
+                    <p>Makesure your question has not been asked already</p>
+                    <p>Keep your question short and to the point</p>
+                    <p>Double-check grammar and spelling</p>
                 </div>
     
                 <form className='modal-q-form' onSubmit={this.handleSubmit}>
-                    <h2 className='q-form-header'>{this.currentUser.first_name} asked</h2>
+                    <div className='modal-user'>
+                        <i class="fa fa-user-circle" aria-hidden="true"></i>
+                        <h2 className='q-form-header'>{this.currentUser.first_name} asked</h2>
+                    </div>
                     <input type="text" 
                         placeholder='Start your question with "What","How","Why", etc' 
                         onChange={this.update('question')}/>
@@ -109,7 +116,7 @@ class CreateQuestion extends React.Component {
                     </div>
                 </form>
             </div>
-        )
+        )}
     }
 }
 

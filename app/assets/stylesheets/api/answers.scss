@@ -2,8 +2,21 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .single-answer-box {
-    border: 1px solid purple;
-    border-radius: 5px;
+    border-top: 1px solid purple;
+    border-bottom: 1px solid purple;
     padding: 20px 0 20px 15px;
-    margin: 15px;
+    width: 97%;
+    margin: 15px 0 15px 0;
+    
+}
+
+.snb-top {
+    font-size: 12px;
+    display: flex;
+    flex-direction: row;
+}
+
+.snb-top > i {
+    font-size: 25px;
+    padding: 0 10px 8px 0;
 }
