@@ -5,11 +5,23 @@ import AnswerIndex from './../answers/answer_index';
 class QuestionShow extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {
+            answerToggle = false
+        }
+        this.answerFormToggle = this.answerFormToggle.bind(this);
     }
 
     componentDidMount() {
         this.props.fetchQuestion(this.props.match.params.questionId);
     }
+
+    answerFormToggle() {
+        this.setState({
+            answerToggle: !this.state.answerToggle 
+        })
+    }
+
+   
 
     render() {
         const { answers, currentUser, deleteAnswer, updateAnswer, question, users  } = this.props;
