@@ -12,16 +12,19 @@ class CreateQuestion extends React.Component {
             question_id: ""//////////////
         }
         this.questionId = this.props.questionId;
+        //debugger
      
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleEdit = this.handleEdit.bind(this);
     }
      
     update(field) {
+        ////debugger
         return e => this.setState({ [field]: e.currentTarget.value})
     }
 
     handleSubmit(e) {
+        
         e.preventDefault();
         
         const question = Object.assign({}, this.state);
@@ -34,9 +37,10 @@ class CreateQuestion extends React.Component {
 // t.integer "topic_id", null: false
     handleEdit(e) {
         e.preventDefault();
-        //this.setState({})
-        const question = Object.assign({}, this.state);
-        //debugger
+        //this.setState({ author_id: 148, topic_id: 10, question_id: })
+        const question = Object.assign({}, this.state, { author_id: this.props.question.author_id, topic_id: 10, question_id: this.props.question.id});
+        ////debugger
+        ////debugger
         this.props.updateQuestion(question)
             .then(() => { this.props.closeModal() })
 
@@ -47,9 +51,10 @@ class CreateQuestion extends React.Component {
     }
 
     render () {
-        //debugger
-        if (this.questionId) {
-            //const questionHolder = this.props.questions[this.questionId].question
+        ////debugger
+        //if (this.questionId) {
+        if (this.props.question) {
+            const questionHolder = this.props.question.question
             return (
                 <div className='question-modal'>
                     <div className='question-head'>
@@ -61,17 +66,17 @@ class CreateQuestion extends React.Component {
 
                     <form className='modal-q-form' onSubmit={this.handleSubmit}>
                         <div className='modal-user'>
-                            <i class="fa fa-user-circle" aria-hidden="true"></i>
+                            <i className="fa fa-user-circle" aria-hidden="true"></i>
                             <h2 className='q-form-header'>{this.currentUser.first_name} asked </h2>
                         </div>
                         <input type="text"
-                            placeholder='I need to be same as a question you want to edit!'
+                            placeholder={`${questionHolder}`}
                             onChange={this.update('question')} />
                         <div className='q-form-btn'>
                             <button onClick={() => this.props.closeModal()}>
                                 cancel
                             </button>
-                            <button onClick={this.handleSubmit} >
+                            <button onClick={this.handleEdit} >
                                 Edit Question
                             </button>
                         </div>
@@ -80,6 +85,7 @@ class CreateQuestion extends React.Component {
             )
         }
         else {
+            ////debugger
             return (
             <div className='question-modal'>
                 <div className='question-head'>
@@ -94,7 +100,7 @@ class CreateQuestion extends React.Component {
     
                 <form className='modal-q-form' onSubmit={this.handleSubmit}>
                     <div className='modal-user'>
-                        <i class="fa fa-user-circle" aria-hidden="true"></i>
+                        <i className="fa fa-user-circle" aria-hidden="true"></i>
                         <h2 className='q-form-header'>{this.currentUser.first_name} asked</h2>
                     </div>
                     <input type="text" 

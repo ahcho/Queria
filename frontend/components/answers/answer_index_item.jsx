@@ -37,14 +37,13 @@ class AnswerIndexItem extends React.Component {
     // }
 
     render() {
-        //debugger
         const {answer, author} = this.props;
-        //if (!answer || !author) return null
-        if (!answer) return null
+        if (!answer || !author) return null
         return (
             <div className='single-answer-box'>
                 <div className='snb-top'>
-                    <i className="fa fa-user-circle" aria-hidden="true"></i>                                
+                    <i className="fa fa-user-circle" aria-hidden="true"></i>  
+                    <p>{author.first_name} {author.last_name}</p>                              
                     <p>{answer.updated_at.slice(0, 10)} at {answer.updated_at.slice(11, 16)}</p>
                 </div>
                 <div className='snb-body'>
@@ -58,8 +57,3 @@ class AnswerIndexItem extends React.Component {
 }
 
 export default AnswerIndexItem;
-
-/* <Link to={`/question/$this.props.question.id`}>
-    <div onClick={this.handleEditQuestion} className="question-detail">
-        <h2 key={question.id}>{question.question}</h2>
-    </div></Link> */

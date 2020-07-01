@@ -12,7 +12,7 @@ class AnswerIndex extends React.Component {
         
         if (!answers) return null
 
-        //debugger
+        ////debugger
         return (
             <div>
                 <div className="answer-index-box">

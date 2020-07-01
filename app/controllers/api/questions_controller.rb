@@ -11,15 +11,18 @@ class Api::QuestionsController < ApplicationController
         @question = Question.new(question_params)
         @question.topic_id = 1; ## needs to be updated\
     
-        #@question.author_id = current_user.id
         if @question.save
-            #@questions = Question.all
-            #render "api/questions/show"
             render :show
         else
             render json: ["Fail to create a question"], status: 422
         end
     end
+
+    def search
+        target = params[:target].downcase
+        @questions = User.where("LOWER(body) LIKE", "%#{target}%")
+        render :index
+    end 
 
     def show
         @question = Question.find_by(id: params[:id])
@@ -27,7 +30,7 @@ class Api::QuestionsController < ApplicationController
     end
 
     def update
-        @question = Question.find(params[:id])
+        @question = Question.find(params[:question][:question_id])
         if @question.update(question_params)
             render :show
         else
@@ -48,6 +51,7 @@ class Api::QuestionsController < ApplicationController
     private
 
     def question_params
-        params.require(:question).permit(:question, :author_id, :topic_id)
+        params.require(:question).permit(:question, :author_id, :topic_id, :target)
     end
 end
+#

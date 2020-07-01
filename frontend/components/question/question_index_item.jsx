@@ -9,10 +9,13 @@ class QuestionIndexItem extends React.Component {
     }
 
     handleEditQuestion() {
-        this.props.openModal('editquestion', this.props.question.id )
+        //debugger
+        //this.props.openModal('editquestion', this.props.question.id )
+        this.props.openModal('editquestion', this.props.question)
     }
 
     userIconDisplay(targetId) {
+        ////debugger
         if (this.props.currentUserId === this.props.question.author_id) {
             return (
                 <div className='right'>
@@ -27,7 +30,7 @@ class QuestionIndexItem extends React.Component {
     render() {
         const { question, deleteQuestion, currentUserId} = this.props;
         if (!question ) return null;
-        //debugger
+        ////debugger
         return (
             <div className="question-index-item">
                 {this.userIconDisplay(question.id)}

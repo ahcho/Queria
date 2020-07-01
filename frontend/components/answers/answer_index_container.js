@@ -12,7 +12,7 @@ const mapStateToProps = (state) => {
         users: state.entities.users,
         currentUser: state.session.currentUser,
     })
-    \
+    
 }
 
 const mapDispatchToProps = (dispatch) => {
