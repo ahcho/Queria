@@ -6,7 +6,7 @@ class QuestionShow extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            answerToggle = false
+            answerToggle: false
         }
         this.answerFormToggle = this.answerFormToggle.bind(this);
     }
