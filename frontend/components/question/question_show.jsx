@@ -12,7 +12,6 @@ class QuestionShow extends React.Component {
     }
 
     render() {
-        debugger
         const { answers, currentUser, deleteAnswer, updateAnswer, question, users  } = this.props;
         if (!currentUser || !answers || !question ) return null;
         return (

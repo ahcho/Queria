@@ -5,7 +5,6 @@ import AnswerIndexItem from './answer_index_item';
 class AnswerIndex extends React.Component {
     constructor(props) {
         super(props);
-        debugger;
     }
 
     render() {
@@ -21,7 +20,7 @@ class AnswerIndex extends React.Component {
                     Object.values(answers).map(
                         (answer) => {
                             if (!answer) return null;
-                            debugger
+                        
                             return (
                                 <AnswerIndexItem
                                 answer={answer} deleteAnswer={deleteAnswer}
