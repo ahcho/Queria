@@ -9,7 +9,7 @@ function Modal({ modal, closeModal }) {
         return null;
     }
     let component;
-    switch (modal) {
+    switch (modal.modal) {
         case 'signup':
             component = <SignupContainer />;
             break;
@@ -17,7 +17,8 @@ function Modal({ modal, closeModal }) {
             component = <CreateQuestionContainer />;
             break;
         case 'editquestion' :
-            component = <CreateQuestionContainer />;
+            debugger
+            component = <CreateQuestionContainer questionId={modal.questionId}/>;
             break;
         default:
             return null;

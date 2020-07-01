@@ -6,11 +6,10 @@ class QuestionIndexItem extends React.Component {
     constructor(props){
         super(props);
         this.handleEditQuestion = this.handleEditQuestion.bind(this);
-  
     }
 
     handleEditQuestion() {
-        this.props.openModal('editquestion')
+        this.props.openModal('editquestion', this.props.question.id )
     }
 
     userIconDisplay(targetId) {

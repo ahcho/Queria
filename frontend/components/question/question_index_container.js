@@ -12,11 +12,11 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = (dispatch) => {
-     
+    //debugger
     return ({
         fetchQuestions: () => (dispatch(fetchQuestions())),
         deleteQuestion: (questionId) => (dispatch(deleteQuestion(questionId))),
-        openModal: (modal) => (dispatch(openModal(modal)))
+        openModal: (modal, questionId) => (dispatch(openModal(modal, questionId)))
     })
 }
 
