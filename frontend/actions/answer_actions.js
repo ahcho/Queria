@@ -39,7 +39,7 @@ export const fetchUserAllAnswers = (userId) => (dispatch) => (
 );
 
 export const createAnswer = (answer) => (dispatch) => {
-    debugger
+    //debugger
     return (
     answerApiUtil.createAnswer(answer)
         .then(newAnswer => dispatch(receiveAnswer(newAnswer)))

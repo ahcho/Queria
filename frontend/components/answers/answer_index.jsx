@@ -12,15 +12,15 @@ class AnswerIndex extends React.Component {
         
         if (!answers) return null
 
-        ////debugger
+        //debugger
         return (
             <div>
                 <div className="answer-index-box">
                 {
-                    Object.values(answers).map(
+                    answers.map(
                         (answer) => {
-                            if (!answer) return null;
-                            const author = this.props.users[answer.id];/////
+                            //if (!answer) return null;
+                            const author = this.props.users[answer.id];
                             return (
                                 <AnswerIndexItem author={author}///
                                 answer={answer} deleteAnswer={deleteAnswer}

@@ -5,7 +5,7 @@ import { createAnswer,
          updateAnswer } from '../../actions/answer_actions'
 
 const mapStateToProps = (state) => {
-
+    
     return ({
         answers: Object.values(state.entities.answers),
         //questions: Object.values(state.entities.questions),

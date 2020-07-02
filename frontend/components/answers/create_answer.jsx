@@ -18,17 +18,17 @@ class CreateAnswer extends React.Component {
         return (e) => { this.setState({ [field]: e.target.value }) }
     }
 
-    handleSumbit(e) {    
+    handleSumbit(e) {
+     
         e.preventDefault();
-        debugger
         this.props.createAnswer(this.state)
     }
 
     render () {
-        
+        // 
         return (
             <form className="answer-form" onSubmit={this.handleSumbit}>
-                <textarea id="answerBox" rows="10" cols="63" value={this.state.body}
+                <textarea id="answerBox" rows="10" cols="80" value={this.state.body}
                 onChange={this.handleInput("body")} placeholder="Write your answer">
                     {this.state.body}
                 </textarea>
