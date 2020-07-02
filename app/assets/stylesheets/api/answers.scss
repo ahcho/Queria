@@ -33,6 +33,18 @@
     background: lightcoral;   
 }
 
-.single-answer-box > .right {
-    color: red;
-} 
+.single-answer-box > .right {
+    float: right;
+}
+
+.a-author-name {
+    padding-top: 7px;
+    padding-right: 7px;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.a-date {
+    padding-top: 9px;
+    font-size: 11px;
+}

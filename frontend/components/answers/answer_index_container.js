@@ -4,7 +4,7 @@ import { deleteAnswer,
          updateAnswer } from '../../actions/answer_actions'
 
 const mapStateToProps = (state) => {
-    //debugger
+    
     return ({
         answers: Object.values(state.entities.answers),
         //questions: Object.values(state.entities.questions),
@@ -15,7 +15,6 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = (dispatch) => {
-    debugger
     return ({ 
         deleteAnswer: (answerId) => (dispatch(deleteAnswer(answerId))),
         updateAnswer: (answer) => (dispatch(updateAnswer(answer)))

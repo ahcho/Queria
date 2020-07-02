@@ -27,8 +27,8 @@ class AnswerIndexItem extends React.Component {
                 {deleteButton}
                 <div className='snb-top'>
                     <i className="fa fa-user-circle" aria-hidden="true"></i>  
-                    <p>{author.first_name} {author.last_name}</p>                              
-                    <p>{answer.updated_at.slice(0, 10)} at {answer.updated_at.slice(11, 16)}</p>
+                    <p className="a-author-name">{author.first_name} {author.last_name}</p>                              
+                    <p className="a-date">{answer.updated_at.slice(0, 10)} at {answer.updated_at.slice(11, 16)}</p>
                 </div>
                 <div className='snb-body'>
                     <p>{answer.body}</p>
