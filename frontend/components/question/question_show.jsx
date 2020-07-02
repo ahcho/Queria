@@ -26,7 +26,6 @@ class QuestionShow extends React.Component {
 
         if (!currentUser || !answers || !question ) return null;
 
-        debugger
         return (
             <div>
                 <div className='q-show-header'>

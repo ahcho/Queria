@@ -39,7 +39,6 @@ export const fetchUserAllAnswers = (userId) => (dispatch) => (
 );
 
 export const createAnswer = (answer) => (dispatch) => {
-    //debugger
     return (
     answerApiUtil.createAnswer(answer)
         .then(newAnswer => dispatch(receiveAnswer(newAnswer)))
@@ -51,7 +50,6 @@ export const updateAnswer = (answer) => (dispatch) => (
 )
 
 export const deleteAnswer = (answerId) => (dispatch) => {
-    //debugger
     return (
     answerApiUtil.deleteAnswer(answerId)
         .then(() => dispatch(removeAnswer(answerId)))
