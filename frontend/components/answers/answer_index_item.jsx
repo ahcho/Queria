@@ -5,39 +5,26 @@ class AnswerIndexItem extends React.Component {
 
     constructor(props) {
         super(props);
-        //this.handleEditAnswer = this.handleEditAnswer.bind(this);
     }
 
-    userIconDisplay(targetId) {
-        if (this.props.currentUserId === this.props.question.author_id) {
-            return (
-                <div className='right'>
-                    <i className="far fa-edit" onClick={this.handleEditQuestion}></i>
-                    <i className="fas fa-times" onClick={() => this.props.deleteQuestion(targetId)}></i>
-                </div>
-            )
-        }
 
-    }
-
-    // userIconDisplay(targetId) {
-    //     if (this.props.currentUserId === this.props.question.author_id) {
-    //         return (
-    //             <div className='right'>
-    //                 <i className="far fa-edit" onClick={this.handleEditQuestion}></i>
-    //                 <i className="fas fa-times" onClick={() => this.props.deleteQuestion(targetId)}></i>
-    //             </div>
-    //         )
-    //     }
-
-    // }
 
     render() {
         const {answer, author} = this.props;
         if (!answer|| !author) return null
-          
+        
+
+        const deleteButton = (
+            (this.props.currentUser.id === this.props.author.id) ? (
+                <div className='right'>
+                    <i className="fas fa-times" onClick={() => this.props.deleteAnswer(answer.id)}></i>
+                </div>
+            ) : (null)
+        )
+ 
         return (
             <div className='single-answer-box'>
+                {deleteButton}
                 <div className='snb-top'>
                     <i className="fa fa-user-circle" aria-hidden="true"></i>  
                     <p>{author.first_name} {author.last_name}</p>                              

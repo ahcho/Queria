@@ -22,9 +22,11 @@ class CreateAnswer extends React.Component {
     handleSumbit(e) {
         e.preventDefault();
         this.props.createAnswer(this.state)
+        this.props.handleDropDown(e);
     }
 
     render () {
+        
         return (
             <form className="answer-form" onSubmit={this.handleSumbit}>
                 <textarea id="answerBox" rows="10" cols="60" value={this.state.body}

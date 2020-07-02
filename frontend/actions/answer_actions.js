@@ -50,7 +50,9 @@ export const updateAnswer = (answer) => (dispatch) => (
         .then(updatedAnswer => dispatch(receiveAnswer(updatedAnswer)))
 )
 
-export const deleteAnswer = (answerId) => (dispatch) => (
+export const deleteAnswer = (answerId) => (dispatch) => {
+    //debugger
+    return (
     answerApiUtil.deleteAnswer(answerId)
         .then(() => dispatch(removeAnswer(answerId)))
-)
+)}

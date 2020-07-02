@@ -15,7 +15,7 @@
   border-radius: 5px;
 }
 
-#home a:visited, #answers a:visited{
+.home a, .answers a{
   color: #FAC0B3;
   margin-top: 10px;
   display: block;
@@ -65,9 +65,12 @@
 }
 
 .dropdown-profile {
-  //border: red 1px solid;
   padding: 5px;
   font-size: 28px;
+  color: #FAC0B3;
+}
+
+.dropdown-profile > i:hover {
   color: salmon;
 }
 .left > li {
@@ -78,7 +81,7 @@
   position: absolute;
   min-width: 160px;
   background: white;
-  border: 0.5px solid gray;
+  border: 0.5px solid lightgray;
   border-radius: 4px;
   font-size: 16px;
   margin-top: 3px;
@@ -91,13 +94,16 @@
 
 
 .dropdown-content a {
-  color: salmon;
+  color: #FAC0B3;
   font-size: 16px;
-  display: block;
+  //display: block;
   text-decoration: none;
   z-index: 1;
 }
 
+.dropdown-content a:hover {
+  color: white;
+}
 .dropdown-content li:hover {
   background: #FAC0B3;
   color: white;
@@ -135,6 +141,7 @@ li > .fa {
 
 #logo, #logo i {
   font-size: 35px;
+  color: salmon;
 }
 
 #home, #answers {
@@ -146,8 +153,12 @@ li > .fa {
   margin-left: 20px;
 }
 
-.left a:visited {
+.left a:hover {
   color: salmon;
+}
+
+.round-btn button:hover {
+  background: salmon;
 }
 
 .right {

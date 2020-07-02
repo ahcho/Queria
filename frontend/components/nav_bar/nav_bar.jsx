@@ -22,12 +22,12 @@ class NavBar extends React.Component {
                             </i>
                         </Link>    
                     </div>
-                    <div id="home">
+                    <div className="home">
                         <Link className="plain" to='/'>
                             <i className="fas fa-home"></i>Home
                         </Link>
                     </div>
-                    <div id="answers">
+                    <div className="answers">
                         <Link className="plain" to='/'>
                         <i className="fas fa-pencil-alt"></i>
                             Answer

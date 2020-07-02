@@ -1,5 +1,4 @@
 import React from 'react'; 
-// import AnswerIndexContainer from './../answers/answer_index_container';
 import CreateAnswerContainer  from './../answers/create_answer_container';
 import AnswerIndex from './../answers/answer_index';
 
@@ -26,7 +25,8 @@ class QuestionShow extends React.Component {
         const banana = this.state.dropDown ? "" : "hidden" ;
 
         if (!currentUser || !answers || !question ) return null;
- 
+
+        debugger
         return (
             <div>
                 <div className='q-show-header'>
@@ -39,7 +39,8 @@ class QuestionShow extends React.Component {
                     <p>people are searching for an answer to this question.</p>
                     <button onClick={this.handleDropDown}>Answer</button>
                     <div className={banana} id="answer-box">
-                        <CreateAnswerContainer currentUserId={currentUser.id} questionId={question.id}/>
+                        <CreateAnswerContainer currentUserId={currentUser.id} questionId={question.id}
+                            handleDropDown={this.handleDropDown}/>
                     </div>
                 </div>
                 <div className='display-answer-box'>

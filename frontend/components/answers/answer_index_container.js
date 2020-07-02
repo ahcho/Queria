@@ -1,11 +1,10 @@
 import { connect } from 'react-redux';
 import AnswerIndex from './answer_index';
-import { createAnswer, 
-         deleteAnswer, 
+import { deleteAnswer, 
          updateAnswer } from '../../actions/answer_actions'
 
 const mapStateToProps = (state) => {
-    
+    //debugger
     return ({
         answers: Object.values(state.entities.answers),
         //questions: Object.values(state.entities.questions),
@@ -16,9 +15,8 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = (dispatch) => {
-
+    debugger
     return ({ 
-        //createAnswer: (answer) => (dispatch(createAnswer(answer))),
         deleteAnswer: (answerId) => (dispatch(deleteAnswer(answerId))),
         updateAnswer: (answer) => (dispatch(updateAnswer(answer)))
     })
