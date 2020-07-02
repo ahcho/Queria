@@ -25,8 +25,7 @@ class Profile extends React.Component {
     renderAnswers() {
 
     }
-    // answers: Object.values(state.entities.answers),
-    //     questions: Object.values(state.entities.questions),
+
 
     render() {
         const {answers, questions} = this.props;
@@ -48,7 +47,7 @@ class Profile extends React.Component {
                 </ul>
                 
                 <div className='profile-bottom'>
-                        <button className='profile-answer-btn'>Answer Questions</button>
+                    <Link className="plain" to='/'><button className='profile-answer-btn'>Answer Questions</button></Link>
                 </div>
             </div>
         )
