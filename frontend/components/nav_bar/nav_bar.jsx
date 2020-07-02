@@ -17,7 +17,9 @@ class NavBar extends React.Component {
                 <div className="left">
                     <div id="logo">
                         <Link className="plain" to='/'>
-                            <i className="fab fa-quora" ></i>ueria
+                            <i className="fab fa-quora">
+                                <p id="ueria"></p>
+                            </i>
                         </Link>    
                     </div>
                     <div id="home">

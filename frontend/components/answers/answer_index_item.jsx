@@ -35,7 +35,7 @@ class AnswerIndexItem extends React.Component {
     render() {
         const {answer, author} = this.props;
         if (!answer|| !author) return null
-        //debugger
+          
         return (
             <div className='single-answer-box'>
                 <div className='snb-top'>

@@ -9,13 +9,13 @@ class QuestionIndexItem extends React.Component {
     }
 
     handleEditQuestion() {
-        //debugger
+          
         //this.props.openModal('editquestion', this.props.question.id )
         this.props.openModal('editquestion', this.props.question)
     }
 
     userIconDisplay(targetId) {
-        ////debugger
+         // 
         if (this.props.currentUserId === this.props.question.author_id) {
             return (
                 <div className='right'>

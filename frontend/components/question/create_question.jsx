@@ -44,7 +44,7 @@ class CreateQuestion extends React.Component {
     }
 
     render () {
-        ////debugger
+         // 
         //if (this.questionId) {
         if (this.props.question) {
             const questionHolder = this.props.question.question

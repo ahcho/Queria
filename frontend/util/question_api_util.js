@@ -21,7 +21,7 @@ export const createQuestion = (question) => {
 };
 
 export const updateQuestion = (question) => {
-    //debugger
+      
     return $.ajax({
         method: "PATCH",
         url: `/api/questions/${question.question_id}`,
@@ -37,7 +37,7 @@ export const deleteQuestion = (id) => {
     })
 };
 
-///////////////in profile page show all question by a logged in user
+   ///in profile page show all question by a logged in user
 export const fetchUserQuestions = () => {
     return $.ajax({
         method: 'GET',

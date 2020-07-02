@@ -29,6 +29,5 @@ const App = () => (
     //<ProtectedRoute path="/profile/userId" component={UserContainer} />
 );
 
-/////????????????
 
 export default App;
