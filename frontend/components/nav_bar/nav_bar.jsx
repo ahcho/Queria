@@ -26,8 +26,10 @@ class NavBar extends React.Component {
                         </Link>
                     </li>
                     <li id="answers">
+                        <Link className="plain" to='/'>
                         <i className="fas fa-pencil-alt"></i>
-                        Answer
+                            Answer
+                        </Link>
                     </li>
                 </div>
             

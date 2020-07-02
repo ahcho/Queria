@@ -51,6 +51,7 @@
     margin: 90px 5px 10px 5px;
     border: 0.5px solid  grey;
     padding: 16px 16px 6px 16px;
+    box-shadow: 2px 2px 5px 0px #858585;
 }
 
 .modal-user {
@@ -71,6 +72,7 @@
 
 #main-asking-user {
     font-size: 13px;
+    
 }
 
 .modal-q-form {
@@ -120,7 +122,9 @@
     background: #F5FFFA;
     border: 0.5px solid lightgrey;
     padding: 16px;
+    box-shadow: 2px 2px 5px 0px #858585;
 }
+
 .question-index-item > .right {
     display: flex;
     float: right;

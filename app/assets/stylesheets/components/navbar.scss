@@ -1,6 +1,5 @@
 .nav-bar {
     background: #F5FFFA;
-    //background: #8BB8E8;
     width: 100%;
     display: flex;
     align-items: center;
@@ -21,10 +20,11 @@
 
 .nav-bar > .right{
     display: flex;
-    //justify-content: space-between;
     width: 50%;
   }
-  
+  .left {
+    margin-left: 6%;
+  }
   .nav-bar > .left{
     display: flex;
     width: 40%;
@@ -37,14 +37,12 @@
 }
 
 .left > li:hover {
-  background: #2774AE;
-  color: white;
+  background-color: lightgrey;
 }
 
 
 #logo {
-    //color: #713E5A; color: #84C0C6;
-    color: 519E8A;
+    color: #519E8A;
 }
 
 
@@ -61,9 +59,8 @@
   border-radius: 4px;
 }
 
-a:visited {
-  //color: #AA2200;
-  color: #713E5A; color: #84C0C6;
+a:visited, #answers {
+  color: #84C0C6;
 }
 
 .search {
@@ -130,6 +127,11 @@ a:visited {
   margin-top: 3px;
 }
 
+.dropdown-content li {
+  padding: 5px 8px;
+}
+
+
 .dropdown-content a {
   color: #519E8A;
   font-size: 16px;
@@ -137,9 +139,10 @@ a:visited {
   text-decoration: none;
 }
 
-.dropdown-content a:hover {
+.dropdown-content li:hover {
   background: #A1CBBF;
   color: white;
+  cursor: pointer;
 }
 
 .dropdown-profile:hover .dropdown-content {

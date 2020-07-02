@@ -8,18 +8,15 @@ class CreateQuestion extends React.Component {
         this.state = {
             question: "",
             author_id: this.currentUser.id,
-            topic_id: "",/////////
-            question_id: ""//////////////
+            topic_id: "",
+            question_id: ""
         }
-        this.questionId = this.props.questionId;
-        //debugger
-     
+        this.questionId = this.props.questionId;     
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleEdit = this.handleEdit.bind(this);
     }
      
     update(field) {
-        ////debugger
         return e => this.setState({ [field]: e.currentTarget.value})
     }
 
@@ -39,8 +36,6 @@ class CreateQuestion extends React.Component {
         e.preventDefault();
         //this.setState({ author_id: 148, topic_id: 10, question_id: })
         const question = Object.assign({}, this.state, { author_id: this.props.question.author_id, topic_id: 10, question_id: this.props.question.id});
-        ////debugger
-        ////debugger
         this.props.updateQuestion(question)
             .then(() => { this.props.closeModal() })
 
@@ -85,7 +80,6 @@ class CreateQuestion extends React.Component {
             )
         }
         else {
-            ////debugger
             return (
             <div className='question-modal'>
                 <div className='question-head'>
