@@ -1,7 +1,7 @@
 import React from 'react'; 
-import AnswerIndexContainer from './../answers/answer_index_container';
-import CreateAnswerContainer  from './../answers/create_answer_container'
-
+// import AnswerIndexContainer from './../answers/answer_index_container';
+import CreateAnswerContainer  from './../answers/create_answer_container';
+import AnswerIndex from './../answers/answer_index';
 
 class QuestionShow extends React.Component {
     constructor(props) {
@@ -19,13 +19,14 @@ class QuestionShow extends React.Component {
     componentDidMount() {
         this.props.fetchQuestion(this.props.match.params.questionId);
     }
-   
 
     render() {
-        const { answers, currentUser, deleteAnswer, updateAnswer, question, users  } = this.props;
+
+        const { answers, currentUser, deleteAnswer, updateAnswer, question, users } = this.props;
         const banana = this.state.dropDown ? "" : "hidden" ;
+
         if (!currentUser || !answers || !question ) return null;
-        // 
+ 
         return (
             <div>
                 <div className='q-show-header'>
@@ -43,12 +44,11 @@ class QuestionShow extends React.Component {
                 </div>
                 <div className='display-answer-box'>
                     <div>
-                        <AnswerIndexContainer/>
+                        <AnswerIndex answers={answers} currentUser={currentUser} users={users} deleteAnswer={deleteAnswer} updateAnswer={updateAnswer} />
                     </div>
                 </div>
             </div>
         )
-
     }
 }
 

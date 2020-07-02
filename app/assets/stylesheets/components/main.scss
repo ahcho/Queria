@@ -1,10 +1,15 @@
 body {
     background: #FDF9ED;
-    font-family: 'Lora', serif;
+    font-family: sans-serif;
 }
 
 .hidden {
     display: none;
+}
+
+#answerBox {
+    padding: 10px;
+    border: 0.2px lightgrey solid;
 }
 .main-page {
     display: flex;

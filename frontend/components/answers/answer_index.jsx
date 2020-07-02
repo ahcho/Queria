@@ -2,27 +2,24 @@ import React from 'react';
 import AnswerIndexItem from './answer_index_item';
 
 class AnswerIndex extends React.Component {
+
     constructor(props) {
         super(props);
     }
 
     render() {
 
-        const {answers, currentUser, deleteAnswer, updateAnswer} = this.props;
-        
+        const {answers, currentUser, deleteAnswer, updateAnswer, users} = this.props;        
         if (!answers) return null
 
-        //debugger
         return (
             <div>
                 <div className="answer-index-box">
                 {
                     answers.map(
                         (answer) => {
-                            //if (!answer) return null;
-                            const author = this.props.users[answer.id];
                             return (
-                                <AnswerIndexItem author={author}///
+                                <AnswerIndexItem author={users[answer.author_id]}///
                                 answer={answer} deleteAnswer={deleteAnswer}
                                 key={answer.id} currentUser={currentUser}
                                 />)})

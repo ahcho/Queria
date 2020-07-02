@@ -1,6 +1,7 @@
 import React from "react";
 
 class CreateAnswer extends React.Component {
+
     constructor(props) {
         super(props)
         this.currentUserId = this.props.currentUserId
@@ -19,23 +20,20 @@ class CreateAnswer extends React.Component {
     }
 
     handleSumbit(e) {
-     
         e.preventDefault();
         this.props.createAnswer(this.state)
     }
 
     render () {
-        // 
         return (
             <form className="answer-form" onSubmit={this.handleSumbit}>
-                <textarea id="answerBox" rows="10" cols="80" value={this.state.body}
+                <textarea id="answerBox" rows="10" cols="60" value={this.state.body}
                 onChange={this.handleInput("body")} placeholder="Write your answer">
                     {this.state.body}
                 </textarea>
                 <br/>
                 <button className="answer-btn">Submit</button>
             </form>
-
         )
     }
 }

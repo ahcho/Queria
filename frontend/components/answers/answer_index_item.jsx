@@ -20,10 +20,6 @@ class AnswerIndexItem extends React.Component {
 
     }
 
-    // handleEditQuestion() {
-    //     this.props.openModal('editquestion')
-    // }
-
     // userIconDisplay(targetId) {
     //     if (this.props.currentUserId === this.props.question.author_id) {
     //         return (
@@ -39,6 +35,7 @@ class AnswerIndexItem extends React.Component {
     render() {
         const {answer, author} = this.props;
         if (!answer|| !author) return null
+        //debugger
         return (
             <div className='single-answer-box'>
                 <div className='snb-top'>
