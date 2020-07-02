@@ -1,76 +1,29 @@
-.nav-bar {
-    background: #F5FFFA;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 20px 0 20px;
-    border-bottom: 0.2px solid lightgrey;
-    position: fixed;
-    height: 50px;
-    box-sizing: border-box;
-    z-index: 800;
-    font-size: 23px; 
-    list-style-type: none; 
-    //color: #AA2200;  
-    //color: #713E5A; color: #84C0C6;
-    //color: #003B5C;
-    //color: #84C0C6;
-}
-
-.nav-bar > .right{
-    display: flex;
-    width: 50%;
-  }
-  .left {
-    margin-left: 6%;
-  }
-  .nav-bar > .left{
-    display: flex;
-    width: 40%;
-    height: 100%;
-    text-align: center;
-}
-
-.left > li {
-  padding: 10px 10px 0 10px;
-}
-
-.left > li:hover {
-  background-color: lightgrey;
-}
-
-
-#logo {
-    color: #519E8A;
-}
-
-
 .search-bar {
   height: 50;
-  width: 200px;
 }
 
 .search > input[type=text] {
   padding: 8px;
   font-size: 14px;
-  width: 300px;
+  width: 200px;
   border: solid 0.5px lightgrey;
-  border-radius: 4px;
+  border-radius: 5px;
 }
 
-a:visited, #answers {
-  color: #84C0C6;
+#home a:visited, #answers a:visited{
+  color: #FAC0B3;
+  margin-top: 10px;
+  display: block;
 }
 
 .search {
-  width: 80%;
+  // width: 80%;
   position: relative;
   display: flex;
 }
 
 .searchTerm {
-  width: 100%;
+  // width: 100%;
   border: 1px solid lightgrey;
   border-right: none;
   padding: 5px;
@@ -88,14 +41,11 @@ a:visited, #answers {
 }
 
 .round-btn {
-  //border: 1px red solid;
   margin-right: 20px;
 }
 .round-btn > button {
-  //background-color: #AA2200;
-  //background-color: #713E5A; 
-  background-color: #519E8A;
-  //background-color: #84C0C6;
+ 
+  background-color: #FAC0B3;
   font-size: 16px;
   border: none;
   color: white;
@@ -106,16 +56,18 @@ a:visited, #answers {
   margin: 4px 0px 4px 5px;
   cursor: pointer;
   border-radius: 500px;
-  //background-color: #0F4C81;
+
 }
 
 .dropdown-profile {
   //border: red 1px solid;
   padding: 5px;
   font-size: 28px;
-  color: #519E8A;
+  color: salmon;
 }
-
+.left > li {
+  display: block;
+}
 .dropdown-content {
   display: none;
   position: absolute;
@@ -125,6 +77,7 @@ a:visited, #answers {
   border-radius: 4px;
   font-size: 16px;
   margin-top: 3px;
+  z-index: 1;
 }
 
 .dropdown-content li {
@@ -133,18 +86,68 @@ a:visited, #answers {
 
 
 .dropdown-content a {
-  color: #519E8A;
+  color: salmon;
   font-size: 16px;
   display: block;
   text-decoration: none;
+  z-index: 1;
 }
 
 .dropdown-content li:hover {
-  background: #A1CBBF;
+  background: #FAC0B3;
   color: white;
   cursor: pointer;
+  
 }
 
 .dropdown-profile:hover .dropdown-content {
   display: block;
+}
+
+/* ASHE EDITING CSS */
+
+.nav-bar, .left, .right {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-bar {
+  border-bottom: 0.5px solid lightgrey;
+  position: fixed;
+  z-index: 8;
+  width: 100%;
+  //background-color: antiquewhite;
+  background-color: #FEF9F0;
+  box-shadow:0px 1px 1px lightgray;
+
+}
+
+li > .fa {
+  padding-right: 5px;
+  padding-left: 2px;
+  size: 16px;
+}
+.left {
+  margin-top: 10px;
+}
+
+#logo, #logo i {
+  font-size: 35px;
+}
+
+#home, #answers {
+  font-size: 20px;
+  padding-top: 10px;
+}
+
+.left div {
+  margin-left: 20px;
+}
+
+.left a:visited {
+  color: salmon;
+}
+
+.right {
+  align-items: center;
 }

@@ -38,10 +38,12 @@ export const fetchUserAllAnswers = (userId) => (dispatch) => (
         .then(answers => dispatch(receiveAllAnswers(answers)))
 );
 
-export const createAnswer = (answer) => (dispatch) => (
+export const createAnswer = (answer) => (dispatch) => {
+    debugger
+    return (
     answerApiUtil.createAnswer(answer)
         .then(newAnswer => dispatch(receiveAnswer(newAnswer)))
-)
+)}
 
 export const updateAnswer = (answer) => (dispatch) => (
     answerApiUtil.updateAnswer(answer)

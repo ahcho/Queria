@@ -20,14 +20,12 @@ class CreateQuestion extends React.Component {
         return e => this.setState({ [field]: e.currentTarget.value})
     }
 
-    handleSubmit(e) {
-        
+    handleSubmit(e) {    
         e.preventDefault();
         
         const question = Object.assign({}, this.state);
         this.props.createQuestion(question)
-            .then(() => {this.props.closeModal()})
-        
+            .then(() => {this.props.closeModal()})    
     }
 //     t.string "question", null: false
 // t.integer "author_id", null: false

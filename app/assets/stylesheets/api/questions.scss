@@ -4,7 +4,7 @@
 .question-modal {
     width: 500px;
     height: 380px;
-    background: #E5F6E3;
+    background: #FEF9F0;
     border-radius: 4px;
     border: lightgrey solid 0.5px;
     margin: 20px;
@@ -46,10 +46,11 @@
 .main-question-modal-trigger {
     width: 93%;
     background-color: #F5FFFA;
+    //background-color: #FEF9F0;
     display: box;
     border-radius: 4px;
     margin: 90px 5px 10px 5px;
-    border: 0.5px solid  grey;
+    //border:
     padding: 16px 16px 6px 16px;
     box-shadow: 2px 2px 5px 0px #858585;
 }
@@ -72,6 +73,7 @@
 
 #main-asking-user {
     font-size: 13px;
+    background-color: #F5FFFA;
     
 }
 

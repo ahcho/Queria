@@ -46,13 +46,14 @@ button {
 }
 
 .profile-list > li {
-    background: white;
     margin: 10px;
 }
 
-.profile-bottom > button {
+.profile-bottom > * {
     background: #713E5A;
     color: white;
+    border-radius: 100px;
+    margin-bottom: 20px;
+    padding: 10px;
     border: none;
-    border-radius: 10px;
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 import QuestionIndexItem from '../question/question_index_item';
+import { Link } from 'react-router-dom';
 
 class Profile extends React.Component {
 
@@ -24,8 +25,11 @@ class Profile extends React.Component {
     renderAnswers() {
 
     }
+    // answers: Object.values(state.entities.answers),
+    //     questions: Object.values(state.entities.questions),
 
     render() {
+        const {answers, questions} = this.props;
         
         return (
             <div className='profile-page'>
@@ -37,14 +41,14 @@ class Profile extends React.Component {
                     <p>Write a description about yourself</p>
                 </div>
                 <ul className='profile-list'>
-                    <li id='user-questions' onClick={this.renderQuestions}>Questions</li>
-                    <li id='user-answers'>Answers</li>
-                    <li>Followers</li>
-                    <li>Following</li>
+                    <li id='user-questions' onClick={this.renderQuestions}>{questions.length} Questions</li>
+                    <li id='user-answers'>{answers.length} Answers</li>
+                    <li>0 Followers</li>
+                    <li>0 Following</li>
                 </ul>
                 
                 <div className='profile-bottom'>
-                    <button className='profile-answer-btn'>Answer Questions</button>
+                        <button className='profile-answer-btn'>Answer Questions</button>
                 </div>
             </div>
         )
@@ -52,3 +56,10 @@ class Profile extends React.Component {
 }
 
 export default Profile;
+
+
+{/* <div className='profile-bottom'>
+    <Link className="plain" to='/'>
+        <button className='profile-answer-btn'>Answer Questions</button>
+    </Link>
+</div> */}

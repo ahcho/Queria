@@ -6,6 +6,9 @@ input[type=submit]:hover {
     cursor: pointer;
 }
 
+.left-bar > img {
+    border-radius: 5px;
+}
 #entry-page {
     background: image_url("Quora_2000.jpg");
     background-size: cover;

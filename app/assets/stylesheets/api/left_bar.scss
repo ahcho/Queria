@@ -13,13 +13,21 @@
     width: 100px;
     transition-duration: 0.1s;
     box-shadow: 2px 2px 5px 0px #858585;
+    background-color: white;
+    display: flex;
+    align-items: center;
 }
 
 .topic-list > li:hover {
     background-color: lightgrey;
     color: white;
+    font-weight: 700;
 }
 
+img {
+    border-radius: 25%;
+    margin-right: 5px;
+}
 .main-right {
     margin-left: 30px;
     //border: 1px solid lightgrey;

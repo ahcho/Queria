@@ -13,28 +13,27 @@ class NavBar extends React.Component {
 
     render() {
         return (
-            <ul className='nav-bar'>
+            <div className='nav-bar'>
                 <div className="left">
-                    <li id="logo">
+                    <div id="logo">
                         <Link className="plain" to='/'>
-                            <i className="fab fa-quora"></i>ueria
+                            <i className="fab fa-quora" ></i>ueria
                         </Link>    
-                    </li>
-                    <li id="home">
+                    </div>
+                    <div id="home">
                         <Link className="plain" to='/'>
                             <i className="fas fa-home"></i>Home
                         </Link>
-                    </li>
-                    <li id="answers">
+                    </div>
+                    <div id="answers">
                         <Link className="plain" to='/'>
                         <i className="fas fa-pencil-alt"></i>
                             Answer
                         </Link>
-                    </li>
+                    </div>
                 </div>
             
                 <div className="right">
-
                     <div className="search-bar">
                         <div className="search">
                             <input type="text" className="searchTerm" 
@@ -61,7 +60,7 @@ class NavBar extends React.Component {
                         <button onClick={this.props.logout}>Logout</button>
                     </div>
                 </div>
-            </ul>
+            </div>
         )
     }
 }
