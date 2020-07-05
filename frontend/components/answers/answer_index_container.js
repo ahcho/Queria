@@ -7,7 +7,6 @@ const mapStateToProps = (state) => {
     
     return ({
         answers: Object.values(state.entities.answers),
-        //questions: Object.values(state.entities.questions),
         users: state.entities.users,
         currentUser: state.session.currentUser,
     })

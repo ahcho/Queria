@@ -1,24 +1,20 @@
-# README
+# Queria
+Queria is a Quora clone. It's an application where you can ask and answer 
+any questions about Charlie and Chocolate Factory.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## <a href="https://queria-app.herokuapp.com/">Queria Live</a>
 
-Things you may want to cover:
+## Technologies
+* Ruby on Rails
+* PostgresSQL
+* React
+* Redux
+* JavaScript
+* jBuilder
 
-* Ruby version
+## Features
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Futer Features
+* Comments: users can leave comments on answers
+* Search: users can search for question by keywords
+* Photo Upload: users can upload photos on answers, and change their profile photo
