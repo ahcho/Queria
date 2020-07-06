@@ -9,7 +9,6 @@ const mapStateToProps = (state) => {
         currentUser: state.session.currentUser,
         errors: state.errors.session,
         updateQuestionId: state.questionId,
-        //questions: Object.values(state.entities.questions)
     }
 }
 

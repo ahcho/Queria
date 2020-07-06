@@ -8,9 +8,9 @@ class CreateQuestionForm extends React.Component {
     render() {
         const { action, formType, question, currentUser, closeModal } = this.props;
         if (!question) return null;
-        debugger
+   
         return (
-            <div className='question-modal'>
+            <>
                 < PostForm
                     action={action}
                     formType={formType}
@@ -18,7 +18,7 @@ class CreateQuestionForm extends React.Component {
                     currentUser={currentUser}
                     closeModal={closeModal}
                 />
-            </div>
+            </>
         )
     }
 }

@@ -4,7 +4,6 @@ class PostForm extends React.Component {
 
     constructor(props) {
         super(props);
-        //debugger;
         this.state = props.question;
         this.currentUser = props.currentUser;
         this.question = props.question;     
@@ -25,7 +24,7 @@ class PostForm extends React.Component {
     render() {
         const {formType, question} = this.props;
         if (!question) return null;
-        //debugger
+    
         
         const topicDropDown = (
             (formType === 'Create Question') ? (

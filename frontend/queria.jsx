@@ -6,8 +6,7 @@ import {logout} from './actions/session_actions';
 
 document.addEventListener("DOMContentLoaded", () => {
     let preloadedState = undefined;
-    // const store = configureStore(preloadedState);
-    // //const store = createStore();
+    
     let store;
     if (window.currentUser) {
         const preloadedState = {

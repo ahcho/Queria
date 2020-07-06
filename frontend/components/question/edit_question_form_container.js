@@ -9,9 +9,9 @@ class EditQuestionForm extends React.Component {
     render() {
         const {action, formType, question, currentUser, fetchQuestion, closeModal} = this.props;
         if (!question) return null;
-        //debugger
+
         return (
-            <div className='question-modal'>
+            <>
                 < PostForm
                     action={action}
                     formType={formType}
@@ -20,16 +20,15 @@ class EditQuestionForm extends React.Component {
                     fetchQuestion={fetchQuestion}
                     closeModal={closeModal}
                 />
-            </div>
+            </>
         )
     }
 }
 
 
 const mapStateToProps = (state, ownProps) => {
-    //debugger
+   
     return ({
-        //currentUserId: state.session.currentUser.id,
         currentUser: state.session.currentUser,
         question: state.ui.modal.questionId,
         formType: 'Update Question'

@@ -2,9 +2,9 @@ import React from 'react';
 import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
 import SignupContainer from '../signup_form/signup_container';
-//import CreateQuestionContainer from '../question/create_question_container';
 import EditQuestionForm from '../question/edit_question_form_container';
 import CreateQuestionForm from '../question/create_question_form_container';
+
 function Modal({ modal, closeModal }) {
     if (!modal) {
         return null;
@@ -14,11 +14,10 @@ function Modal({ modal, closeModal }) {
         case 'signup':
             component = <SignupContainer />;
             break;
-        case 'createquestion' :
-            //component = <CreateQuestionContainer />; 
+        case 'createquestion':
             component = <CreateQuestionForm />
             break;
-        case 'editquestion' :
+        case 'editquestion':
             component = <EditQuestionForm question={modal.questionId} />;
             break;
         default:
@@ -32,6 +31,7 @@ function Modal({ modal, closeModal }) {
         </div>
     );
 }
+
 //container
 const mapStateToProps = state => {
     return {
