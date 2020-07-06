@@ -1,25 +1,42 @@
 import { connect } from 'react-redux';
 import PostForm from './post_form';
-import { createQuestion, fetchQuestions, updateQuestion } from '../../actions/question_actions';
-import { openModal, closeModal } from '../../actions/modal_actions';
+import { createQuestion } from '../../actions/question_actions';
+import { closeModal } from '../../actions/modal_actions';
+import React from 'react';
+class CreateQuestionForm extends React.Component {
 
+    render() {
+        const { action, formType, question, currentUser, closeModal } = this.props;
+        if (!question) return null;
+        debugger
+        return (
+            <div className='question-modal'>
+                < PostForm
+                    action={action}
+                    formType={formType}
+                    question={question}
+                    currentUser={currentUser}
+                    closeModal={closeModal}
+                />
+            </div>
+        )
+    }
+}
 
 const mapStateToProps = state => ({
-    post: {
-        title: '',
-        body: ''
+    question: {
+        question: "",
+        author_id: state.session.currentUser.id,
+        topic_id: 10, // default value, needs to be updated later
+        question_id: ""
     },
-    formType: 'Create Post'
+    currentUser: state.session.currentUser,
+    formType: 'Create Question'
 });
 
 const mapDispatchToProps = dispatch => ({
-    action: post => dispatch(createPost(post)),
-    createQuestion: (question) => dispatch(createQuestion(question)),
-    updateQuestion: (question) => dispatch(updateQuestion(question)),
-    fetchQuestions: () => dispatch(fetchQuestions()),
-    openModal: (modal) => dispatch(openModal(modal)),
+    action: post => dispatch(createQuestion(post)),
     closeModal: () => dispatch(closeModal()),
-    clearErrors: () => dispatch(clearErrors())
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(PostForm);
+export default connect(mapStateToProps, mapDispatchToProps)(CreateQuestionForm);

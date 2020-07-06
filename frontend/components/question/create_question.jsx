@@ -27,9 +27,7 @@ class CreateQuestion extends React.Component {
         this.props.createQuestion(question)
             .then(() => {this.props.closeModal()})    
     }
-//     t.string "question", null: false
-// t.integer "author_id", null: false
-// t.integer "topic_id", null: false
+
     handleEdit(e) {
         e.preventDefault();
         //this.setState({ author_id: 148, topic_id: 10, question_id: })

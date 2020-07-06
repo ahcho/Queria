@@ -1,21 +1,47 @@
+import React from 'react';
 import { connect } from 'react-redux';
-import EditQuestionForm from './edit_question_form'
 import { updateQuestion, fetchQuestion } from '../../actions/question_actions';
 import { closeModal } from '../../actions/modal_actions';
+import PostForm from './post_form';
+
+class EditQuestionForm extends React.Component {
+    
+    render() {
+        const {action, formType, question, currentUser, fetchQuestion, closeModal} = this.props;
+        if (!question) return null;
+        //debugger
+        return (
+            <div className='question-modal'>
+                < PostForm
+                    action={action}
+                    formType={formType}
+                    question={question}
+                    currentUser={currentUser}
+                    fetchQuestion={fetchQuestion}
+                    closeModal={closeModal}
+                />
+            </div>
+        )
+    }
+}
 
 
-// const mapStateToProps = (state) => {
-//     //  
-//     // return {
-//     //     currentUser: state.session.currentUser,
-//     // }
-// }
+const mapStateToProps = (state, ownProps) => {
+    //debugger
+    return ({
+        //currentUserId: state.session.currentUser.id,
+        currentUser: state.session.currentUser,
+        question: state.ui.modal.questionId,
+        formType: 'Update Question'
+    })
+}
+
 const mapDispatchToProps = (dispatch) => {
     return ({
-        updateQuestion: (question) => dispatch(updateQuestion(question)),
+        action: (question) => dispatch(updateQuestion(question)),
         fetchQuestion: (questionId) => dispatch(fetchQuestion(questionId)),
         closeModal: () => dispatch(closeModal())
     })
 }
 
-export default connect(null, mapDispatchToProps)(EditQuestionForm);
+export default connect(mapStateToProps, mapDispatchToProps)(EditQuestionForm);
