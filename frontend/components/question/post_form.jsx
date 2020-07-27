@@ -1,11 +1,13 @@
 import React from 'react';
 
 class PostForm extends React.Component {
+
   constructor(props) {
     super(props);
     this.state = props.question;
     this.currentUser = props.currentUser;
     this.question = props.question;
+    this.update = this.update.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleKeyDown = this.handleKeyDown.bind(this);
   }
@@ -25,8 +27,8 @@ class PostForm extends React.Component {
     });
   }
 
-  update(field) {
-    return (e) => this.setState({ [field]: e.currentTarget.value });
+  update(e) {
+    this.setState({ "question": e.currentTarget.value });
   }
 
   render() {
@@ -52,6 +54,11 @@ class PostForm extends React.Component {
         <>
           <div className="question-head">
             <h1 className="q-modal-msg">Add Question</h1>
+            <i
+              className="fa fa-times"
+              aria-hidden="true"
+              onClick={() => this.props.closeModal()}
+            ></i>
           </div>
           <div className="question-reminder">
             <h1>Tips on getting good answers quickly</h1>
@@ -63,6 +70,11 @@ class PostForm extends React.Component {
       ) : (
         <div className="question-head">
           <h1 className="q-modal-msg">Edit Question</h1>
+          <i
+            className="fa fa-times"
+            aria-hidden="true"
+            onClick={() => this.props.closeModal()}
+          ></i>
         </div>
       );
 
@@ -79,20 +91,17 @@ class PostForm extends React.Component {
           Edit Question </button>
       );
 
-    const questionHolder = this.props.question.question;
+    //let questionHolder = this.props.question.question;
     const getInput =
       this.props.formType === "Create Question" ? (
         <input
           type="text"
           placeholder='Start your question with "What","How","Why", etc'
-          onChange={this.update("question")}
+          onChange={this.update}
         />
       ) : (
-        <input
-          type="text"
-          placeholder={`${questionHolder}`}
-          onChange={this.update("question")}
-        />
+        <textarea value={this.state.question} onChange={this.update} cols="30" rows="2"></textarea>
+        
       );
 
     return (
@@ -106,12 +115,11 @@ class PostForm extends React.Component {
             </h2>
           </div>
           {getInput}
-          <div className="q-form-btn">
-            {submitBtn}
-            <button onClick={() => this.props.closeModal()}>Cancel</button>
-            {topicDropDown}
-          </div>
         </form>
+        <div className="q-form-btn">
+          {submitBtn}
+          {topicDropDown}
+        </div>
       </div>
     );
   }
