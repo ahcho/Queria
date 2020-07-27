@@ -12,7 +12,6 @@ class NavBar extends React.Component {
     }
 
     render() {
-        //debugger
         return (
             <div className='nav-bar'>
                 <div className="left">
@@ -70,9 +69,3 @@ class NavBar extends React.Component {
 
 export default NavBar;
 
-/* <div className="dropdown-profile">
-    <a href="">
-        <i className="fas fa-user-circle">  </i>
-    </a>
-
-</div> */

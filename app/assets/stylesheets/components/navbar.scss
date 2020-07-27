@@ -22,13 +22,11 @@
 }
 
 .search {
-  // width: 80%;
   position: relative;
   display: flex;
 }
 
 .searchTerm {
-  // width: 100%;
   border: 1px solid lightgrey;
   border-right: none;
   padding: 5px;
@@ -48,8 +46,7 @@
 .round-btn {
   margin-right: 20px;
 }
-.round-btn > button {
- 
+.round-btn > button { 
   background-color: #FAC0B3;
   font-size: 16px;
   border: none;
@@ -61,7 +58,6 @@
   margin: 4px 0px 4px 5px;
   cursor: pointer;
   border-radius: 500px;
-
 }
 
 .dropdown-profile {
@@ -96,7 +92,6 @@
 .dropdown-content a {
   color: #FAC0B3;
   font-size: 16px;
-  //display: block;
   text-decoration: none;
   z-index: 1;
 }
@@ -107,8 +102,7 @@
 .dropdown-content li:hover {
   background: #FAC0B3;
   color: white;
-  cursor: pointer;
-  
+  cursor: pointer;  
 }
 
 .dropdown-profile:hover .dropdown-content {

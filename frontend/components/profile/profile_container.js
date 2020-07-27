@@ -7,11 +7,9 @@ import { fetchUserAllAnswers } from '../../actions/answer_actions';
 
 const mapStateToProps = (state, ownProps) => {
     return ({
-        //user: state.entities.users[ownProps.match.params.userId],
         user: state.session.currentUser,
         answers: Object.values(state.entities.answers),
-        questions: Object.values(state.entities.questions),
-        //user: state.currentUser.user
+        questions: Object.values(state.entities.questions)
     })
 
 }
