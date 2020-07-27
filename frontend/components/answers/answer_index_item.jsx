@@ -8,7 +8,6 @@ class AnswerIndexItem extends React.Component {
     }
 
 
-
     render() {
         const {answer, author} = this.props;
         if (!answer|| !author) return null
@@ -17,11 +16,12 @@ class AnswerIndexItem extends React.Component {
         const deleteButton = (
             (this.props.currentUser.id === this.props.author.id) ? (
                 <div className='right'>
+                    <i className="far fa-edit" onClick={this.handleEditQuestion}></i>
                     <i className="fas fa-times" onClick={() => this.props.deleteAnswer(answer.id)}></i>
                 </div>
             ) : (null)
         )
- 
+
         return (
             <div className='single-answer-box'>
                 {deleteButton}

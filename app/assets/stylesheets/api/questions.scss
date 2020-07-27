@@ -99,6 +99,10 @@
 }
 
 .q-form-btn {
+    display: flex;
+    flex-direction: row-reverse;
+    
+
     margin-top: 50px;
     float: right;
     border: none;

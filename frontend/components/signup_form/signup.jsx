@@ -12,6 +12,7 @@ class SignUpForm extends React.Component {
             lname: ""
         } 
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleKeyDown = this.handleKeyDown.bind(this);
     }
 
     update(field) {
@@ -34,12 +35,20 @@ class SignUpForm extends React.Component {
         this.props.closeModal();
     } 
 
+    handleKeyDown(e) {
+        
+        if (e.key === "Enter") {
+            e.preventDefault();
+            this.handleSubmit(e);
+        }
+    }
+
     handleSubmit(e) {
+        debugger
         e.preventDefault();
         const user = Object.assign({}, this.state);
         this.props.createNewUser(user)
             .then(() => {this.props.closeModal()})
-            //err => (this.renderErrors()))
     }
 
     render() {
@@ -72,8 +81,11 @@ class SignUpForm extends React.Component {
                             <input type="password" placeholder="Password(6 or more characters)" onChange={this.update("signup_pw")} value={this.state.signup_pw} />
                         </div>
                         <div className="signup-btn">
+                            <button 
+                                type="submit" 
+                                onClick={this.handleSubmit}
+                                onKeyDown={this.handleKeyDown}>Sign Up</button>        
                             <button type="submit" onClick={() => this.props.closeModal()}>Cancel</button>                             
-                            <button type="submit" onClick={this.handleSubmit}>Sign Up</button>        
                         </div>
                     </div >
                     <div id="signup-error">
