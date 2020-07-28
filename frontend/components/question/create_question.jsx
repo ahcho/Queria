@@ -31,7 +31,6 @@ class CreateQuestion extends React.Component {
     }
 
     handleEdit(e) {
-        debugger
         e.preventDefault();
         const question = Object.assign({}, this.state, { author_id: this.props.question.author_id, topic_id: 10, question_id: this.props.question.id});
         this.props.updateQuestion(question)

@@ -2,24 +2,58 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .single-answer-box {
-    border-top: 1px solid salmon;
-    border-bottom: 1px solid salmon;
-    padding: 20px 0 20px 15px;
+    //border-top: 1px solid salmon;
+    //border-bottom: 1px solid salmon;
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+    padding: 20px 15px 20px 15px;
     width: 97%;
-    margin: 15px 0 15px 0;
+    margin: 30px 0 30px 0;
+    border: black 2px solid;
     
 }
 
 .snb-top {
-    font-size: 12px;
+    // border: black 2px solid;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+
+}
+
+// .snb-top > * {
+//     border: red 1px solid;
+// }
+ 
+.snb-top-right > * {
+    margin-left: 5px;
+
+}
+.snb-top-left {
+    // border: black 2px solid;
     display: flex;
     flex-direction: row;
 }
-
-.snb-top > i {
-    font-size: 25px;
-    padding: 0 10px 8px 0;
+.single-answer-box > .right > * {
+    // border: black 2px solid;
+    margin-left: 8px;
 }
+
+.answer-edit-form {
+    margin: 20px 0 20px 0;
+}
+
+// .snb-top {
+//     font-size: 12px;
+//     display: flex;
+//     flex-direction: row;
+// }
+
+// .snb-top > i {
+//     font-size: 25px;
+//     padding: 0 10px 8px 0;
+// }
 
 .answer-btn { 
     margin-top: 20px;
@@ -47,4 +81,13 @@
 .a-date {
     padding-top: 9px;
     font-size: 11px;
+}
+
+.edit-hidden {
+    display: none;
+}
+
+
+.not-hidden-answer {
+    display: none;
 }
