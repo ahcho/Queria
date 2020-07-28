@@ -24,11 +24,12 @@ Rails.application.routes.draw do
       resources :answers, only: [:show]
       resources :questions, only: [:index]#
     end
-    resource :session, only: [:create, :destroy, :show]
+    resource :session, only: [:create, :destroy]
     resources :questions, only: [:index, :create, :show, :update, :destroy] do
       resources :answers, only: [:index]
     end
     resources :answers, only: [:create, :update, :destroy]
+    resources :comments, only: [:index, :destroy, :update, :create]
   end
 
 end

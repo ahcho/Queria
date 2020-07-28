@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux'
-import { updateAnswer} from '../../actions/answer_actions';
+import { updateAnswer } from '../../actions/answer_actions';
 
 
 class EditAnswerForm extends React.Component {
@@ -43,19 +43,16 @@ class EditAnswerForm extends React.Component {
 }
 
 
-const mapStateToProps = (state, ownProps) => {
-
-    // currentUser: state.session.currentUser,
-    // question: state.ui.modal.questionId,
-    return ({
-        formType: 'Update Answer'
-    })
+const mapStateToProps = (state, ownProps) => {  
+  return ({
+    formType: 'Update Answer'
+  })
 }
 
 const mapDispatchToProps = (dispatch) => {
-    return ({
-        action: (question) => dispatch(updateAnswer(question)),
-    })
+  return ({
+    action: (question) => dispatch(updateAnswer(question)),
+  })
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(EditAnswerForm);

@@ -20,7 +20,6 @@ class QuestionShow extends React.Component {
     }
 
     render() {
-
         const { answers, currentUser, deleteAnswer, updateAnswer, question, users } = this.props;
         const dropdown = this.state.dropDown ? "" : "hidden" ;
 

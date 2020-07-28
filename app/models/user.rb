@@ -16,6 +16,8 @@ class User < ApplicationRecord
     class_name: :Answer,
     foreign_key: :author_id,
     dependent: :destroy
+
+  has_many :comments
   
 
   def self.find_by_credentials(email, password)

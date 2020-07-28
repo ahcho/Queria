@@ -23,7 +23,6 @@ class CreateAnswer extends React.Component {
         e.preventDefault();
         this.props.createAnswer(this.state)
         this.props.handleDropDown(e);
-        //debugger
         this.setState({ "body": "" });
     }
 

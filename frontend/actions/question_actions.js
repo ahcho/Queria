@@ -10,6 +10,7 @@ const receiveAllQuestions = (questions) => {
         questions
     })
 };
+
 // const receiveAllQuestions = (payload) => {
 //     return ({
 //         type: RECEIVE_ALL_QUESTIONS,
