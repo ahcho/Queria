@@ -1,6 +1,11 @@
 // Place all the styles related to the api/answers controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.answer-index-box {
+    width: 60%;
+    margin-left: 20%;
+    //border: 1px solid black;
+}
 .single-answer-box {
     border: 1px solid salmon;
     //border-top: 1px solid salmon;
@@ -9,9 +14,10 @@
     flex-direction: column;
     min-height: 200px;
     height: auto;
-    padding: 20px 15px 20px 15px;
-    width: 97%;
-    margin: 30px 0 30px 0;
+    padding: 20px 0;
+    // padding: 20px 0 20px 15px;
+    width: 100%;
+    margin: 30px 0;
     // border: black 2px solid;
     
 }
