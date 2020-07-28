@@ -2,15 +2,15 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .single-answer-box {
-    //border-top: 1px solid salmon;
-    //border-bottom: 1px solid salmon;
+    border-top: 1px solid salmon;
+    border-bottom: 1px solid salmon;
     display: flex;
     flex-direction: column;
     height: 300px;
     padding: 20px 15px 20px 15px;
     width: 97%;
     margin: 30px 0 30px 0;
-    border: black 2px solid;
+    // border: black 2px solid;
     
 }
 
@@ -19,6 +19,7 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: 20px;
+    padding-top: 5px;
 
 }
 
@@ -28,32 +29,45 @@
  
 .snb-top-right > * {
     margin-left: 5px;
-
+    // border: black 2px solid;
 }
 .snb-top-left {
     // border: black 2px solid;
     display: flex;
     flex-direction: row;
 }
+ 
+// .snb-top-left > * {
+//     border: black 1px solid;
+// }
 .single-answer-box > .right > * {
     // border: black 2px solid;
     margin-left: 8px;
 }
 
 .answer-edit-form {
+    display: flex;
+    flex-direction: column;
     margin: 20px 0 20px 0;
+    // border: 1px solid black;
+
 }
 
-// .snb-top {
-//     font-size: 12px;
-//     display: flex;
-//     flex-direction: row;
-// }
-
-// .snb-top > i {
-//     font-size: 25px;
-//     padding: 0 10px 8px 0;
-// }
+.edit-answer-btn {
+    // border: 1px solid black;
+    margin-top: 20px;
+    margin-left: 35%;
+    width: 30%;
+    height: 30px;
+    border-radius: 8px;
+    border: none;
+    
+}
+.snb-top-left > i, .snb-top-right > i {
+    font-size: 25px;
+    padding: 0 10px 8px 0;
+    // border: red 1px solid;
+}
 
 .answer-btn { 
     margin-top: 20px;

@@ -23,15 +23,8 @@ class AnswerIndexItem extends React.Component {
 
     const deleteButton =
       this.props.currentUser.id === this.props.author.id ? (
-        <div className="right">
+        <div className="snb-top-right">
           <i className="far fa-edit" onClick={this.handleDropDown}></i>
-          {/* <div className={dropdown} id="answer-edit-box">
-            <EditAnswerForm
-              handleDropDown={this.handleDropDown}
-              answer = {answer}
-              author = {author}
-            />
-          </div> */}
           <i
             className="fas fa-times"
             onClick={() => this.props.deleteAnswer(answer.id)}
@@ -52,7 +45,7 @@ class AnswerIndexItem extends React.Component {
               {answer.updated_at.slice(11, 16)}
             </p>
           </div>
-          <div className="snb-top-right">{deleteButton}</div>
+          {deleteButton}
         </div>
         <div className={dropdown} id="answer-edit-box">
           <EditAnswerForm
