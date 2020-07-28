@@ -18,9 +18,13 @@ class AnswerIndex extends React.Component {
                     answers.map(
                         (answer) => {
                             return (
-                                <AnswerIndexItem author={users[answer.author_id]}///
-                                answer={answer} deleteAnswer={deleteAnswer}
-                                key={answer.id} currentUser={currentUser}
+                                <AnswerIndexItem 
+                                    author={users[answer.author_id]}
+                                    answer={answer} 
+                                    deleteAnswer={deleteAnswer}
+                                    updateAnswer={updateAnswer}
+                                    key={answer.id} 
+                                    currentUser={currentUser}
                                 />)})
                 }
                 </div>

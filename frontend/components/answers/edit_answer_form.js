@@ -8,35 +8,35 @@ class EditAnswerForm extends React.Component {
 
     constructor(props) {
         
-        super(props)
+        super(props);
+        this.state = props.answer;
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.update = this.update.bind(this);
     }
 
     handleSubmit(e) {
-        e.preventDefault();
-        
+      e.preventDefault(); 
+      const answer = Object.assign({}, this.state);
+      this.props.updateAnswer(answer); ///
     } 
+
+    update(e) {
+      this.setState({"body": e.currentTarget.value})
+    }
+
     render() {
-        
-        //const { action, formType, question, currentUser, fetchQuestion, closeModal } = this.props;
-        //if (!question) return null;
-        //  create_table "answers", force: :cascade do |t|
-        // t.string "body", null: false
-        // t.integer "author_id", null: false
-        // t.integer "question_id", null: false
-        //debugger;
+
         return (
           <form className="answer-edit-form" onSubmit={this.handleSubmit}>
             <textarea
               id="answerBox"
               rows="3"
               cols="50"
-              value={this.props.answer.body}
-              onChange={this.handleSubmit}
+              value={this.state.body}
+              onChange={this.update}
             >
-              {/* {this.state.body} */}
             </textarea>
-            <button className="edit-answer-btn">Edit</button>
+            <button className="edit-answer-btn" onClick={this.props.handleDropDown}>Edit</button>
           </form>
         );
     }

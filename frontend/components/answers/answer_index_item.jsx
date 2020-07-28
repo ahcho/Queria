@@ -16,7 +16,7 @@ class AnswerIndexItem extends React.Component {
   }
 
   render() {
-    const { answer, author } = this.props;
+    const { answer, author, updateAnswer } = this.props;
     const dropdown = this.state.dropDown ? "" : "edit-hidden" ;
     const showAnswer = this.state.dropDown? "not-hidden-answer" : "";
     if (!answer || !author) return null;
@@ -52,6 +52,7 @@ class AnswerIndexItem extends React.Component {
             handleDropDown={this.handleDropDown}
             answer={answer}
             author={author}
+            updateAnswer={updateAnswer}
           />
         </div>
         <div className={showAnswer}>
