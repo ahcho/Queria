@@ -20,11 +20,9 @@ class QuestionShow extends React.Component {
     }
 
     render() {
-        const { answers, currentUser, deleteAnswer, updateAnswer, question, users } = this.props;
+        const { answers, currentUser, question, users } = this.props;
         const dropdown = this.state.dropDown ? "" : "hidden" ;
-
         if (!currentUser || !answers || !question ) return null;
-
         return (
             <div>
                 <div className='q-show-header'>
@@ -37,7 +35,9 @@ class QuestionShow extends React.Component {
                     <p>people are searching for an answer to this question.</p>
                     <button onClick={this.handleDropDown}>Answer</button>
                     <div className={dropdown} id="answer-box">
-                        <CreateAnswerContainer currentUserId={currentUser.id} questionId={question.id}
+                        <CreateAnswerContainer 
+                            currentUserId={currentUser.id} 
+                            questionId={question.id}
                             handleDropDown={this.handleDropDown}/>
                     </div>
                 </div>

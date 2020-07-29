@@ -1,6 +1,7 @@
 import React from 'react';
 import EditAnswerForm from './edit_answer_form'
 import { Link } from 'react-router-dom';
+import CommentIndexItem from '../comments/comment_index_item_container';
 
 class AnswerIndexItem extends React.Component {
   constructor(props) {
@@ -35,6 +36,7 @@ class AnswerIndexItem extends React.Component {
   }
 //////////////////////
   render() {
+
     const { answer, author, updateAnswer } = this.props;
     const dropdown = this.state.dropDown ? "" : "edit-hidden" ;
     const showAnswer = this.state.dropDown? "not-hidden-answer" : "";
@@ -74,13 +76,15 @@ class AnswerIndexItem extends React.Component {
             updateAnswer={updateAnswer}
           />
         </div>
+
         <div className={showAnswer}>
           <p>{answer.body}</p>
         </div>
+
         <div className="comment-form">
           <input
             type="text"
-            className="comment-box"
+            id="comment-box"
             onChange={this.update("body")}
             placeholder="Add a comment..."
             value={this.state.body}>
