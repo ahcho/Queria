@@ -5,16 +5,37 @@ import { Link } from 'react-router-dom';
 class AnswerIndexItem extends React.Component {
   constructor(props) {
     super(props);
+    
     this.state = {
       dropDown: false,
+      body: ""
     };
     this.handleDropDown = this.handleDropDown.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleDropDown(e) {
+    // debugger
     this.setState({ dropDown: !this.state.dropDown });
   }
+//////////////////////
+  update(field) {
+    return (e) => {
+      this.setState({ [field]: e.target.value });
+    };
+  };
 
+  handleSubmit(e) {
+    e.preventDefault();
+    debugger;
+    this.props.createComment({body: this.state.body, answer_id: this.props.answer.id, user_id: this.props.currentUser.id});
+    this.setState({ body: "" });
+  }
+
+  handleChange(value) {
+    this.setState({ body: value })
+  }
+//////////////////////
   render() {
     const { answer, author, updateAnswer } = this.props;
     const dropdown = this.state.dropDown ? "" : "edit-hidden" ;
@@ -57,6 +78,17 @@ class AnswerIndexItem extends React.Component {
         </div>
         <div className={showAnswer}>
           <p>{answer.body}</p>
+        </div>
+        <div className="comment-form">
+          <input
+            type="text"
+            className="comment-box"
+            onChange={this.update("body")}
+            placeholder="Add a comment..."
+            value={this.state.body}>
+          </input>
+
+          <button className="comment-button" onClick={this.handleSubmit}>Comment</button>
         </div>
       </div>
     );

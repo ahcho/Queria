@@ -1,6 +1,6 @@
 import React from 'react'; 
 import CreateAnswerContainer  from './../answers/create_answer_container';
-import AnswerIndex from './../answers/answer_index';
+import AnswerIndexContainer from './../answers/answer_index_container';
 
 class QuestionShow extends React.Component {
     constructor(props) {
@@ -43,7 +43,7 @@ class QuestionShow extends React.Component {
                 </div>
                 <div className='display-answer-box'>
                     <div>
-                        <AnswerIndex answers={answers} currentUser={currentUser} users={users} deleteAnswer={deleteAnswer} updateAnswer={updateAnswer} />
+                        <AnswerIndexContainer />
                     </div>
                 </div>
             </div>

@@ -1,22 +1,26 @@
 import { connect } from 'react-redux';
 import AnswerIndex from './answer_index';
 import { deleteAnswer, 
-         updateAnswer } from '../../actions/answer_actions'
+         updateAnswer } from '../../actions/answer_actions';
+import { createComment } from '../../actions/comment_actions';
 
 const mapStateToProps = (state) => {
-    
+    debugger;
     return ({
         answers: Object.values(state.entities.answers),
         users: state.entities.users,
         currentUser: state.session.currentUser,
+        trash: {}
     })
     
 }
 
 const mapDispatchToProps = (dispatch) => {
+    // debugger;
     return ({ 
         deleteAnswer: (answerId) => (dispatch(deleteAnswer(answerId))),
-        updateAnswer: (answer) => (dispatch(updateAnswer(answer)))
+        updateAnswer: (answer) => (dispatch(updateAnswer(answer))),
+        createComment: (comment) => (dispatch(createComment(comment)))
     })
     
 }

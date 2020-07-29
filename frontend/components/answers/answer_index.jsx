@@ -8,8 +8,8 @@ class AnswerIndex extends React.Component {
     }
 
     render() {
-
-        const {answers, currentUser, deleteAnswer, updateAnswer, users} = this.props;        
+        // debugger
+        const {answers, currentUser, deleteAnswer, updateAnswer, users, createComment} = this.props;        
         if (!answers) return null
         return (
             <div>
@@ -25,6 +25,7 @@ class AnswerIndex extends React.Component {
                                     updateAnswer={updateAnswer}
                                     key={answer.id} 
                                     currentUser={currentUser}
+                                    createComment={createComment}
                                 />)})
                 }
                 </div>
