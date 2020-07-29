@@ -6,7 +6,6 @@ class CommentIndex extends React.Component {
     render() {
         
         const { answer_id, comments, deleteComment, currentUser_id } = this.props;
-        //debugger
         // get the comments by answer
         const filterComments = comments.filter(
             (comment) => comment.answer_id === answer_id

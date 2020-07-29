@@ -14,5 +14,7 @@ class Question < ApplicationRecord
         class_name: :Answer,
         dependent: :destroy
 
+    # has_one_attached :photo
+
     #dependent: :destroy
 end

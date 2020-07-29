@@ -18,6 +18,8 @@ class User < ApplicationRecord
     dependent: :destroy
 
   has_many :comments
+
+  has_one_attached :photo
   
 
   def self.find_by_credentials(email, password)

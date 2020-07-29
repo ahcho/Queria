@@ -6,7 +6,6 @@ class CommentIndexItem extends React.Component {
     }
 
     render() {
-        //debugger
         const {comment, currentUser_id} = this.props;
 
         const deleteButton =
