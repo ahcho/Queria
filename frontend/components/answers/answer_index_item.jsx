@@ -15,7 +15,6 @@ class AnswerIndexItem extends React.Component {
   }
 
   handleDropDown(e) {
-    // debugger
     this.setState({ dropDown: !this.state.dropDown });
   }
 //////////////////////
@@ -27,7 +26,6 @@ class AnswerIndexItem extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    debugger;
     this.props.createComment({body: this.state.body, answer_id: this.props.answer.id, user_id: this.props.currentUser.id});
     this.setState({ body: "" });
   }

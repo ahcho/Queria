@@ -5,7 +5,6 @@ import { deleteAnswer,
 import { createComment } from '../../actions/comment_actions';
 
 const mapStateToProps = (state) => {
-    debugger;
     return ({
         answers: Object.values(state.entities.answers),
         users: state.entities.users,
@@ -16,7 +15,6 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = (dispatch) => {
-    // debugger;
     return ({ 
         deleteAnswer: (answerId) => (dispatch(deleteAnswer(answerId))),
         updateAnswer: (answer) => (dispatch(updateAnswer(answer))),

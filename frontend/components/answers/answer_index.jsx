@@ -8,7 +8,6 @@ class AnswerIndex extends React.Component {
     }
 
     render() {
-        // debugger
         const {answers, currentUser, deleteAnswer, updateAnswer, users, createComment} = this.props;        
         if (!answers) return null
         return (
