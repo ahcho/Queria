@@ -5,20 +5,26 @@ class CommentIndex extends React.Component {
 
     render() {
         
+        const { answer_id, comments, deleteComment, currentUser_id } = this.props;
+        //debugger
         // get the comments by answer
-        const filterComments = this.props.comments.filter(
-            (comment) => comment.answer_id === this.props.answer_id
+        const filterComments = comments.filter(
+            (comment) => comment.answer_id === answer_id
         )
 
-        const commentIndexItems = filterComments.map((comment) => {
+        const renderComments = filterComments.map((comment) => {
             return (
-                <CommentIndexItem comment={comment} key={comment.id}/>
+                <CommentIndexItem 
+                    comment={comment} 
+                    key={comment.id}
+                    deleteComment={deleteComment}
+                    currentUser_id={currentUser_id}/>
             )
         })
      
         return(
             <div className="comments-box">
-                {commentIndexItems}
+                {renderComments}
             </div>
         )
     }
