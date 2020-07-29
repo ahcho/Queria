@@ -6,9 +6,11 @@ class CommentIndexItem extends React.Component {
     }
 
     render() {
-        <li className="comment-index-item">
-
-        </li>
+        return (
+            <li className="comment-index-item">
+                {this.props.comment.body}
+            </li>)
+        
 
     }
     

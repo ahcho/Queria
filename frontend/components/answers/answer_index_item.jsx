@@ -1,7 +1,7 @@
 import React from 'react';
 import EditAnswerForm from './edit_answer_form'
 import { Link } from 'react-router-dom';
-import CommentIndexItem from '../comments/comment_index_item_container';
+import CommentIndexContainer from '../comments/comment_index_container';
 
 class AnswerIndexItem extends React.Component {
   constructor(props) {
@@ -92,6 +92,10 @@ class AnswerIndexItem extends React.Component {
 
           <button className="comment-button" onClick={this.handleSubmit}>Comment</button>
         </div>
+        <CommentIndexContainer
+          answer={answer}
+          author={author}
+        />
       </div>
     );
   }
