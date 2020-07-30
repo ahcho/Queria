@@ -18,7 +18,7 @@ class AnswerIndexItem extends React.Component {
   handleDropDown(e) {
     this.setState({ dropDown: !this.state.dropDown });
   }
-//////////////////////
+
   update(field) {
     return (e) => {
       this.setState({ [field]: e.target.value });
@@ -34,7 +34,7 @@ class AnswerIndexItem extends React.Component {
   handleChange(value) {
     this.setState({ body: value })
   }
-//////////////////////
+
   render() {
 
     const { answer, author, updateAnswer } = this.props;
@@ -55,16 +55,19 @@ class AnswerIndexItem extends React.Component {
 
     return (
       <div className="single-answer-box">
+        <div className="single-answer-container">
         <div className="snb-top">
           <div className="snb-top-left">
             <i className="fa fa-user-circle" aria-hidden="true"></i>
-            <p className="a-author-name">
-              {author.first_name} {author.last_name}
-            </p>
-            <p className="a-date">
-              {answer.updated_at.slice(0, 10)} at{" "}
-              {answer.updated_at.slice(11, 16)}
-            </p>
+            <div className="answer-name-time">
+              <p className="a-author-name">
+                {author.first_name} {author.last_name}
+              </p>
+              <p className="a-date">
+                {answer.updated_at.slice(0, 10)} at{" "}
+                {answer.updated_at.slice(11, 16)}
+              </p>
+            </div>
           </div>
           {deleteButton}
         </div>
@@ -78,24 +81,26 @@ class AnswerIndexItem extends React.Component {
         </div>
 
         <div className={showAnswer}>
-          <p>{answer.body}</p>
+          <p className="single-answer-body">{answer.body}</p>
         </div>
+        <div className="comment-section">
+          <div className="comment-form">
+            <input
+              type="text"
+              id="comment-box"
+              onChange={this.update("body")}
+              placeholder="Add a comment..."
+              value={this.state.body}>
+            </input>
 
-        <div className="comment-form">
-          <input
-            type="text"
-            id="comment-box"
-            onChange={this.update("body")}
-            placeholder="Add a comment..."
-            value={this.state.body}>
-          </input>
-
-          <button className="comment-button" onClick={this.handleSubmit}>Comment</button>
+            <button className="comment-button" onClick={this.handleSubmit}>Comment</button>
+          </div>
+          <CommentIndexContainer
+            answer={answer}
+            author={author}
+          />
+          </div>
         </div>
-        <CommentIndexContainer
-          answer={answer}
-          author={author}
-        />
       </div>
     );
   }

@@ -10,23 +10,29 @@ class CommentIndexItem extends React.Component {
 
         const deleteButton =
             comment.user.id === currentUser_id ? (
-                <div className="snb-top-right">
                     <i
                         className="fas fa-times"
                         onClick={() => this.props.deleteComment(comment.id)}
                     ></i>
-                </div>
             ) : null;
 
         return (
             
             <div className="comment-index-item">
-                {deleteButton}
-                <li>
+                <div className="comment-info">
+                    <div className="comment-profile-photo">
+                        <i className="fa fa-user-circle" aria-hidden="true"></i>
+                    </div>
+                    <div className="comment-name-time">
+                        <li>{comment.user.first_name} {comment.user.last_name}</li>
+                        <li>date and time</li>
+                    </div>
+                    <div className="comment-delete-btn">
+                        {deleteButton}
+                    </div>
+                </div>
+                <li className="comment-body">
                     {comment.body}
-                </li>
-                <li>
-                    {comment.user.first_name} {comment.user.last_name}
                 </li>
             </div>
             )

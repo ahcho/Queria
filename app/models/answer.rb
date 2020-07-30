@@ -16,3 +16,4 @@ class Answer < ApplicationRecord
 
 
 end
+
