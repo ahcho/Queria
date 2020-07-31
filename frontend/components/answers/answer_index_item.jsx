@@ -9,26 +9,12 @@ class AnswerIndexItem extends React.Component {
     
     this.state = {
       dropDown: false,
-      body: ""
     };
     this.handleDropDown = this.handleDropDown.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleDropDown(e) {
     this.setState({ dropDown: !this.state.dropDown });
-  }
-
-  update(field) {
-    return (e) => {
-      this.setState({ [field]: e.target.value });
-    };
-  };
-
-  handleSubmit(e) {
-    e.preventDefault();
-    this.props.createComment({body: this.state.body, answer_id: this.props.answer.id, user_id: this.props.currentUser.id});
-    this.setState({ body: "" });
   }
 
   handleChange(value) {
@@ -83,26 +69,13 @@ class AnswerIndexItem extends React.Component {
         <div className={showAnswer}>
           <p className="single-answer-body">{answer.body}</p>
         </div>
-        <div className="comment-section">
-          <div className="comment-form">
-            <input
-              type="text"
-              id="comment-box"
-              onChange={this.update("body")}
-              placeholder="Add a comment..."
-              value={this.state.body}>
-            </input>
-
-            <button className="comment-button" onClick={this.handleSubmit}>Comment</button>
-          </div>
           <CommentIndexContainer
             answer={answer}
             author={author}
           />
-          </div>
         </div>
       </div>
-    );
+   );
   }
 }
 

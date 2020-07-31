@@ -18,7 +18,7 @@ const mapDispatchToProps = (dispatch) => {
     return ({ 
         deleteAnswer: (answerId) => (dispatch(deleteAnswer(answerId))),
         updateAnswer: (answer) => (dispatch(updateAnswer(answer))),
-        createComment: (comment) => (dispatch(createComment(comment)))
+        // createComment: (comment) => (dispatch(createComment(comment)))
     })
     
 }

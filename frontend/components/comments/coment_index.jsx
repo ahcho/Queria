@@ -3,24 +3,67 @@ import CommentIndexItem from './comment_index_item';
 
 class CommentIndex extends React.Component {
 
+    constructor(props) {
+        super(props)
+        this.state = {
+            commentsShow: false,
+            body: ""
+        };
+        this.handleCommentsShow = this.handleCommentsShow.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+
+    }
+
+    handleSubmit(e) {
+        e.preventDefault();
+        // debugger;
+        this.props.createComment({ body: this.state.body, answer_id: this.props.answer.id, user_id: this.props.currentUser_id });
+        this.setState({ body: "" });
+    } 
+
+    update(field) {
+        return (e) => {
+            this.setState({ [field]: e.target.value });
+        };
+    };
+
+    handleCommentsShow(e) {    
+        this.setState({ commentsShow: !this.state.commentsShow }, () => console.log(this.state));
+    }
+
     render() {
         
         
         const { answer_id, comments, deleteComment, currentUser_id } = this.props;
 
-        const hasComments = comments.length > 0 ? "comments-hide" : "";
+        // const hasComments = comments.length > 0 ? "comments-hide" : "";
+        
         // get the comments by answer
         const filterComments = comments.filter(
             (comment) => comment.answer_id === answer_id
         )
+        // this.state.commentsShow = filterComments.length > 0 ? false : true;
+    
+        const hasComments = this.state.commentsShow ? "" : "comments-hide";
 
+        
         const showCommentsBtn =
             filterComments.length > 0 ? (
                 <div>
-                    <button>{filterComments.length} comments </button>
-                    {/* {filterComments.length} comments */}
+                    <button className='show-comments-btn' onClick={this.handleCommentsShow}>{filterComments.length} comments </button>
                 </div>
-            ) : null;
+            ) : (
+                <div className="comment-form">
+                    <input
+                        type="text"
+                        id="comment-box"
+                        onChange={this.update("body")}
+                        placeholder="Add a comment..."
+                        value={this.state.body}>
+                    </input>
+
+                    <button className="comment-button" onClick={this.handleSubmit}>Comment</button>
+                </div>);
 
         
         const renderComments = filterComments.map((comment) => {
@@ -38,7 +81,21 @@ class CommentIndex extends React.Component {
         return(
             <div>
                 {showCommentsBtn} 
-                {renderComments}
+                <div className={hasComments}>
+                    <div className="comment-section">
+                        <div className="comment-form">
+                            <input
+                                type="text"
+                                id="comment-box"
+                                onChange={this.update("body")}
+                                placeholder="Add a comment..."
+                                value={this.state.body}>
+                            </input>
+                            <button className="comment-button" onClick={this.handleSubmit}>Comment</button>
+                        </div>
+                    </div>
+                    {renderComments}
+                </div>
             </div>
         )
     }
