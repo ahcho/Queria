@@ -5,5 +5,11 @@ class Api::TopicsController < ApplicationController
         render :index
     end
 
+    def show
+        @topic = Topic.find(params[:id])
+        @questions = @topic.questions
+    end
+
+
 
 end

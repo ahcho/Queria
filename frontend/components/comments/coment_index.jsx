@@ -16,7 +16,6 @@ class CommentIndex extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        // debugger;
         this.props.createComment({ body: this.state.body, answer_id: this.props.answer.id, user_id: this.props.currentUser_id });
         this.setState({ body: "" });
     } 
@@ -28,21 +27,19 @@ class CommentIndex extends React.Component {
     };
 
     handleCommentsShow(e) {    
-        this.setState({ commentsShow: !this.state.commentsShow }, () => console.log(this.state));
+        this.setState({ commentsShow: !this.state.commentsShow });
     }
 
     render() {
         
         
         const { answer_id, comments, deleteComment, currentUser_id } = this.props;
-
-        // const hasComments = comments.length > 0 ? "comments-hide" : "";
         
         // get the comments by answer
         const filterComments = comments.filter(
             (comment) => comment.answer_id === answer_id
         )
-        // this.state.commentsShow = filterComments.length > 0 ? false : true;
+        this.state.commentsShow = filterComments.length === 0 ? false : this.state.commentsShow;
     
         const hasComments = this.state.commentsShow ? "" : "comments-hide";
 

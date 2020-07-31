@@ -2,18 +2,15 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .comment-section {
-    border: 0.8px solid lightgrey;
+    // border: 0.8px solid lightgrey;
     margin-top: 10px;
     // padding: 10px;
 }
 .comment-form {
     display: flex;
     justify-content: space-between;
-    // border: 1px black solid;
-    // border-bottom: 0.8px solid lightgrey;
     padding: 10px;
     padding-top: 15px;
-    
 }
 
 #comment-box {
@@ -46,7 +43,6 @@
 
 .comment-name-time {
     padding: 7px 0 5px 0;
-    // border: 1px solid black;
     font-size: 12px;
     display: flex;
     flex-direction: column;
@@ -54,7 +50,6 @@
 }
 
 .comment-delete-btn {
-    // border: 1px solid black;
     margin-left: 75%;
 }
 
