@@ -7,7 +7,7 @@ class Api::QuestionsController < ApplicationController
         render :index
     end
 
-    
+
 
     def create
         @question = Question.new(question_params)

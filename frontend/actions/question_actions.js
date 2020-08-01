@@ -19,11 +19,19 @@ const receiveAllQuestions = (questions) => {
 // };
 
 const receiveQuestion = (payload) => {
-    return({
+
+    return ({
         type: RECEIVE_QUESTION,
         payload: payload
     })
 }
+// const receiveQuestion = (question) => {
+    
+//     return ({
+//         type: RECEIVE_QUESTION,
+//         question: question
+//     })
+// }
 
 const removeQuestion = (questionId) => {
     return ({

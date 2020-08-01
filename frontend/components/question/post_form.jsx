@@ -21,32 +21,33 @@ class PostForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    
     const question = Object.assign({}, this.state);
+    
     this.props.action(question).then(() => {
       this.props.closeModal();
     });
   }
 
-  update(e) {
-    this.setState({ "question": e.currentTarget.value });
+  update(key) {
+
+    return (e) => {
+      this.setState({ [key]: e.currentTarget.value })
+    };
   }
 
   render() {
+    const topics = ["history", "product", "recipe", "health", "tour"]
     const { formType, question } = this.props;
     if (!question) return null;
 
     const topicDropDown =
       formType === "Create Question" ? (
-        <>
-          <select name="topic-select" id="slct">
-            <option>Category</option>
-            <option value="1">history</option>
-            <option value="2">product</option>
-            <option value="3">recipe</option>
-            <option value="4">health</option>
-            <option value="5">tour</option>
-          </select>
-        </>
+       topics.map((topic, idx) => {
+         return (
+           <option key={idx} value={idx+1}>{topic}</option>
+         )
+       })
       ) : null;
 
     const createReminder =
@@ -97,10 +98,10 @@ class PostForm extends React.Component {
         <input
           type="text"
           placeholder='Start your question with "What","How","Why", etc'
-          onChange={this.update}
+          onChange={this.update("question")}
         />
       ) : (
-        <textarea value={this.state.question} onChange={this.update} cols="30" rows="2"></textarea>
+        <textarea value={this.state.question} onChange={this.update("question")} cols="30" rows="2"></textarea>
         
       );
 
@@ -118,7 +119,9 @@ class PostForm extends React.Component {
         </form>
         <div className="q-form-btn">
           {submitBtn}
-          {topicDropDown}
+          <select name="topic-select" id="slct" onChange={this.update("topic")}>
+            {topicDropDown}
+          </select> 
         </div>
       </div>
     );
