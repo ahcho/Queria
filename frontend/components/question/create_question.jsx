@@ -9,7 +9,7 @@ class CreateQuestion extends React.Component {
             question: "",
             author_id: this.currentUser.id,
             topic_id: "",
-            question_id: ""
+            question_id: "" // for edit
         }
         this.questionId = this.props.questionId;     
         this.handleSubmit = this.handleSubmit.bind(this);

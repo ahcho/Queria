@@ -21,7 +21,6 @@ class PostForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    
     const question = Object.assign({}, this.state);
     
     this.props.action(question).then(() => {
@@ -119,7 +118,7 @@ class PostForm extends React.Component {
         </form>
         <div className="q-form-btn">
           {submitBtn}
-          <select name="topic-select" id="slct" onChange={this.update("topic")}>
+          <select name="topic-select" id="slct" onChange={this.update("topic_id")}>
             {topicDropDown}
           </select> 
         </div>
