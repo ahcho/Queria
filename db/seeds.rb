@@ -10,6 +10,15 @@ User.destroy_all
 Topic.destroy_all
 Question.destroy_all
 Answer.destroy_all
+Topic.destroy_all
+
+
+t0 = Topic.create!(name: "Feed")
+t1 = Topic.create!(name: "History")
+t2 = Topic.create!(name: "Products")
+t3 = Topic.create!(name: "Recipe")
+t4 = Topic.create!(name: "Health")
+t5 = Topic.create!(name: "Tour")
 
 u1 = User.create!(email: 'willy@wonka.com', password: 'password', first_name: 'Willy', last_name: 'Wonka')
 u2 = User.create!(email: 'guest1@wonka.com', password: 'password', first_name: 'Augustus', last_name: 'Gloop')
