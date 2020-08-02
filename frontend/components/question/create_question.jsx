@@ -21,7 +21,6 @@ class CreateQuestion extends React.Component {
         return e => this.setState({ [field]: e.currentTarget.value})
     }
 
-  
     handleSubmit(e) {    
         e.preventDefault();
         

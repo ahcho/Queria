@@ -5,7 +5,6 @@ class Answer < ApplicationRecord
         class_name: :User,
         foreign_key: :author_id
  
-
     belongs_to :question,
         class_name: :Question,
         foreign_key: :question_id

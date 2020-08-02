@@ -10,8 +10,7 @@ class Api::QuestionsController < ApplicationController
 
     def create
         @question = Question.new(question_params)
-        @question.topic_id = 1
-    
+
         if @question.save
             render :show
         else
