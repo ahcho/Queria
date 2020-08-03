@@ -5,8 +5,6 @@ import configureStore from './store/store';
 import {logout} from './actions/session_actions';
 
 document.addEventListener("DOMContentLoaded", () => {
-    let preloadedState = undefined;
-    
     let store;
     if (window.currentUser) {
         const preloadedState = {
@@ -23,12 +21,11 @@ document.addEventListener("DOMContentLoaded", () => {
         store = configureStore();
     }
 
-    //testing start
-    window.getState = store.getState;
-    window.dispatch = store.dispatch;
-    window.logout = logout;
-    //testing end
-    
+    // //testing start
+    // window.getState = store.getState;
+    // window.dispatch = store.dispatch;
+    // window.logout = logout;
+    // //testing end
     const root = document.getElementById("root");
     ReactDOM.render(<Root store={store} />, root);
 })

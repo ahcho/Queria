@@ -13,12 +13,12 @@ Answer.destroy_all
 Topic.destroy_all
 
 
-t0 = Topic.create!(name: "Feed")
-t1 = Topic.create!(name: "History")
-t2 = Topic.create!(name: "Products")
-t3 = Topic.create!(name: "Recipe")
-t4 = Topic.create!(name: "Health")
-t5 = Topic.create!(name: "Tour")
+t0 = Topic.create!(id: 0, name: "Feed")
+t1 = Topic.create!(id: 1, name: "History")
+t2 = Topic.create!(id: 2, name: "Products")
+t3 = Topic.create!(id: 3, name: "Recipe")
+t4 = Topic.create!(id: 4, name: "Health")
+t5 = Topic.create!(id: 5, name: "Tour")
 
 u1 = User.create!(email: 'willy@wonka.com', password: 'password', first_name: 'Willy', last_name: 'Wonka')
 u2 = User.create!(email: 'guest1@wonka.com', password: 'password', first_name: 'Augustus', last_name: 'Gloop')
@@ -30,12 +30,6 @@ u6 = User.create!(email: 'guest4@wonka.com', password: 'password', first_name: '
 u7 = User.create!(email: 'guest5@wonka.com', password: 'password', first_name: 'Marvin', last_name: 'Prune')
 u8 = User.create!(email: 'guest6@wonka.com', password: 'password', first_name: 'Veruca', last_name: 'Salt')
 u9 = User.create!(email: 'guest8@wonka.com', password: 'password', first_name: 'Joe', last_name: 'Bucket')
-
-t1 = Topic.create!(id: 1, name: "Feed")
-t2 = Topic.create!(name: "History")
-t3 = Topic.create!(name: "Tour")
-t4 = Topic.create!(name: "Recipe")
-t5 = Topic.create!(name: "Product")
 
 q1 = Question.create!(question: "What is your favorite chocolate?", author_id: demo.id, topic_id: t5.id)
 q2 = Question.create!(question: "How do I get a golden ticket?", author_id: u2.id, topic_id: t3.id)

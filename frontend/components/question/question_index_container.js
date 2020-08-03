@@ -4,10 +4,9 @@ import { fetchQuestions, deleteQuestion } from '../../actions/question_actions';
 import { openModal } from '../../actions/modal_actions';
 
 const mapStateToProps = (state) => {
-
     return ({
         currentUser: state.session.currentUser,
-        questions: Object.values(state.entities.questions)
+        questions: Object.values(state.entities.questions),
     })
 }
 

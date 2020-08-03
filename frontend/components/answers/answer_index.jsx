@@ -37,10 +37,3 @@ class AnswerIndex extends React.Component {
 
 export default AnswerIndex;
 
-// {
-//     answers.map(
-//         (answer) => <AnswerIndexItem
-//             answer={answer} deleteAnswer={deleteAnswer} key={answer.id}
-//             openModal={openModal} currentUserId={currentUser.id}
-//             users={users} />)
-// }
