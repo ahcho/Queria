@@ -1,25 +1,6 @@
-# json.partial! 'api/users/user', user:@user
 json.user do
-    json.extract! @user, :id, :email, :first_name, :last_name, :question_ids, :answer_ids
+    json.extract! @user, :id, :email, :first_name, :last_name, :question_ids #, :answer_ids
 end
-
-
-# json.questions do 
-#     @questions.each do |question|
-#         json.set! question.id do 
-#             json.extract! question, :question, :updated_at, :created_at, :id, :author_id
-#         end
-#     end
-# end
-
-# json.answers do 
-#     @answers.each do |answer|
-#         json.set! answer.id do 
-#             json.extract! answer, :answer, :updated_at, :created_at, :id, :author_id
-#         end
-#     end
-# end
-
 
 json.questions do
     @user.questions.each do |question|
@@ -31,6 +12,7 @@ json.questions do
         end
     end
 end
+
 
 
 json.answers do 

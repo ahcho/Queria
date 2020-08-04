@@ -29,7 +29,6 @@ class Profile extends React.Component {
 
     render() {
         const {answers, questions} = this.props;
-        
         return (
             <div className='profile-page'>
                 <div className='profile-top'>

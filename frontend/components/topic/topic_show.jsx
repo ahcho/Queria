@@ -11,15 +11,18 @@ class TopicShow extends React.Component {
         //parseInt(this.props.match.params.id);
         this.props.fetchTopic(parseInt(this.props.match.params.id));
     };
+    
 
     render() {
         const {questions, deleteQuestion, openModal, currentUser} = this.props;
+        
         return (
             <div className="topic-show-container">
                 <br/>
                 <br/>
                 <br/>
                 <br/>
+                {/* <div className="topic-header">hello</div> */}
                 {questions.map(
                     (question) => <QuestionIndexItem
                         question={question} deleteQuestion={deleteQuestion} key={question.id}

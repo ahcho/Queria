@@ -5,7 +5,7 @@ import { fetchUserQuestions } from '../../actions/question_actions';
 import { fetchUserAllAnswers } from '../../actions/answer_actions';
 
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = (state) => {
     return ({
         user: state.session.currentUser,
         answers: Object.values(state.entities.answers),
@@ -17,7 +17,6 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch) => {
     return ({
         fetchUser: (userId) => dispatch(fetchUser(userId)),
-        fetchUserQuestions: (userId) => dispatch(fetchUserQuestions(userId)),
         fetchUserAllAnswers:  (userId) => dispatch(fetchUserAllAnswers(userId))
     })
 }

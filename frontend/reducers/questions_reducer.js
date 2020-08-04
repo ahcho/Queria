@@ -22,7 +22,7 @@ const QuestionsReducer = (state = {}, action) => {
             return newState;
         case RECEIVE_USER:
             if (!action.payload.questions) return {};
-            return Object.assign({}, state, action.payload.questions)
+            return action.payload.questions;
         case RECEIVE_CURRENT_USER:
             return Object.assign({}, state, action.payload.questions)
         case RECEIVE_TOPIC:

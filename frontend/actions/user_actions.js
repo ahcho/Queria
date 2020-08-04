@@ -30,10 +30,11 @@ export const fetchAllUsers = () => (dispatch) => (
         .then(users => dispatch(receiveAllUsers(users)))
 );
 
-export const fetchUser = (userId) => (dispatch) => (
+export const fetchUser = (userId) => (dispatch) => {
+    return(
     UserApiUtil.fetchUser(userId)
         .then(user => dispatch(receiveUser(user)))
-);
+)}
 
 export const deleteUser = (userId) => (dispatch) => (
     UserApiUtil.deleteUser(userId)

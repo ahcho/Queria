@@ -37,11 +37,11 @@ export const deleteQuestion = (id) => {
     })
 };
 
-   ///in profile page show all question by a logged in user
-export const fetchUserQuestions = () => {
-    return $.ajax({
-        method: 'GET',
-        url: `api/user/questions`
-    })
+///in profile page show all question by a logged in user
+// export const fetchUserQuestions = (userId) => {
+//     return $.ajax({
+//         method: 'GET',
+//         url: `api/users/${userId}/questions`
+//     })
 
-}
+// }
