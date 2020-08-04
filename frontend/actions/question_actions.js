@@ -66,7 +66,7 @@ export const deleteQuestion = (questionId) => (dispatch) => {
     .then(() => dispatch(removeQuestion(questionId)))
 };
 
-export const fetchUserQuestions = (userId) => (dispatch) => {
-    return QuestionApiUtil.fetchUserQuestions(userId)
-        .then( (questions) => dispatch(receiveAllQuestions(questions)))
-}
+// export const fetchUserQuestions = (userId) => (dispatch) => {
+//     return QuestionApiUtil.fetchUserQuestions(userId)
+//         .then( (questions) => dispatch(receiveAllQuestions(questions)))
+// }
