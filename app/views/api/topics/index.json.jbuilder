@@ -1,5 +1,5 @@
 @topics.each do |topic|
     json.set! topic.id do
-        json.partial! topic: topic
+        json.extract! topic, :id, :name
     end
 end

@@ -1,5 +1,4 @@
 import * as ApiUtil from '../util/topic_api_util';
-
 export const RECEIVE_ALL_TOPICS = 'RECEIVE_ALL_TOPICS';
 export const RECEIVE_TOPIC = 'RECEIVE_TOPIC';
 

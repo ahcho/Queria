@@ -30,6 +30,7 @@ Rails.application.routes.draw do
     end
     resources :answers, only: [:create, :update, :destroy]
     resources :comments, only: [:index, :destroy, :update, :create]
+    resources :topics, only: [:index, :show]
   end
 
 end

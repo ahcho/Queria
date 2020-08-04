@@ -1,4 +1,4 @@
- import React from 'react';
+import React from 'react';
 import QuestionIndexItem from './question_index_item';
 
 

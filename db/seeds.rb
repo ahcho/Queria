@@ -47,150 +47,151 @@ q13 = Question.create!(question: "Can you tell me about the Vanila Fudge Room??"
 q14 = Question.create!(question: "How can I prevent cavities?", author_id: demo.id, topic_id: t2.id)
 
 a1 = Answer.create!(
-body:
- "It's a secret!",
-author_id: u1.id,
-question_id: q1.id)
+    body:
+    "It's a secret!",
+    author_id: u1.id,
+    question_id: q1.id)
 
 a1_1 = Answer.create!(
-body:
- "I <3 original milk chocolate bar",
-author_id: u2.id,
-question_id: q1.id)
+    body:
+    "I <3 original milk chocolate bar",
+    author_id: u2.id,
+    question_id: q1.id)
 
 a1_2 = Answer.create!(
-body:
- "Anything from Wonka inc!",
-author_id: u9.id,
-question_id: q1.id)
+    body:
+    "Anything from Wonka inc!",
+    author_id: u9.id,
+    question_id: q1.id)
 
 b1 = Answer.create!(
-body:
- "I bought 2 bars and got the ticket",
-author_id: demo.id,
-question_id: q2.id)
+    body:
+    "I bought 2 bars and got the ticket",
+    author_id: demo.id,
+    question_id: q2.id)
 
 b2 = Answer.create!(
-body:
- "Mr. Wonka is my dad' friend's teacher's son's nextdoor neightbour's cousin!",
-author_id: u1.id,
-question_id: q2.id)
+    body:
+    "Mr. Wonka is my dad' friend's teacher's son's nextdoor neightbour's cousin!",
+    author_id: u1.id,
+    question_id: q2.id)
 
 b3 = Answer.create!(
-body:
- "They are the friendly people working in Wonka factory",
-author_id: u9.id,
-question_id: q4.id)
+    body:
+    "They are the friendly people working in Wonka factory",
+    author_id: u9.id,
+    question_id: q4.id)
 
 b4 = Answer.create!(
-body:
- "No one knows where they are from, but they do make create chocolate!",
-author_id: u8.id,
-question_id: q4.id)
+    body:
+    "No one knows where they are from, but they do make create chocolate!",
+    author_id: u8.id,
+    question_id: q4.id)
 
 a2 = Answer.create!(
-body:
- "It's a super secret!!",
-author_id: demo.id,
-question_id: q4.id)
+    body:
+    "It's a super secret!!",
+    author_id: demo.id,
+    question_id: q4.id)
 
 a3 = Answer.create!(
-body:
- "It's a super super secret!",
-author_id: u2.id,
-question_id: q8.id)
+    body:
+    "It's a super super secret!",
+    author_id: u2.id,
+    question_id: q8.id)
 
 c1 = Answer.create!(
-body:
- "It's a secret!",
-author_id: u1.id,
-question_id: q4.id)
+    body:
+    "It's a secret!",
+    author_id: u1.id,
+    question_id: q4.id)
 
 c1_1 = Answer.create!(
-body:
- "I <3 original milk chocolate bar",
-author_id: u2.id,
-question_id: q1.id)
+    body:
+    "I <3 original milk chocolate bar",
+    author_id: u2.id,
+    question_id: q1.id)
 
 c1_2 = Answer.create!(
-body:
- "I don't like chocolate!!",
-author_id: u4.id,
-question_id: q6.id)
+    body:
+    "I don't like chocolate!!",
+    author_id: u4.id,
+    question_id: q6.id)
 
 c1 = Answer.create!(
-body:
- "I bought 2 bars and got the ticket",
-author_id: demo.id,
-question_id: q6.id)
+    body:
+    "I bought 2 bars and got the ticket",
+    author_id: demo.id,
+    question_id: q6.id)
 
 c2 = Answer.create!(
-body:
- "Mr. Wonka is my dad' friend's teacher's son's nextdoor neightbour's cousin!",
-author_id: u1.id,
-question_id: q6.id)
+    body:
+    "Mr. Wonka is my dad' friend's teacher's son's nextdoor neightbour's cousin!",
+    author_id: u1.id,
+    question_id: q6.id)
 
 c33 = Answer.create!(
-body:
- "I bouth 1000000000 wonka bar to get the ticket",
-author_id: u2.id,
-question_id: q4.id)
+    body:
+    "I bouth 1000000000 wonka bar to get the ticket",
+    author_id: u2.id,
+    question_id: q4.id)
 
 c42 = Answer.create!(
-body:
- "I bought it from black market",
-author_id: u4.id,
-question_id: q4.id)
+    body:
+    "I bought it from black market",
+    author_id: u4.id,
+    question_id: q4.id)
 
 c21 = Answer.create!(
-body:
- "It's a super secret!!",
-author_id: demo.id,
-question_id: q3.id)
+    body:
+    "It's a super secret!!",
+    author_id: demo.id,
+    question_id: q3.id)
 
 c35 = Answer.create!(
-body:
- "It's a super super secret!",
-author_id: u2.id,
-question_id: q3.id)
+    body:
+    "It's a super super secret!",
+    author_id: u2.id,
+    question_id: q3.id)
+
 c1_2 = Answer.create!(
-body:
- "I don't like chocolate!!",
-author_id: u4.id,
-question_id: q6.id)
+    body:
+    "I don't like chocolate!!",
+    author_id: u4.id,
+    question_id: q6.id)
 
 d1 = Answer.create!(
-body:
- "I bought 2 bars and got the ticket",
-author_id: u5.id,
-question_id: q6.id)
+    body:
+    "I bought 2 bars and got the ticket",
+    author_id: u5.id,
+    question_id: q6.id)
 
 d2 = Answer.create!(
-body:
- "Mr. Wonka is my dad' friend's teacher's son's nextdoor neightbour's cousin!",
-author_id: u1.id,
-question_id: q6.id)
+    body:
+    "It's Monday",
+    author_id: u1.id,
+    question_id: q6.id)
 
 d33 = Answer.create!(
-body:
- "I bouth 1000000000 wonka bar to get the ticket",
-author_id: u5.id,
-question_id: q4.id)
+    body:
+    "I bouth 1000000000 wonka bar to get the ticket",
+    author_id: u5.id,
+    question_id: q4.id)
 
 d42 = Answer.create!(
-body:
- "I bought it from black market",
-author_id: u4.id,
-question_id: q4.id)
+    body:
+    "I bought it from black market",
+    author_id: u4.id,
+    question_id: q4.id)
 
 d21 = Answer.create!(
-body:
- "It's a super secret!!",
-author_id: demo.id,
-question_id: q3.id)
+    body:
+    "It's a super secret!!",
+    author_id: demo.id,
+    question_id: q3.id)
 
 d35 = Answer.create!(
-body:
- "It's a super super secret!",
-author_id: u2.id,
-question_id: q3.id)
+    body:
+    "It's a super super secret!",
+    author_id: u2.id,
+    question_id: q3.id)

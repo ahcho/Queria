@@ -103,5 +103,4 @@ class Entry extends React.Component {
 
 export default Entry;
 
-//<button className='signup-form-open' id='queria-btn' onClick={() => this.props.openModal('signup')}>Sign Up With Email</button>
 

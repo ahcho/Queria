@@ -3,8 +3,8 @@ import {
     RECEIVE_QUESTION,
     REMOVE_QUESTION
 } from '../actions/question_actions';
+import {RECEIVE_TOPIC} from '../actions/topic_actions';
 import { RECEIVE_USER } from '../actions/user_actions';
-import { RECEIVE_ALL_ANSWERS } from '../actions/answer_actions';
 import { RECEIVE_CURRENT_USER } from '../actions/session_actions';
 
 const QuestionsReducer = (state = {}, action) => {
@@ -25,6 +25,8 @@ const QuestionsReducer = (state = {}, action) => {
             return Object.assign({}, state, action.payload.questions)
         case RECEIVE_CURRENT_USER:
             return Object.assign({}, state, action.payload.questions)
+        // case RECEIVE_TOPIC:
+        //     return Object.assign({}, state, action.payload.questions);
         default:
             return state;
     }

@@ -9,7 +9,6 @@ import { RECEIVE_QUESTION } from '../actions/question_actions';
 const answersReducer = (state = {}, action) => {
     Object.freeze(state);
     let newState = Object.assign({}, state);
-
     switch(action.type) {
         case RECEIVE_ALL_ANSWERS:
             return action.answers
