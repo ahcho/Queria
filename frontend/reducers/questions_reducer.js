@@ -25,8 +25,9 @@ const QuestionsReducer = (state = {}, action) => {
             return Object.assign({}, state, action.payload.questions)
         case RECEIVE_CURRENT_USER:
             return Object.assign({}, state, action.payload.questions)
-        // case RECEIVE_TOPIC:
-        //     return Object.assign({}, state, action.payload.questions);
+        case RECEIVE_TOPIC:
+            if (!action.payload.questions) return {};
+            return action.payload.questions;
         default:
             return state;
     }
