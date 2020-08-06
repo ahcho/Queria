@@ -1,18 +1,6 @@
-.search-bar {
-  height: 50;
-}
-
 #ueria {
   font-family: 'Lora', serif;
   font-size: 17px;
-}
-
-.search > input[type=text] {
-  padding: 8px;
-  font-size: 14px;
-  width: 200px;
-  border: solid 0.5px lightgrey;
-  border-radius: 5px;
 }
 
 .home a, .answers a{
@@ -21,24 +9,6 @@
   display: block;
 }
 
-.search {
-  position: relative;
-  display: flex;
-}
-
-.searchTerm {
-  border: 1px solid lightgrey;
-  border-right: none;
-  padding: 5px;
-  height: 12px;
-  outline: none;
-  color: #9DBFAF;
-}
-
-.searchTerm:focus{
-  color: black;
-  font-size: x-small
-}
 .plain{
     text-decoration: none;
 }
@@ -46,6 +16,7 @@
 .round-btn {
   margin-right: 20px;
 }
+
 .round-btn > button { 
   background-color: #FAC0B3;
   font-size: 16px;
@@ -69,9 +40,11 @@
 .dropdown-profile > i:hover {
   color: salmon;
 }
+
 .left > li {
   display: block;
 }
+
 .dropdown-content {
   display: none;
   position: absolute;
@@ -88,7 +61,6 @@
   padding: 5px 8px;
 }
 
-
 .dropdown-content a {
   color: #FAC0B3;
   font-size: 16px;
@@ -99,6 +71,7 @@
 .dropdown-content a:hover {
   color: white;
 }
+
 .dropdown-content li:hover {
   background: #FAC0B3;
   color: white;
@@ -157,4 +130,16 @@ li > .fa {
 
 .right {
   align-items: center;
+}
+
+
+// search bar
+
+.foundTarget { 
+   border-radius: 4px;
+  padding: 5px;
+  position: absolute;
+  background: white;
+  width: inherit;
+
 }

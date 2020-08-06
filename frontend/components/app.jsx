@@ -13,7 +13,7 @@ import { logger } from 'redux-logger';
 
 const App = () => (
     
-    <div>
+    <div className="app-page">
         <Modal /> 
         <ProtectedRoute path="/" component={navBarContainer} />
             <Switch>

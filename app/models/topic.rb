@@ -6,4 +6,9 @@ class Topic < ApplicationRecord
         foreign_key: :topic_id,
         primary_key: :id 
 
+    def all_questions
+        questions.all
+    end
+
+    
 end

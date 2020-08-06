@@ -11,13 +11,6 @@ const receiveAllQuestions = (questions) => {
     })
 };
 
-// const receiveAllQuestions = (payload) => {
-//     return ({
-//         type: RECEIVE_ALL_QUESTIONS,
-//         payload: payload
-//     })
-// };
-
 const receiveQuestion = (payload) => {
 
     return ({
@@ -25,14 +18,6 @@ const receiveQuestion = (payload) => {
         payload: payload
     })
 }
-// const receiveQuestion = (question) => {
-    
-//     return ({
-//         type: RECEIVE_QUESTION,
-//         question: question
-//     })
-// }
-
 const removeQuestion = (questionId) => {
     return ({
         type: REMOVE_QUESTION,
@@ -66,7 +51,3 @@ export const deleteQuestion = (questionId) => (dispatch) => {
     .then(() => dispatch(removeQuestion(questionId)))
 };
 
-// export const fetchUserQuestions = (userId) => (dispatch) => {
-//     return QuestionApiUtil.fetchUserQuestions(userId)
-//         .then( (questions) => dispatch(receiveAllQuestions(questions)))
-// }

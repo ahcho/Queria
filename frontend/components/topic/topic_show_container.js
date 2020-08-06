@@ -5,7 +5,6 @@ import { fetchTopic, fetchTopics } from '../../actions/topic_actions';
 import { openModal } from '../../actions/modal_actions';
 
 const mapStateToProps = (state) => {
-    
     return ({
         currentUser: state.session.currentUser,
         questions: Object.values(state.entities.questions),

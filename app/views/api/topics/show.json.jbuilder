@@ -1,4 +1,4 @@
-json.extract! @topic, :id, :name
+json.extract! @topic, :id, :name, :all_questions
 
 json.questions do
   @questions.each do |question|

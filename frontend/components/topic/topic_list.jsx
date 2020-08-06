@@ -13,7 +13,6 @@ class TopicList extends React.Component {
     };
 
     handleClick(e) {
-        
         this.setState({ title: e.currentTarget.innerText });
     }
 
@@ -56,7 +55,6 @@ export default TopicList;
 //     render() {
 //         const {topics} = this.props;
 //         const renderTopics = topics.map((topic, idx) => {
-//             // debugger
 //             return (
 //                 <Link to={`/topic/${topic.id}`} className='topic-list' key={idx}>
 //                     <li >{topic.name}</li>

@@ -1,3 +1,6 @@
+body, html {
+    height: 100%;
+}
 body {
     background: #FDF9ED;
     font-family: sans-serif;
@@ -11,10 +14,20 @@ body {
     padding: 10px;
     border: 0.2px lightgrey solid;
 }
+
+// #root {
+//     height: 100%;
+//     // background-image: linear-gradient( #E0F7F6, #00BFB2);
+// }
+
+.app-page {
+    height: 100%;
+}
+
 .main-page {
     display: flex;
     background-image: linear-gradient( #E0F7F6, #00BFB2);
-    min-height: 100%;
+    height: 100%;
     // position: relative;
 }
 
@@ -30,3 +43,4 @@ body {
     margin-top: 90px;
     width: 25%;
 }
+
