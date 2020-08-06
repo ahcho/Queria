@@ -11,7 +11,6 @@ class Profile extends React.Component {
             showAnswer: false
         }
         this.questions = this.props.questions;  
-        this.handleFollow = this.handleFollow.bind(this);  
         this.handleClick = this.handleClick.bind(this);
     } 
 
@@ -23,14 +22,10 @@ class Profile extends React.Component {
         this.setState({showAnswer: !this.state.showAnswer})  
     }
     
-    handleFollow() {
-        console.log("follow button click")
-    }
 
     render() {
         const {questions, answers, user, deleteQuestion, openModal,
         deleteAnswer, updateAnswer, createComment} = this.props;
-        
         const renderQuestions = 
              this.state.showAnswer ? (
                 <div className="answer-index-box">
@@ -62,10 +57,9 @@ class Profile extends React.Component {
                 <div className='profile-top'>
                     <i id='profile-img' className="fas fa-user-astronaut"></i>
                     <h1 id='profile-name'>{this.props.user.first_name} {this.props.user.last_name}</h1>
-                    <button onClick={this.handleFollow}>follow</button>
                 </div>
                 <ul className='profile-list'>
-                    <a id='user-questions' onClick={this.renderQuestions}>{questions.length} Questions</a>
+                    <a id='user-questions' onClick={this.handleClick}>{questions.length} Questions</a>
                     <a id='user-answers' onClick={this.handleClick}>{answers.length} Answers</a>
                 </ul>
                 {renderQuestions}   

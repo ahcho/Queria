@@ -19,8 +19,9 @@ class QuestionShow extends React.Component {
         this.props.fetchQuestion(this.props.match.params.questionId);
     }
 
+
     render() {
-        const { answers, currentUser, question } = this.props;
+        const { currentUser, question } = this.props;
         const dropdown = this.state.dropDown ? "" : "hidden" ;
     
         return (
