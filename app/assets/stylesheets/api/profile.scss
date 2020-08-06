@@ -2,7 +2,16 @@ button {
     outline: none;
 }
 
+a, i {
+    cursor: pointer;
+}
+
+// i {
+//     cursor: pointer;
+// }
+
 .profile-page{
+    margin-top: 20px;
     width: 70%;
     display: flex;
     background: #EEE2DF;
@@ -13,7 +22,6 @@ button {
 }
 
 .profile-top {
-    padding-top: 50px;
     background: #C89F9C;
     display: flex;
 }
@@ -40,14 +48,13 @@ button {
 .profile-list {
     display: flex;
     padding: 10px;
-    margin-bottom: 100px;
+    margin-bottom: 10px;
     background: #EEE2DF;
     border-top: 1px solid grey;
     border-bottom: 1px solid grey;
 }
 
 .profile-list > li {
-    //background: white;
     margin: 10px;
 }
 

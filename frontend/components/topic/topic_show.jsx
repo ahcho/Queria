@@ -8,7 +8,6 @@ class TopicShow extends React.Component {
     }
 
     componentDidMount() {
-        // debugger
         this.props.fetchTopic(parseInt(this.props.match.params.id));
     };
     

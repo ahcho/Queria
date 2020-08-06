@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import AnswerIndex from './answer_index';
 import { deleteAnswer, 
          updateAnswer } from '../../actions/answer_actions';
-import { createComment } from '../../actions/comment_actions';
+// import { createComment } from '../../actions/comment_actions';
 
 const mapStateToProps = (state) => {
     return ({

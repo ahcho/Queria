@@ -22,7 +22,7 @@ class QuestionShow extends React.Component {
     render() {
         const { answers, currentUser, question } = this.props;
         const dropdown = this.state.dropDown ? "" : "hidden" ;
-        if (!currentUser || !answers || !question ) return null;
+    
         return (
             <div>
                 <div className='q-show-header'>

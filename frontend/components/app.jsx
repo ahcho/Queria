@@ -16,15 +16,15 @@ const App = () => (
     <div>
         <Modal /> 
         <ProtectedRoute path="/" component={navBarContainer} />
-        <Switch>
-            <Route path="/question/:questionId" component={QuestionShow} />
-            <Route path="/topic/:id" component={TopicShow} /> 
-            <ProtectedRoute path="/profile/:userId" component={ProfileContainer} />
-            <ProtectedRoute path="/main" component={mainContainer} />
-            <AuthRoute exact path="/" component={entryContainer} />  
-            <AuthRoute component={entryContainer} />  
-            
-        </Switch>
+            <Switch>
+                <Route path="/question/:questionId" component={QuestionShow} />
+                <Route path="/topic/:id" component={TopicShow} /> 
+                <ProtectedRoute path="/profile/:userId" component={ProfileContainer} />
+                <ProtectedRoute path="/main" component={mainContainer} />
+                <AuthRoute exact path="/" component={entryContainer} />  
+                <AuthRoute component={entryContainer} />     
+            </Switch>
+
     </div>
 
 );
