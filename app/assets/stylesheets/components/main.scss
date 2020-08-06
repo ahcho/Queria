@@ -14,8 +14,8 @@ body {
 .main-page {
     display: flex;
     background-image: linear-gradient( #E0F7F6, #00BFB2);
-    height: 100%;
-    position: relative;
+    min-height: 100%;
+    // position: relative;
 }
 
 .main-center {

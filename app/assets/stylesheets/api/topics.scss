@@ -6,10 +6,22 @@
 
 .topic-header {
     width: 93%;
-    margin: 15px 5px 10px 5px;
+    margin: 80px 5px 10px 5px;
+    height: 100px;
     border-radius: 4px;
     background: #F5FFFA;
     border: 0.5px solid lightgrey;
     padding: 16px;
     box-shadow: 2px 2px 5px 0px #858585;
+    display: flex;
+}
+.topic-header > p {
+    font-size: 25px;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.topic-header > i {
+    // border: 1px solid black;
+    font-size: 90px;
 }

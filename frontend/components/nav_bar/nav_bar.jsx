@@ -36,12 +36,12 @@ class NavBar extends React.Component {
                 </div>
             
                 <div className="right">
-                    <div className="search-bar">
+                    {/* <div className="search-bar">
                         <div className="search">
                             <input type="text" className="searchTerm" 
                             placeholder="Search Queria"/>
                         </div>
-                    </div>
+                    </div> */}
                     <div className="dropdown-profile">
     
                         <i className="fas fa-user-circle">  </i>
