@@ -94,7 +94,13 @@ class Entry extends React.Component {
                             </div>
                         </div>
                     </div>
+                    <div className='link-icons'>
+                        <a href="https://www.linkedin.com/in/anna-cho-4034b3191/" className="fab fa-linkedin"></a>
+                        <a href="https://github.com/ahcho" className="fab fa-github"></a>
+                        <a href="https://angel.co/u/anna-cho-3" className="fab fa-angellist"></a>
+                    </div>
                 </div>
+                
             </main>
         )
     }
