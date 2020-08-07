@@ -14,6 +14,10 @@ class TopicShow extends React.Component {
         this.props.fetchTopic(parseInt(this.props.match.params.id));
     };
 
+    componentDidUpdate() {
+        this.props.fetchTopic(parseInt(this.props.match.params.id));        
+    }
+
 
 
     render() {
