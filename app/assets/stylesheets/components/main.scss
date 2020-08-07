@@ -2,7 +2,6 @@ body, html {
     height: 100%;
 }
 body {
-    background: #FDF9ED;
     font-family: sans-serif;
 }
 
@@ -26,21 +25,31 @@ body {
 
 .main-page {
     display: flex;
-    background-image: linear-gradient( #E0F7F6, #00BFB2);
+    // background-image: linear-gradient( #E0F7F6, #00BFB2);
     height: 100%;
+    background-color: white;
     // position: relative;
 }
 
 .main-center {
-    width: 50%;
+    width: 75%;
+    // background-color: white;
 }
 
 .main-left {
+    position: relative;
+    display: flex;
+    overflow: auto;
+    padding-top: 10%;
+    padding-right: 25px;
+    padding-left: 25px;
+    background-color: #FAFAFA;
     width: 25%;
+    min-height: 100%;
 }
 
-.main-right {
-    margin-top: 90px;
-    width: 25%;
-}
+// .main-right {
+//     margin-top: 90px;
+//     width: 25%;
+// }
 

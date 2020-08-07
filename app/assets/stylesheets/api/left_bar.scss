@@ -1,21 +1,21 @@
 .topic-list {
-    margin: 90px 25px 0 100px;
-    display: felx;   
-    color: grey;
+    // margin: 90px 25px 0 100px;
+    //display: felx;   
+    color: black;
 }
 
 .topic-list > li {
-    border: 1px solid lightgray;
     margin-bottom: 15px;
-    border-radius: 5px;
-    padding: 7px 0 7px 5px;
+    border-radius: 100px;
+    padding: 18px 30px;
     font-size: 14px;
     width: 100px;
     transition-duration: 0.1s;
-    box-shadow: 2px 2px 5px 0px #858585;
-    background-color: white;
+    //box-shadow: 2px 2px 5px 0px #858585;
+    background-color: rgba(79, 94, 120, 0.1);
     display: flex;
     align-items: center;
+    
 }
 
 .topic-list > li:hover {

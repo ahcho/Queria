@@ -4,7 +4,7 @@
 }
 
 .home a, .answers a{
-  color: #FAC0B3;
+  color: #5748c5;
   margin-top: 10px;
   display: block;
 }
@@ -18,7 +18,7 @@
 }
 
 .round-btn > button { 
-  background-color: #FAC0B3;
+  background-color: #5748c5;
   font-size: 16px;
   border: none;
   color: white;
@@ -34,11 +34,11 @@
 .dropdown-profile {
   padding: 5px;
   font-size: 28px;
-  color: #FAC0B3;
+  color: #5748c5;
 }
 
 .dropdown-profile > i:hover {
-  color: salmon;
+  color: #5748c5;
 }
 
 .left > li {
@@ -62,7 +62,7 @@
 }
 
 .dropdown-content a {
-  color: #FAC0B3;
+  color: #5748c5;
   font-size: 16px;
   text-decoration: none;
   z-index: 1;
@@ -73,7 +73,7 @@
 }
 
 .dropdown-content li:hover {
-  background: #FAC0B3;
+  background: #5748c5;
   color: white;
   cursor: pointer;  
 }
@@ -91,10 +91,9 @@
   border-bottom: 0.5px solid lightgrey;
   z-index: 8;
   width: 100%;
-  background-color: #FEF9F0;
-  box-shadow:0px 1px 1px lightgray;
+  background-color: white;
   display: flex;
-
+  padding: 20px 0;
 }
 
 li > .fa {
@@ -108,7 +107,7 @@ li > .fa {
 
 #logo, #logo i {
   font-size: 35px;
-  color: salmon;
+  color: #5748c5;
 }
 
 #home, #answers {
@@ -121,11 +120,11 @@ li > .fa {
 }
 
 .left a:hover {
-  color: salmon;
+  color: #5748c5;
 }
 
 .round-btn button:hover {
-  background: salmon;
+  background: #5748c5;
 }
 
 .right {

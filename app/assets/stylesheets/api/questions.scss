@@ -46,12 +46,12 @@
 
 .main-question-modal-trigger {
     width: 93%;
-    background-color: #F5FFFA;
     display: box;
+    background-color: rgba(79, 94, 120, 0.24);
     border-radius: 4px;
     margin: 90px 5px 10px 5px;
     padding: 16px 16px 6px 16px;
-    box-shadow: 2px 2px 5px 0px #858585;
+    //box-shadow: 2px 2px 5px 0px #858585;
 }
 
 .modal-user {
@@ -72,7 +72,7 @@
 
 #main-asking-user {
     font-size: 13px;
-    background-color: #F5FFFA;
+    // background-color: #F5FFFA;
     
 }
 
@@ -122,13 +122,14 @@
     width: 100%;
 }
 .question-index-item {
-    width: 93%;
-    margin: 15px 5px 10px 5px;
+    width: 80%;
+    margin: 30px auto;;
     border-radius: 4px;
-    background: #F5FFFA;
+    background: rgba(79, 94, 120, 0.24) ;
+    //background: #F5FFFA;
     border: 0.5px solid lightgrey;
     padding: 16px;
-    box-shadow: 2px 2px 5px 0px #858585;
+    //box-shadow: 2px 2px 5px 0px #858585;
 }
 
 .question-index-item > .right {
