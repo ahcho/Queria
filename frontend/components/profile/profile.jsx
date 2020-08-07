@@ -63,9 +63,9 @@ class Profile extends React.Component {
                     <a id='user-answers' onClick={this.handleClick}>{answers.length} Answers</a>
                 </ul>
                 {renderQuestions}   
-                <div className='profile-bottom'>
+                {/* <div className='profile-bottom'>
                     <Link className="plain" to='/'><button className='profile-answer-btn'>Answer Questions</button></Link>
-                </div>
+                </div> */}
             </div>
         )
     }
