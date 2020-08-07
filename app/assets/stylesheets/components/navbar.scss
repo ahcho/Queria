@@ -135,11 +135,28 @@ li > .fa {
 
 // search bar
 
+.search-input {
+  border-radius: 4px;
+  border: 1px lightgray solid;
+}
 .foundTarget { 
    border-radius: 4px;
   padding: 5px;
   position: absolute;
   background: white;
   width: inherit;
+}
 
+.target-question{
+  border-bottom: 1px solid #e2e2e2;
+  padding: 8px 10px;
+  font-size: 15px;
+}
+
+.target-question:hover {
+  background: #e6e6e6;
+}
+
+.target-question > a {
+  color: gray;
 }

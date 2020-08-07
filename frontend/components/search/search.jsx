@@ -16,7 +16,7 @@ class Search extends React.Component {
     getMatches(questions) {
         return Object.values(questions).map((question) => {
             return (
-                <li className="search-result" key={question.id}>
+                <li className="target-question" key={question.id}>
                     <Link onClick={this.resetSearch} to={`/question/${question.id}`}>{question.question}</Link>
                 </li>
             )
