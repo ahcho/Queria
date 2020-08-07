@@ -27,7 +27,7 @@ const mapStateToProps = state => ({
     question: {
         question: "",
         author_id: state.session.currentUser.id,
-        topic_id: 0, // default value, needs to be updated later
+        topic_id: 1, // default value, needs to be updated later
     },
     currentUser: state.session.currentUser,
     formType: 'Create Question'

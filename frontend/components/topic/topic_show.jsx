@@ -26,9 +26,12 @@ class TopicShow extends React.Component {
         
         const photos= ["history", "history", "products", "recipe", "health", "tour"]
         const { deleteQuestion, openModal, currentUser, topics } = this.props;
-        if (!topics || topics.length === 0) return null;
+        if (!topics || topics.length < this.props.match.params.id) return null;
+        // debugger
         const topic = topics[parseInt(this.props.match.params.id)]
-        const questions = Object.values(topic.questions);
+        // debugger
+        const questions = Object.values(topic.questions) || [];
+        // debugger
         return (
             <div className='main-page'>
                 <div className='main-left'>

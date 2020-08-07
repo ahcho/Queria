@@ -19,6 +19,7 @@ class TopicList extends React.Component {
     render() {
         const { topics } = this.props;
         const renderTopics = topics.map((topic, idx) => {
+            if (idx > 0) {
             return (
                 <Link 
                     onClick={this.handleClick}
@@ -26,7 +27,7 @@ class TopicList extends React.Component {
                     className='topic-list' 
                     key={idx}> <li >{topic.name}</li>
                 </Link>
-            )
+            )}
         })
         return (
             <div className='left-bar'>

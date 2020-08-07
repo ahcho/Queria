@@ -1,5 +1,5 @@
 import { RECEIVE_ALL_TOPICS, RECEIVE_TOPIC } from '../actions/topic_actions';
-
+import {RECEIVE_QUESTION} from '../actions/question_actions'
 const topicsReducer = (state = {}, action) => {
     Object.freeze(state);
     let newState = Object.assign({}, state);

@@ -22,14 +22,13 @@ class PostForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const question = Object.assign({}, this.state);
-    
     this.props.action(question).then(() => {
       this.props.closeModal();
     });
   }
 
   update(key) {
-
+    
     return (e) => {
       this.setState({ [key]: e.currentTarget.value })
     };

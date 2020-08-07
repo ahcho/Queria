@@ -39,7 +39,6 @@ class Search extends React.Component {
         const questions = this.state.questions;
         const foundQuestions = this.getMatches(questions)
         const foundTarget = (questions.length > 0) ? 'foundTarget' : '';
-        // debugger
         return (
             <div className="search-bar">
                 <input className="search-input" type="text" placeholder="Search Queria" onKeyUp={this.handleInput} />
