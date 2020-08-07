@@ -7,6 +7,7 @@
   color: #5748c5;
   margin-top: 10px;
   display: block;
+  font-size: 20px;
 }
 
 .plain{
@@ -22,19 +23,20 @@
   font-size: 16px;
   border: none;
   color: white;
-  padding: 5px 10px;
+  padding: 15px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  margin: 4px 0px 4px 5px;
+  margin: 4px 0px 4px 10px;
   cursor: pointer;
   border-radius: 500px;
 }
 
 .dropdown-profile {
   padding: 5px;
-  font-size: 28px;
+  font-size: 45px;
   color: #5748c5;
+  margin-left: 10px;
 }
 
 .dropdown-profile > i:hover {
@@ -93,7 +95,7 @@
   width: 100%;
   background-color: white;
   display: flex;
-  padding: 20px 0;
+  padding: 15px 0;
 }
 
 li > .fa {
@@ -106,13 +108,13 @@ li > .fa {
 }
 
 #logo, #logo i {
-  font-size: 35px;
+  font-size: 40px;
   color: #5748c5;
 }
 
 #home, #answers {
-  font-size: 20px;
-  padding-top: 10px;
+  font-size: 30px;
+  // padding-top: 10px;
 }
 
 .left div {

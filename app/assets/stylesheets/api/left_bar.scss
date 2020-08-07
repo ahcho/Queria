@@ -2,14 +2,18 @@
     // margin: 90px 25px 0 100px;
     //display: felx;   
     color: black;
+    font-weight: 530;
+    margin-left: 30%;
+    
 }
 
 .topic-list > li {
     margin-bottom: 15px;
     border-radius: 100px;
     padding: 18px 30px;
-    font-size: 14px;
-    width: 100px;
+    font-size: 16px;
+    min-width: 100px;
+    width: 80%;
     transition-duration: 0.1s;
     //box-shadow: 2px 2px 5px 0px #858585;
     background-color: rgba(79, 94, 120, 0.1);

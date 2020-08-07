@@ -80,10 +80,15 @@ class PostForm extends React.Component {
 
     const submitBtn =
       this.props.formType === "Create Question" ? (
+        <>
         <button 
             onClick={this.handleSubmit} 
             onKeyDown={this.handleKeyDown}>
           Add Question </button>
+        <select name="topic-select" id="slct" onChange={this.update("topic_id")}>
+          {topicDropDown}
+        </select> 
+        </>
       ) : (
         <button 
             onClick={this.handleSubmit} 
@@ -118,9 +123,9 @@ class PostForm extends React.Component {
         </form>
         <div className="q-form-btn">
           {submitBtn}
-          <select name="topic-select" id="slct" onChange={this.update("topic_id")}>
+          {/* <select name="topic-select" id="slct" onChange={this.update("topic_id")}>
             {topicDropDown}
-          </select> 
+          </select>  */}
         </div>
       </div>
     );

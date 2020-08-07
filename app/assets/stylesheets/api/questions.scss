@@ -45,11 +45,11 @@
 }
 
 .main-question-modal-trigger {
-    width: 93%;
+    width: 75%;
     display: box;
     background-color: rgba(79, 94, 120, 0.24);
-    border-radius: 4px;
-    margin: 90px 5px 10px 5px;
+    border-radius: 8px;
+    margin: 90px auto 10px auto;
     padding: 16px 16px 6px 16px;
     //box-shadow: 2px 2px 5px 0px #858585;
 }
@@ -62,6 +62,9 @@
     padding-right: 4px;
 }
 
+.modal-q-form > textarea {
+    min-width: 90%;
+}
 
 .main-question-modal-trigger > div {
     padding-bottom: 10px;
@@ -88,7 +91,6 @@
     background: transparent;
     border: none;
     border-bottom: 0.7px solid lightgray;
-    width: 80%;
 }
 
 .q-form-header {
@@ -122,9 +124,9 @@
     width: 100%;
 }
 .question-index-item {
-    width: 80%;
+    width: 75%;
     margin: 30px auto;;
-    border-radius: 4px;
+    border-radius: 8px;
     background: rgba(79, 94, 120, 0.24) ;
     //background: #F5FFFA;
     border: 0.5px solid lightgrey;
