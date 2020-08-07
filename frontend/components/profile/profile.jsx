@@ -8,20 +8,32 @@ class Profile extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            showAnswer: false
+            showAnswer: false,
+            showQuestion: true
         }
         this.questions = this.props.questions;  
-        this.handleClick = this.handleClick.bind(this);
+        this.handleShowQuestion = this.handleShowQuestion.bind(this);
+        this.handleShowAnswer = this.handleShowAnswer.bind(this);
     } 
 
     componentDidMount() {
         this.props.fetchUser(this.props.match.params.userId);
     }
 
-    handleClick() {
-        this.setState({showAnswer: !this.state.showAnswer})  
+    handleShowAnswer() {
+        if (this.state.showAnswer === false) {
+            this.setState({ showAnswer: !this.state.showAnswer })
+            this.setState({ showQuestion: !this.state.showQuestion })
+        }
     }
-    
+
+    handleShowQuestion () {
+        if (this.state.showQuestion=== false) {
+            this.setState({ showAnswer: !this.state.showAnswer })
+            this.setState({ showQuestion: !this.state.showQuestion })
+        }
+
+    }
 
     render() {
         const {questions, answers, user, deleteQuestion, openModal,
@@ -59,8 +71,8 @@ class Profile extends React.Component {
                     <h1 id='profile-name'>{this.props.user.first_name} {this.props.user.last_name}</h1>
                 </div>
                 <ul className='profile-list'>
-                    <a id='user-questions' onClick={this.handleClick}>{questions.length} Questions</a>
-                    <a id='user-answers' onClick={this.handleClick}>{answers.length} Answers</a>
+                    <a id='user-questions' onClick={this.handleShowQuestion}>{questions.length} Questions</a>
+                    <a id='user-answers' onClick={this.handleShowAnswer}>{answers.length} Answers</a>
                 </ul>
                 {renderQuestions}   
                 {/* <div className='profile-bottom'>
