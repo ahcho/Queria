@@ -16,8 +16,10 @@ class CommentIndex extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.createComment({ body: this.state.body, answer_id: this.props.answer.id, user_id: this.props.currentUser_id });
-        this.setState({ body: "" });
+        if (this.state.body.length > 0){
+            this.props.createComment({ body: this.state.body, answer_id: this.props.answer.id, user_id: this.props.currentUser_id });
+            this.setState({ body: "" });
+        }
     } 
 
     update(field) {

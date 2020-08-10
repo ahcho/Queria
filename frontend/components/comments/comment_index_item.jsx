@@ -15,7 +15,7 @@ class CommentIndexItem extends React.Component {
                         onClick={() => this.props.deleteComment(comment.id)}
                     ></i>
             ) : null;
-
+            // debugger
         return (
             
             <div className="comment-index-item">
@@ -31,7 +31,7 @@ class CommentIndexItem extends React.Component {
                         {deleteButton}
                     </div>
                 </div>
-                <li className="comment-body">
+                <li key={comment.id}  className="comment-body">
                     {comment.body}
                 </li>
             </div>

@@ -73,7 +73,7 @@ class Entry extends React.Component {
                                         <input type="text" placeholder="Email" onChange={this.update("email")} value={this.state.email}/>
                                     </div>
                                     <div id="login-pw">
-                                        <input type="password" placeholder="password" onChange={this.update("password")}/>
+                                        <input type="password" placeholder="Password" onChange={this.update("password")}/>
                                     </div>
                                 </div>
                                 <div className="login-bottom">  
