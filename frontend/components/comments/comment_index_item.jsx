@@ -15,7 +15,7 @@ class CommentIndexItem extends React.Component {
                         onClick={() => this.props.deleteComment(comment.id)}
                     ></i>
             ) : null;
-            // debugger
+        // debugger  
         return (
             
             <div className="comment-index-item">
@@ -25,7 +25,8 @@ class CommentIndexItem extends React.Component {
                     </div>
                     <div className="comment-name-time">
                         <li>{comment.user.first_name} {comment.user.last_name}</li>
-                        <li>date and time</li>
+                        <li>{comment.updated_at.slice(0, 10)} at{" "}
+                            {comment.updated_at.slice(11, 16)}</li>
                     </div>
                     <div className="comment-delete-btn">
                         {deleteButton}
