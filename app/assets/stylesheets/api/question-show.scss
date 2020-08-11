@@ -1,11 +1,18 @@
 .q-show-header {
     padding-top: 100px;
     //border: 0.8px lightgrey solid;
-    width: 60%;
+    min-width: 60%;
+    max-width: 60%;
     margin: 0 0 20px 20%;
     padding-bottom: 10px;
     border-bottom: 1px #724EE2 solid;
     font-size: 12px;
+}
+
+.q-show-header > img {
+    max-width: 100%;
+    max-height: 100%;
+    display: block; 
 }
 
 .q-show-header > h1 {
