@@ -30,12 +30,17 @@ class PostForm extends React.Component {
     }
   }
 
+  handleFile(e) {
+    e.preventDefault();
+
+  }
+
   update(key) {
-    
     return (e) => {
       this.setState({ [key]: e.currentTarget.value })
     };
   }
+
 
   render() {
     const topics = ["history", "product", "recipe", "health", "tour"]
@@ -101,11 +106,16 @@ class PostForm extends React.Component {
     //let questionHolder = this.props.question.question;
     const getInput =
       this.props.formType === "Create Question" ? (
-        <input
-          type="text"
-          placeholder='Start your question with "What","How","Why", etc'
-          onChange={this.update("question")}
-        />
+        <>
+          <input
+            type="text"
+            placeholder='Start your question with "What","How","Why", etc'
+            onChange={this.update("question")}
+          />
+          <input 
+            type="file"
+            onChange={this.handleFile.bind(this)}/>
+        </>
       ) : (
         <textarea value={this.state.question} onChange={this.update("question")} cols="30" rows="2"></textarea>
         

@@ -24,7 +24,7 @@ class QuestionShow extends React.Component {
         if (this.props.question.questionPhotoUrl) {
             // debugger
             return (
-                <img src={this.props.question.questionPhotoUrl} src="" />
+                <img src={this.props.question.questionPhotoUrl} />
             )
         } else {
             return (

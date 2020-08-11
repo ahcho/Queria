@@ -71,6 +71,4 @@ Users can delete questions and answers that are written by them.
 Users have own profile page and it shows number of answers and questions they wrote.
 
 ## Futer Features
-* Comments: users can leave comments on answers.
-* Search: users can search for question by keywords.
 * Photo Upload: users can upload photos on answers, and change their profile photo.
