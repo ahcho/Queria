@@ -20,9 +20,7 @@ class QuestionShow extends React.Component {
     }
 
     questionPhotoAttached() {
-        // debugger
         if (this.props.question.questionPhotoUrl) {
-            // debugger
             return (
                 <img src={this.props.question.questionPhotoUrl} />
             )

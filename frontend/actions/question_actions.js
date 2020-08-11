@@ -12,7 +12,6 @@ const receiveAllQuestions = (questions) => {
 };
 
 const receiveQuestion = (payload) => {
-
     return ({
         type: RECEIVE_QUESTION,
         payload: payload

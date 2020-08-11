@@ -12,13 +12,23 @@ export const fetchQuestion = (id) => {
     })
 };
 
-export const createQuestion = (question) => {
-    return $.ajax({
-        method: "POST",
-        url: '/api/questions',
-        data: { question }
-    })
+export const createQuestion = (formData) => {
+  return $.ajax({
+    method: "POST",
+    url: "/api/questions",
+    data: formData ,
+    contentType: false,
+    processData: false
+  });
 };
+// export const createQuestion = (question) => {
+//      
+//     return $.ajax({
+//         method: "POST",
+//         url: '/api/questions',
+//         data: { question }
+//     })
+// };
 
 export const updateQuestion = (question) => {
       

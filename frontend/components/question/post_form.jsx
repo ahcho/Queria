@@ -20,19 +20,31 @@ class PostForm extends React.Component {
   }
 
   handleSubmit(e) {
-    e.preventDefault();
-    
-    if (this.state.question.length > 0) {
-      const question = Object.assign({}, this.state);
-      this.props.action(question).then(() => {
-        this.props.closeModal();
-      });
-    }
-  }
+                    e.preventDefault();
+                    const formData = new FormData();
+                    formData.append("question[question]", this.state.question);
+                    formData.append(
+                      "question[author_id]",
+                      this.state.author_id
+                    );
+                    formData.append("question[topic_id]", this.state.topic_id);
+                    if (this.state.photoFile) {
+                      formData.append("question[photo]", this.state.photoFile);
+                    }
+                    this.props.action(formData).then(() => {
+                      this.props.closeModal();
+                    });
+                    // if (this.state.question.length > 0) {
+                    //   const question = Object.assign({}, this.state);
+                    //   this.props.action(question).then(() => {
+                    //     this.props.closeModal();
+                    //   });
+                    // }
+                  }
 
   handleFile(e) {
     e.preventDefault();
-
+    this.setState({photoFile: e.currentTarget.files[0]})
   }
 
   update(key) {

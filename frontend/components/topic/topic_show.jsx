@@ -11,7 +11,7 @@ class TopicShow extends React.Component {
 
     componentDidMount() {
         this.props.fetchTopics();
-        // debugger
+         
         this.props.fetchTopic(parseInt(this.props.match.params.id));
     };
 
@@ -33,7 +33,7 @@ class TopicShow extends React.Component {
         const { deleteQuestion, openModal, currentUser, topics } = this.props;
         if (!topics || topics.length < this.props.match.params.id) return null;
         const topic = topics[parseInt(this.props.match.params.id)]
-        // debugger
+         
         let questions = []
         if (topic.questions !== undefined) {
             questions = Object.values(topic.questions); 

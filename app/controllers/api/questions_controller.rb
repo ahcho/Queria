@@ -10,7 +10,6 @@ class Api::QuestionsController < ApplicationController
 
     def create
         @question = Question.new(question_params)
-
         if @question.save
             render :show
         else
@@ -56,6 +55,6 @@ class Api::QuestionsController < ApplicationController
     private
 
     def question_params
-        params.require(:question).permit(:question, :author_id, :topic_id, :target, :question_id)
+        params.require(:question).permit(:question, :author_id, :topic_id, :target, :question_id, :photo)
     end
 end
