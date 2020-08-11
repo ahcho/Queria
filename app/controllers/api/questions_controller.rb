@@ -24,11 +24,16 @@ class Api::QuestionsController < ApplicationController
         render :index
     end 
 
+    # def show
+    #     @question = Question.find_by(id: params[:id])
+    #     render :show
+    # end
+
     def show
         @question = Question.find_by(id: params[:id])
         render :show
     end
-
+    
     def update
         @question = Question.find(params[:id])
         if @question.update(question_params)

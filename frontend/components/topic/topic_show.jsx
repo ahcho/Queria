@@ -11,6 +11,7 @@ class TopicShow extends React.Component {
 
     componentDidMount() {
         this.props.fetchTopics();
+        // debugger
         this.props.fetchTopic(parseInt(this.props.match.params.id));
     };
 
@@ -33,7 +34,10 @@ class TopicShow extends React.Component {
         if (!topics || topics.length < this.props.match.params.id) return null;
         const topic = topics[parseInt(this.props.match.params.id)]
         // debugger
-        const questions = Object.values(topic.questions) || [];
+        let questions = []
+        if (topic.questions !== undefined) {
+            questions = Object.values(topic.questions); 
+        } 
         return (
             <div className='main-page'>
                 <div className='main-left'>

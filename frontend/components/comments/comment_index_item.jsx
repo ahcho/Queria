@@ -11,7 +11,7 @@ class CommentIndexItem extends React.Component {
         const deleteButton =
             comment.user.id === currentUser_id ? (
                     <i
-                        className="fas fa-times"
+                    className="comment-delete-btn fas fa-times"
                         onClick={() => this.props.deleteComment(comment.id)}
                     ></i>
             ) : null;
@@ -24,17 +24,15 @@ class CommentIndexItem extends React.Component {
                         <i className="fa fa-user-circle" aria-hidden="true"></i>
                     </div>
                     <div className="comment-name-time">
-                        <li>{comment.user.first_name} {comment.user.last_name}</li>
-                        <li>{comment.updated_at.slice(0, 10)} at{" "}
-                            {comment.updated_at.slice(11, 16)}</li>
+                        <p>{comment.user.first_name} {comment.user.last_name}</p>
+                        <p>{comment.updated_at.slice(0, 10)} at{" "}
+                            {comment.updated_at.slice(11, 16)}</p>
                     </div>
-                    <div className="comment-delete-btn">
-                        {deleteButton}
-                    </div>
+                    {deleteButton}
                 </div>
-                <li key={comment.id}  className="comment-body">
+                <p key={comment.id}  className="comment-body">
                     {comment.body}
-                </li>
+                </p>
             </div>
             )
         

@@ -31,7 +31,8 @@ class CreateAnswer extends React.Component {
     render () {
         return (
             <form className="answer-form" onSubmit={this.handleSubmit}>
-                <textarea id="answerBox" 
+                <textarea 
+                className="single-answer" 
                 rows="10" 
                 cols="50" 
                 value={this.state.body}

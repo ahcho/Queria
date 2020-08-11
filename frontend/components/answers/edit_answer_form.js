@@ -29,7 +29,7 @@ class EditAnswerForm extends React.Component {
         return (
           <form className="answer-edit-form" onSubmit={this.handleSubmit}>
             <textarea
-              id="answerBox"
+              className="single-answer" 
               rows="3"
               cols="50"
               value={this.state.body}

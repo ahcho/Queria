@@ -37,18 +37,5 @@ json.comments do
         end
     end
 end
-# {
-#   question: {...},
-#   answers: {
-#     1: {
-#       id: 1,
-#       text: asdhfjkdashf                                                                                                                    comments: {
-#     3: {
-#       id: 3,
-#       text: sadfjkas
-#     },
-#     etc. etc. 
-#   }
-#     }
-# } 
+
 

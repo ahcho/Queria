@@ -3,7 +3,7 @@ import CommentIndex from './coment_index'
 import { deleteComment, createComment } from '../../actions/comment_actions';
 
 const mapStateToProps = (state, ownProps) => {
-    debugger
+    // debugger
     return ({
         comments: Object.values(state.entities.comments),
         answer_id: ownProps.answer.id,

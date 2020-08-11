@@ -55,7 +55,7 @@ class CommentIndex extends React.Component {
                 <div className="comment-form">
                     <input
                         type="text"
-                        id="comment-box"
+                        className="single-comment"
                         onChange={this.update("body")}
                         placeholder="Add a comment..."
                         value={this.state.body}>
@@ -85,7 +85,7 @@ class CommentIndex extends React.Component {
                         <div className="comment-form">
                             <input
                                 type="text"
-                                id="comment-box"
+                                className="single-comment"
                                 onChange={this.update("body")}
                                 placeholder="Add a comment..."
                                 value={this.state.body}>
