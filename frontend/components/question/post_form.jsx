@@ -20,31 +20,35 @@ class PostForm extends React.Component {
   }
 
   handleSubmit(e) {
-                    e.preventDefault();
-                    const formData = new FormData();
-                    formData.append("question[question]", this.state.question);
-                    formData.append(
-                      "question[author_id]",
-                      this.state.author_id
-                    );
-                    formData.append("question[topic_id]", this.state.topic_id);
-                    if (this.state.photoFile) {
-                      formData.append("question[photo]", this.state.photoFile);
-                    }
-                    this.props.action(formData).then(() => {
-                      this.props.closeModal();
-                    });
-                    // if (this.state.question.length > 0) {
-                    //   const question = Object.assign({}, this.state);
-                    //   this.props.action(question).then(() => {
-                    //     this.props.closeModal();
-                    //   });
-                    // }
-                  }
+    e.preventDefault();
+    const formData = new FormData();
+    formData.append("question[question]", this.state.question);
+    formData.append(
+      "question[author_id]",
+      this.state.author_id
+    );
+    formData.append("question[topic_id]", this.state.topic_id);
+    if (this.state.photoFile) {
+      formData.append("question[photo]", this.state.photoFile);
+    }
+    this.props.action(formData).then(() => {
+      this.props.closeModal();
+    });
+  }
 
   handleFile(e) {
     e.preventDefault();
-    this.setState({photoFile: e.currentTarget.files[0]})
+    this.setState({ photoFile: e.currentTarget.files[0] });
+
+    //////preview
+    // const file = e.currentTarget.files[0];
+    // const fileReader = new FileReader();
+    // fileReader.onloadend = () => {
+    //   this.setState({ photoFile: file, photoUrl: fileReader.result });
+    // };
+    // if (file) {
+    //   fileReader.readAsDataURL(file);
+    // }
   }
 
   update(key) {
@@ -55,6 +59,7 @@ class PostForm extends React.Component {
 
 
   render() {
+    // const preview = this.state.photoUrl ? <img src={this.state.photoUrl} /> : null;
     const topics = ["history", "product", "recipe", "health", "tour"]
     const { formType, question } = this.props;
     if (!question) return null;
@@ -127,6 +132,7 @@ class PostForm extends React.Component {
           <input 
             type="file"
             onChange={this.handleFile.bind(this)}/>
+            {/* {preview} */}
         </>
       ) : (
         <textarea value={this.state.question} onChange={this.update("question")} cols="30" rows="2"></textarea>

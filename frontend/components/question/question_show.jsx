@@ -24,10 +24,6 @@ class QuestionShow extends React.Component {
             return (
                 <img src={this.props.question.questionPhotoUrl} />
             )
-        } else {
-            return (
-                <img src="https://images.unsplash.com/photo-1567206563064-6f60f40a2b57?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80"/>
-            )
         }
     }
 
