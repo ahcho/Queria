@@ -2,7 +2,6 @@ import { connect } from 'react-redux';
 import AnswerIndex from './answer_index';
 import { deleteAnswer, 
          updateAnswer } from '../../actions/answer_actions';
-// import { createComment } from '../../actions/comment_actions';
 
 const mapStateToProps = (state) => {
     return ({
@@ -18,7 +17,6 @@ const mapDispatchToProps = (dispatch) => {
     return ({ 
         deleteAnswer: (answerId) => (dispatch(deleteAnswer(answerId))),
         updateAnswer: (answer) => (dispatch(updateAnswer(answer))),
-        // createComment: (comment) => (dispatch(createComment(comment)))
     })
     
 }

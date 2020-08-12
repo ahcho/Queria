@@ -21,6 +21,7 @@ json.answers do
     @question.answers.each do |answer|
         json.set! answer.id do 
             json.extract! answer, :body, :id, :author_id, :question_id, :updated_at, :created_at
+            json.answerPhotoUrl url_for(answer.photo) if answer.photo.attached?
         end        
     end
 end

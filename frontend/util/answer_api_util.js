@@ -13,13 +13,24 @@ export const fetchUserAllAnswers = (userId) => {
     })
 }
 
-export const createAnswer = (answer) => {
+export const createAnswer = (formData) => {
+    
+
     return $.ajax({
-        method: "POST",
-        url:   `/api/answers`,
-        data: { answer }
-    })
-}
+    method: "POST",
+    url: `/api/answers`,
+    data: formData,
+    contentType: false,
+    processData: false,
+  });
+};
+// export const createAnswer = (answer) => {
+//     return $.ajax({
+//         method: "POST",
+//         url:   `/api/answers`,
+//         data: { answer }
+//     })
+// }
 
 export const updateAnswer = (answer) => {
     return $.ajax({

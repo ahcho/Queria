@@ -6,7 +6,7 @@ import CommentIndexContainer from '../comments/comment_index_container';
 class AnswerIndexItem extends React.Component {
   constructor(props) {
     super(props);
-    
+
     this.state = {
       dropDown: false,
     };
@@ -18,14 +18,19 @@ class AnswerIndexItem extends React.Component {
   }
 
   handleChange(value) {
-    this.setState({ body: value })
+    this.setState({ body: value });
+  }
+
+  answerPhotoAttached() {
+    if (this.props.answer.answerPhotoUrl) {
+      return <img src={this.props.answer.answerPhotoUrl} />;
+    }
   }
 
   render() {
-
     const { answer, author, updateAnswer } = this.props;
-    const dropdown = this.state.dropDown ? "" : "edit-hidden" ;
-    const showAnswer = this.state.dropDown? "not-hidden-answer" : "";
+    const dropdown = this.state.dropDown ? "" : "edit-hidden";
+    const showAnswer = this.state.dropDown ? "not-hidden-answer" : "answer-detail-box";
     if (!answer || !author) return null;
 
     const deleteButton =
@@ -42,40 +47,39 @@ class AnswerIndexItem extends React.Component {
     return (
       <div className="single-answer-box">
         <div className="single-answer-container">
-        <div className="snb-top">
-          <div className="snb-top-left">
-            <i className="fa fa-user-circle" aria-hidden="true"></i>
-            <div className="answer-name-time">
-              <p className="a-author-name">
-                {author.first_name} {author.last_name}
-              </p>
-              <p className="a-date">
-                {answer.updated_at.slice(0, 10)} at{" "}
-                {answer.updated_at.slice(11, 16)}
-              </p>
+          <div className="snb-top">
+            <div className="snb-top-left">
+              <i className="fa fa-user-circle" aria-hidden="true"></i>
+              <div className="answer-name-time">
+                <p className="a-author-name">
+                  {author.first_name} {author.last_name}
+                </p>
+                <p className="a-date">
+                  {answer.updated_at.slice(0, 10)} at{" "}
+                  {answer.updated_at.slice(11, 16)}
+                </p>
+              </div>
             </div>
+            {deleteButton}
           </div>
-          {deleteButton}
-        </div>
-        <div className={dropdown} id="answer-edit-box">
-          <EditAnswerForm
-            handleDropDown={this.handleDropDown}
-            answer={answer}
-            author={author}
-            updateAnswer={updateAnswer}
-          />
-        </div>
+          <div className={dropdown} id="answer-edit-box">
+            <EditAnswerForm
+              handleDropDown={this.handleDropDown}
+              answer={answer}
+              author={author}
+              updateAnswer={updateAnswer}
+            />
+          </div>
 
-        <div className={showAnswer}>
-          <p className="single-answer-body">{answer.body}</p>
-        </div>
-          <CommentIndexContainer
-            answer={answer}
-            author={author}
-          />
+          <div className={showAnswer}>
+            <p className="single-answer-body">{answer.body}</p>
+            <br/>
+            {this.answerPhotoAttached()}
+          </div>
+          <CommentIndexContainer answer={answer} author={author} />
         </div>
       </div>
-   );
+    );
   }
 }
 

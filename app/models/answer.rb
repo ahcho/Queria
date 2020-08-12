@@ -10,9 +10,9 @@ class Answer < ApplicationRecord
         foreign_key: :question_id
 
     has_many :comments,
-    dependent: :destroy
+        dependent: :destroy
+
+    has_one_attached :photo
  
-
-
 end
 
