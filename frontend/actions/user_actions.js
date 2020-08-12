@@ -32,11 +32,18 @@ export const fetchAllUsers = () => (dispatch) => (
 
 export const fetchUser = (userId) => (dispatch) => {
     return(
-    UserApiUtil.fetchUser(userId)
-        .then(user => dispatch(receiveUser(user)))
+        UserApiUtil.fetchUser(userId)
+            .then(user => dispatch(receiveUser(user)))
 )}
 
-export const deleteUser = (userId) => (dispatch) => (
-    UserApiUtil.deleteUser(userId)
-        .then(()=> dispatch(removeUser(user)))
-)
+export const deleteUser = (userId) => (dispatch) => { 
+    return(
+        UserApiUtil.deleteUser(userId)
+            .then(()=> dispatch(removeUser(user)))
+)}
+
+export const editUser = (formData, userId) => dispatch => { 
+    return(
+        UserApiUtil.editUser(formData, userId)
+            .then(user => dispatch(receiveUser(user)))
+)}

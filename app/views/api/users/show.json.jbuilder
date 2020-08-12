@@ -1,5 +1,6 @@
 json.user do
     json.extract! @user, :id, :email, :first_name, :last_name, :question_ids #, :answer_ids
+    json.profilePhotoUrl url_for(@user.photo) if @user.photo.attached?
 end
 
 json.questions do
@@ -12,8 +13,6 @@ json.questions do
         end
     end
 end
-
-
 
 json.answers do 
     @user.answers.each do |answer|

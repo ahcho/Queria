@@ -1,4 +1,4 @@
-import { RECEIVE_CURRENT_USER, LOGOUT_CURRENT_USER } from "../actions/session_actions";
+import { RECEIVE_CURRENT_USER } from "../actions/session_actions";
 import { RECEIVE_ALL_USERS,
          RECEIVE_USER,
          REMOVE_USER} from "../actions/user_actions";
@@ -21,12 +21,7 @@ const usersReducer = (state = {}, action) => {
             delete nextState[action.userId];
             return nextState;
         case RECEIVE_QUESTION:
-            //if (!action.payload.users) return {};
-            // return action.payload.users;
             return Object.assign(nextState, action.payload.users);
-        // case RECEIVE_ALL_QUESTIONS:
-        //     if(!action.payload.users) return state;
-        //     return Object.assign(nextState, action.payload.users);
         default:
             return state;
     }

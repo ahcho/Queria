@@ -1,7 +1,7 @@
 import React from 'react';
 import QuestionIndexItem from '../question/question_index_item';
 import AnswerIndexItem from '../answers/answer_index_item';
-import { Link } from 'react-router-dom';
+import EditProfileContainer from './edit_profile_container'
 
 class Profile extends React.Component {
 
@@ -9,11 +9,13 @@ class Profile extends React.Component {
         super(props);
         this.state = {
             showAnswer: false,
-            showQuestion: true
+            showQuestion: true,
+            photoFile: null
         }
         this.questions = this.props.questions;  
         this.handleShowQuestion = this.handleShowQuestion.bind(this);
         this.handleShowAnswer = this.handleShowAnswer.bind(this);
+        this.handleProfilePhoto = this.handleProfilePhoto.bind(this);
     } 
 
     componentDidMount() {
@@ -34,6 +36,31 @@ class Profile extends React.Component {
         }
 
     }
+
+    handleProfilePhoto(e) {
+        const file = e.currentTarget.files[0];
+        const fileReader = new FileReader();
+        fileReader.onloadend = () => {
+            this.setState({ profileFile: file, photoUrl: fileReader.result })
+        };
+        if (file) {
+            fileReader.readAsDataURL(file);
+        }
+        
+    }
+
+    handleSubmit(e) {
+        e.preventDefault();
+        const formData = new FormData();
+        formData.append('user[bio]', this.state.bio);
+        formData.append('user[current_city]', this.state.current_city);
+        formData.append('user[home_town]', this.state.home_town);
+        if (this.state.profileFile) {
+            formData.append('user[profile_photo]', this.state.profileFile)
+        }
+        this.props.editUser(formData, this.state.id);
+    }
+       
 
     render() {
         const {questions, answers, user, deleteQuestion, openModal,
@@ -66,10 +93,7 @@ class Profile extends React.Component {
 
         return (
             <div className='profile-page'>
-                <div className='profile-top'>
-                    <i id='profile-img' className="fas fa-user-astronaut"></i>
-                    <h1 id='profile-name'>{this.props.user.first_name} {this.props.user.last_name}</h1>
-                </div>
+                <EditProfileContainer />
                 <ul className='profile-list'>
                     <a id='user-questions' onClick={this.handleShowQuestion}>{questions.length} Questions</a>
                     <a id='user-answers' onClick={this.handleShowAnswer}>{answers.length} Answers</a>

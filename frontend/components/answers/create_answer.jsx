@@ -34,11 +34,6 @@ class CreateAnswer extends React.Component {
             this.props.handleDropDown(e);
             this.setState({ body: "" });
         }
-        // if (this.state.body.length > 0) {
-        //     this.props.createAnswer(this.state)
-        //     this.props.handleDropDown(e);
-        //     this.setState({ "body": "" });
-        // }
     }
 
     handleFile(e) {

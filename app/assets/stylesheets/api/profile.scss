@@ -36,9 +36,15 @@ a, i {
     padding: 10px;
 }
 #profile-name{
-    font-size: 24px;
+    // border: 2px green solid;
+    padding-top: 30px;
+    font-size: 20px;
     font-weight: bold;
     color: black;
+}
+
+#profile-img {
+    font-size: 100px;
 }
 
 .profile-description {
@@ -66,4 +72,8 @@ a, i {
     margin-bottom: 20px;
     border: none;
     padding: 15px;
+}
+
+.image-upload > input {
+  display: none;
 }

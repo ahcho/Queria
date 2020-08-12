@@ -19,3 +19,13 @@ export const deleteUser = (userId) => {
         url: `/api/users/${user.id}`
     })
 }
+
+export const editUser = (formData, userId) => {
+    return $.ajax({
+        method: "PATCH",
+        url: `/api/users/${userId}`,
+        data: formData,
+        contentType: false,
+        processData: false
+    })
+}

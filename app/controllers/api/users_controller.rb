@@ -21,14 +21,21 @@ class Api::UsersController < ApplicationController
 
     def show
         @user = User.find_by(id: params[:id])
-        # @questions = @user.questions
-        # @answers = @user.answers
         render :show
+    end
+
+    def update
+        @user = User.find_by(id: params[:id])
+        if @user.update(user_params)
+            render :show
+        else
+            render json: ["fail to update an user"], status: 404
+        end
     end
 
     private
     
     def user_params
-        params.require(:user).permit(:signup_email, :signup_pw, :fname, :lname)
+        params.require(:user).permit(:signup_email, :signup_pw, :fname, :lname, :photo)
     end
 end
