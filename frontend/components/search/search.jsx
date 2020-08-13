@@ -4,9 +4,14 @@ import { Link } from 'react-router-dom';
 class Search extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { target: "", questions: [] }
+        this.state = { 
+            target: "", 
+            questions: [],
+            showSearchBar: false }
         this.handleInput = this.handleInput.bind(this)
         this.resetSearch = this.resetSearch.bind(this)
+        this.handleSearchBar = this.handleSearchBar.bind(this);
+
     }
 
     resetSearch(e) {
@@ -23,6 +28,10 @@ class Search extends React.Component {
         })
     }
 
+    handleSearchBar() {
+        this.setState({ showSearchBar: !this.state.showSearchBar });
+    }
+
     handleInput(e) {
         if (e.target.value === "") {
             this.setState({ target: "", questions: [] });
@@ -36,12 +45,14 @@ class Search extends React.Component {
     }
 
     render() {
+        const showSearchBar = this.state.showSearchBar ? "search-input" : "hide-search-input"
         const questions = this.state.questions;
         const foundQuestions = this.getMatches(questions)
         const foundTarget = (questions.length > 0) ? 'foundTarget' : '';
         return (
             <div className="search-bar">
-                <input className="search-input" type="text" placeholder="Search Queria" onKeyUp={this.handleInput} />
+                <i className="fas fa-search" onClick={this.handleSearchBar}></i>
+                <input className={showSearchBar} type="text" placeholder="Search Queria" onKeyUp={this.handleInput} />
                 <ul className={foundTarget}>
                     {foundQuestions}
                 </ul>

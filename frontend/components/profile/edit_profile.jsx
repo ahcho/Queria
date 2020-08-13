@@ -4,13 +4,12 @@ class EditProfile extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            email: "",
-            id:"",
-            first_name:"",
-            last_name:"",
+            email: this.props.user.email,
+            id: this.props.user.id,
+            first_name: this.props.user.first_name,
+            last_name: this.props.user.last_name,
             photoFile: null
         }
-        // this.state = this.props.user;
     }
 
     componentDidMount() {
@@ -22,20 +21,12 @@ class EditProfile extends React.Component {
     }
 
     handleProfilePhoto(e) {
-        
-        const file = e.currentTarget.files[0];
-        const fileReader = new FileReader();
-        fileReader.onloadend = () => {
-            this.setState({ profileFile: file, photoUrl: fileReader.result })
-        };
-        if (file) {
-            fileReader.readAsDataURL(file);
-        }
-        this.handleSubmit();
+        this.setState({ photoFile: e.currentTarget.files[0]}, () =>
+            this.handleSubmit());        
     }
 
     handleSubmit() {
-
+        
         //e.preventDefault();
         const formData = new FormData();
         // formData.append('user[first_name]', this.state.first_name);

@@ -22,12 +22,14 @@ class AnswerIndexItem extends React.Component {
   }
 
   answerPhotoAttached() {
+     
     if (this.props.answer.answerPhotoUrl) {
       return <img src={this.props.answer.answerPhotoUrl} />;
     }
   }
 
   render() {
+     
     const { answer, author, updateAnswer } = this.props;
     const dropdown = this.state.dropDown ? "" : "edit-hidden";
     const showAnswer = this.state.dropDown ? "not-hidden-answer" : "answer-detail-box";

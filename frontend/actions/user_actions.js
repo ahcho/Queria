@@ -43,6 +43,7 @@ export const deleteUser = (userId) => (dispatch) => {
 )}
 
 export const editUser = (formData, userId) => dispatch => { 
+     
     return(
         UserApiUtil.editUser(formData, userId)
             .then(user => dispatch(receiveUser(user)))

@@ -21,6 +21,7 @@ export const deleteUser = (userId) => {
 }
 
 export const editUser = (formData, userId) => {
+     
     return $.ajax({
         method: "PATCH",
         url: `/api/users/${userId}`,
