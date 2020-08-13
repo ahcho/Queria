@@ -51,11 +51,11 @@ class Search extends React.Component {
         const foundTarget = (questions.length > 0) ? 'foundTarget' : '';
         return (
             <div className="search-bar">
-                <i className="fas fa-search" onClick={this.handleSearchBar}></i>
                 <input className={showSearchBar} type="text" placeholder="Search Queria" onKeyUp={this.handleInput} />
                 <ul className={foundTarget}>
                     {foundQuestions}
                 </ul>
+                <i className="fas fa-search" onClick={this.handleSearchBar}></i>
             </div>
         )
     }

@@ -27,10 +27,11 @@ const removeAnswer = (answerId) => {
     })
 }
 //get answers belong to a question
-export const fetchAnswers = (questionId) => (dispatch) => (
-    answerApiUtil.fetchAnswers(questionId)
+export const fetchAnswers = (questionId) => (dispatch) => { 
+    return (
+        answerApiUtil.fetchAnswers(questionId)
         .then(answers => dispatch(receiveAllAnswers(answers)))
-);
+)}
 
 //get all answes by a logged in user
 export const fetchUserAllAnswers = (userId) => (dispatch) => (

@@ -44,7 +44,8 @@
 .dropdown-profile {
   padding: 5px;
   font-size: 45px;
-  color: #724EE2;
+  // color: #724EE2;
+  color: white;
   margin-left: 10px;
 }
 
@@ -70,6 +71,7 @@
 
 .dropdown-content li {
   padding: 5px 8px;
+  color: #724EE2;
 }
 
 .dropdown-content a {
@@ -102,7 +104,8 @@
   border-bottom: 0.5px solid lightgrey;
   z-index: 8;
   width: 100%;
-  background-color: white;
+  background-color: #23252C;
+  // background-color: white;
   display: flex;
   padding: 15px 0;
 }
@@ -118,7 +121,8 @@ li > .fa {
 
 #logo, #logo i {
   font-size: 40px;
-  color: #724EE2;
+  // color: #724EE2;
+  color: white;
 }
 
 #home, #answers {
@@ -142,9 +146,31 @@ li > .fa {
   align-items: center;
 }
 
+.nav-center {
+  margin-top: 15px;
+}
+
+.nav-center a {
+  text-decoration: none;
+  color: white;
+  font-family: 'Lora', serif;
+  font-size: 35px;
+  font-weight: 700;
+  // margin-top: 30px;
+
+}
+
 
 // search bar
-
+.search-bar {
+  display: flex;
+  // border: 1px solid red;
+}
+.search-bar > i {
+  font-size: 30px;
+  color: white;
+  margin: 0 20px;
+}
 .search-input {
   border-radius: 4px;
   border: 1px lightgray solid;

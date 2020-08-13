@@ -10,6 +10,7 @@ class EditProfile extends React.Component {
             last_name: this.props.user.last_name,
             photoFile: null
         }
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     componentDidMount() {
@@ -21,18 +22,20 @@ class EditProfile extends React.Component {
     }
 
     handleProfilePhoto(e) {
-        this.setState({ photoFile: e.currentTarget.files[0]}, () =>
-            this.handleSubmit());        
+           
+        this.setState({ photoFile: e.currentTarget.files[0]}, () => this.handleSubmit()) 
+        // setTimeout(()=>{this.handleSubmit}, 1000); 
+        // this.handleSubmit()        
     }
 
     handleSubmit() {
-        
         //e.preventDefault();
         const formData = new FormData();
         // formData.append('user[first_name]', this.state.first_name);
         // formData.append('user[last_name]', this.state.last_name);
-        if (this.state.profileFile) {
-            formData.append('user[profile_photo]', this.state.profileFile)
+           
+        if (this.state.photoFile) {
+            formData.append('user[photo]', this.state.photoFile)
         }
         this.props.editUser(formData, this.state.id);
     }

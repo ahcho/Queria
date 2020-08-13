@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import CreateAnswer from './create_answer';
-import { createAnswer } from '../../actions/answer_actions';
+import { createAnswer, fetchAnswers } from '../../actions/answer_actions';
 
 const mapStateToProps = (state, ownProps) => {
     
@@ -12,8 +12,10 @@ const mapStateToProps = (state, ownProps) => {
 
 
 const mapDispatchToProps = (dispatch) => {
+       
     return {
-        createAnswer : (answer) => dispatch(createAnswer(answer))
+        createAnswer: (answer) => dispatch(createAnswer(answer)),
+        fetchAnswers: (answerId) => dispatch(fetchAnswers(answerId))
     };
 };
 

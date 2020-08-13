@@ -1,4 +1,5 @@
 import React from "react";
+import { fetchAnswers } from '../../util/answer_api_util';
 
 class CreateAnswer extends React.Component {
 
@@ -35,6 +36,11 @@ class CreateAnswer extends React.Component {
             this.setState({ body: "" });
         }
     }
+
+    // componentDidUpdate() {
+    //      ;
+    //   this.props.fetchAnswers(this.props.questionId);
+    // }
 
     handleFile(e) {
         e.preventDefault();
