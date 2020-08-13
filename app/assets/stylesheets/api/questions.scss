@@ -127,10 +127,10 @@
     width: 75%;
     margin: 30px auto;;
     border-radius: 8px;
-    background: rgba(79, 94, 120, 0.24) ;
-    //background: #F5FFFA;
-    border: 0.5px solid lightgrey;
+    // background: rgba(79, 94, 120, 0.24) ;
+    // border: 0.5px solid lightgrey;
     padding: 16px;
+    color: white;
     //box-shadow: 2px 2px 5px 0px #858585;
 }
 
@@ -162,6 +162,14 @@
 
 .question-detail {
     padding-top: 5px;
-    color: black;
-    font-weight: 500;
+    color: white;
+    // font-weight: 500;
 }
+
+.question-index > div:nth-child(odd) {
+    background: #d1288c;
+}
+
+.question-index > div:nth-child(even) {
+    background: #724EE2;;
+} 

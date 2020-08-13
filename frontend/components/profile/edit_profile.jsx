@@ -41,12 +41,10 @@ class EditProfile extends React.Component {
     }
 
     hasProfilePhoto() {
-        if (this.props.user.profilePhotoUrl === undefined) {
-            <div>
-                <img id='profile-img' src={this.props.user.profilePhotoUrl} />
-            </div>
+        if (this.props.user.profilePhotoUrl) {
+            return <img id='profile-photo' src={this.props.user.profilePhotoUrl} />;
          } else {
-                <i id='profile-img' className="fas fa-user-circle"></i>
+            return <i id='profile-img' className="fas fa-user-circle"></i>;
          }
     }
 
@@ -56,14 +54,13 @@ class EditProfile extends React.Component {
                 <div className="image-upload">
                     <label htmlFor="file-input">
                         {this.hasProfilePhoto()}
-                        <i id='profile-img' className="fas fa-user-circle"></i>
                     </label>
                     <input id="file-input"
                         type="file"
                         onChange={this.handleProfilePhoto.bind(this)} />
                 </div>
-
                 <h1 id='profile-name'>{this.props.user.first_name} {this.props.user.last_name}</h1>
+                
             </div>
         )
 

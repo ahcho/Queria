@@ -6,15 +6,10 @@ a, i {
     cursor: pointer;
 }
 
-// i {
-//     cursor: pointer;
-// }
-
 .profile-page{
-    margin-top: 20px;
-    width: 70%;
+    width: 100%;
     display: flex;
-    background: #EEE2DF;
+    // background: #EEE2DF;
     flex-direction: column;
     margin-left: auto;
     margin-right: auto;
@@ -22,9 +17,14 @@ a, i {
 }
 
 .profile-top {
-    background: #C89F9C;
+    margin-top: 20px;
+    margin-left: 8%;
+    height: 50%;
+
+    // background: #C89F9C;
     display: flex;
 }
+
 
 .profile-answer-btn {
     margin-left: 20%;
@@ -38,14 +38,13 @@ a, i {
 #profile-name{
     // border: 2px green solid;
     padding-top: 30px;
-    font-size: 20px;
-    font-weight: bold;
-    color: black;
+    font-size: 25px;
+    // font-weight: bold;
+    color: white;
+    font-family: 'Lora', serif;
 }
 
-#profile-img {
-    font-size: 100px;
-}
+
 
 .profile-description {
     margin: 20px;
@@ -53,11 +52,15 @@ a, i {
 
 .profile-list {
     display: flex;
-    padding: 10px;
+    // padding: 10px;
     margin-bottom: 10px;
-    background: #EEE2DF;
-    border-top: 1px solid grey;
-    border-bottom: 1px solid grey;
+    margin-left: 30%;
+    // border: 1px lightgray solid;
+    // margin-left: 150px;
+    // background: #EEE2DF;
+    // border-top: 1px solid grey;
+    // border-bottom: 1px solid grey;
+    color: white;
 }
 
 .profile-list > a {
@@ -76,4 +79,20 @@ a, i {
 
 .image-upload > input {
   display: none;
+}
+
+.image-upload {
+    padding: none;
+}
+
+#profile-img {
+    font-size: 100px;
+}
+
+#profile-photo {
+    object-fit: cover;
+    width: 100%;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
 }

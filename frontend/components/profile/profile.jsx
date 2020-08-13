@@ -15,7 +15,6 @@ class Profile extends React.Component {
         this.questions = this.props.questions;  
         this.handleShowQuestion = this.handleShowQuestion.bind(this);
         this.handleShowAnswer = this.handleShowAnswer.bind(this);
-        this.handleProfilePhoto = this.handleProfilePhoto.bind(this);
     } 
 
     componentDidMount() {
@@ -37,29 +36,6 @@ class Profile extends React.Component {
 
     }
 
-    handleProfilePhoto(e) {
-        const file = e.currentTarget.files[0];
-        const fileReader = new FileReader();
-        fileReader.onloadend = () => {
-            this.setState({ profileFile: file, photoUrl: fileReader.result })
-        };
-        if (file) {
-            fileReader.readAsDataURL(file);
-        }
-        
-    }
-
-    handleSubmit(e) {
-        e.preventDefault();
-        const formData = new FormData();
-        formData.append('user[bio]', this.state.bio);
-        formData.append('user[current_city]', this.state.current_city);
-        formData.append('user[home_town]', this.state.home_town);
-        if (this.state.profileFile) {
-            formData.append('user[profile_photo]', this.state.profileFile)
-        }
-        this.props.editUser(formData, this.state.id);
-    }
        
 
     render() {
