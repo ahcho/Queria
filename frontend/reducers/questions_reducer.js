@@ -10,11 +10,12 @@ import { RECEIVE_CURRENT_USER } from '../actions/session_actions';
 const QuestionsReducer = (state = {}, action) => {
     Object.freeze(state);
     let newState = Object.assign({}, state);
-
+     
     switch (action.type) {
         case RECEIVE_ALL_QUESTIONS:
             return Object.assign({}, state, action.questions)
         case RECEIVE_QUESTION:
+            RECEIVE_QUESTION
             newState[action.payload.question.id] = action.payload.question;
             return newState;
         case REMOVE_QUESTION:

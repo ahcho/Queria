@@ -16,6 +16,7 @@ class QuestionShow extends React.Component {
     }
 
     componentDidMount() {
+         
         this.props.fetchQuestion(this.props.match.params.questionId);
     }
 

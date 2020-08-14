@@ -3,7 +3,7 @@ import { fetchUser, editUser } from '../../actions/user_actions';
 import EditProfile from './edit_profile';
 
 const mapStateToProps = (state) => {
-    // debugger
+    //  
     return ({
         user: state.session.currentUser
     })

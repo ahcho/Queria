@@ -12,6 +12,7 @@ const receiveAllQuestions = (questions) => {
 };
 
 const receiveQuestion = (payload) => {
+     ;
     return ({
         type: RECEIVE_QUESTION,
         payload: payload
@@ -31,6 +32,7 @@ export const fetchQuestions = () => (dispatch) => {
 };
 
 export const fetchQuestion = (questionId) => (dispatch) => {
+     
     return QuestionApiUtil.fetchQuestion(questionId)
         .then((payload) => dispatch(receiveQuestion(payload)))
 };

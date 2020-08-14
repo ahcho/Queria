@@ -6,6 +6,7 @@ export const fetchQuestions = () => {
 };
 
 export const fetchQuestion = (id) => {
+     
     return $.ajax({
         method: "GET",
         url: `/api/questions/${id}`
@@ -21,14 +22,6 @@ export const createQuestion = (formData) => {
     processData: false
   });
 };
-// export const createQuestion = (question) => {
-//      
-//     return $.ajax({
-//         method: "POST",
-//         url: '/api/questions',
-//         data: { question }
-//     })
-// };
 
 export const updateQuestion = (question) => {
       
@@ -38,7 +31,6 @@ export const updateQuestion = (question) => {
         data: { question }
     })
 };
-//url: `/api/questions/${question.id}`,
 
 export const deleteQuestion = (id) => {
     return $.ajax({
