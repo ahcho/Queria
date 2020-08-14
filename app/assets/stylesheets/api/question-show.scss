@@ -3,13 +3,13 @@
     //border: 0.8px lightgrey solid;
     background: #d1288c;
     color: white;
-    padding-bottom: 10px;
+    padding-bottom: 30px;
     padding-left: 10%;
 }
 
 .asker-info {
     display: flex;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     // border: 1px solid black;
 }
 
@@ -37,8 +37,6 @@
 .q-answer-box {
     display: flex;
     flex-direction: column;;
-    border-top: 2px solid #724EE2;
-    border-bottom: 2px solid #724EE2;
     padding: 20px 0 10px 0;
     margin: 0 0 20px 0;
     // width: 60%;

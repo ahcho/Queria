@@ -29,8 +29,8 @@ class AnswerIndexItem extends React.Component {
   }
 
   render() {
-     
-    const { answer, author, updateAnswer } = this.props;
+    
+    const { answer, author, updateAnswer} = this.props;
     const dropdown = this.state.dropDown ? "" : "edit-hidden";
     const showAnswer = this.state.dropDown ? "not-hidden-answer" : "answer-detail-box";
     if (!answer || !author) return null;

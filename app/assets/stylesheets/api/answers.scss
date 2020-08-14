@@ -10,21 +10,19 @@
     color: white;
 }
 .single-answer-box {
-    border: 1px solid #724EE2;
+    // border: 1px solid #724EE2;
     // border-top: 1px solid #724EE2;
-    // border-bottom: 1px solid #724EE2;
+    border-bottom: 1px solid black;
     display: flex;
     flex-direction: column;
     min-height: 200px;
     height: auto;
     padding: 20px 0;
-    width: 100%;
-    margin-bottom: 10px;
 }
 
 .single-answer-container {
-
-    padding: 10px;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
 .snb-top {
@@ -77,8 +75,6 @@
     display: flex;
     flex-direction: column;
     margin: 20px 0 20px 0;
-    border: 1px solid black;
-
 }
 
 .edit-answer-btn {

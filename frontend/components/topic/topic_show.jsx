@@ -40,9 +40,9 @@ class TopicShow extends React.Component {
         } 
         return (
             <div className='main-page'>
-                <div className='main-left'>
+                {/* <div className='main-left'>
                     <TopicList />
-                </div>
+                </div> */}
                 <div className='main-center'>
                     <div className="topic-header">
                         {/* <img src='/Users/habin/Desktop/Queria/app/assets/images/history.jpg' alt=""/> */}
@@ -57,17 +57,6 @@ class TopicShow extends React.Component {
                 <div className='main-right'>
                 </div>
             </div>
-            // <div className="topic-show-container">
-            //     <br/>
-            //     <br/>
-            //     <br/>
-            //     <br/>
-            //     <div className="topic-header">{topic.name}</div>
-            //     {questions.map(
-            //         (question) => <QuestionIndexItem
-            //             question={question} deleteQuestion={deleteQuestion} key={question.id}
-            //             openModal={openModal} currentUserId={currentUser.id} />)}
-            // </div>
         )
     }
 }

@@ -28,7 +28,7 @@ class QuestionShow extends React.Component {
     }
 
     render() {
-        const { currentUser, question } = this.props;
+        const { currentUser, question, answers } = this.props;
         const dropdown = this.state.dropDown ? "" : "hidden" ;
         if (!question ) return null;
         return (
@@ -42,6 +42,7 @@ class QuestionShow extends React.Component {
                     </div>
                     <h1>{question.question}</h1>
                     {this.questionPhotoAttached()}
+                    <i className="fas fa-comment-alt"></i> {answers.length}
                 </div>
                 <div className='q-answer-box'>
                     <p>{this.props.currentUser.first_name}, can you answer this question?</p>
