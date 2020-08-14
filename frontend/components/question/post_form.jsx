@@ -8,18 +8,11 @@ class PostForm extends React.Component {
     this.currentUser = props.currentUser;
     this.question = props.question;
     this.update = this.update.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleKeyDown = this.handleKeyDown.bind(this);
+    this.handleCreateSubmit = this.handleCreateSubmit.bind(this);
+    this.handleEditSubmit = this.handleEditSubmit.bind(this);
   }
 
-  handleKeyDown(e) {
-    if (e.key === "Enter") {
-      e.preventDefault();
-      this.handleSubmit(e);
-    }
-  }
-
-  handleSubmit(e) {
+  handleCreateSubmit(e) {
     e.preventDefault();
     const formData = new FormData();
     formData.append("question[question]", this.state.question);
@@ -34,6 +27,16 @@ class PostForm extends React.Component {
     this.props.action(formData).then(() => {
       this.props.closeModal();
     });
+  }
+
+  handleEditSubmit(e) {
+    e.preventDefault();
+    if (this.state.question.length > 0) {
+        const question = Object.assign({}, this.state);
+        this.props.action(question).then(() => {
+          this.props.closeModal();
+        });
+      }
   }
 
   handleFile(e) {
@@ -106,8 +109,7 @@ class PostForm extends React.Component {
       this.props.formType === "Create Question" ? (
         <>
         <button 
-            onClick={this.handleSubmit} 
-            onKeyDown={this.handleKeyDown}>
+            onClick={this.handleCreateSubmit}>
           Add Question </button>
         <select name="topic-select" id="slct" onChange={this.update("topic_id")}>
           {topicDropDown}
@@ -115,12 +117,10 @@ class PostForm extends React.Component {
         </>
       ) : (
         <button 
-            onClick={this.handleSubmit} 
-            onKeyDown={this.handleKeyDown}>
+            onClick={this.handleEditSubmit}>
           Edit Question </button>
       );
 
-    //let questionHolder = this.props.question.question;
     const getInput =
       this.props.formType === "Create Question" ? (
         <>
@@ -142,9 +142,9 @@ class PostForm extends React.Component {
     return (
       <div className="question-modal">
         {createReminder}
-        <form className="modal-q-form" onSubmit={this.handleSubmit}>
+        <form className="modal-q-form" >
           <div className="modal-user">
-            <i className="fa fa-user-circle" aria-hidden="true"></i>
+            {/* <i className="fa fa-user-circle" aria-hidden="true"></i> */}
             <h2 className="q-form-header">
               {this.currentUser.first_name} asked
             </h2>

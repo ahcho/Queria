@@ -65,16 +65,6 @@ a, i {
     margin: 10px;
 }
 
-//.profile-bottom > li {
-.profile-answer-btn{
-    background: #713E5A;
-    color: white;
-    border-radius: 50px;
-    margin-bottom: 20px;
-    border: none;
-    padding: 15px;
-}
-
 .image-upload > input {
   display: none;
 }
@@ -93,4 +83,5 @@ a, i {
     width: 150px;
     height: 150px;
     border-radius: 50%;
+    cursor: pointer;
 }

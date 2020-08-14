@@ -19,6 +19,7 @@ class Profile extends React.Component {
 
     componentDidMount() {
         this.props.fetchUser(this.props.match.params.userId);
+        // this.props.fetchTopics();
     }
 
     handleShowAnswer() {
@@ -73,9 +74,6 @@ class Profile extends React.Component {
                     <a id='user-answers' onClick={this.handleShowAnswer}>{answers.length} Answers</a>
                 </ul>
                 {renderQuestions}   
-                {/* <div className='profile-bottom'>
-                    <Link className="plain" to='/'><button className='profile-answer-btn'>Answer Questions</button></Link>
-                </div> */}
             </div>
         )
     }
@@ -84,9 +82,4 @@ class Profile extends React.Component {
 export default Profile;
 
 
-{/* <div className='profile-bottom'>
-    <Link className="plain" to='/'>
-        <button className='profile-answer-btn'>Answer Questions</button>
-    </Link>
-</div> */}
 

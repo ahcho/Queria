@@ -3,21 +3,22 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .question-modal {
     width: 500px;
-    height: 380px;
-    background: #FEF9F0;
+    height: 400px;
+    background: #23252C;
     border-radius: 4px;
-    border: lightgrey solid 0.5px;
     margin: 20px;
+    border-radius: 8px;
 }
 
 .question-head {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    background: lightsteelblue;
+    border-radius: 8px;
     margin-bottom: 20px;
     border: none;
-    color: grey;
+    background: #d1288c;
+    color: white;
 }
 
 .question-head > * {
@@ -26,8 +27,8 @@
 
 .question-reminder  {
     display: block;
-    background: lightsteelblue;
-    color: grey;
+    background-color: rgba(79, 94, 120, 0.24);
+    color: white;
     margin: 10px 10px 30px 10px;
     padding: 20px;
     border-radius: 4px;
@@ -68,7 +69,7 @@
 
 .main-question-modal-trigger > div {
     padding-bottom: 10px;
-    color: grey;
+    color: white;
     font-size: 16px;
     font-weight: bold;
 }
@@ -81,8 +82,8 @@
 
 .modal-q-form {
     display: box;
-    background-color: lightsteelblue;
-    margin: 0 10px 0 10px;
+    background-color: rgba(79, 94, 120, 0.24);   
+     margin: 0 10px 0 10px;
     border-radius: 4px;
     padding: 10px;
 }
@@ -91,11 +92,12 @@
     background: transparent;
     border: none;
     border-bottom: 0.7px solid lightgray;
+    margin-bottom: 5px;
 }
 
 .q-form-header {
     display: box;
-    color: gray;
+    color: white;
     margin-bottom: 10px;
 }
 
@@ -112,7 +114,7 @@
     padding: 10px;
     border: none;
     margin-left: 10px;
-    background: lightsteelblue;
+    background: #d1288c;
     color: white;
 }
 

@@ -8,7 +8,7 @@ class AnswerIndex extends React.Component {
     }
 
     render() {
-        const {answers, currentUser, deleteAnswer, updateAnswer, users, createComment} = this.props;        
+        const {answers, currentUser, deleteAnswer, updateAnswer, users, createComment} = this.props; 
         if (!answers) return null
         return (
             <div className="answer-index-box">

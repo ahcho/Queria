@@ -11,7 +11,6 @@ class TopicShow extends React.Component {
 
     componentDidMount() {
         this.props.fetchTopics();
-         
         this.props.fetchTopic(parseInt(this.props.match.params.id));
     };
 
@@ -29,10 +28,8 @@ class TopicShow extends React.Component {
         
         const photos= ["history", "history", "products", "recipe", "health", "tour"]
         const { deleteQuestion, openModal, currentUser, topics } = this.props;
-        // if (!topics || topics.length < this.props.match.params.id) return null;
-        if (!topics) return null;
+        if (!topics || topics.length < 6) return null;
         const topic = topics[parseInt(this.props.match.params.id)]
-        
         let questions = []
         if (topic.questions !== undefined) {
             questions = Object.values(topic.questions); 
@@ -44,7 +41,6 @@ class TopicShow extends React.Component {
                 </div> */}
                 <div className='main-center'>
                     <div className="topic-header">
-                        {/* <img src='/Users/habin/Desktop/Queria/app/assets/images/history.jpg' alt=""/> */}
                         <i className={renderIcon[topic.id]} ></i>
                         <p>{topic.name}</p>
                     </div>

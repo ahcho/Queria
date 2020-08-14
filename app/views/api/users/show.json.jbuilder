@@ -6,7 +6,7 @@ end
 json.questions do
     @user.questions.each do |question|
         json.set! question.id do
-            json.extract! question, :question, :updated_at, :created_at, :id, :author_id
+            json.extract! question, :question, :updated_at, :created_at, :id, :author_id, :topic_id
             json.author do 
                 json.extract! question.author, :first_name, :last_name, :id
                 # json.profilePhotoUrl url_for(question.author.photo) if question.author.photo.attached?

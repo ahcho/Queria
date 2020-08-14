@@ -51,7 +51,7 @@ class CreateQuestion extends React.Component {
 
                     <form className='modal-q-form' onSubmit={this.handleSubmit}>
                         <div className='modal-user'>
-                            <i className="fa fa-user-circle" aria-hidden="true"></i>
+                            {/* <i className="fa fa-user-circle" aria-hidden="true"></i> */}
                             <h2 className='q-form-header'>{this.currentUser.first_name} asked</h2>
                         </div>
                         <input type="text"
