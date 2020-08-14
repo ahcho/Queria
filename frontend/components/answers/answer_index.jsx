@@ -11,24 +11,21 @@ class AnswerIndex extends React.Component {
         const {answers, currentUser, deleteAnswer, updateAnswer, users, createComment} = this.props;        
         if (!answers) return null
         return (
-            <div>
-                <div className="answer-index-box">
-                {
-                    answers.map(
-                        (answer) => {
-                            return (
-                                <AnswerIndexItem 
-                                    author={users[answer.author_id]}
-                                    answer={answer} 
-                                    deleteAnswer={deleteAnswer}
-                                    updateAnswer={updateAnswer}
-                                    key={answer.id} 
-                                    currentUser={currentUser}
-                                    createComment={createComment}
-                                />)})
-                }
-                </div>
-                
+            <div className="answer-index-box">
+            {
+                answers.map(
+                    (answer) => {
+                        return (
+                            <AnswerIndexItem 
+                                author={users[answer.author_id]}
+                                answer={answer} 
+                                deleteAnswer={deleteAnswer}
+                                updateAnswer={updateAnswer}
+                                key={answer.id} 
+                                currentUser={currentUser}
+                                createComment={createComment}
+                            />)})
+            }
             </div>
         )
 

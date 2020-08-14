@@ -34,8 +34,12 @@ class QuestionShow extends React.Component {
         return (
             <div>
                 <div className='q-show-header'>
-                    <p>{question.author.first_name} asked</p>
-                    <p>{question.created_at.slice(0, 10)} at {question.created_at.slice(11, 16)}</p>
+                    <div className='asker-info'>
+                        <i id='profile-img' className="fas fa-user-circle"></i>
+                        <p className="asker-detail">
+                        {question.author.first_name} asked<br/><br/>
+                        {question.created_at.slice(0, 10)} at {question.created_at.slice(11, 16)}</p>
+                    </div>
                     <h1>{question.question}</h1>
                     {this.questionPhotoAttached()}
                 </div>
@@ -51,9 +55,7 @@ class QuestionShow extends React.Component {
                     </div>
                 </div>
                 <div className='display-answer-box'>
-                    <div>
-                        <AnswerIndexContainer />
-                    </div>
+                    <AnswerIndexContainer />
                 </div>
             </div>
         )

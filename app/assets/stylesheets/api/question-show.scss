@@ -1,17 +1,30 @@
 .q-show-header {
     padding-top: 100px;
     //border: 0.8px lightgrey solid;
-    min-width: 60%;
-    max-width: 60%;
-    margin: 0 0 20px 20%;
+    background: #d1288c;
+    color: white;
     padding-bottom: 10px;
-    border-bottom: 1px #724EE2 solid;
-    font-size: 12px;
+    padding-left: 10%;
+}
+
+.asker-info {
+    display: flex;
+    margin-bottom: 20px;
+    // border: 1px solid black;
+}
+
+.asker-info > * {
+    margin-right: 10px;
+    // border: 1px solid black;
+}
+
+.asker-detail {
+    margin-top: 20px;
 }
 
 .q-show-header > img {
-    max-width: 100%;
-    max-height: 100%;
+    max-width: 50%;
+    max-height: 50%;
     display: block; 
 }
 
@@ -27,8 +40,8 @@
     border-top: 2px solid #724EE2;
     border-bottom: 2px solid #724EE2;
     padding: 20px 0 10px 0;
-    margin: 0 0 20px 20%;
-    width: 60%;
+    margin: 0 0 20px 0;
+    // width: 60%;
     text-align: center; 
     justify-content: center; 
 }
