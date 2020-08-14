@@ -9,7 +9,7 @@ json.questions do
         json.set! question.id do
             json.extract! question, :question, :updated_at, :created_at, :id, :author_id
             json.author do 
-                json.extract! question.author, :first_name, :last_name, :id
+                json.extract! question.author, :first_name, :last_name, :id                
             end
         end
     end

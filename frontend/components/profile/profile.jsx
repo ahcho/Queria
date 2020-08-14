@@ -36,8 +36,6 @@ class Profile extends React.Component {
 
     }
 
-       
-
     render() {
         const {questions, answers, user, deleteQuestion, openModal,
         deleteAnswer, updateAnswer, createComment} = this.props;

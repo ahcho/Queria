@@ -24,6 +24,14 @@ class QuestionIndexItem extends React.Component {
         }
 
     }
+
+    hasProfilePhoto() {
+        if (this.props.question.author.profilePhotoUrl) {
+            return <img id='answer-profile-photo' src={this.props.question.author.profilePhotoUrl} />;
+        } else {
+            return <i id='answer-profile-icon' className="fas fa-user-circle"></i>;
+        }
+    }
     
     render() {
         const { question } = this.props;
@@ -33,7 +41,7 @@ class QuestionIndexItem extends React.Component {
                 {this.userIconDisplay(question.id)}
                 <div className="single-question-top">
                     <div className="sqt-left">
-                        <i className="fas fa-user-circle">  </i>
+                        {this.hasProfilePhoto()}
                     </div>
                     <div className="sqt-right">
                         <h1>{question.author.first_name} {question.author.last_name} asked:</h1>

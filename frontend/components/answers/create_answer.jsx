@@ -60,10 +60,11 @@ class CreateAnswer extends React.Component {
             >
               {this.state.body}
             </textarea>
-            <br />
-            <input type="file" 
-                onChange={this.handleFile.bind(this)} />
-            <button className="answer-btn">Submit</button>
+            <div className="answer-form-bottom">
+              <input type="file" 
+                  onChange={this.handleFile.bind(this)} />
+              <button className="answer-btn">Submit</button>
+            </div>
           </form>
         );
     }

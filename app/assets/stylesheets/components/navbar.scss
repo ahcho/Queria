@@ -1,55 +1,17 @@
-#ueria {
-  font-family: 'Lora', serif;
-  font-size: 17px;
-}
-
-.home a, .answers a{
-  color: #724EE2;
-  // background-image: linear-gradient(-90deg, #724EE2 0%, #009BFF 47%, #2AC9DB 100%);
-  margin-top: 10px;
-  display: block;
-  font-size: 20px;
-}
-
 .plain{
     text-decoration: none;
 }
 
-.round-btn {
-  margin-right: 20px;
-}
-
-.round-btn > button { 
-  background-color: #724EE2;
-  //background-image: linear-gradient(-90deg, #724EE2 0%, #009BFF 47%, #2AC9DB 100%);  font-size: 16px;
-  border: none;
-  color: white;
-  padding: 15px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  margin: 4px 0px 4px 10px;
-  cursor: pointer;
-  border-radius: 500px;
-
-
-  // box-shadow:
-  //   // 0px 5px 10px #CF77F3,
-  //   // 0px 0px 20px #009BFF,
-  //   // 0px 0px 0px #2AC9DB;
-  background-image: linear-gradient(-90deg, #724EE2 0%, #009BFF 47%, #2AC9DB 100%);
-
-}
-
-.dropdown-profile {
+.nav-dropdown {
   padding: 5px;
   font-size: 45px;
-  // color: #724EE2;
   color: white;
   margin-left: 10px;
 }
 
-.dropdown-profile > i:hover {
+.nav-dropdown > i:hover, 
+.nav-center > a:hover,
+.search-bar > i:hover {
   color: #724EE2;
 }
 
@@ -62,26 +24,18 @@
   position: absolute;
   min-width: 160px;
   background: white;
-  border: 0.5px solid lightgray;
   border-radius: 4px;
-  font-size: 16px;
-  margin-top: 3px;
+  padding: 5px;
   z-index: 1;
 }
 
 .dropdown-content li {
-  padding: 5px 8px;
+  padding: 5px;
+  font-size: 20px;
   color: #724EE2;
 }
 
-.dropdown-content a {
-  color: #724EE2;
-  font-size: 16px;
-  text-decoration: none;
-  z-index: 1;
-}
-
-.dropdown-content a:hover {
+.dropdown-content a:hover, #nav-dropdown-profile:hover {
   color: white;
 }
 
@@ -91,39 +45,23 @@
   cursor: pointer;  
 }
 
-.dropdown-profile:hover .dropdown-content {
+.nav-dropdown:hover .dropdown-content {
   display: block;
 }
 
 .nav-bar {
-  // border-bottom: 0.5px solid lightgrey;
+  // border-bottom: 0.5px solid black;
   z-index: 8;
-  width: 100%;
   background-color: #23252C;
-  // background-color: white;
   display: flex;
   padding: 15px 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 
-li > .fa {
-  padding-right: 5px;
-  padding-left: 2px;
-  size: 16px;
-}
 .left {
-  // margin-top: 10px;
   width: 30%;
-}
-
-#logo, #logo i {
-  font-size: 40px;
-  // color: #724EE2;
-  color: white;
-}
-
-#home, #answers {
-  font-size: 30px;
-  // padding-top: 10px;
 }
 
 .left div {
@@ -132,10 +70,6 @@ li > .fa {
 
 .left a:hover {
   color: #724EE2;
-}
-
-.round-btn button:hover {
-  background: #724EE2;
 }
 
 .right {
@@ -159,21 +93,19 @@ li > .fa {
   font-size: 35px;
   font-weight: 700;
   position:absolute;
-  // margin-top: 30px;
-
 }
 
-
-// search bar
 .search-bar {
   display: flex;
   // border: 1px solid red;
 }
+
 .search-bar > i {
   font-size: 30px;
   color: white;
   margin: 0 20px;
 }
+
 .search-input {
   border-radius: 4px;
   border: 1px lightgray solid;

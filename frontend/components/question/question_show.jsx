@@ -27,6 +27,14 @@ class QuestionShow extends React.Component {
         }
     }
 
+    hasProfilePhoto() {
+        if (this.props.question.author.profilePhotoUrl) {
+            return <img id='profile-photo' src={this.props.question.author.profilePhotoUrl} />;
+        } else {
+            return <i id='profile-img' className="fas fa-user-circle"></i>;
+        }
+    }
+
     render() {
         const { currentUser, question, answers } = this.props;
         const dropdown = this.state.dropDown ? "" : "hidden" ;
@@ -35,7 +43,7 @@ class QuestionShow extends React.Component {
             <div>
                 <div className='q-show-header'>
                     <div className='asker-info'>
-                        <i id='profile-img' className="fas fa-user-circle"></i>
+                        {this.hasProfilePhoto()}                        
                         <p className="asker-detail">
                         {question.author.first_name} asked<br/><br/>
                         {question.created_at.slice(0, 10)} at {question.created_at.slice(11, 16)}</p>
@@ -47,7 +55,7 @@ class QuestionShow extends React.Component {
                 <div className='q-answer-box'>
                     <p>{this.props.currentUser.first_name}, can you answer this question?</p>
                     <p>people are searching for an answer to this question.</p>
-                    <button onClick={this.handleDropDown}>Answer</button>
+                    <button onClick={this.handleDropDown}><i className="fas fa-plus"></i></button>
                     <div className={dropdown} id="answer-box">
                         <CreateAnswerContainer 
                             currentUserId={currentUser.id} 
