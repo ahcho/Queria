@@ -35,8 +35,7 @@ class SignUpForm extends React.Component {
         this.props.closeModal();
     } 
 
-    handleKeyDown(e) {
-        
+    handleKeyDown(e) { 
         if (e.key === "Enter") {
             e.preventDefault();
             this.handleSubmit(e);

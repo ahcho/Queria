@@ -17,6 +17,10 @@ class EditProfile extends React.Component {
         this.props.fetchUser(this.props.user.id);
     }
 
+    componentDidUpdate() {
+        this.props.fetchUser(this.props.user.id);
+    }
+
     update(field) {
         return e => this.setState({ [field]: e.currentTarget.value });
     }

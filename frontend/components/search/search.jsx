@@ -9,20 +9,21 @@ class Search extends React.Component {
             questions: [],
             showSearchBar: false }
         this.handleInput = this.handleInput.bind(this)
-        this.resetSearch = this.resetSearch.bind(this)
+        this.clearSearch = this.clearSearch.bind(this)
         this.handleSearchBar = this.handleSearchBar.bind(this);
 
     }
 
-    resetSearch(e) {
-        this.setState({ target: e.target.value, questions: [] })
+    clearSearch(e) {
+        this.setState({ target: "", questions: [] })
+        document.getElementById('search-bar-input').value = ""
     }
 
     getMatches(questions) {
         return Object.values(questions).map((question) => {
             return (
                 <li className="target-question" key={question.id}>
-                    <Link onClick={this.resetSearch} to={`/question/${question.id}`}>{question.question}</Link>
+                    <Link onClick={this.clearSearch} to={`/question/${question.id}`}>{question.question}</Link>
                 </li>
             )
         })
@@ -34,7 +35,7 @@ class Search extends React.Component {
 
     handleInput(e) {
         if (e.target.value === "") {
-            this.setState({ target: "", questions: [] });
+            this.clearSearch(e);
         } else {
             this.props.fetchQuestions()
             const targetQuestions = this.props.questions.filter(
@@ -51,7 +52,12 @@ class Search extends React.Component {
         const foundTarget = (questions.length > 0) ? 'foundTarget' : '';
         return (
             <div className="search-bar">
-                <input className={showSearchBar} type="text" placeholder="Search Queria" onKeyUp={this.handleInput} />
+                <input 
+                    className={showSearchBar} 
+                    id="search-bar-input"
+                    type="text" 
+                    placeholder="Search Queria" 
+                    onKeyUp={this.handleInput}/>
                 <ul className={foundTarget}>
                     {foundQuestions}
                 </ul>

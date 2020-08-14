@@ -9,9 +9,9 @@ class CommentIndex extends React.Component {
             commentsShow: false,
             body: ""
         };
-        this.handleCommentsShow = this.handleCommentsShow.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
-
+        this.handleKeyDown = this.handleKeyDown.bind(this);
+        this.handleCommentsShow = this.handleCommentsShow.bind(this);
     }
 
     handleSubmit(e) {
@@ -30,6 +30,13 @@ class CommentIndex extends React.Component {
 
     handleCommentsShow(e) {    
         this.setState({ commentsShow: !this.state.commentsShow });
+    }
+
+    handleKeyDown(e) {
+        if (e.key === "Enter") {
+            e.preventDefault();
+            this.handleSubmit(e);
+        }
     }
 
     render() {
@@ -56,9 +63,10 @@ class CommentIndex extends React.Component {
                     <input
                         type="text"
                         className="single-comment"
-                        onChange={this.update("body")}
                         placeholder="Add a comment..."
-                        value={this.state.body}>
+                        value={this.state.body}
+                        onChange={this.update("body")}
+                        onKeyDown={this.handleKeyDown}>
                     </input>
 
                     <button className="comment-button" onClick={this.handleSubmit}>Comment</button>
@@ -82,13 +90,15 @@ class CommentIndex extends React.Component {
                 {showCommentsBtn} 
                 <div className={hasComments}>
                     <div className="comment-section">
+                        {/* {showCommentsBtn} */}
                         <div className="comment-form">
                             <input
                                 type="text"
                                 className="single-comment"
                                 onChange={this.update("body")}
                                 placeholder="Add a comment..."
-                                value={this.state.body}>
+                                value={this.state.body}
+                                onKeyDown={this.handleKeyDown}>
                             </input>
                             <button className="comment-button" onClick={this.handleSubmit}>Comment</button>
                         </div>

@@ -1,6 +1,5 @@
 import React from 'react';
 import EditAnswerForm from './edit_answer_form'
-import { Link } from 'react-router-dom';
 import CommentIndexContainer from '../comments/comment_index_container';
 
 class AnswerIndexItem extends React.Component {

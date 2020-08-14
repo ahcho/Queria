@@ -19,8 +19,6 @@ class TopicShow extends React.Component {
     //     this.props.fetchTopic(parseInt(this.props.match.params.id));        
     // }
 
-
-
     render() {
         const renderIcon = ["",
             "fa fa-history",
