@@ -4,10 +4,14 @@ import { fetchQuestions, deleteQuestion } from '../../actions/question_actions';
 import { fetchTopic, fetchTopics } from '../../actions/topic_actions';
 import { openModal } from '../../actions/modal_actions';
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
+    const topicId = ownProps.match.params.id;
+    const questions = Object.values(state.entities.questions).filter(
+        (question) => question.topic_id == topicId)
     return ({
+        topicId: topicId,
         currentUser: state.session.currentUser,
-        questions: Object.values(state.entities.questions),
+        questions: questions,
         topics: Object.values(state.entities.topics)
     })
 }

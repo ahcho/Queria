@@ -11,13 +11,9 @@ class TopicShow extends React.Component {
 
     componentDidMount() {
         this.props.fetchTopics();
-        this.props.fetchTopic(parseInt(this.props.match.params.id));
+        this.props.fetchQuestions();
     };
-
-    // componentDidUpdate() {
-    //     this.props.fetchTopic(parseInt(this.props.match.params.id));        
-    // }
-
+    
     render() {
         const renderIcon = ["",
             "fa fa-history",
@@ -26,14 +22,10 @@ class TopicShow extends React.Component {
             "fas fa-apple-alt",
             "fab fa-fort-awesome"]
         
-        const photos= ["history", "history", "products", "recipe", "health", "tour"]
-        const { deleteQuestion, openModal, currentUser, topics } = this.props;
+        const { deleteQuestion, openModal, currentUser, topics, questions, topicId } = this.props;
         if (!topics || topics.length < 6) return null;
         const topic = topics[parseInt(this.props.match.params.id)]
-        let questions = []
-        if (topic.questions !== undefined) {
-            questions = Object.values(topic.questions); 
-        } 
+
         return (
             <div className='main-page'>
                 {/* <div className='main-left'>
@@ -41,7 +33,7 @@ class TopicShow extends React.Component {
                 </div> */}
                 <div className='main-center'>
                     <div className="topic-header">
-                        <i className={renderIcon[topic.id]} ></i>
+                        <i className={renderIcon[topicId]} ></i>
                         <p>{topic.name}</p>
                     </div>
                     {questions.map(
