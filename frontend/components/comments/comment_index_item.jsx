@@ -5,6 +5,14 @@ class CommentIndexItem extends React.Component {
         super(props);
     }
 
+    hasProfilePhoto() {
+        if (this.props.comment.user.profilePhotoUrl) {
+            return <img src={this.props.comment.user.profilePhotoUrl} />;
+        } else {
+            return <i className="fas fa-user-circle"></i>;
+        }
+    }
+
     render() {
         const {comment, currentUser_id} = this.props;
 
@@ -20,7 +28,7 @@ class CommentIndexItem extends React.Component {
             <div className="comment-index-item">
                 <div className="comment-info">
                     <div className="comment-profile-photo">
-                        <i className="fa fa-user-circle" aria-hidden="true"></i>
+                        {this.hasProfilePhoto()}
                     </div>
                     <div className="comment-name-time">
                         <p>{comment.user.first_name} {comment.user.last_name}</p>

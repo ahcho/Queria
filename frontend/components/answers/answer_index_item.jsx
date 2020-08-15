@@ -27,6 +27,14 @@ class AnswerIndexItem extends React.Component {
     }
   }
 
+  hasProfilePhoto() {
+    if (this.props.author.profilePhotoUrl) {
+      return <img id='answer-profile-photo' src={this.props.author.profilePhotoUrl} />;
+    } else {
+      return <i className="fa fa-user-circle" aria-hidden="true"></i>;
+    }
+  }
+
   render() {
     
     const { answer, author, updateAnswer} = this.props;
@@ -43,14 +51,14 @@ class AnswerIndexItem extends React.Component {
             onClick={() => this.props.deleteAnswer(answer.id)}
           ></i>
         </div>
-      ) : null;
+      ) : (<i class="fas fa-user-plus"></i>);
 
     return (
       <div className="single-answer-box">
         <div className="single-answer-container">
           <div className="snb-top">
             <div className="snb-top-left">
-              <i className="fa fa-user-circle" aria-hidden="true"></i>
+              {this.hasProfilePhoto()}
               <div className="answer-name-time">
                 <p className="a-author-name">
                   {author.first_name} {author.last_name}

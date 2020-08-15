@@ -4,7 +4,6 @@
     color: white;
     padding-bottom: 30px;
     padding-left: 10%;
-    width: 100%;
 }
 
 .asker-info {
@@ -33,6 +32,9 @@
     padding-bottom: 10px;   
 }
 
+.no-answer-box {
+    display: none;
+}
 .q-answer-box {
     display: flex;
     align-items: center;

@@ -37,7 +37,6 @@ class EditProfile extends React.Component {
         const formData = new FormData();
         // formData.append('user[first_name]', this.state.first_name);
         // formData.append('user[last_name]', this.state.last_name);
-           
         if (this.state.photoFile) {
             formData.append('user[photo]', this.state.photoFile)
         }
@@ -48,7 +47,7 @@ class EditProfile extends React.Component {
         if (this.props.user.profilePhotoUrl) {
             return <img id='profile-photo' src={this.props.user.profilePhotoUrl} />;
          } else {
-            return <i id='profile-img' className="fas fa-user-circle"></i>;
+            return <i id='profile-photo' className="fas fa-user-circle"></i>;
          }
     }
 

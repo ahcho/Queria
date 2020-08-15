@@ -20,8 +20,6 @@ a, i {
     padding-top: 150px;
     margin-left: 8%;
     height: 50%;
-
-    // background: #C89F9C;
     display: flex;
 }
 
@@ -70,12 +68,10 @@ a, i {
 }
 
 .image-upload {
+    position: relative;
     padding: none;
 }
 
-#profile-img {
-    font-size: 100px;
-}
 
 #profile-photo {
     object-fit: cover;
@@ -83,5 +79,17 @@ a, i {
     width: 150px;
     height: 150px;
     border-radius: 50%;
+    font-size: 100px;
     cursor: pointer;
+}
+
+#profile-photo:hover {
+    opacity: 0.5;
+}
+.comment-profile-photo > img {
+    object-fit: cover;
+    width: 100%;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
 }

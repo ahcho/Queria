@@ -36,10 +36,14 @@ class QuestionShow extends React.Component {
         }
     }
 
+
     render() {
         const { currentUser, question, answers } = this.props;
-        const dropdown = this.state.dropDown ? "" : "hidden" ;
         if (!question ) return null;
+        const isLoggedInUser =
+            currentUser.id === question.author.id ? "no-answer-box" : "q-answer-box";
+
+        const dropdown = this.state.dropDown ? "" : "hidden" ;
         return (
             <div>
                 <div className='q-show-header'>
@@ -53,11 +57,11 @@ class QuestionShow extends React.Component {
                     {this.questionPhotoAttached()}
                     <i className="fas fa-comment-alt"></i> {answers.length}
                 </div>
-                <div className='q-answer-box'>
+                <div className={isLoggedInUser}>
                     <p>{this.props.currentUser.first_name}, can you answer this question?</p>
                     <p>people are searching for an answer to this question.</p>
                     <button onClick={this.handleDropDown}><i className="fas fa-plus"></i></button>
-                    <div className={dropdown} id="answer-box">
+                    <div className={dropdown}>
                         <CreateAnswerContainer 
                             currentUserId={currentUser.id} 
                             questionId={question.id}
