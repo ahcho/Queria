@@ -155,7 +155,11 @@
 }
 
 .footer > a {
-  margin-left: 20%;
+  margin-left: 26%;
+}
+
+.footer > a > i {
+  color: #724EE2;
 }
 
 .footer > .fa-question-circle {
@@ -163,4 +167,8 @@
   // margin-left: 26%;
   margin-left: 46%;
   font-size: 40px;
+}
+
+.footer > *:hover, .footer > a > i:hover {
+  color: white;
 }

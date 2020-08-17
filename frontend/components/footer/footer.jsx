@@ -18,10 +18,10 @@ class Footer extends React.Component {
     render() {
         return (
             <div className='footer'>
-                {/* <Link to={`/profile/${this.props.currentUser.id}`} >
-                    <i className="fa fa-user" aria-hidden="true"></i>
-                </Link> */}
                 <i className="fa fa-question-circle" aria-hidden="true" onClick={this.handleAddQuestion}></i>
+                <Link to={`/profile/${this.props.currentUser.id}`} >
+                    <i className="fa fa-user" aria-hidden="true"></i>
+                </Link>
             </div>
         )
     }
