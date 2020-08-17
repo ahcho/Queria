@@ -60,9 +60,7 @@
   width: 100%;
 }
 
-.nav-bar > * {
-  // border: 1px red solid;
-}
+
 .left {
   width: 30%;
 }
@@ -139,4 +137,30 @@
 
 .hide-search-input {
   display: none;
+}
+
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: black;
+  display: flex;
+  flex-direction: row;
+  height: 5%;
+  font-size: 35px;
+  padding: 15px 0 10px 0;
+
+}
+
+.footer > a {
+  margin-left: 20%;
+}
+
+.footer > .fa-question-circle {
+  color: #724EE2;
+  // margin-left: 26%;
+  margin-left: 46%;
+  font-size: 40px;
 }

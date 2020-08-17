@@ -78,6 +78,9 @@ class SignUpForm extends React.Component {
                             <br />
                             <input type="password" placeholder="Password(6 or more characters)" onChange={this.update("signup_pw")} value={this.state.signup_pw} />
                         </div>
+                        <div id="signup-error">
+                            {this.renderErrors()}
+                        </div>
                         <div className="signup-btn">
                             <button 
                                 type="submit" 
@@ -86,9 +89,7 @@ class SignUpForm extends React.Component {
                             <button type="submit" onClick={() => this.props.closeModal()}>Cancel</button>                             
                         </div>
                     </div >
-                    <div id="signup-error">
-                        {this.renderErrors()}
-                    </div>
+   
                 </form>
             </div>
         )

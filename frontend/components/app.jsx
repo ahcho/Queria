@@ -5,10 +5,11 @@ import entryContainer from './entry_form/entry_container';
 import mainContainer from './main/main_container'
 import navBarContainer from './nav_bar/nav_bar_container';
 import Modal from './modal/modal';
-import ProfileContainer from './profile/profile_container'
-import QuestionShow from './question/question_show_container'
-import TopicShow from './topic/topic_show_container'
-import { logger } from 'redux-logger';
+import ProfileContainer from './profile/profile_container';
+import QuestionShow from './question/question_show_container';
+import TopicShow from './topic/topic_show_container';
+import footerContainer from './footer/footer';
+
 
 
 const App = () => (
@@ -16,6 +17,7 @@ const App = () => (
     <div className="app-page">
         <Modal /> 
         <ProtectedRoute path="/" component={navBarContainer} />
+        <ProtectedRoute path="/" component={footerContainer} />
             <Switch>
                 <Route path="/question/:questionId" component={QuestionShow} />
                 <Route path="/topic/:id" component={TopicShow} /> 
@@ -24,6 +26,7 @@ const App = () => (
                 <AuthRoute exact path="/" component={entryContainer} />  
                 <AuthRoute component={entryContainer} />     
             </Switch>
+        
 
     </div>
 
