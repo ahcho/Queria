@@ -19,8 +19,8 @@ class Profile extends React.Component {
 
     componentDidMount() {
         this.props.fetchUser(this.props.match.params.userId);
-        // this.props.fetchTopics();
     }
+    
 
     handleShowAnswer() {
         if (this.state.showAnswer === false) {
@@ -34,7 +34,6 @@ class Profile extends React.Component {
             this.setState({ showAnswer: !this.state.showAnswer })
             this.setState({ showQuestion: !this.state.showQuestion })
         }
-
     }
 
     render() {
@@ -42,7 +41,7 @@ class Profile extends React.Component {
         deleteAnswer, updateAnswer, createComment} = this.props;
         const renderQuestions = 
              this.state.showAnswer ? (
-                <div className="answer-index-box">
+                <div className="profile-answer-index-box">
                     {
                         answers.map(
                             (answer) => {

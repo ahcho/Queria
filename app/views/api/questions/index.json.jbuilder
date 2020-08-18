@@ -5,6 +5,9 @@
             json.extract! question.author, :first_name, :last_name
             json.profilePhotoUrl url_for(question.author.photo) if question.author.photo.attached?    
         end
+        # json.array! question.answers do |answer|
+        #      answer.id
+        # end
     end
 end
-#
+

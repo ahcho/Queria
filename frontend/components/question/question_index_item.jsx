@@ -59,12 +59,21 @@ class QuestionIndexItem extends React.Component {
                     </div>
                     
                 </div>
-                <Link to={`/question/${this.props.question.id}`}>
-                    <div className="question-detail">
-                        <h2 key={question.id}>{question.question}</h2>
+                <div className='question-index-bottom'>
+                    <Link to={`/question/${this.props.question.id}`}>
+                        <div className="question-detail">
+                            <h2 key={question.id}>{question.question}</h2>
+                        </div>
+                    </Link>
+                    <div className='question-info'>
+                        <p className='question-topic'>#test</p>
+                        <div className='question-detail-box'>
+                            <i className="far fa-comment"></i> 
+                            {/* <i className="fas fa-heart"></i> */}
+                        </div>
                     </div>
-                </Link>
-                <i className="fas fa-comment"></i>
+                </div>
+                
             </div>
         )
     }

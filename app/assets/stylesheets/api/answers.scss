@@ -137,3 +137,20 @@
 .answer-form-bottom {
     margin-top: 20px;
 }
+
+.profile-answer-index-box > div:nth-child(even) {
+    background: #d1288c;
+}
+
+.profile-answer-index-box > div:nth-child(odd) {
+    background: #724EE2;
+} 
+
+.profile-answer-index-box > .single-answer-box{
+    width: 75%;
+    margin: 30px auto;;
+    border-radius: 8px;
+    padding: 16px;
+    color: white;
+}
+

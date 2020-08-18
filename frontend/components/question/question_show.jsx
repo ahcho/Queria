@@ -10,6 +10,7 @@ class QuestionShow extends React.Component {
         }
         this.handleDropDown = this.handleDropDown.bind(this);
         this.handleEditQuestion = this.handleEditQuestion.bind(this);
+        this.handleDeleteQuestion = this.handleDeleteQuestion.bind(this);
     }
 
     handleDropDown(e) {
@@ -17,7 +18,6 @@ class QuestionShow extends React.Component {
     }
 
     componentDidMount() {
-         
         this.props.fetchQuestion(this.props.match.params.questionId);
     }
 
@@ -38,7 +38,12 @@ class QuestionShow extends React.Component {
     }
 
     handleEditQuestion() {
-        this.props.openModal('editquestion', this.props.question)
+        this.props.openModal('editquestion', this.props.question);
+    }
+
+    handleDeleteQuestion() {
+        this.props.deleteQuestion(this.props.question.id);
+        window.location.replace("http://localhost:3000/#/main");
     }
 
     handleSameAuthor() {
@@ -46,7 +51,7 @@ class QuestionShow extends React.Component {
             return (
                 <div className='right'>
                     <i className="far fa-edit" onClick={this.handleEditQuestion}></i>
-                    <i className="fas fa-times" onClick={() => this.props.deleteQuestion(this.props.question.id)}></i>
+                    <i className="fas fa-times" onClick={this.handleDeleteQuestion}></i>
                 </div>
             )
         }
@@ -71,7 +76,11 @@ class QuestionShow extends React.Component {
                     </div>
                     <h1>{question.question}</h1>
                     {this.questionPhotoAttached()}
-                    <i className="fas fa-comment-alt"></i> {answers.length}
+                    <p className='question-topic'>#test</p>
+                    <div className='question-detail-box'>
+                        <i className="far fa-comment"></i> {answers.length}
+                        {/* <i className="fas fa-heart"></i> */}
+                    </div>
                 </div>
                 <div className={isLoggedInUser}>
                     <p>{this.props.currentUser.first_name}, can you answer this question?</p>

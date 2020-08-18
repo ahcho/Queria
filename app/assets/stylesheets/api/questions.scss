@@ -124,6 +124,7 @@
 
 .question-index {
     width: 100%;
+    margin-bottom: 100px;
 }
 .question-index-item {
     width: 75%;
@@ -180,6 +181,7 @@
     padding-top: 5px;
     color: white;
     // font-weight: 500;
+    // text-decoration: none;
 }
 
 .question-index > div:nth-child(odd) {
@@ -190,4 +192,12 @@
     background: #724EE2;
 } 
 
+.question-info > * {
+    margin-top: 10px;
+}
+
+.question-index-bottom > i {
+    margin-top: 10px;
+    margin-right: 5px;
+}
 

@@ -8,32 +8,27 @@ class EditProfile extends React.Component {
             id: this.props.user.id,
             first_name: this.props.user.first_name,
             last_name: this.props.user.last_name,
-            photoFile: null
+            photoFile: null,
+            //profilePhotoUrl: null
         }
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     componentDidMount() {
+        
         this.props.fetchUser(this.props.user.id);
-    }
 
-    componentDidUpdate() {
-        this.props.fetchUser(this.props.user.id);
     }
 
     update(field) {
         return e => this.setState({ [field]: e.currentTarget.value });
     }
 
-    handleProfilePhoto(e) {
-           
-        this.setState({ photoFile: e.currentTarget.files[0]}, () => this.handleSubmit()) 
-        // setTimeout(()=>{this.handleSubmit}, 1000); 
-        // this.handleSubmit()        
+    handleProfilePhoto(e) {   
+        this.setState({ photoFile: e.currentTarget.files[0]}, () => this.handleSubmit())  
     }
 
     handleSubmit() {
-        //e.preventDefault();
         const formData = new FormData();
         // formData.append('user[first_name]', this.state.first_name);
         // formData.append('user[last_name]', this.state.last_name);
@@ -41,10 +36,19 @@ class EditProfile extends React.Component {
             formData.append('user[photo]', this.state.photoFile)
         }
         this.props.editUser(formData, this.state.id);
+       
+    }
+
+    componentDidUpdate(prevPros) {
+        if (prevPros.user.profilePhotoUrl !== this.props.user.profilePhotoUrl) {
+            this.props.fetchUser(this.props.user.id).then(user => {
+                this.setState({ user: user })
+            })
+        }
     }
 
     hasProfilePhoto() {
-        if (this.props.user.profilePhotoUrl) {
+        if(this.props.url) {
             return <img id='profile-photo' src={this.props.user.profilePhotoUrl} />;
          } else {
             return <i id='profile-photo' className="fas fa-user-circle"></i>;

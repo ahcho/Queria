@@ -5,7 +5,9 @@ import EditProfile from './edit_profile';
 const mapStateToProps = (state) => {
     //  
     return ({
-        user: state.session.currentUser
+        user: state.session.currentUser,
+        url: state.session.currentUser.profilePhotoUrl
+        //update url here by pulling it
     })
 }
 

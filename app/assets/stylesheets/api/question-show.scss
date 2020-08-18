@@ -6,9 +6,14 @@
     padding-left: 10%;
 }
 
+.q-show-header > * {
+    margin-top: 15px;
+}
+
 .asker-info {
     display: flex;
     margin-bottom: 30px;
+    width: 90%;
 }
 
 .asker-info > * {
@@ -20,6 +25,9 @@
     margin-top: 20px;
 }
 
+// .question-detail-box {
+//     margin-top: 10px;
+// }
 .q-show-header > img {
     max-width: 50%;
     max-height: 50%;
@@ -29,7 +37,6 @@
 .q-show-header > h1 {
     font-size: 20px;
     font-weight: bold;
-    padding-bottom: 10px;   
 }
 
 .no-answer-box {
@@ -58,6 +65,10 @@
     background: #724EE2;
     margin-top: 10px;
     margin-bottom: 10px;
+}
+
+.asker-info > .right > * {
+    margin-left: 10px;
 }
 
 // .q-answer-box > button {
