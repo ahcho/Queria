@@ -28,10 +28,14 @@ class AnswerIndexItem extends React.Component {
   }
 
   hasProfilePhoto() {
-    if (this.props.author.profilePhotoUrl) {
-      return <img id='answer-profile-photo' src={this.props.author.profilePhotoUrl} />;
+    if (this.props.location === 'profile') {
+      return null;
     } else {
-      return <i className="fa fa-user-circle" aria-hidden="true"></i>;
+      if (this.props.author.profilePhotoUrl) {
+        return <img id='answer-profile-photo' src={this.props.author.profilePhotoUrl} />;
+      } else {
+        return <i className="fa fa-user-circle" aria-hidden="true"></i>;
+      }
     }
   }
 

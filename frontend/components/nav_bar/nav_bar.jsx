@@ -6,10 +6,15 @@ class NavBar extends React.Component {
     constructor(props) {
         super(props)
         this.handleAddQuestion = this.handleAddQuestion.bind(this);
+        this.handleLogOut = this.handleLogOut.bind(this);
     }
 
     handleAddQuestion() {
         this.props.openModal('createquestion')
+    }
+
+    handleLogOut() {
+        this.props.logout();
     }
 
     render() {
@@ -26,7 +31,8 @@ class NavBar extends React.Component {
                                     </Link>
                                 </li>
                                 <li onClick={this.handleAddQuestion}>Add Question</li>
-                                <li onClick={this.props.logout}>Logout</li>
+                                <li onClick={this.handleLogOut}>Logout</li>
+                                {/* <li onClick={this.props.logout}>Logout</li> */}
                             </ul>
                         </div>
                     </div>

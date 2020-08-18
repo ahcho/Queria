@@ -37,11 +37,6 @@ class CreateAnswer extends React.Component {
         }
     }
 
-    // componentDidUpdate() {
-    //      ;
-    //   this.props.fetchAnswers(this.props.questionId);
-    // }
-
     handleFile(e) {
         e.preventDefault();
         this.setState({ photoFile: e.currentTarget.files[0]});

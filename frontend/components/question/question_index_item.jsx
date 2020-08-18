@@ -26,10 +26,20 @@ class QuestionIndexItem extends React.Component {
     }
 
     hasProfilePhoto() {
-        if (this.props.question.author.profilePhotoUrl) {
-            return <img id='answer-profile-photo' src={this.props.question.author.profilePhotoUrl} />;
+        if (this.props.location === 'profile') {
+            return null;
         } else {
-            return <i id='answer-profile-icon' className="fas fa-user-circle"></i>;
+            if (this.props.question.author.profilePhotoUrl) {
+                if (this.props.currentUserId === this.props.question.author_id) {
+                    return <Link to={`/profile/${this.props.question.author.id}`}>
+                                <img id='answer-profile-photo' src={this.props.question.author.profilePhotoUrl} />
+                            </Link>;
+                } else {
+                    return <img id='answer-profile-photo' src={this.props.question.author.profilePhotoUrl} />
+                }
+            } else {
+                return <i id='answer-profile-icon' className="fas fa-user-circle"></i>;
+            }
         }
     }
     

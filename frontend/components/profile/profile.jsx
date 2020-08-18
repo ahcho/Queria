@@ -55,6 +55,7 @@ class Profile extends React.Component {
                                         key={answer.id}
                                         currentUser={user}
                                         createComment={createComment}
+                                        location='profile'
                                     />)
                             })
                     }
@@ -63,7 +64,7 @@ class Profile extends React.Component {
                     {questions.map(
                         (question) => <QuestionIndexItem
                             question={question} deleteQuestion={deleteQuestion} key={question.id}
-                            openModal={openModal} currentUserId={user.id} />)}
+                            openModal={openModal} currentUserId={user.id} location='profile'/>)}
                 </div>)
 
         return (

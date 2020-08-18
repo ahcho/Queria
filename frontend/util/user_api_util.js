@@ -13,7 +13,7 @@ export const fetchAllUsers = () => {
     })
 }
 
-export const deleteUser = (userId) => {
+export const deleteUser = (user) => {
     return $.ajax ({
         method: "DELETE",
         url: `/api/users/${user.id}`
