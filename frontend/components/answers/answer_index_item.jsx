@@ -55,7 +55,7 @@ class AnswerIndexItem extends React.Component {
             onClick={() => this.props.deleteAnswer(answer.id)}
           ></i>
         </div>
-      ) : (<i class="fas fa-user-plus"></i>);
+      ) : (<i className="fas fa-user-plus"></i>);
 
     return (
       <div className="single-answer-box">

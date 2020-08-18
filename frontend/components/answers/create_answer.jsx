@@ -33,7 +33,8 @@ class CreateAnswer extends React.Component {
             }
             this.props.createAnswer(formData);
             this.props.handleDropDown(e);
-            this.setState({ body: "" });
+            this.setState({ body: "", photoFile: null });
+            document.getElementById("uploadAnswerInputFile").value = ""; // clear file field
         }
     }
 
@@ -56,7 +57,9 @@ class CreateAnswer extends React.Component {
               {this.state.body}
             </textarea>
             <div className="answer-form-bottom">
-              <input type="file" 
+              <input 
+                  id="uploadAnswerInputFile"
+                  type="file" 
                   onChange={this.handleFile.bind(this)} />
               <button className="answer-btn">Submit</button>
             </div>

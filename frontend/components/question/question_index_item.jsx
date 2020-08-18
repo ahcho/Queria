@@ -31,7 +31,7 @@ class QuestionIndexItem extends React.Component {
         } else {
             if (this.props.question.author.profilePhotoUrl) {
                 if (this.props.currentUserId === this.props.question.author_id) {
-                    return <Link to={`/profile/${this.props.question.author.id}`}>
+                    return <Link to={`/profile/${this.props.question.author_id}`}>
                                 <img id='answer-profile-photo' src={this.props.question.author.profilePhotoUrl} />
                             </Link>;
                 } else {
@@ -64,6 +64,7 @@ class QuestionIndexItem extends React.Component {
                         <h2 key={question.id}>{question.question}</h2>
                     </div>
                 </Link>
+                <i className="fas fa-comment"></i>
             </div>
         )
     }

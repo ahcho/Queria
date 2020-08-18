@@ -2,6 +2,7 @@ import {connect} from "react-redux";
 import { updateQuestion, deleteQuestion, fetchQuestion } from "../../actions/question_actions";
 import QuestionShow from './question_show';
 import { deleteAnswer, updateAnswer } from '../../actions/answer_actions';
+import { openModal } from '../../actions/modal_actions';
 
 const mapStateToProps = (state, ownProps) => {
     return ({ 
@@ -18,7 +19,8 @@ const mapDispatchToProps = (dispatch) => {
         deleteQuestion: (questionId) => (dispatch(deleteQuestion(questionId))),
         updateQuestion: (question) => (dispatch(updateQuestion(question))),
         deleteAnswer: (answerId) => (dispatch(deleteAnswer(answerId))),
-        updateAnswer: (answer) => (dispatch(updateAnswer(answer))) 
+        updateAnswer: (answer) => (dispatch(updateAnswer(answer))),
+        openModal: (modal, questionId) => (dispatch(openModal(modal, questionId)))
     })
 }
 

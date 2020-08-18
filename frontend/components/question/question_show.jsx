@@ -9,6 +9,7 @@ class QuestionShow extends React.Component {
             dropDown: false
         }
         this.handleDropDown = this.handleDropDown.bind(this);
+        this.handleEditQuestion = this.handleEditQuestion.bind(this);
     }
 
     handleDropDown(e) {
@@ -36,6 +37,20 @@ class QuestionShow extends React.Component {
         }
     }
 
+    handleEditQuestion() {
+        this.props.openModal('editquestion', this.props.question)
+    }
+
+    handleSameAuthor() {
+        if (this.props.currentUser.id === this.props.question.author.id) {
+            return (
+                <div className='right'>
+                    <i className="far fa-edit" onClick={this.handleEditQuestion}></i>
+                    <i className="fas fa-times" onClick={() => this.props.deleteQuestion(this.props.question.id)}></i>
+                </div>
+            )
+        }
+    }
 
     render() {
         const { currentUser, question, answers } = this.props;
@@ -52,6 +67,7 @@ class QuestionShow extends React.Component {
                         <p className="asker-detail">
                         {question.author.first_name} asked<br/><br/>
                         {question.created_at.slice(0, 10)} at {question.created_at.slice(11, 16)}</p>
+                        {this.handleSameAuthor()}
                     </div>
                     <h1>{question.question}</h1>
                     {this.questionPhotoAttached()}
