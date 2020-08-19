@@ -3,11 +3,10 @@ import { fetchUser, editUser } from '../../actions/user_actions';
 import EditProfile from './edit_profile';
 
 const mapStateToProps = (state) => {
-    //  
+
     return ({
-        user: state.session.currentUser,
+        user: state.entities.users[state.session.currentUser.id],
         url: state.session.currentUser.profilePhotoUrl
-        //update url here by pulling it
     })
 }
 

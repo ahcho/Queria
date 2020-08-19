@@ -9,14 +9,17 @@ class EditProfile extends React.Component {
             first_name: this.props.user.first_name,
             last_name: this.props.user.last_name,
             photoFile: null,
-            //profilePhotoUrl: null
+            user: this.props.user
         }
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     componentDidMount() {
         
-        this.props.fetchUser(this.props.user.id);
+        this.props.fetchUser(this.props.user.id).then( user => { 
+
+            this.setState({user: user.payload.user})
+        });
 
     }
 
@@ -40,16 +43,15 @@ class EditProfile extends React.Component {
     }
 
     componentDidUpdate(prevPros) {
+
         if (prevPros.user.profilePhotoUrl !== this.props.user.profilePhotoUrl) {
-            this.props.fetchUser(this.props.user.id).then(user => {
-                this.setState({ user: user })
-            })
+            this.setState({ user: this.props.user })
         }
     }
 
     hasProfilePhoto() {
-        if(this.props.url) {
-            return <img id='profile-photo' src={this.props.user.profilePhotoUrl} />;
+        if (this.props.user.profilePhotoUrl) {
+            return <img id='profile-photo' src={this.state.user.profilePhotoUrl} />;
          } else {
             return <i id='profile-photo' className="fas fa-user-circle"></i>;
          }
