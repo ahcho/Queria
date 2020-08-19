@@ -42,7 +42,7 @@ class QuestionIndexItem extends React.Component {
             }
         }
     }
-    
+
     render() {
         const { question } = this.props;
         if (!question ) return null;
@@ -66,7 +66,11 @@ class QuestionIndexItem extends React.Component {
                         </div>
                     </Link>
                     <div className='question-info'>
-                        <p className='question-topic'>#test</p>
+                        <Link
+                            to={`/topic/${question.topic_id}`}
+                            className='question-topic'
+                            > #{question.topic.name}
+                        </Link>
                         <div className='question-detail-box'>
                             <i className="far fa-comment"></i> 
                             {/* <i className="fas fa-heart"></i> */}

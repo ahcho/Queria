@@ -11,6 +11,9 @@ json.questions do
             json.author do 
                 json.extract! question.author, :first_name, :last_name, :id                
             end
+            json.topic do 
+                json.extract! question.topic, :name 
+            end
         end
     end
 end

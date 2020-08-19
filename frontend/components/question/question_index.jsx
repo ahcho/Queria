@@ -27,8 +27,11 @@ class QuestionIndex extends React.Component {
                     <div className="question-index">
                         {questions.reverse().map(
                             (question) => <QuestionIndexItem 
-                                question={question} deleteQuestion={deleteQuestion} key={question.id}
-                                openModal={openModal} currentUserId={currentUser.id}/>)}
+                                key={question.id}
+                                question={question} 
+                                deleteQuestion={deleteQuestion} 
+                                openModal={openModal} 
+                                currentUserId={currentUser.id}/>)}
                     </div>
                 </div>
             </div>

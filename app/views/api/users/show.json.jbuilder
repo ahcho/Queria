@@ -11,6 +11,9 @@ json.questions do
                 json.extract! question.author, :first_name, :last_name, :id
                 # json.profilePhotoUrl url_for(question.author.photo) if question.author.photo.attached?
             end
+            json.topic do 
+                json.extract! question.topic, :name
+            end
         end
     end
 end

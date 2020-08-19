@@ -1,5 +1,5 @@
 # Queria
-Queria is a Quora clone. It's an application where you can ask and answer 
+Queria is a user-generated-content question and answer web application modeled with features modeled after the Quora service. It's an application where you can ask and answer 
 any questions about Charlie and Chocolate Factory.
 
 ## <a href="https://queria-app.herokuapp.com/">Queria Live</a>
@@ -11,10 +11,13 @@ any questions about Charlie and Chocolate Factory.
 * Redux
 * JavaScript
 * jBuilder
+* AWS S3
+* HTML
+* CSS
 
 ## Features
 
-In order to show edit text box, when edit button is clicked in a same page. I changed the state as button click to simplify the program. 
+<!-- In order to show edit text box, when edit button is clicked in a same page, I changed the state as button click to simplify the program.  -->
 ```
 
 handleDropDown(e) {
@@ -70,5 +73,3 @@ Users can delete questions and answers that are written by them.
 
 Users have own profile page and it shows number of answers and questions they wrote.
 
-## Futer Features
-* Photo Upload: users can upload photos on answers, and change their profile photo.
