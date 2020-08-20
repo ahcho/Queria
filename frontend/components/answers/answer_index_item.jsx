@@ -41,11 +41,11 @@ class AnswerIndexItem extends React.Component {
 
   render() {
     
-    const { answer, author, updateAnswer} = this.props;
+    const { answer, author, updateAnswer, location} = this.props;
     const dropdown = this.state.dropDown ? "" : "edit-hidden";
     const showAnswer = this.state.dropDown ? "not-hidden-answer" : "answer-detail-box";
     if (!answer || !author) return null;
-
+    const profile = (this.props.location !== undefined) ? "profile" : ""
     const deleteButton =
       this.props.currentUser.id === this.props.author.id ? (
         <div className="snb-top-right">
@@ -59,7 +59,7 @@ class AnswerIndexItem extends React.Component {
 
     return (
       <div className="single-answer-box">
-        <div className="single-answer-container">
+        <div className="single-answer-container" id="profile">
           <div className="snb-top">
             <div className="snb-top-left">
               {this.hasProfilePhoto()}
