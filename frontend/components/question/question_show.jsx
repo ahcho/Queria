@@ -62,7 +62,6 @@ class QuestionShow extends React.Component {
         if (!question ) return null;
         const isLoggedInUser =
             currentUser.id === question.author.id ? "no-answer-box" : "q-answer-box";
-
         const dropdown = this.state.dropDown ? "" : "hidden" ;
         return (
             <div>
@@ -76,7 +75,7 @@ class QuestionShow extends React.Component {
                     </div>
                     <h1>{question.question}</h1>
                     {this.questionPhotoAttached()}
-                    <p className='question-topic'>#test</p>
+                    <p className='question-topic'>#{question.topic.name}</p>
                     <div className='question-detail-box'>
                         <i className="far fa-comment"></i> {answers.length}
                         {/* <i className="fas fa-heart"></i> */}

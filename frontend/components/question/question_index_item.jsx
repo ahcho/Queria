@@ -45,7 +45,10 @@ class QuestionIndexItem extends React.Component {
 
     render() {
         const { question } = this.props;
+        // debugger
         if (!question ) return null;
+        const numOfAnswers = question.answers ? Object.values(question.answers).length : 0;
+       
         return (
             <div className="question-index-item">
                 {this.userIconDisplay(question.id)}
@@ -72,6 +75,7 @@ class QuestionIndexItem extends React.Component {
                             > #{question.topic.name}
                         </Link>
                         <div className='question-detail-box'>
+                            {numOfAnswers}
                             <i className="far fa-comment"></i> 
                             {/* <i className="fas fa-heart"></i> */}
                         </div>

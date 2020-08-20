@@ -14,6 +14,15 @@ json.questions do
             json.topic do 
                 json.extract! question.topic, :name 
             end
+
+            json.answers do 
+                question.answers.each do |answer|
+                    json.set! answer.id do 
+                        json.extract! answer, :id
+                    end
+                end
+            end
+
         end
     end
 end

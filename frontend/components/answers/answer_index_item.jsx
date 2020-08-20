@@ -59,7 +59,7 @@ class AnswerIndexItem extends React.Component {
 
     return (
       <div className="single-answer-box">
-        <div className="single-answer-container" id="profile">
+        <div className="single-answer-container" id={profile}>
           <div className="snb-top">
             <div className="snb-top-left">
               {this.hasProfilePhoto()}

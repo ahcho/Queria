@@ -185,6 +185,12 @@
     // font-weight: 500;
     // text-decoration: none;
 }
+.question-detail-box > * {
+    cursor: default;
+}
+.question-detail-box > i {
+    margin-left: 5px;
+}
 
 .question-index > div:nth-child(odd) {
     background: #d1288c;
