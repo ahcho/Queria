@@ -16,6 +16,7 @@ class CommentIndexItem extends React.Component {
     render() {
         const {comment, currentUser_id} = this.props;
 
+
         const deleteButton =
             comment.user.id === currentUser_id ? (
                     <i
@@ -37,7 +38,7 @@ class CommentIndexItem extends React.Component {
                     </div>
                     {deleteButton}
                 </div>
-                <p key={comment.id}  className="comment-body">
+                <p className="comment-body">
                     {comment.body}
                 </p>
             </div>

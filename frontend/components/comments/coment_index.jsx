@@ -74,14 +74,12 @@ class CommentIndex extends React.Component {
 
         
         const renderComments = filterComments.map((comment) => {
-            return (
-                <div>
-                    <CommentIndexItem 
-                        comment={comment} 
-                        key={comment.id}
-                        deleteComment={deleteComment}
-                        currentUser_id={currentUser_id}/>
-                </div>
+            return (  
+                <CommentIndexItem 
+                    comment={comment} 
+                    key={comment.id}
+                    deleteComment={deleteComment}
+                    currentUser_id={currentUser_id}/>   
             )
         })
      

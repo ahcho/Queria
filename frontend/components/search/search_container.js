@@ -2,10 +2,12 @@ import { connect } from 'react-redux';
 import { fetchQuestions } from '../../actions/question_actions';
 import Search from './search';
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = (state) => {
+    return ({
         target: "",
         questions: Object.values(state.entities.questions),
-});
+    })
+}
 
 const mapDispatchToProps = (dispatch) => {
     return ({

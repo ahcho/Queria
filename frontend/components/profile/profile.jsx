@@ -35,10 +35,15 @@ class Profile extends React.Component {
             this.setState({ showQuestion: !this.state.showQuestion })
         }
     }
-
+    
     render() {
         const {questions, answers, user, deleteQuestion, openModal,
         deleteAnswer, updateAnswer, createComment} = this.props;
+  
+        const userQuestions = questions.filter(
+            (question) => user.question_ids.includes(question.id)
+        )
+
         const renderQuestions = 
              this.state.showAnswer ? (
                 <div className="profile-answer-index-box">
@@ -60,7 +65,7 @@ class Profile extends React.Component {
                     }
                 </div>
             ) : (<div className="question-index">
-                    {questions.map(
+                    {userQuestions.map(
                         (question) => <QuestionIndexItem
                             question={question} deleteQuestion={deleteQuestion} key={question.id}
                             openModal={openModal} currentUserId={user.id} location='profile'/>)}

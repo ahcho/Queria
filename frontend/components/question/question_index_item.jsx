@@ -46,10 +46,10 @@ class QuestionIndexItem extends React.Component {
     render() {
         const { question } = this.props;
         if (!question ) return null;
-        // debugger
+         
         const numOfAnswers = question.answers ? Object.values(question.answers).length : 0;
        
-        // debugger;
+         ;
         return (
             <div className="question-index-item">
                 {this.userIconDisplay(question.id)}

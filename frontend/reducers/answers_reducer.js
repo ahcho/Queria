@@ -28,7 +28,7 @@ const answersReducer = (state = {}, action) => {
             if (!action.payload.answers) return {};
             return action.payload.answers;
         case RECEIVE_ALL_QUESTIONS:
-            // debugger
+             
             if (!action.answers) return {};
             return action.answers;
         default: 
