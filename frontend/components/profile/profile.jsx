@@ -18,7 +18,16 @@ class Profile extends React.Component {
     } 
 
     componentDidMount() {
+         // debugger
         this.props.fetchUser(this.props.match.params.userId);
+    }
+
+    componentDidUpdate(prevPros) {
+        if (prevPros.questions !== this.props.questions) {
+            // this.props.fetchUserAllAnswers(this.props.user.id);
+            this.setState({questions: this.props.questions})
+            this.setState({ answers: this.props.answers })
+        } 
     }
     
 
@@ -40,15 +49,16 @@ class Profile extends React.Component {
         const {questions, answers, user, deleteQuestion, openModal,
         deleteAnswer, updateAnswer, createComment} = this.props;
   
-        const userQuestions = questions.filter(
-            (question) => user.question_ids.includes(question.id)
-        )
+        // const userQuestions = questions.filter(
+        //     (question) => user.question_ids.includes(question.id)
+        // )// when adding an question, it doesn't show question I just asked
+        const userQuestions = questions
 
         const renderQuestions = 
              this.state.showAnswer ? (
                 <div className="profile-answer-index-box">
                     {
-                        answers.map(
+                        answers.reverse().map(
                             (answer) => {
                                 return (
                                     <AnswerIndexItem

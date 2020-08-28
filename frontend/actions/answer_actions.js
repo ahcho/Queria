@@ -34,10 +34,11 @@ export const fetchAnswers = (questionId) => (dispatch) => {
 )}
 
 //get all answes by a logged in user
-export const fetchUserAllAnswers = (userId) => (dispatch) => (
-    answerApiUtil.fetchUserAllAnswers(userId)
-        .then(answers => dispatch(receiveAllAnswers(answers)))
-);
+export const fetchUserAllAnswers = (userId) => (dispatch) => { 
+    return (
+            answerApiUtil.fetchUserAllAnswers(userId)
+            .then(answers => dispatch(receiveAllAnswers(answers)))
+)}
 
 export const createAnswer = (answer) => (dispatch) => {
     return (

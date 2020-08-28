@@ -10,19 +10,21 @@ export const fetchAnswers = (questionId) => {
 export const fetchUserAllAnswers = (userId) => {
     return $.ajax({
         method: "GET",
-        url: `api/user/answers/${userId}`
+        url: `api/users/${userId}/answers`
     })
 }
+
+
 
 export const createAnswer = (formData) => {
     
 
     return $.ajax({
-    method: "POST",
-    url: `/api/answers`,
-    data: formData,
-    contentType: false,
-    processData: false,
+        method: "POST",
+        url: `/api/answers`,
+        data: formData,
+        contentType: false,
+        processData: false,
   });
 };
 // export const createAnswer = (answer) => {

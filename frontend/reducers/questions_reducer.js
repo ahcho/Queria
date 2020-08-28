@@ -29,6 +29,9 @@ const QuestionsReducer = (state = {}, action) => {
         case RECEIVE_TOPIC:
             if (!action.payload.questions) return {};
             return action.payload.questions;
+        // case CLOSE_MODAL:
+        //     debugger
+        //     return null;
         default:
             return state;
     }

@@ -43,7 +43,6 @@ class EditProfile extends React.Component {
     }
 
     componentDidUpdate(prevPros) {
-
         if (prevPros.user.profilePhotoUrl !== this.props.user.profilePhotoUrl) {
             this.setState({ user: this.props.user })
         }

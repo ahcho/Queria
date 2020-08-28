@@ -1,9 +1,13 @@
 class Api::AnswersController < ApplicationController
 
     def index
-        #if params.has_key?(:question_id)
-        @question = Question.find_by(id: params[:question_id])
-        @answers = @question.answers
+        if params.has_key?(:question_id) 
+            @question = Question.find_by(id: params[:question_id])
+            @answers = @question.answers
+        else 
+            user = User.find_by(id: params[:user_id])
+            @answers = user.answers
+        end
         render :index
     end
     
@@ -21,9 +25,10 @@ class Api::AnswersController < ApplicationController
         if params.has_key?(:user_id)
             user = User.find_by(id: params[:user_id])
             @answer = user.answers
+            render :index
         end
         
-        render :show
+        # render :show
     end
 
 

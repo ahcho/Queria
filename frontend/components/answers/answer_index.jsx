@@ -33,4 +33,3 @@ class AnswerIndex extends React.Component {
 }
 
 export default AnswerIndex;
-

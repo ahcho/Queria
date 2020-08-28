@@ -5,6 +5,7 @@ import {
 import { RECEIVE_USER} from '../actions/user_actions';
 import { RECEIVE_CURRENT_USER } from '../actions/session_actions';
 import { RECEIVE_QUESTION, RECEIVE_ALL_QUESTIONS } from '../actions/question_actions';
+import { CLOSE_MODAL } from '../actions/modal_actions';
 
 const answersReducer = (state = {}, action) => {
     Object.freeze(state);
@@ -25,10 +26,9 @@ const answersReducer = (state = {}, action) => {
             if (!action.payload.answers) return {};
             return action.payload.answers;
         case RECEIVE_QUESTION:
-            if (!action.payload.answers) return {};
-            return action.payload.answers;
+            if (action.payload.answers) return action.payload.answers;
+            return newState;
         case RECEIVE_ALL_QUESTIONS:
-             
             if (!action.answers) return {};
             return action.answers;
         default: 
