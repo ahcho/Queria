@@ -58,7 +58,7 @@ class AnswerIndexItem extends React.Component {
       ) : (<i className="fas fa-user-plus"></i>);
 
     return (
-      <div className="single-answer-box">
+      <div className="single-answer-box" key={answer.id}>
         <div className="single-answer-container" id={profile}>
           <div className="snb-top">
             <div className="snb-top-left">

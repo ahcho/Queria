@@ -132,7 +132,6 @@ class PostForm extends React.Component {
           <input 
             type="file"
             onChange={this.handleFile.bind(this)}/>
-            {/* {preview} */}
         </>
       ) : (
         <textarea value={this.state.question} onChange={this.update("question")} cols="30" rows="2"></textarea>

@@ -5,8 +5,8 @@ class Api::AnswersController < ApplicationController
             @question = Question.find_by(id: params[:question_id])
             @answers = @question.answers
         else 
-            user = User.find_by(id: params[:user_id])
-            @answers = user.answers
+            @user = User.find_by(id: params[:user_id])
+            @answers = @user.answers
         end
         render :index
     end
@@ -54,7 +54,7 @@ class Api::AnswersController < ApplicationController
     private
 
     def answer_params
-        params.require(:answer).permit(:body, :question_id, :author_id, :photo)
+        params.require(:answer).permit(:body, :question_id, :user_id, :photo)
     end
 
 end

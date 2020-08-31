@@ -19,6 +19,7 @@ class QuestionShow extends React.Component {
 
     componentDidMount() {
         this.props.fetchQuestion(this.props.match.params.questionId);
+        this.props.fetchAnswers(this.props.match.params.questionId)
     }
 
     questionPhotoAttached() {

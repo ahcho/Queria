@@ -12,7 +12,7 @@ const answersReducer = (state = {}, action) => {
     let newState = Object.assign({}, state);
     switch(action.type) {
         case RECEIVE_ALL_ANSWERS:
-            return action.answers
+            return action.answers.answers
         case RECEIVE_ANSWER:
             newState[action.answer.id] = action.answer
             return newState;

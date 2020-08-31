@@ -10,7 +10,8 @@ class Profile extends React.Component {
         this.state = {
             showAnswer: false,
             showQuestion: true,
-            photoFile: null
+            photoFile: null,
+            answers: null
         }
         this.questions = this.props.questions;  
         this.handleShowQuestion = this.handleShowQuestion.bind(this);
@@ -18,17 +19,16 @@ class Profile extends React.Component {
     } 
 
     componentDidMount() {
-         // debugger
         this.props.fetchUser(this.props.match.params.userId);
+        // this.props.fetchUserAllAnswers(this.props.user.id)
     }
 
-    componentDidUpdate(prevPros) {
-        if (prevPros.questions !== this.props.questions) {
-            // this.props.fetchUserAllAnswers(this.props.user.id);
-            this.setState({questions: this.props.questions})
-            this.setState({ answers: this.props.answers })
-        } 
-    }
+    // componentDidUpdate(prevProps) {
+    //     if (prevProps.answers.length !== this.props.answers.length) {
+            
+    //         // this.setState({ answers: prevProps.answers })
+    //     } 
+    // }
     
 
     handleShowAnswer() {
@@ -46,14 +46,14 @@ class Profile extends React.Component {
     }
     
     render() {
-        const {questions, answers, user, deleteQuestion, openModal,
+        const {questions, user, deleteQuestion, openModal,
         deleteAnswer, updateAnswer, createComment} = this.props;
   
-        // const userQuestions = questions.filter(
-        //     (question) => user.question_ids.includes(question.id)
-        // )// when adding an question, it doesn't show question I just asked
-        const userQuestions = questions
-
+        const userQuestions = questions.filter(
+            (question) => question.author_id === user.id
+        ).reverse()
+        const answers = this.props.answers//this.state.answers
+        
         const renderQuestions = 
              this.state.showAnswer ? (
                 <div className="profile-answer-index-box">
@@ -85,7 +85,7 @@ class Profile extends React.Component {
             <div className='profile-page'>
                 <EditProfileContainer />
                 <ul className='profile-list'>
-                    <a id='user-questions' onClick={this.handleShowQuestion}>{questions.length} Questions</a>
+                    <a id='user-questions' onClick={this.handleShowQuestion}>{userQuestions.length} Questions</a>
                     <a id='user-answers' onClick={this.handleShowAnswer}>{answers.length} Answers</a>
                 </ul>
                 {renderQuestions}   

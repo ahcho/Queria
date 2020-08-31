@@ -52,16 +52,19 @@ class QuestionIndexItem extends React.Component {
         return (
             <div className="question-index-item">
                 {this.userIconDisplay(question.id)}
+                <div className="sqt-left">
+                    {this.hasProfilePhoto()}
+                </div>
+                <Link to={`/question/${this.props.question.id}`}>
                 <div className="single-question-top">
-                    <div className="sqt-left">
-                        {this.hasProfilePhoto()}
-                    </div>
+                    
                     <div className="sqt-right">
                         <h1>{question.author.first_name} {question.author.last_name} asked:</h1>
                         <h2>{question.created_at.slice(0, 10)}</h2>
-                    </div>
-                    
+                    </div>              
                 </div>
+                </Link>
+                
                 <div className='question-index-bottom'>
                     <Link to={`/question/${this.props.question.id}`}>
                         <div className="question-detail">
@@ -74,11 +77,13 @@ class QuestionIndexItem extends React.Component {
                             className='question-topic'
                             > #{question.topic.name}
                         </Link>
-                        <div className='question-detail-box'>
-                            {numOfAnswers}
-                            <i className="far fa-comment"></i> 
-                            {/* <i className="fas fa-heart"></i> */}
-                        </div>
+                        {/* <Link to={`/question/${this.props.question.id}`}> */}
+                            <div className='question-detail-box'>
+                                {numOfAnswers}
+                                <i className="far fa-comment"></i> 
+                                {/* <i className="fas fa-heart"></i> */}
+                            </div>
+                        {/* </Link> */}
                     </div>
                 </div>
                 

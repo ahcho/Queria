@@ -2,15 +2,16 @@ export const fetchAnswers = (questionId) => {
        
     return $.ajax({
         method: "GET",
-        url: `/api/question/${questionId}/answers`
+        url: `/api/questions/${questionId}/answers`
     })
 }
    
 //call to get answer by a logged in user
 export const fetchUserAllAnswers = (userId) => {
+    
     return $.ajax({
         method: "GET",
-        url: `api/users/${userId}/answers`
+        url: `/api/users/${userId}/answers`
     })
 }
 

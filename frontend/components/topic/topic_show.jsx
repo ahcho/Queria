@@ -10,6 +10,7 @@ class TopicShow extends React.Component {
     }
 
     componentDidMount() {
+        
         this.props.fetchTopics();
         this.props.fetchQuestions();
     };

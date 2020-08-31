@@ -32,7 +32,6 @@ function Modal({ modal, closeModal }) {
     );
 }
 
-//container
 const mapStateToProps = state => {
     return {
         modal: state.ui.modal

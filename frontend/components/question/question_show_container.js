@@ -1,7 +1,7 @@
 import {connect} from "react-redux";
 import { updateQuestion, deleteQuestion, fetchQuestion } from "../../actions/question_actions";
 import QuestionShow from './question_show';
-import { deleteAnswer, updateAnswer } from '../../actions/answer_actions';
+import { deleteAnswer, updateAnswer, fetchAnswers } from '../../actions/answer_actions';
 import { openModal } from '../../actions/modal_actions';
 
 const mapStateToProps = (state, ownProps) => {
@@ -15,6 +15,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch) => {
     return ({
+        fetchAnswers: (questionId) => dispatch(fetchAnswers(questionId)),
         fetchQuestion: (questionId) => dispatch(fetchQuestion(questionId)),
         deleteQuestion: (questionId) => (dispatch(deleteQuestion(questionId))),
         updateQuestion: (question) => (dispatch(updateQuestion(question))),

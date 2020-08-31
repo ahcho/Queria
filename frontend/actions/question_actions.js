@@ -3,7 +3,7 @@ import * as QuestionApiUtil from '../util/question_api_util';
 export const RECEIVE_ALL_QUESTIONS = 'RECEIVE_ALL_QUESTIONS';
 export const RECEIVE_QUESTION = 'RECEIVE_QUESTION';
 export const REMOVE_QUESTION = 'REMOVE_QUESTION';
-
+//0829 
 const receiveAllQuestions = (questions) => {
     return ({
         type: RECEIVE_ALL_QUESTIONS,
@@ -11,8 +11,14 @@ const receiveAllQuestions = (questions) => {
     })
 };
 
+// const receiveAllQuestions = (payload) => {
+//     return ({
+//         type: RECEIVE_ALL_QUESTIONS,
+//         payload: payload
+//     })
+// };
+
 const receiveQuestion = (payload) => {
-     ;
     return ({
         type: RECEIVE_QUESTION,
         payload: payload
@@ -31,8 +37,7 @@ export const fetchQuestions = () => (dispatch) => {
         .then((questions) => dispatch(receiveAllQuestions(questions)))
 };
 
-export const fetchQuestion = (questionId) => (dispatch) => {
-     
+export const fetchQuestion = (questionId) => (dispatch) => {   
     return QuestionApiUtil.fetchQuestion(questionId)
         .then((payload) => dispatch(receiveQuestion(payload)))
 };
