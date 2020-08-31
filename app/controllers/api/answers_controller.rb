@@ -5,7 +5,7 @@ class Api::AnswersController < ApplicationController
             @question = Question.find_by(id: params[:question_id])
             @answers = @question.answers
         else 
-            @user = User.find_by(id: params[:user_id])
+            @user = User.find_by(id: params[:author_id])
             @answers = @user.answers
         end
         render :index
@@ -23,7 +23,7 @@ class Api::AnswersController < ApplicationController
     #show answers by an user (in user profile)
     def show
         if params.has_key?(:user_id)
-            user = User.find_by(id: params[:user_id])
+            user = User.find_by(id: params[:author_id])
             @answer = user.answers
             render :index
         end
@@ -54,7 +54,7 @@ class Api::AnswersController < ApplicationController
     private
 
     def answer_params
-        params.require(:answer).permit(:body, :question_id, :user_id, :photo)
+        params.require(:answer).permit(:body, :question_id, :author_id, :photo)
     end
 
 end

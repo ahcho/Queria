@@ -12,6 +12,7 @@ const answersReducer = (state = {}, action) => {
     let newState = Object.assign({}, state);
     switch(action.type) {
         case RECEIVE_ALL_ANSWERS:
+            if (Object.values(action.answers).length === 0) return newState
             return action.answers.answers
         case RECEIVE_ANSWER:
             newState[action.answer.id] = action.answer
