@@ -14,11 +14,6 @@ class Search extends React.Component {
 
     }
 
-    clearSearch(e) {
-        this.setState({ target: "", questions: [] })
-        document.getElementById('search-bar-input').value = ""
-    }
-
     getMatches(questions) {
         return Object.values(questions).map((question) => {
             return (
@@ -31,6 +26,11 @@ class Search extends React.Component {
 
     handleSearchBar() {
         this.setState({ showSearchBar: !this.state.showSearchBar });
+    }
+
+    clearSearch(e) {
+        this.setState({ target: "", questions: [] })
+        document.getElementById('search-bar-input').value = ""
     }
 
     handleInput(e) {
@@ -57,6 +57,7 @@ class Search extends React.Component {
                     id="search-bar-input"
                     type="text" 
                     placeholder="Search Queria" 
+                    onBlur={this.clearSearch}
                     onKeyUp={this.handleInput}/>
                 <ul className={foundTarget}>
                     {foundQuestions}
