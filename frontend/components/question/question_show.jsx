@@ -94,7 +94,8 @@ class QuestionShow extends React.Component {
                     </div>
                 </div>
                 <div className='display-answer-box'>
-                    <AnswerIndexContainer />
+                    <AnswerIndexContainer 
+                       questionId={question.id}/>
                 </div>
             </div>
         )

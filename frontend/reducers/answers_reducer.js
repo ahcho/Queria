@@ -29,9 +29,14 @@ const answersReducer = (state = {}, action) => {
         case RECEIVE_QUESTION:
             if (action.payload.answers) return action.payload.answers;
             return newState;
-        case RECEIVE_ALL_QUESTIONS:
-            if (!action.answers) return {};
-            return action.answers;
+        // case RECEIVE_ALL_QUESTIONS:
+        //     // debugger;
+        //     Object.values(action.questions).forEach ((question) => { 
+        //         let answers = question.answers ? Object.values(question.answers) : [];
+        //         // debugger
+        //         answers.forEach((answer) => { newState[answer.id] = answer} )
+        //     })
+        //     return newState;
         default: 
             return state;
     }

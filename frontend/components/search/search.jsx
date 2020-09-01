@@ -28,20 +28,26 @@ class Search extends React.Component {
         this.setState({ showSearchBar: !this.state.showSearchBar });
     }
 
-    clearSearch(e) {
+    clearSearch() {
         this.setState({ target: "", questions: [] })
         document.getElementById('search-bar-input').value = ""
     }
 
     handleInput(e) {
         if (e.target.value === "") {
-            this.clearSearch(e);
+            this.clearSearch();
         } else {
             this.props.fetchQuestions()
             const targetQuestions = this.props.questions.filter(
                 (question) => question.question.toLowerCase().includes(e.target.value.toLowerCase())
             )
             this.setState({ target: e.target.value, questions: targetQuestions })
+        }
+    }
+
+    componentDidUpdate(prevProps) {
+        if (this.props.match.params !== prevProps.match.params){
+            this.clearSearch();
         }
     }
 
@@ -57,7 +63,7 @@ class Search extends React.Component {
                     id="search-bar-input"
                     type="text" 
                     placeholder="Search Queria" 
-                    onBlur={this.clearSearch}
+                    
                     onKeyUp={this.handleInput}/>
                 <ul className={foundTarget}>
                     {foundQuestions}
