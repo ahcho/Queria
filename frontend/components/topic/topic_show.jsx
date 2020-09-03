@@ -39,6 +39,7 @@ class TopicShow extends React.Component {
                     </div>
                     {questions.map(
                         (question) => <QuestionIndexItem
+                            location="topic-show"
                             question={question} deleteQuestion={deleteQuestion} key={question.id}
                             openModal={openModal} currentUserId={currentUser.id} />)}
                 </div>

@@ -31,9 +31,10 @@ class QuestionIndexItem extends React.Component {
         } else {
             if (this.props.question.author.profilePhotoUrl) {
                 if (this.props.currentUserId === this.props.question.author_id) {
-                    return <Link to={`/profile/${this.props.question.author_id}`}>
-                                <img id='answer-profile-photo' src={this.props.question.author.profilePhotoUrl} />
-                            </Link>;
+                    // return <Link to={`/profile/${this.props.question.author_id}`}>
+                    //             <img id='answer-profile-photo' src={this.props.question.author.profilePhotoUrl} />
+                    //         </Link>;
+                    return <img id='answer-profile-photo' src={this.props.question.author.profilePhotoUrl} />
                 } else {
                     return <img id='answer-profile-photo' src={this.props.question.author.profilePhotoUrl} />
                 }
@@ -44,17 +45,20 @@ class QuestionIndexItem extends React.Component {
     }
 
     render() {
-        const { question } = this.props;
+        const { question, location } = this.props;
         if (!question ) return null;
-         
+        
+        const loc = location === "topic-show" ?  "topic" : ""
         const numOfAnswers = question.answers ? Object.values(question.answers).length : 0;
         return (
-            <div className="question-index-item">
+            <div className="question-index-item" id={loc}>
                 {this.userIconDisplay(question.id)}
+                <Link to={`/question/${this.props.question.id}`}>
+                
                 <div className="sqt-left">
                     {this.hasProfilePhoto()}
                 </div>
-                <Link to={`/question/${this.props.question.id}`}>
+                {/* <Link to={`/question/${this.props.question.id}`}> */}
                 <div className="single-question-top">
                     
                     <div className="sqt-right">

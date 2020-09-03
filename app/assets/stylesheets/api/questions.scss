@@ -65,6 +65,7 @@
 
 .modal-q-form > textarea {
     min-width: 90%;
+
 }
 
 .main-question-modal-trigger > div {
@@ -93,6 +94,7 @@
     border: none;
     border-bottom: 0.7px solid lightgray;
     margin-bottom: 5px;
+    color: white;
 }
 
 .q-form-header {
@@ -215,4 +217,13 @@
 .question-topic {
     font-size: 12px;
     color: white;
+}
+
+#slct {
+    cursor: pointer;
+    outline: none;
+}
+
+#topic {
+    border: 2px solid #724EE2;
 }

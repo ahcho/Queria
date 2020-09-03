@@ -77,6 +77,7 @@ class Profile extends React.Component {
             ) : (<div className="question-index">
                     {userQuestions.map(
                         (question) => <QuestionIndexItem
+                            location="profile"
                             question={question} deleteQuestion={deleteQuestion} key={question.id}
                             openModal={openModal} currentUserId={user.id} location='profile'/>)}
                 </div>)

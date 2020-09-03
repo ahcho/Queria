@@ -32,7 +32,7 @@ class QuestionShow extends React.Component {
 
     hasProfilePhoto() {
         if (this.props.question.author.profilePhotoUrl) {
-            return <img id='profile-photo' src={this.props.question.author.profilePhotoUrl} />;
+            return <img id='profile-photo-question-show' src={this.props.question.author.profilePhotoUrl} />;
         } else {
             return <i id='profile-img' className="fas fa-user-circle"></i>;
         }
@@ -61,8 +61,8 @@ class QuestionShow extends React.Component {
     render() {
         const { currentUser, question, answers } = this.props;
         if (!question ) return null;
-        const isLoggedInUser =
-            currentUser.id === question.author.id ? "no-answer-box" : "q-answer-box";
+        // const isLoggedInUser =
+        //     currentUser.id === question.author.id ? "no-answer-box" : "q-answer-box";
         const dropdown = this.state.dropDown ? "" : "hidden" ;
         return (
             <div>
@@ -82,7 +82,8 @@ class QuestionShow extends React.Component {
                         {/* <i className="fas fa-heart"></i> */}
                     </div>
                 </div>
-                <div className={isLoggedInUser}>
+                {/* <div className={isLoggedInUser}> */}
+                <div className="q-answer-box">
                     <p>{this.props.currentUser.first_name}, can you answer this question?</p>
                     <p>people are searching for an answer to this question.</p>
                     <button onClick={this.handleDropDown}><i className="fas fa-plus"></i></button>

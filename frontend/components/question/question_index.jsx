@@ -27,6 +27,7 @@ class QuestionIndex extends React.Component {
                     <div className="question-index">
                         {questions.reverse().map(
                             (question) => <QuestionIndexItem 
+                                location="question-index"
                                 key={question.id}
                                 question={question} 
                                 deleteQuestion={deleteQuestion} 

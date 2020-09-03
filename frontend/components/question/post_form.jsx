@@ -24,9 +24,11 @@ class PostForm extends React.Component {
     if (this.state.photoFile) {
       formData.append("question[photo]", this.state.photoFile);
     }
-    this.props.action(formData).then(() => {
-      this.props.closeModal();
-    });
+    if (this.state.question.length > 0) {
+      this.props.action(formData).then(() => {
+        this.props.closeModal();
+      });
+    }
   }
 
   handleEditSubmit(e) {
@@ -89,7 +91,7 @@ class PostForm extends React.Component {
           </div>
           <div className="question-reminder">
             <h1>Tips on getting good answers quickly</h1>
-            <p>Makesure your question has not been asked already</p>
+            <p>Make sure your question has not been asked already</p>
             <p>Keep your question short and to the point</p>
             <p>Double-check grammar and spelling</p>
           </div>

@@ -24,9 +24,11 @@ class CreateQuestion extends React.Component {
     handleSubmit(e) {    
         e.preventDefault();
         
-        const question = Object.assign({}, this.state);
-        this.props.createQuestion(question)
-            .then(() => {this.props.closeModal()})    
+        if (this.state.question.length > 0 ) {
+            const question = Object.assign({}, this.state);
+            this.props.createQuestion(question)
+                .then(() => {this.props.closeModal()})    
+        }
     }
 
     handleEdit(e) {

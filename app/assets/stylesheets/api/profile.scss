@@ -86,6 +86,15 @@ a, i {
 #profile-photo:hover {
     opacity: 0.5;
 }
+
+#profile-photo-question-show {
+    object-fit: cover;
+    width: 100%;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    font-size: 100px;
+}
 .comment-profile-photo > img {
     object-fit: cover;
     width: 100%;
