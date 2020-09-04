@@ -6,6 +6,7 @@ export default function modalReducer(state = null, action) {
         case OPEN_MODAL:
             return action;
         case CLOSE_MODAL:
+            if (action['questionId']) { return action['questionId']}
             return null;
         default:
             return state;

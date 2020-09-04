@@ -12,6 +12,9 @@ class QuestionIndexItem extends React.Component {
         this.props.openModal('editquestion', this.props.question)
     }
 
+    handleDeleteQuestion() {
+        this.props.openModal('deletequestion', this.props.question)
+    }
     userIconDisplay(targetId) {
 
         if (this.props.currentUserId === this.props.question.author_id) {

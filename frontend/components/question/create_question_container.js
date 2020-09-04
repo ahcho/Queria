@@ -4,7 +4,6 @@ import { createQuestion, fetchQuestions, updateQuestion } from '../../actions/qu
 import { openModal, closeModal } from '../../actions/modal_actions';
 
 const mapStateToProps = (state) => {
-     // 
     return {
         currentUser: state.session.currentUser,
         errors: state.errors.session,
@@ -19,7 +18,7 @@ const mapDispatchToProps  = (dispatch) => {
         fetchQuestions: () => dispatch(fetchQuestions()),
         openModal: (modal) => dispatch(openModal(modal)),
         closeModal: () => dispatch(closeModal()),
-        clearErrors: () => dispatch(clearErrors())
+        clearErrors: (test) => dispatch(clearErrors(test))
     })
 }
 

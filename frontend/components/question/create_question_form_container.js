@@ -3,6 +3,7 @@ import PostForm from './post_form';
 import { createQuestion } from '../../actions/question_actions';
 import { closeModal } from '../../actions/modal_actions';
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 class CreateQuestionForm extends React.Component {
 
     render() {
@@ -27,7 +28,7 @@ const mapStateToProps = state => ({
     question: {
         question: "",
         author_id: state.session.currentUser.id,
-        topic_id: 1, // default value, needs to be updated later
+        topic_id: null, 
         photoFile: null,
         photoUrl: null
     },
@@ -37,7 +38,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
     action: post => dispatch(createQuestion(post)),
-    closeModal: () => dispatch(closeModal()),
+    closeModal: (questionId) => dispatch(closeModal(questionId)),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(CreateQuestionForm);
+export default withRouter( connect(mapStateToProps, mapDispatchToProps)(CreateQuestionForm));

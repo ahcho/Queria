@@ -23,7 +23,7 @@ class CreateQuestion extends React.Component {
 
     handleSubmit(e) {    
         e.preventDefault();
-        
+
         if (this.state.question.length > 0 ) {
             const question = Object.assign({}, this.state);
             this.props.createQuestion(question)

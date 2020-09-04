@@ -20,6 +20,9 @@ function Modal({ modal, closeModal }) {
         case 'editquestion':
             component = <EditQuestionForm question={modal.questionId} />;
             break;
+        case 'deletequestion':
+            component = <DelteQuestionFrom question={modal.questionId}/>;
+            break;
         default:
             return null;
     }

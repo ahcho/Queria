@@ -3,7 +3,7 @@ class Api::QuestionsController < ApplicationController
 
     #shows all questions or questions belong to a user or topic
     def index
-        @questions = Question.all #needs to be updated later !!!!!!!!!!!!! selected by topic_id and user_id
+        @questions = Question.all
         render :index
     end
 
@@ -30,6 +30,7 @@ class Api::QuestionsController < ApplicationController
 
     def show
         @question = Question.find_by(id: params[:id])
+        @answers = @question.answers#######
         render :show
     end
     

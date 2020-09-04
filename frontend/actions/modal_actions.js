@@ -10,8 +10,9 @@ export const openModal = (modal, questionId) => {
     };
 };
 
-export const closeModal = () => {
+export const closeModal = (questionId = false) => {
     return {
-        type: CLOSE_MODAL
+        type: CLOSE_MODAL,
+        questionId: questionId
     };
 };

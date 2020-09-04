@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter} from 'react-router-dom'
 
 class PostForm extends React.Component {
 
@@ -10,6 +11,7 @@ class PostForm extends React.Component {
     this.update = this.update.bind(this);
     this.handleCreateSubmit = this.handleCreateSubmit.bind(this);
     this.handleEditSubmit = this.handleEditSubmit.bind(this);
+    this.handleDeleteSubmit = this.handleDeleteSubmit.bind(this);
   }
 
   handleCreateSubmit(e) {
@@ -25,8 +27,11 @@ class PostForm extends React.Component {
       formData.append("question[photo]", this.state.photoFile);
     }
     if (this.state.question.length > 0) {
-      this.props.action(formData).then(() => {
-        this.props.closeModal();
+      this.props.action(formData).then((value) => {
+        this.props.closeModal(value.payload.question.id);
+      if (value.payload.question.id) {
+        this.props.history.push(`/question/${value.payload.question.id}`)     
+        }
       });
     }
   }
@@ -41,19 +46,16 @@ class PostForm extends React.Component {
       }
   }
 
+  handleDeleteSubmit(e) {
+    e.preventDefault();
+    this.props.action(questionId).then(() => {
+      this.props.closeModal();
+    });
+  }
+
   handleFile(e) {
     e.preventDefault();
     this.setState({ photoFile: e.currentTarget.files[0] });
-
-    //////preview
-    // const file = e.currentTarget.files[0];
-    // const fileReader = new FileReader();
-    // fileReader.onloadend = () => {
-    //   this.setState({ photoFile: file, photoUrl: fileReader.result });
-    // };
-    // if (file) {
-    //   fileReader.readAsDataURL(file);
-    // }
   }
 
   update(key) {
@@ -164,4 +166,4 @@ class PostForm extends React.Component {
 }
 
 
-export default PostForm;
+export default withRouter(PostForm);
