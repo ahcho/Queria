@@ -178,7 +178,7 @@
 }
 .tooltip {
   visibility: hidden;
-  width: 120px;
+  min-width: 120px;
   background-color: #555;
   color: #fff;
   text-align: center;
@@ -187,10 +187,11 @@
   position: absolute;
   z-index: 1;
   bottom: 125%;
-  left: 50%;
-  margin-left: -60px;
+  // left: 50%;
+  // margin-left: -60px;
   opacity: 0;
   transition: opacity 0.3s;
+  font-size: 20px;
 }
 
 .fa-question-circle:hover .tooltip {
@@ -202,3 +203,4 @@
   visibility: visible;
   opacity: 1;
 }
+

@@ -2,8 +2,7 @@ import { RECEIVE_CURRENT_USER } from "../actions/session_actions";
 import { RECEIVE_ALL_USERS,
          RECEIVE_USER,
          REMOVE_USER} from "../actions/user_actions";
-import { RECEIVE_QUESTION, RECEIVE_ALL_QUESTIONS } from "../actions/question_actions";
-import { CLOSE_MODAL } from '../actions/modal_actions';
+import { RECEIVE_QUESTION } from "../actions/question_actions";
 
 const usersReducer = (state = {}, action) => {
     Object.freeze(state);

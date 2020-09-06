@@ -83,8 +83,13 @@ a, i {
     cursor: pointer;
 }
 
-#profile-photo:hover {
+#profile-photo:hover{
     opacity: 0.5;
+}
+
+#profile-photo:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
 }
 
 #profile-photo-question-show {

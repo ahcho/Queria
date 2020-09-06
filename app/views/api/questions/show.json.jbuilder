@@ -24,6 +24,7 @@ json.users do
 end
 
 json.answers do 
+    # @question.answers.each do |answer|
     @question.answers.each do |answer|
         json.set! answer.id do 
             json.extract! answer, :body, :id, :author_id, :question_id, :updated_at, :created_at

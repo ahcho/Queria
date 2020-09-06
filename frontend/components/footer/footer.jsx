@@ -19,7 +19,7 @@ class Footer extends React.Component {
         return (
             <div className='footer'>
                 <i className="fa fa-question-circle" aria-hidden="true" onClick={this.handleAddQuestion}>
-                    <span className="tooltip">Ask!</span>
+                    <span className="tooltip">Ask a Question!</span>
                 </i>
                 <Link to={`/profile/${this.props.currentUser.id}`} >
                     <i className="far fa-user">

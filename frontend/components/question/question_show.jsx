@@ -43,17 +43,21 @@ class QuestionShow extends React.Component {
     }
 
     handleDeleteQuestion() {
-        // this.props.deleteQuestion(this.props.question.id);
-        this.props.openModal('deletequestion', this.props.question)
-        window.location.replace("http://localhost:3000/#/main");
+        this.props.openModal('deletequestion', this.props.question) 
+        this.props.history.push('/main')
+        // window.location.replace("http://localhost:3000/#/main");
     }
 
     handleSameAuthor() {
         if (this.props.currentUser.id === this.props.question.author.id) {
             return (
                 <div className='right'>
-                    <i className="far fa-edit" onClick={this.handleEditQuestion}></i>
-                    <i className="fas fa-times" onClick={this.handleDeleteQuestion}></i>
+                    <i className="far fa-edit" onClick={this.handleEditQuestion}>
+                        <span className='tooltip'>Edit</span>
+                    </i>
+                    <i className="fas fa-times" onClick={this.handleDeleteQuestion}>
+                        <span className='tooltip'>Delete</span>
+                    </i>
                 </div>
             )
         }
@@ -62,7 +66,6 @@ class QuestionShow extends React.Component {
     render() {
         const { currentUser, question, answers } = this.props;
         if (!question ) return null;
-       
         const dropdown = this.state.dropDown ? "" : "hidden" ;
         return (
             <div>

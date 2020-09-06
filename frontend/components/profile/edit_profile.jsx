@@ -62,6 +62,7 @@ class EditProfile extends React.Component {
                 <div className="image-upload">
                     <label htmlFor="file-input">
                         {this.hasProfilePhoto()}
+
                     </label>
                     <input id="file-input"
                         type="file"
