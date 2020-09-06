@@ -43,7 +43,8 @@ class QuestionShow extends React.Component {
     }
 
     handleDeleteQuestion() {
-        this.props.deleteQuestion(this.props.question.id);
+        // this.props.deleteQuestion(this.props.question.id);
+        this.props.openModal('deletequestion', this.props.question)
         window.location.replace("http://localhost:3000/#/main");
     }
 
@@ -61,8 +62,7 @@ class QuestionShow extends React.Component {
     render() {
         const { currentUser, question, answers } = this.props;
         if (!question ) return null;
-        // const isLoggedInUser =
-        //     currentUser.id === question.author.id ? "no-answer-box" : "q-answer-box";
+       
         const dropdown = this.state.dropDown ? "" : "hidden" ;
         return (
             <div>

@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import SignupContainer from '../signup_form/signup_container';
 import EditQuestionForm from '../question/edit_question_form_container';
 import CreateQuestionForm from '../question/create_question_form_container';
+import DeleteQuestionForm from '../question/delete_question_form';
 
 function Modal({ modal, closeModal }) {
     if (!modal) {
@@ -21,7 +22,7 @@ function Modal({ modal, closeModal }) {
             component = <EditQuestionForm question={modal.questionId} />;
             break;
         case 'deletequestion':
-            component = <DelteQuestionFrom question={modal.questionId}/>;
+            component = <DeleteQuestionForm question={modal.questionId}/>;
             break;
         default:
             return null;

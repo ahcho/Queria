@@ -10,8 +10,7 @@ class PostForm extends React.Component {
     this.question = props.question;
     this.update = this.update.bind(this);
     this.handleCreateSubmit = this.handleCreateSubmit.bind(this);
-    this.handleEditSubmit = this.handleEditSubmit.bind(this);
-    this.handleDeleteSubmit = this.handleDeleteSubmit.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleCreateSubmit(e) {
@@ -36,21 +35,15 @@ class PostForm extends React.Component {
     }
   }
 
-  handleEditSubmit(e) {
+  handleSubmit(e) {
     e.preventDefault();
-    if (this.state.question.length > 0) {
-        const question = Object.assign({}, this.state);
-        this.props.action(question).then(() => {
+    if (this.props.formType === 'Delete Question' || this.state.question.length > 0) {
+        const value = this.props.formType === 'Update Question' ?
+         Object.assign({}, this.state) : this.props.question.id
+        this.props.action(value).then(() => {
           this.props.closeModal();
         });
       }
-  }
-
-  handleDeleteSubmit(e) {
-    e.preventDefault();
-    this.props.action(questionId).then(() => {
-      this.props.closeModal();
-    });
   }
 
   handleFile(e) {
@@ -64,9 +57,7 @@ class PostForm extends React.Component {
     };
   }
 
-
   render() {
-    // const preview = this.state.photoUrl ? <img src={this.state.photoUrl} /> : null;
     const topics = ["history", "product", "recipe", "health", "tour"]
     const { formType, question } = this.props;
     if (!question) return null;
@@ -100,7 +91,7 @@ class PostForm extends React.Component {
         </>
       ) : (
         <div className="question-head">
-          <h1 className="q-modal-msg">Edit Question</h1>
+          <h1 className="q-modal-msg">{formType}</h1>
           <i
             className="fa fa-times"
             aria-hidden="true"
@@ -121,8 +112,8 @@ class PostForm extends React.Component {
         </>
       ) : (
         <button 
-            onClick={this.handleEditSubmit}>
-          Edit Question </button>
+            onClick={this.handleSubmit}>
+          {formType}</button>
       );
 
     const getInput =
@@ -141,27 +132,41 @@ class PostForm extends React.Component {
         <textarea value={this.state.question} onChange={this.update("question")} cols="30" rows="2"></textarea>
         
       );
-
-    return (
-      <div className="question-modal">
-        {createReminder}
-        <form className="modal-q-form" >
-          <div className="modal-user">
-            {/* <i className="fa fa-user-circle" aria-hidden="true"></i> */}
-            <h2 className="q-form-header">
-              {this.currentUser.first_name} asked
-            </h2>
+      
+    if (formType === 'Delete Question') {
+      return (
+        <div className="question-modal">
+          {createReminder}
+          <form className="modal-q-form" >
+            <div className="modal-user">
+              <h2 className="q-form-header">
+                Do you want to delete this question? 
+              </h2>
+            </div>
+          </form>
+          <div className="q-form-btn">
+            {submitBtn}
           </div>
-          {getInput}
-        </form>
-        <div className="q-form-btn">
-          {submitBtn}
-          {/* <select name="topic-select" id="slct" onChange={this.update("topic_id")}>
-            {topicDropDown}
-          </select>  */}
         </div>
-      </div>
-    );
+        )
+    } else {
+      return (
+        <div className="question-modal">
+          {createReminder}
+          <form className="modal-q-form" >
+            <div className="modal-user">
+              <h2 className="q-form-header">
+                {this.currentUser.first_name} asked
+              </h2>
+            </div>
+            {getInput}
+          </form>
+          <div className="q-form-btn">
+            {submitBtn}
+          </div>
+        </div>
+      );
+    }
   }
 }
 

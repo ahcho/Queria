@@ -6,6 +6,7 @@ class QuestionIndexItem extends React.Component {
     constructor(props){
         super(props);
         this.handleEditQuestion = this.handleEditQuestion.bind(this);
+        this.handleDeleteQuestion = this.handleDeleteQuestion.bind(this);
     }
 
     handleEditQuestion() {
@@ -15,13 +16,13 @@ class QuestionIndexItem extends React.Component {
     handleDeleteQuestion() {
         this.props.openModal('deletequestion', this.props.question)
     }
-    userIconDisplay(targetId) {
-
+    userIconDisplay() {
         if (this.props.currentUserId === this.props.question.author_id) {
             return (
                 <div className='right'>
                     <i className="far fa-edit" onClick={this.handleEditQuestion}></i>
-                    <i className="fas fa-times" onClick={() => this.props.deleteQuestion(targetId)}></i>
+                    {/* <i className="fas fa-times" onClick={() => this.props.deleteQuestion(targetId)}></i> */}
+                    <i className="fas fa-times" onClick={this.handleDeleteQuestion}></i>
                 </div>
             )
         }
@@ -48,7 +49,7 @@ class QuestionIndexItem extends React.Component {
     }
 
     render() {
-        const { question, location } = this.props;
+        const { question, location} = this.props;
         if (!question ) return null;
         
         const loc = location === "topic-show" ?  "topic" : ""

@@ -9,7 +9,7 @@ class DeleteQuestionForm extends React.Component {
     render() {
         const { action, formType, question, currentUser, closeModal } = this.props;
         if (!question) return null;
-
+        
         return (
             <>
                 < PostForm
@@ -25,7 +25,7 @@ class DeleteQuestionForm extends React.Component {
 }
 
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = (state) => {
 
     return ({
         currentUser: state.session.currentUser,
