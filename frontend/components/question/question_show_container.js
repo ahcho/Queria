@@ -7,7 +7,7 @@ import { openModal } from '../../actions/modal_actions';
 const mapStateToProps = (state, ownProps) => {
     return ({ 
         question: state.entities.questions[ownProps.match.params.questionId],
-        answers: Object.values(state.entities.answers),
+        answers: Object.values(state.entities.answers).filter(ele => ele.question_id === parseInt(ownProps.match.params.questionId) ),
         users: state.entities.users,
         currentUser: state.session.currentUser,
     })

@@ -3,11 +3,13 @@ import { connect } from 'react-redux';
 import { deleteQuestion } from '../../actions/question_actions';
 import { closeModal } from '../../actions/modal_actions';
 import PostForm from './post_form';
+import { withRouter } from 'react-router-dom';
+
 
 class DeleteQuestionForm extends React.Component {
 
     render() {
-        const { action, formType, question, currentUser, closeModal } = this.props;
+        const { action, formType, question, currentUser, closeModal, history } = this.props;
         if (!question) return null;
         
         return (
@@ -18,6 +20,7 @@ class DeleteQuestionForm extends React.Component {
                     question={question}
                     currentUser={currentUser}
                     closeModal={closeModal}
+                    history={history}
                 />
             </>
         )
@@ -41,4 +44,4 @@ const mapDispatchToProps = (dispatch) => {
     })
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(DeleteQuestionForm);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(DeleteQuestionForm));

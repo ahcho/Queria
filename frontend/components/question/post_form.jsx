@@ -41,6 +41,7 @@ class PostForm extends React.Component {
         const value = this.props.formType === 'Update Question' ?
          Object.assign({}, this.state) : this.props.question.id
         this.props.action(value).then(() => {
+          this.props.history.push('/main');
           this.props.closeModal();
         });
       }

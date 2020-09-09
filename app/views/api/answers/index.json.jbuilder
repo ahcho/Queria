@@ -2,7 +2,7 @@ json.answers do
     @answers.each do |answer|
         json.set! answer.id do
             # json.extract! answer, :id, :topic_id, :body, :author_id, :updated_at, :created_at
-            json.extract! answer, :id, :body, :author_id, :updated_at, :created_at
+            json.extract! answer, :id, :body, :author_id, :updated_at, :created_at, :question_id
 
             json.answerPhotoUrl url_for(answer.photo) if answer.photo.attached?
         end

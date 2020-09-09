@@ -3,9 +3,10 @@ import AnswerIndex from './answer_index';
 import { deleteAnswer, 
          updateAnswer } from '../../actions/answer_actions';
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
     return ({
-        answers: Object.values(state.entities.answers),
+        // answers: Object.values(state.entities.answers),
+        answers: Object.values(state.entities.answers).filter(ele => ele.question_id === ownProps.questionId),
         users: state.entities.users,
         currentUser: state.session.currentUser,
         comments: Object.values(state.entities.comments)
