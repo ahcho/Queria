@@ -13,15 +13,24 @@ class QuestionShow extends React.Component {
         this.handleDeleteQuestion = this.handleDeleteQuestion.bind(this);
     }
 
-    handleDropDown(e) {
+    handleDropDown() {
         this.setState({dropDown: !this.state.dropDown})
     }
 
     componentDidMount() {
         this.props.fetchQuestion(this.props.match.params.questionId);
-        this.props.fetchAnswers(this.props.match.params.questionId)
+        this.props.fetchAnswers(this.props.match.params.questionId);
     }
 
+    componentDidUpdate(prevProps) {
+        debugger;
+        // if I refresh in the same page, error
+        // if I move to different question page, error
+        if (prevProps.question && this.props.question && prevProps.question.id !== this.props.question.id) {
+            debugger;
+            this.props.fetchAnswers(this.props.match.params.questionId);
+        }
+    }
     questionPhotoAttached() {
         if (this.props.question.questionPhotoUrl) {
             return (
@@ -43,8 +52,8 @@ class QuestionShow extends React.Component {
     }
 
     handleDeleteQuestion() {
-        this.props.openModal('deletequestion', this.props.question) 
-        this.props.history.push('/main')
+        this.props.openModal('deletequestion', this.props.question); 
+        this.props.history.push('/main');
         // window.location.replace("http://localhost:3000/#/main");
     }
 
