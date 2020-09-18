@@ -20,16 +20,7 @@ class Profile extends React.Component {
 
     componentDidMount() {
         this.props.fetchUser(this.props.match.params.userId);
-        // this.props.fetchUserAllAnswers(this.props.user.id)
     }
-
-    // componentDidUpdate(prevProps) {
-    //     if (prevProps.answers.length !== this.props.answers.length) {
-            
-    //         // this.setState({ answers: prevProps.answers })
-    //     } 
-    // }
-    
 
     handleShowAnswer() {
         if (this.state.showAnswer === false) {
@@ -52,7 +43,7 @@ class Profile extends React.Component {
         const userQuestions = questions.filter(
             (question) => question.author_id === user.id
         ).reverse()
-        const answers = this.props.answers//this.state.answers
+        const answers = this.props.answers
         
         const renderQuestions = 
              this.state.showAnswer ? (

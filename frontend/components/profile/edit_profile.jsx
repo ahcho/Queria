@@ -33,13 +33,10 @@ class EditProfile extends React.Component {
 
     handleSubmit() {
         const formData = new FormData();
-        // formData.append('user[first_name]', this.state.first_name);
-        // formData.append('user[last_name]', this.state.last_name);
         if (this.state.photoFile) {
             formData.append('user[photo]', this.state.photoFile)
         }
         this.props.editUser(formData, this.state.id);
-       
     }
 
     componentDidUpdate(prevProps) {
@@ -62,7 +59,6 @@ class EditProfile extends React.Component {
                 <div className="image-upload">
                     <label htmlFor="file-input">
                         {this.hasProfilePhoto()}
-
                     </label>
                     <input id="file-input"
                         type="file"

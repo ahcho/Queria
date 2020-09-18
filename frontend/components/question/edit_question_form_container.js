@@ -26,7 +26,7 @@ class EditQuestionForm extends React.Component {
 }
 
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = (state) => {
    
     return ({
         currentUser: state.session.currentUser,

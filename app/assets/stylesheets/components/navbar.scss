@@ -139,12 +139,25 @@
   display: none;
 }
 
+.footer-box {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  height: 6%;
+  font-size: 35px;
+  // padding: 15px 0 10px 0;
+}
 
 .footer {
   position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
+  // min-height: 80%;
   background-color: black;
   display: flex;
   flex-direction: row;
@@ -204,3 +217,9 @@
   opacity: 1;
 }
 
+.footer-copyright {
+  font-size: 10px;
+  color: white;
+  border: solid red 3px;
+  background-color: black;
+}

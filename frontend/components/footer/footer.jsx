@@ -17,18 +17,25 @@ class Footer extends React.Component {
 
     render() {
         return (
-            <div className='footer'>
-                <i className="fa fa-question-circle" aria-hidden="true" onClick={this.handleAddQuestion}>
-                    <span className="tooltip">Ask a Question!</span>
+          // <div className="footer-box">
+            <div className="footer">
+              <i
+                className="fa fa-question-circle"
+                aria-hidden="true"
+                onClick={this.handleAddQuestion}
+              >
+                <span className="tooltip">Ask a Question!</span>
+              </i>
+              <Link to={`/profile/${this.props.currentUser.id}`}>
+                <i className="far fa-user">
+                  <span className="tooltip">My Profile</span>
                 </i>
-                <Link to={`/profile/${this.props.currentUser.id}`} >
-                    <i className="far fa-user">
-                        <span className="tooltip">My Profile</span>
-                    </i>
-                    {/* <i className="fa fa-user" aria-hidden="true"></i> */}
-                </Link>
-            </div>
-        )
+                {/* <i className="fa fa-user" aria-hidden="true"></i> */}
+              </Link>
+            {/* </div> */}
+            {/* <p className="footer-copyright">Copyright © 2020 Anna Cho</p> */}
+          </div>
+        );
     }
 }
 
