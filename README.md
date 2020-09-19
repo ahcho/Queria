@@ -17,59 +17,59 @@ any questions about Charlie and Chocolate Factory.
 
 ## Features
 
-<!-- In order to show edit text box, when edit button is clicked in a same page, I changed the state as button click to simplify the program.  -->
+### Storing Photos
+
+Users can upload photos on question, answers and their profile photo. I used AWS photos to store these photos and only the original writer of the questions, answers can delete or edit the phoots. 
+
+
+### Profile Page
+
+Each user gets own profile page where they can see
+all of their questions, answers and also edit and delete them. They can also update their profile photos in this page. As soon as the user profile photo gets updated, component checks the update and render new image.
+
+The user uploads a profile photo. 
+```js
+    handleSubmit() {
+        const formData = new FormData();
+        if (this.state.photoFile) {
+            formData.append('user[photo]', 
+            this.state.photoFile)
+        }
+        this.props.editUser(formData, this.state.id);
+    }
 ```
 
-handleDropDown(e) {
-    this.setState({ dropDown: !this.state.dropDown });
-}
-render() {
-    ...
-    const deleteButton =
-        this.props.currentUser.id === this.props.author.id ? (
-            <div className="snb-top-right">
-            <i className="far fa-edit" onClick={this.handleDropDown}></i>
-            <i
-                className="fas fa-times"
-                onClick={() => this.props.deleteAnswer(answer.id)}
-            ></i>
-            </div>
-        ) : null;
-        
-    ...
-}
-
-```
-
-In order to implement the question searching feature, I filter questions as the user input changes.  
-
-```
-    handleInput(e) {
-        if (e.target.value === "") {
-            this.setState({ target: "", questions: [] });
-        } else {
-            this.props.fetchQuestions()
-            const targetQuestions = this.props.questions.filter(
-                (question) => question.question.toLowerCase().includes(e.target.value.toLowerCase())
-            )
-            this.setState({ target: e.target.value, questions: targetQuestions })
+Once it is updated, set new state to render a new photo. 
+```js
+    componentDidUpdate(prevProps) {
+        if (prevProps.user.profilePhotoUrl !== 
+            this.props.user.profilePhotoUrl) {
+            this.setState({ user: this.props.user })
         }
     }
 ```
-<img src="https://i.ibb.co/BsyprKn/signup.png" alt="sign-up-error" style="width:20%;height:20%">
-
-Sign up only takes a unique email address.
-
-<img src="https://i.ibb.co/8g9zQVd/edit.png" alt="question" style="width:30%;height:30%">
-
-Users can ask questions and write answers.
-
-<img src="https://i.ibb.co/B27kttX/delete.png" alt="delete" style="width:30%;height:30%">
 
 
-Users can delete questions and answers that are written by them.  
+### Code Reusabiltiy 
 
-<img src="https://i.ibb.co/tmbMk9L/profile.png" alt="question" style="width:30%;height:30%">
+In order to avoid repeated codes, three different containers, creating, updating and deleting question, are all using same component to render a modal. In Post From, it checks the type of form to determine which functionalities, messages and buttons to render.
 
-Users have own profile page and it shows number of answers and questions they wrote.
-
+```js
+Post Form
+const submitBtn =
+      this.props.formType === "Create Question" ? (
+        <>
+            <button onClick={this.handleCreateSubmit}>
+                Add Question</button>
+            <select name="topic-select" 
+                    id="slct" 
+                    onChange={this.update("topic_id")}>
+                {topicDropDown}
+            </select> 
+        </>
+      ) : (
+        <button 
+            onClick={this.handleSubmit}>
+          {formType}</button>
+      );
+```

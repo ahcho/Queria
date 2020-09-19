@@ -34,7 +34,7 @@ class CreateAnswer extends React.Component {
             this.props.createAnswer(formData);
             this.props.handleDropDown(e);
             this.setState({ body: "", photoFile: null });
-            document.getElementById("uploadAnswerInputFile").value = ""; // clear file field
+            document.getElementById("uploadAnswerInputFile").value = ""; 
         }
     }
 
