@@ -41,7 +41,7 @@ class PostForm extends React.Component {
         const value = this.props.formType === 'Update Question' ?
          Object.assign({}, this.state) : this.props.question.id
         this.props.action(value).then(() => {
-          this.props.history.push('/main');
+        if (this.props.formType === "Delete Question") {this.props.history.push("/main");}
           this.props.closeModal();
         });
       }
@@ -117,6 +117,8 @@ class PostForm extends React.Component {
           {formType}</button>
       );
 
+    const display = this.props.formType === "Delete Question" ? "hide-display" : "";
+
     const getInput =
       this.props.formType === "Create Question" ? (
         <>
@@ -130,46 +132,28 @@ class PostForm extends React.Component {
             onChange={this.handleFile.bind(this)}/>
         </>
       ) : (
-        <textarea value={this.state.question} onChange={this.update("question")} cols="30" rows="2"></textarea>
-        
+        <textarea className={display} value={this.state.question} onChange={this.update("question")} cols="30" rows="2"></textarea>
       );
       
-    if (formType === 'Delete Question') {
-      return (
-        <div className="question-modal">
-          {createReminder}
-          <form className="modal-q-form" >
-            <div className="modal-user">
-              <h2 className="q-form-header">
-                Do you want to delete this question? 
-              </h2>
-            </div>
-          </form>
-          <div className="q-form-btn">
-            {submitBtn}
+    return (
+      <div className="question-modal">
+        {createReminder}
+        <form className="modal-q-form" >
+          <div className="modal-user">
+            <h2 className="q-form-header">
+              {this.currentUser.first_name} asked
+            </h2>
           </div>
+          {getInput}
+        </form>
+        <div className="q-form-btn">
+          {submitBtn}
         </div>
-        )
-    } else {
-      return (
-        <div className="question-modal">
-          {createReminder}
-          <form className="modal-q-form" >
-            <div className="modal-user">
-              <h2 className="q-form-header">
-                {this.currentUser.first_name} asked
-              </h2>
-            </div>
-            {getInput}
-          </form>
-          <div className="q-form-btn">
-            {submitBtn}
-          </div>
-        </div>
-      );
-    }
+      </div>
+    );
   }
 }
+
 
 
 export default withRouter(PostForm);

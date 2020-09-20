@@ -1,5 +1,4 @@
 import React from "react";
-import { fetchAnswers } from '../../util/answer_api_util';
 
 class CreateAnswer extends React.Component {
 
