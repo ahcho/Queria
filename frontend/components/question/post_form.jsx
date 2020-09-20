@@ -118,6 +118,7 @@ class PostForm extends React.Component {
       );
 
     const display = this.props.formType === "Delete Question" ? "hide-display" : "";
+    const size = this.props.formType !== "Create Question" ? "short" : "";
 
     const getInput =
       this.props.formType === "Create Question" ? (
@@ -132,23 +133,24 @@ class PostForm extends React.Component {
             onChange={this.handleFile.bind(this)}/>
         </>
       ) : (
-        <textarea className={display} value={this.state.question} onChange={this.update("question")} cols="30" rows="2"></textarea>
+        <textarea id={display} value={this.state.question} onChange={this.update("question")} cols="30" rows="2"></textarea>
       );
-      
+
+    const message = 
+      this.props.formType === "Delete Question" ? "would you like to delete the question?" : `${this.currentUser.first_name} asked`
+
     return (
-      <div className="question-modal">
+      <div className="question-modal" id={size}>
         {createReminder}
-        <form className="modal-q-form" >
+        <form className="modal-q-form">
           <div className="modal-user">
             <h2 className="q-form-header">
-              {this.currentUser.first_name} asked
+              {message}
             </h2>
           </div>
           {getInput}
         </form>
-        <div className="q-form-btn">
-          {submitBtn}
-        </div>
+        <div className="q-form-btn">{submitBtn}</div>
       </div>
     );
   }
