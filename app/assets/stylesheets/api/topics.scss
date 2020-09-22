@@ -27,9 +27,17 @@
 
 .link-icons {
     display: flex;
-    margin: 25px;
+    justify-content: space-around;;
+    margin: 15px;
+    font-size: 30px;
+    // border: black solid 2px;
 }
 
 .link-icons > a {
-    margin-right: 10px;
+    text-decoration: none;
+    color: gray;
+}
+
+.link-icons > a:hover {
+    color: #AA2200;
 }
