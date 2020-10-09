@@ -79,6 +79,8 @@ class Profile extends React.Component {
                 <ul className='profile-list'>
                     <a id='user-questions' onClick={this.handleShowQuestion}>{userQuestions.length} Questions</a>
                     <a id='user-answers' onClick={this.handleShowAnswer}>{answers.length} Answers</a>
+                    <a id='user-answers' onClick={this.handleShowAnswer}>5 Followers</a>
+                    <a id='user-answers' onClick={this.handleShowAnswer}>7 Followings</a>
                 </ul>
                 {renderQuestions}   
             </div>

@@ -64,6 +64,7 @@ class Search extends React.Component {
                     type="text" 
                     placeholder="Search Queria" 
                     
+                    
                     onKeyUp={this.handleInput}/>
                 <ul className={foundTarget}>
                     {foundQuestions}

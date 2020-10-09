@@ -24,7 +24,7 @@ li {
     border: 0.2px solid lightgrey;
     background-color:  #F8F8F8;
     width: 650px;
-    height: 520px;
+    height: 540px;
     //box-shadow: 1px 1px 1px lightgrey;
     border-radius: 5px; 
     margin: 2px solid gray;
@@ -182,4 +182,10 @@ a {
 
 #queria-btn {
     background: green;
+}
+
+.official {
+    color: gray;
+    font-size: 10px;
+    padding-left: 40%;
 }
