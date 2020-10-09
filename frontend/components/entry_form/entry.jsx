@@ -98,6 +98,7 @@ class Entry extends React.Component {
                         <a href="https://www.linkedin.com/in/anna-cho-4034b3191/" className="fab fa-linkedin"></a>
                         <a href="https://github.com/ahcho" className="fab fa-github"></a>
                         <a href="https://angel.co/u/anna-cho-3" className="fab fa-angellist"></a>
+                        <a href="https://twitter.com/AnnaCho98178357" className="fab fa-twitter"></a>
                     </div>
                     <p className='official'>Queria © 2020 by Anna Cho</p>
                 </div>
