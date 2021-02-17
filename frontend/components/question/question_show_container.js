@@ -12,7 +12,7 @@ const mapStateToProps = (state, ownProps) => {
         currentUser: state.session.currentUser,
     })
 }
-
+// what do I need to do through redux
 const mapDispatchToProps = (dispatch) => {
     return ({
         fetchAnswers: (questionId) => dispatch(fetchAnswers(questionId)),
@@ -25,4 +25,6 @@ const mapDispatchToProps = (dispatch) => {
     })
 }
 
+// global state changes connect see the 
+// react props changing, I need to update, dom and virutal dom, these don't match this component need to rerender
 export default connect(mapStateToProps, mapDispatchToProps)(QuestionShow);
