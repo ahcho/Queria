@@ -100,25 +100,12 @@ class PostForm extends React.Component {
           ></i>
         </div>
       );
-
-    const submitBtn =
-      this.props.formType === "Create Question" ? (
-        <>
-        <button 
-            onClick={this.handleCreateSubmit}>
-          Add Question </button>
-        <select name="topic-select" id="slct" onChange={this.update("topic_id")}>
-          {topicDropDown}
-        </select> 
-        </>
-      ) : (
-        <button 
-            onClick={this.handleSubmit}>
-          {formType}</button>
-      );
+    
+    const handleFunction = this.props.formType === "Create Question" ? this.handleCreateSubmit : this.handleSubmit;
 
     const display = this.props.formType === "Delete Question" ? "hide-display" : "";
     const size = this.props.formType !== "Create Question" ? "short" : "";
+    const showTopic = this.props.formType == "Create Question" ? "show-topic" : "hide-topic";
 
     const getInput =
       this.props.formType === "Create Question" ? (
@@ -137,7 +124,7 @@ class PostForm extends React.Component {
       );
 
     const message = 
-      this.props.formType === "Delete Question" ? "would you like to delete the question?" : `${this.currentUser.first_name} asked`
+      this.props.formType === "Delete Question" ? "Would you like to delete this question?" : `${this.currentUser.first_name} asked`
 
     return (
       <div className="question-modal" id={size}>
@@ -150,7 +137,12 @@ class PostForm extends React.Component {
           </div>
           {getInput}
         </form>
-        <div className="q-form-btn">{submitBtn}</div>
+        <div className="q-form-btn">
+           <button onClick={handleFunction}>{formType}</button>
+           <select className={showTopic} name="topic-select" id="slct" onChange={this.update("topic_id")}>
+             {topicDropDown}
+           </select> 
+        </div>
       </div>
     );
   }
