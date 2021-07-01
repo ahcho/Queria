@@ -43,7 +43,7 @@ export const deleteUser = (userId) => (dispatch) => {
 )}
 
 export const editUser = (formData, userId) => dispatch => { 
-    return(
-        UserApiUtil.editUser(formData, userId)
-            .then(user => dispatch(receiveUser(user)))
+    return(//that's calling a edit user function, it goes to router, end point, jquery
+        UserApiUtil.editUser(formData, userId) 
+            .then(user => dispatch(receiveUser(user)))// waiting for user to comback
 )}

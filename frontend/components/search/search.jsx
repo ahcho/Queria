@@ -7,6 +7,7 @@ class Search extends React.Component {
         this.state = { 
             target: "", 
             questions: [],
+            questions_fetched: false,
             showSearchBar: false }
         this.handleInput = this.handleInput.bind(this)
         this.clearSearch = this.clearSearch.bind(this)
@@ -37,7 +38,11 @@ class Search extends React.Component {
         if (e.target.value === "") {
             this.clearSearch();
         } else {
-            this.props.fetchQuestions()
+            /////////// never reset
+            if (this.state.questions_fetched === false) {
+                this.props.fetchQuestions();
+                this.state.questions_fetched = true;
+            }
             const targetQuestions = this.props.questions.filter(
                 (question) => question.question.toLowerCase().includes(e.target.value.toLowerCase())
             )
@@ -63,8 +68,6 @@ class Search extends React.Component {
                     id="search-bar-input"
                     type="text" 
                     placeholder="Search Queria" 
-                    
-                    
                     onKeyUp={this.handleInput}/>
                 <ul className={foundTarget}>
                     {foundQuestions}

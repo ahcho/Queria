@@ -17,7 +17,8 @@ class Profile extends React.Component {
         this.handleShowQuestion = this.handleShowQuestion.bind(this);
         this.handleShowAnswer = this.handleShowAnswer.bind(this);
     } 
-
+    // using slide of hand, they are thinking they are accessing to new page
+    // this.props."match" it's always there
     componentDidMount() {
         this.props.fetchUser(this.props.match.params.userId);
     }

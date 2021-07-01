@@ -5,7 +5,9 @@ import SignupContainer from '../signup_form/signup_container';
 import EditQuestionForm from '../question/edit_question_form_container';
 import CreateQuestionForm from '../question/create_question_form_container';
 import DeleteQuestionForm from '../question/delete_question_form';
-
+// functional component, no render
+// different displays depanding on props.
+// hooks let us change
 function Modal({ modal, closeModal }) {
     if (!modal) {
         return null;

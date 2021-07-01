@@ -31,3 +31,7 @@ json.answers do
         end
     end
 end
+
+## json will be create and this is what .then in frontend is waiting for
+## .then sees the update, and redux 
+## reducers will hit every action

@@ -5,9 +5,9 @@ import { deleteAnswer,
 
 const mapStateToProps = (state, ownProps) => {
     return ({
-        // answers: Object.values(state.entities.answers),
+        // SELECTOR PATTERN, I WANT ANSER TO COME IN, BUT NOT EVERY ANSWER IN GLOBAL STATE
         answers: Object.values(state.entities.answers).filter(ele => ele.question_id === ownProps.questionId),
-        users: state.entities.users,
+        users: state.entities.users, // I WANT ALL THE USERS FROM GLOBAL STATE
         currentUser: state.session.currentUser,
         comments: Object.values(state.entities.comments)
     })

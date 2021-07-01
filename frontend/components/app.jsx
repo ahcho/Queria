@@ -11,7 +11,10 @@ import TopicShow from './topic/topic_show_container';
 import footerContainer from './footer/footer';
 
 
-
+/// I didn't send a request to data
+// it reads my url and send the userId to profile container
+// going to mount the componenet thunk action and api util return .then triggers
+// capture by reducer
 const App = () => (
     
     <div className="app-page">

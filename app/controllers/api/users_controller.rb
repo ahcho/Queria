@@ -26,9 +26,9 @@ class Api::UsersController < ApplicationController
 
     def update
            
-        @user = User.find_by(id: params[:id])
-        if @user.update(user_params)
-            render :show
+        @user = User.find_by(id: params[:id])# find the user with the id
+        if @user.update(user_params) #updating backend 
+            render :show#that's where my jbuilder will hit. we send json file via jbuilder. 
         else
             render json: ["fail to update an user"], status: 404
         end

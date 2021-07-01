@@ -7,7 +7,10 @@ class QuestionShow extends React.Component {
         super(props);
         this.state = {
             dropDown: false,
-            answers: []
+            answers: [],
+            counts: 0,
+            upClick: false,
+            downClick: false
         }        
         this.handleDropDown = this.handleDropDown.bind(this);
         this.handleEditQuestion = this.handleEditQuestion.bind(this);
@@ -55,6 +58,15 @@ class QuestionShow extends React.Component {
         // window.location.replace("http://localhost:3000/#/main");
     }
 
+    handleCounter(val) {
+        let count = this.state.counts;
+        if (val) {
+            this.setState({counts: count + 1, upClick: val, downClick: !val})
+        } else {
+            this.setState({counts: count - 1, downClick: !val, upClick: val})
+        }
+        
+    }
     handleSameAuthor() {
         if (this.props.currentUser.id === this.props.question.author.id) {
             return (
@@ -72,6 +84,7 @@ class QuestionShow extends React.Component {
 
     render() {
         const { currentUser, question, answers } = this.props;
+        const hasUp = this.state.hasUp ? "UP" : "DOWN" ;
         if (!question ) return null;
         const dropdown = this.state.dropDown ? "" : "hidden" ;
         return (
@@ -89,6 +102,9 @@ class QuestionShow extends React.Component {
                     <p className='question-topic'>#{question.topic.name}</p>
                     <div className='question-detail-box'>
                         <i className="far fa-comment"></i> {answers.length}
+                        {!this.state.upClick ? <button onClick={this.handleCounter.bind(this, true)}> UP </button> : null}
+                        {this.state.upClick ? <button onClick={this.handleCounter.bind(this, false)}> DOWN </button> : null }
+                        {this.state.counts}
                         {/* <i className="fas fa-heart"></i> */}
                     </div>
                 </div>

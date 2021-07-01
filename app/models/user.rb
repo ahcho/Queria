@@ -27,7 +27,7 @@ class User < ApplicationRecord
     return nil unless user
     user.is_password?(password) ? user : nil
   end
-
+  #application records, security is important and crazy
   def password=(password)
     @password = password
     self.password_digest = BCrypt::Password.create(password)
