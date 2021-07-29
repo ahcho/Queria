@@ -38,8 +38,7 @@ class PostForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     if (this.props.formType === 'Delete Question' || this.state.question.length > 0) {
-        const value = this.props.formType === 'Update Question' ?
-         Object.assign({}, this.state) : this.props.question.id
+        const value = this.props.formType === 'Update Question' ? Object.assign({}, this.state) : this.props.question.id
         this.props.action(value).then(() => {
         if (this.props.formType === "Delete Question") {this.props.history.push("/main");}
           this.props.closeModal();

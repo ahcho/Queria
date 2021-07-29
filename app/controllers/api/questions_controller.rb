@@ -7,7 +7,6 @@ class Api::QuestionsController < ApplicationController
         render :index
     end
 
-
     def create
         @question = Question.new(question_params)
         if @question.save
@@ -22,11 +21,6 @@ class Api::QuestionsController < ApplicationController
         @questions = User.where("LOWER(body) LIKE", "%#{target}%")
         render :index
     end 
-
-    # def show
-    #     @question = Question.find_by(id: params[:id])
-    #     render :show
-    # end
 
     def show
         @question = Question.find_by(id: params[:id])

@@ -54,8 +54,6 @@ class QuestionShow extends React.Component {
 
     handleDeleteQuestion() {
         this.props.openModal('deletequestion', this.props.question); 
-        // this.props.history.push('/main');
-        // window.location.replace("http://localhost:3000/#/main");
     }
 
     handleCounter(val) {
@@ -105,7 +103,6 @@ class QuestionShow extends React.Component {
                         {!this.state.upClick ? <button onClick={this.handleCounter.bind(this, true)}> UP </button> : null}
                         {this.state.upClick ? <button onClick={this.handleCounter.bind(this, false)}> DOWN </button> : null }
                         {this.state.counts}
-                        {/* <i className="fas fa-heart"></i> */}
                     </div>
                 </div>
                 {/* <div className={isLoggedInUser}> */}
