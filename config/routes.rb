@@ -51,6 +51,7 @@ Rails.application.routes.draw do
     resources :answers, only: [:create, :update, :destroy]
     resources :comments, only: [:index, :destroy, :update, :create]
     resources :topics, only: [:index, :show]
+    resources :searches, only: :index
   end
 
 end
