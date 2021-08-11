@@ -38,7 +38,6 @@ class Search extends React.Component {
         if (e.target.value === "") {
             this.clearSearch();
         } else {
-            /////////// never reset
             if (this.state.questions_fetched === false) {
                 this.props.fetchQuestions();
                 this.state.questions_fetched = true;
@@ -57,6 +56,9 @@ class Search extends React.Component {
     }
 
     render() {
+        let debounce = function(func, wait, immediate) {
+            
+        }
         const showSearchBar = this.state.showSearchBar ? "search-input" : "hide-search-input"
         const questions = this.state.questions;
         const foundQuestions = this.getMatches(questions)
